@@ -16,9 +16,9 @@ static(perc=0.1, n=500, s=1234)
 static(perc=0.3, n=500, s=1234)
 ```
 <p align="center">
-<img src="/images/static_p01_n500.jpeg?raw=true" width="33%">
-<img src="/images/static_p10_n500.jpeg?raw=true" width="33%">
-<img src="/images/static_p30_n500.jpeg?raw=true" width="33%">
+<img src="/images/static_p01_n500.jpeg?raw=true" width="30%">
+<img src="/images/static_p10_n500.jpeg?raw=true" width="30%">
+<img src="/images/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
 ``` r
@@ -27,8 +27,8 @@ static(perc=0.1, n=500, s=1234)
 static(perc=0.1, n=5000, s=1234)
 ```
 <p align="center">
-<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n50.jpeg?raw=true" width="33%">
-<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n500.jpeg?raw=true" width="33%">
-<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n5000.jpeg?raw=true" width="33%">
+<img src="/images/static_p10_n50.jpeg?raw=true" width="30%">
+<img src="/images/static_p10_n500.jpeg?raw=true" width="30%">
+<img src="/images/static_p10_n5000.jpeg?raw=true" width="30%">
 </p>
 
