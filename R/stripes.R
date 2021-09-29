@@ -1,0 +1,42 @@
+#' Generate Striped Art
+#'
+#' This function generates a generative art ggplot object featuring rows of stripes.
+#'
+#' @param perc Percentage of data points to be sorted
+#' @param n Number of rows
+#' @param s Seed value
+#' @return A ggplot object
+#' @export
+
+stripes <- function(perc, n=3, s=1234){
+  if(n < 1) stop('n must be a positive integer')
+  set.seed(s)
+  plot_df <- matrix(NA, ncol=1000, nrow=n)
+  for (i in 1:n){
+    k <- runif(1000)
+    vals <- sample(x=1:1000, size=perc*1000, replace=F)
+    k[vals] <- sort(k[vals])
+    plot_df[i,] <- k
+  }
+  colnames(plot_df) <- 1:ncol(plot_df)
+  rownames(plot_df) <- 1:nrow(plot_df)
+  plot_data <- tibble::tibble(times=1:nrow(plot_df), tibble::as_tibble(plot_df))
+  plot_data <- tidyr::pivot_longer(plot_data, cols=2:(ncol(plot_df)+1))
+  plot_data$value[sample(x=1:(ncol(plot_df)*nrow(plot_df)), size=round(perc*ncol(plot_df)*nrow(plot_df)), replace=F)] <- runif(round(perc*ncol(plot_df)*nrow(plot_df)))
+  p <- ggplot2::ggplot(data=plot_data, ggplot2::aes(x=times, y=name, fill=value)) +
+    ggplot2::geom_tile() +
+    ggplot2::coord_flip(expand=F) +
+    ggplot2::scale_fill_gradient(low="#a1dab4", high="#253494", na.value = "white", limits=c(0,1)) +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent"),
+                   plot.background = ggplot2::element_rect(fill = "transparent"),
+                   axis.text=ggplot2::element_blank(),
+                   axis.ticks = ggplot2::element_blank(),
+                   axis.title=ggplot2::element_blank(),
+                   plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+                   legend.position="none",
+                   legend.key = ggplot2::element_blank())
+  return(p)
+}
+
+
+
