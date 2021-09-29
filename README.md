@@ -1,9 +1,34 @@
-#aRt
+<h1 align="center">
+aRt</h1>
 
-An R package to create generative art. 
-
-Install using:
-
+aRt is an R package to create generative art. Install using:
 ``` r
 devtools::install_github("nrennie/aRt")
 ```
+<h2 align="center">
+static</h2>
+
+The static function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.
+
+``` r
+static(perc=0.01, n=500, s=1234)
+static(perc=0.1, n=500, s=1234)
+static(perc=0.3, n=500, s=1234)
+```
+<p align="center">
+<img src="/images/static_p01_n500.jpeg?raw=true" width="33%">
+<img src="/images/static_p10_n500.jpeg?raw=true" width="33%">
+<img src="/images/static_p30_n500.jpeg?raw=true" width="33%">
+</p>
+
+``` r
+static(perc=0.1, n=50, s=1234)
+static(perc=0.1, n=500, s=1234)
+static(perc=0.1, n=5000, s=1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n50.jpeg?raw=true" width="33%">
+<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n500.jpeg?raw=true" width="33%">
+<img src="https://github.com/nrennie/aRt/blob/develop/images/static_p10_n5000.jpeg?raw=true" width="33%">
+</p>
+

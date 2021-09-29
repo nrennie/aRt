@@ -3,14 +3,16 @@
 #' This function generates a greyscale generative art ggplot object.
 #'
 #' @param perc Percentage of data points to be non-NA
+#' @param n Number of squares
 #' @param s Seed value
 #' @return A ggplot object
 #' @export
 
-static <- function(perc, s=1234){
+static <- function(perc, n=500, s=1234){
   if(perc < 0 | perc > 1) stop('perc not between 0 and 1')
+  if(n < 1) stop('n must be a positive integer')
   set.seed(s)
-  plot_df <- matrix(NA, ncol=100, nrow=50)
+  plot_df <- matrix(NA, ncol=n, nrow=n)
   colnames(plot_df) <- 1:ncol(plot_df)
   rownames(plot_df) <- 1:nrow(plot_df)
   plot_data <- tibble::tibble(times=1:nrow(plot_df), tibble::as_tibble(plot_df))
@@ -30,4 +32,6 @@ static <- function(perc, s=1234){
           legend.key = ggplot2::element_blank())
   return(p)
 }
+
+
 
