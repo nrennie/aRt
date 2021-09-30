@@ -15,15 +15,14 @@ stripes <- function(perc, n=3, s=1234){
   for (i in 1:n){
     k <- runif(1000)
     vals <- sample(x=1:1000, size=perc*1000, replace=F)
-    k[vals] <- sort(k[vals])
+    k[sort(vals)] <- sort(k[vals])
     plot_df[i,] <- k
   }
   colnames(plot_df) <- 1:ncol(plot_df)
   rownames(plot_df) <- 1:nrow(plot_df)
   plot_data <- tibble::tibble(times=1:nrow(plot_df), tibble::as_tibble(plot_df))
   plot_data <- tidyr::pivot_longer(plot_data, cols=2:(ncol(plot_df)+1))
-  plot_data$value[sample(x=1:(ncol(plot_df)*nrow(plot_df)), size=round(perc*ncol(plot_df)*nrow(plot_df)), replace=F)] <- runif(round(perc*ncol(plot_df)*nrow(plot_df)))
-  p <- ggplot2::ggplot(data=plot_data, ggplot2::aes(x=times, y=name, fill=value)) +
+  p <- ggplot2::ggplot(data=plot_data, ggplot2::aes(x=times, y=as.numeric(name), fill=value)) +
     ggplot2::geom_tile() +
     ggplot2::coord_flip(expand=F) +
     ggplot2::scale_fill_gradient(low="#a1dab4", high="#253494", na.value = "white", limits=c(0,1)) +
@@ -37,6 +36,3 @@ stripes <- function(perc, n=3, s=1234){
                    legend.key = ggplot2::element_blank())
   return(p)
 }
-
-
-
