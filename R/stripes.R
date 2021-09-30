@@ -2,13 +2,14 @@
 #'
 #' This function generates a generative art ggplot object featuring rows of stripes.
 #'
-#' @param perc Percentage of data points to be sorted
-#' @param n Number of rows
-#' @param s Seed value
+#' @param perc Percentage of data points to be sorted. Default 0.5.
+#' @param n Number of rows. Default 3.
+#' @param s Seed value. Default 1234.
 #' @return A ggplot object
 #' @export
 
-stripes <- function(perc, n=3, s=1234){
+stripes <- function(perc=0.5, n=3, s=1234){
+  if(perc < 0 | perc > 1) stop('perc not between 0 and 1')
   if(n < 1) stop('n must be a positive integer')
   set.seed(s)
   plot_df <- matrix(NA, ncol=1000, nrow=n)

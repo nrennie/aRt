@@ -4,14 +4,14 @@
 \alias{stripes}
 \title{Generate Striped Art}
 \usage{
-stripes(perc, n = 3, s = 1234)
+stripes(perc = 0.5, n = 3, s = 1234)
 }
 \arguments{
-\item{perc}{Percentage of data points to be sorted}
+\item{perc}{Percentage of data points to be sorted. Default 0.5.}
 
-\item{n}{Number of rows}
+\item{n}{Number of rows. Default 3.}
 
-\item{s}{Seed value}
+\item{s}{Seed value. Default 1234.}
 }
 \value{
 A ggplot object
