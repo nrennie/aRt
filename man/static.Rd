@@ -4,17 +4,17 @@
 \alias{static}
 \title{Generate Static Art}
 \usage{
-static(perc, n = 500, s = 1234)
+static(perc = 0.1, n = 500, s = 1234)
 }
 \arguments{
-\item{perc}{Percentage of data points to be non-NA}
+\item{perc}{Percentage of data points to be non-NA. Default 0.1.}
 
-\item{n}{Number of squares}
+\item{n}{Number of squares. Default 500.}
 
-\item{s}{Seed value}
+\item{s}{Seed value. Default 1234.}
 }
 \value{
-A ggplot object
+A ggplot object.
 }
 \description{
 This function generates a greyscale generative art ggplot object.

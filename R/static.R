@@ -2,13 +2,13 @@
 #'
 #' This function generates a greyscale generative art ggplot object.
 #'
-#' @param perc Percentage of data points to be non-NA
-#' @param n Number of squares
-#' @param s Seed value
-#' @return A ggplot object
+#' @param perc Percentage of data points to be non-NA. Default 0.1.
+#' @param n Number of squares. Default 500.
+#' @param s Seed value. Default 1234.
+#' @return A ggplot object.
 #' @export
 
-static <- function(perc, n=500, s=1234){
+static <- function(perc=0.1, n=500, s=1234){
   if(perc < 0 | perc > 1) stop('perc not between 0 and 1')
   if(n < 1) stop('n must be a positive integer')
   set.seed(s)
