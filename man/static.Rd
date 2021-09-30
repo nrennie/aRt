@@ -4,10 +4,12 @@
 \alias{static}
 \title{Generate Static Art}
 \usage{
-static(perc, s = 1234)
+static(perc, n = 500, s = 1234)
 }
 \arguments{
 \item{perc}{Percentage of data points to be non-NA}
+
+\item{n}{Number of squares}
 
 \item{s}{Seed value}
 }
