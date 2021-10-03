@@ -19,10 +19,10 @@ circular <- function(n=100, main_col="black", bg_col="white", s=56){
   plot_df <- tibble::tibble(val=1:360, tibble::as_tibble(output_mat))
   plot_data <- tidyr::pivot_longer(plot_df, cols=2:(ncol(plot_df)))
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(x=val, y=name, group=val)) +
-    ggplot2::geom_line(colour="black") +
+    ggplot2::geom_line(colour=main_col) +
     ggplot2::coord_polar(start = 0) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "white", colour="white"),
-          plot.background = ggplot2::element_rect(fill = "white", colour="white"),
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
           legend.position="none",
