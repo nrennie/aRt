@@ -1,4 +1,4 @@
-#' Generate Static Art
+#' Random Walk Circular
 #'
 #' This function generates a greyscale generative art ggplot object.
 #'

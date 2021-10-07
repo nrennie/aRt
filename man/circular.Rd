@@ -2,7 +2,7 @@
 % Please edit documentation in R/circular.R
 \name{circular}
 \alias{circular}
-\title{Generate Circular Art}
+\title{Circular}
 \usage{
 circular(n = 100, main_col = "black", bg_col = "white", s = 56)
 }

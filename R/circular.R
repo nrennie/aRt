@@ -1,4 +1,4 @@
-#' Generate Circular Art
+#' Circular
 #'
 #' This function generates an abstract circular generative art ggplot object.
 #'
