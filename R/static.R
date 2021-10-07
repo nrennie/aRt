@@ -1,4 +1,4 @@
-#' Generate Static Art
+#' Static
 #'
 #' This function generates a greyscale generative art ggplot object.
 #'

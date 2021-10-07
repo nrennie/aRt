@@ -2,7 +2,7 @@
 % Please edit documentation in R/static.R
 \name{static}
 \alias{static}
-\title{Generate Static Art}
+\title{Static}
 \usage{
 static(perc = 0.1, n = 500, s = 1234)
 }

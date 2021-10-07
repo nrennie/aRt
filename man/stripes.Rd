@@ -2,7 +2,7 @@
 % Please edit documentation in R/stripes.R
 \name{stripes}
 \alias{stripes}
-\title{Generate Striped Art}
+\title{Stripes}
 \usage{
 stripes(perc = 0.5, n = 3, s = 1234)
 }

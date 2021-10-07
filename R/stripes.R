@@ -1,4 +1,4 @@
-#' Generate Striped Art
+#' Stripes
 #'
 #' This function generates a generative art ggplot object featuring rows of stripes.
 #'
