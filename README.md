@@ -39,6 +39,23 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 <img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+infinity</h2>
+
+The `infinity()` function draws an infinity symbol from many overlapping lines.
+
+``` r
+infinity(n=25, col_scheme="mono", bg_col="black", s=1234)
+infinity(n=100, col_scheme="mono", bg_col="black", s=1234)
+infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/infinity_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/infinity_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/infinity_n25_r.jpeg?raw=true" width="30%">
+</p>
+
+
 
 <h2 align="center">
 static</h2>
