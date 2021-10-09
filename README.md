@@ -55,6 +55,22 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 <img src="/images/infinity_n25_r.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+heart</h2>
+
+The `heart()` function draws a heart from many overlapping lines.
+
+``` r
+heart(n=25, col_scheme="mono", bg_col="black", s=1234)
+heart(n=100, col_scheme="mono", bg_col="black", s=1234)
+heart(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/heart_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n25_r.jpeg?raw=true" width="30%">
+</p>
+
 
 
 <h2 align="center">

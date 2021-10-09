@@ -2,6 +2,7 @@
 
 export(circular)
 export(circular2)
+export(heart)
 export(infinity)
 export(spirals)
 export(static)
