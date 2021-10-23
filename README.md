@@ -39,6 +39,39 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 <img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+infinity</h2>
+
+The `infinity()` function draws an infinity symbol from many overlapping lines.
+
+``` r
+infinity(n=25, col_scheme="mono", bg_col="black", s=1234)
+infinity(n=100, col_scheme="mono", bg_col="black", s=1234)
+infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/infinity_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/infinity_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/infinity_n25_r.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
+heart</h2>
+
+The `heart()` function draws a heart from many overlapping lines.
+
+``` r
+heart(n=25, col_scheme="mono", bg_col="black", s=1234)
+heart(n=100, col_scheme="mono", bg_col="black", s=1234)
+heart(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/heart_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n25_r.jpeg?raw=true" width="30%">
+</p>
+
+
 
 <h2 align="center">
 static</h2>
@@ -81,5 +114,21 @@ stripes(perc=1, n=3, s=1234)
 <img src="/images/stripes_p00_n3.jpeg?raw=true" width="30%">
 <img src="/images/stripes_p50_n3.jpeg?raw=true" width="30%">
 <img src="/images/stripes_p100_n3.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
+spirals</h2>
+
+The `spirals()` function produces generative art consisting of dots arranged in a spiral.
+
+``` r
+spirals(perc=0.2, s=1234)
+spirals(perc=0.5, s=1234)
+spirals(perc=0.8, s=1234)
+```
+<p align="center">
+<img src="/images/spirals_p2.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p5.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p8.jpeg?raw=true" width="30%">
 </p>
 
