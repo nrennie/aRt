@@ -116,3 +116,19 @@ stripes(perc=1, n=3, s=1234)
 <img src="/images/stripes_p100_n3.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+spirals</h2>
+
+The `spirals()` function produces generative art consisting of dots arranged in a spiral.
+
+``` r
+spirals(perc=0.2, s=1234)
+spirals(perc=0.5, s=1234)
+spirals(perc=0.8, s=1234)
+```
+<p align="center">
+<img src="/images/spirals_p2.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p5.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p8.jpeg?raw=true" width="30%">
+</p>
+
