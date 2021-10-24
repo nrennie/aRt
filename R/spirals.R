@@ -41,7 +41,7 @@ spirals <- function(perc=0.2, s=1234){
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank()
     )
-  p
+  suppressWarnings(print(p))
 }
 
 
