@@ -16,5 +16,8 @@ Imports:
   dplyr,
   ExtDist,
 	ggplot2,
+	patchwork,
+	rcartocolor,
 	tibble,
-	tidyr
+	tidyr,
+	treemapify

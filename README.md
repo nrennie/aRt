@@ -22,6 +22,22 @@ circular(n=100, main_col="black", bg_col="white", s=56)
 <img src="/images/circular_n100.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+boxes</h2>
+
+The `boxes()` function produces generative art of many boxes.
+
+``` r
+boxes(n=100, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
+boxes(n=20, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
+boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/boxes_n100_p1.jpeg?raw=true" width="30%">
+<img src="/images/boxes_n20_p1.jpeg?raw=true" width="30%">
+<img src="/images/boxes_n100_p5.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 vortex</h2>
