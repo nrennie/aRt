@@ -38,6 +38,22 @@ boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
 <img src="/images/boxes_n100_p5.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+bullseye</h2>
+
+The `bullseye()` function produces generative art using layered polar bar charts.
+
+``` r
+bullseye(main_col="black", bg_col="white", s=1234)
+bullseye(main_col="black", bg_col="white", s=2021)
+bullseye(main_col="white", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/bullseye_1234.jpeg?raw=true" width="30%">
+<img src="/images/bullseye_1234n.jpeg?raw=true" width="30%">
+<img src="/images/bullseye_2021.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 vortex</h2>
