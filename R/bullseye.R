@@ -32,7 +32,7 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           plot.title = element_blank(),
           plot.subtitle = element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0, 0, 0, 0), "cm"), #top, right, bottom, left
+          plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), #top, right, bottom, left
           axis.title.x= element_blank(),
           axis.title.y= element_blank(),
           axis.text.x= element_blank(),
@@ -52,7 +52,7 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           plot.title = element_blank(),
           plot.subtitle = element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0, 0, 0, 0), "cm"), #top, right, bottom, left
+          plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), #top, right, bottom, left
           axis.title.x= element_blank(),
           axis.title.y= element_blank(),
           axis.text.x= element_blank(),
@@ -72,7 +72,7 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           plot.title = element_blank(),
           plot.subtitle = element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0, 0, 0, 0), "cm"), #top, right, bottom, left
+          plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), #top, right, bottom, left
           axis.title.x= element_blank(),
           axis.title.y= element_blank(),
           axis.text.x= element_blank(),
@@ -92,7 +92,7 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           plot.title = element_blank(),
           plot.subtitle = element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0, 0, 0, 0), "cm"), #top, right, bottom, left
+          plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), #top, right, bottom, left
           axis.title.x= element_blank(),
           axis.title.y= element_blank(),
           axis.text.x= element_blank(),
@@ -106,7 +106,8 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
   p <- p1 +
     inset_element(p2, left = 0, bottom = 0, right = 1, top = 1) +
     inset_element(p3, left = 0, bottom = 0, right = 1, top = 1) +
-    inset_element(p4, left = 0, bottom = 0, right = 1, top = 1)
+    inset_element(p4, left = 0, bottom = 0, right = 1, top = 1) &
+    theme(plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"))
   p
 }
 

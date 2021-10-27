@@ -45,8 +45,8 @@ The `bullseye()` function produces generative art using layered polar bar charts
 
 ``` r
 bullseye(main_col="black", bg_col="white", s=1234)
-bullseye(main_col="black", bg_col="white", s=2021)
 bullseye(main_col="white", bg_col="black", s=1234)
+bullseye(main_col="black", bg_col="white", s=2021)
 ```
 <p align="center">
 <img src="/images/bullseye_1234.jpeg?raw=true" width="30%">
