@@ -121,16 +121,6 @@ static(perc=0.3, n=500, s=1234)
 <img src="/images/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
-``` r
-static(perc=0.1, n=50, s=1234)
-static(perc=0.1, n=500, s=1234)
-static(perc=0.1, n=5000, s=1234)
-```
-<p align="center">
-<img src="/images/static_p10_n50.jpeg?raw=true" width="30%">
-<img src="/images/static_p10_n500.jpeg?raw=true" width="30%">
-<img src="/images/static_p10_n5000.jpeg?raw=true" width="30%">
-</p>
 
 <h2 align="center">
 stripes</h2>
