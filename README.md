@@ -54,6 +54,22 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <img src="/images/bullseye_2021.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+fading</h2>
+
+The `fading()` function produces generative art using voronoi tiles..
+
+``` r
+fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
+fading(n_layers=6, n_points=1, col_palette="Sunset", s=1234)
+fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
+```
+<p align="center">
+<img src="/images/fading_6_10.jpeg?raw=true" width="30%">
+<img src="/images/fading_6_1.jpeg?raw=true" width="30%">
+<img src="/images/fading_10_10.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 vortex</h2>
@@ -121,16 +137,6 @@ static(perc=0.3, n=500, s=1234)
 <img src="/images/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
-``` r
-static(perc=0.1, n=50, s=1234)
-static(perc=0.1, n=500, s=1234)
-static(perc=0.1, n=5000, s=1234)
-```
-<p align="center">
-<img src="/images/static_p10_n50.jpeg?raw=true" width="30%">
-<img src="/images/static_p10_n500.jpeg?raw=true" width="30%">
-<img src="/images/static_p10_n5000.jpeg?raw=true" width="30%">
-</p>
 
 <h2 align="center">
 stripes</h2>
