@@ -57,7 +57,7 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <h2 align="center">
 fading</h2>
 
-The `fading()` function produces generative art using voronoi tiles..
+The `fading()` function produces generative art using voronoi tiles.
 
 ``` r
 fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
