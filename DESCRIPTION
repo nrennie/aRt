@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -15,6 +15,7 @@ RoxygenNote: 7.1.2
 Imports:
   dplyr,
   ExtDist,
+  ggforce,
 	ggplot2,
 	patchwork,
 	rcartocolor,
