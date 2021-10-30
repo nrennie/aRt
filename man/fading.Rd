@@ -9,7 +9,7 @@ fading(n_layers = 6, n_points = 10, col_palette = "SunsetDark", s = 1234)
 \arguments{
 \item{n_layers}{Number of layers. Default 6.}
 
-\item{n_points}{Number of points per layer area. Default 50.}
+\item{n_points}{Number of points per layer area. Default 10.}
 
 \item{col_palette}{Colour palette from rcartocolor. Default "SunsetDark".}
 

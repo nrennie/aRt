@@ -3,7 +3,7 @@
 #' This function generates a coloured generative art ggplot object using voronoi tiles.
 #'
 #' @param n_layers Number of layers. Default 6.
-#' @param n_points Number of points per layer area. Default 50.
+#' @param n_points Number of points per layer area. Default 10.
 #' @param col_palette Colour palette from rcartocolor. Default "SunsetDark".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
