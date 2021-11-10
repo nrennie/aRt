@@ -70,6 +70,22 @@ fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
 <img src="/images/fading_10_10.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+connected</h2>
+
+The `connected()` function produces generative art using voronoi tiles.
+
+``` r
+connected(n=100, n_geom=10, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
+connected(n=100, n_geom=10, random=T, col_palette="RdPu", bg_col="#ae217e", s=1234)
+connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
+```
+<p align="center">
+<img src="/images/connected_100_10F.jpeg?raw=true" width="30%">
+<img src="/images/connected_100_10T.jpeg?raw=true" width="30%">
+<img src="/images/connected_250_2F.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 vortex</h2>
