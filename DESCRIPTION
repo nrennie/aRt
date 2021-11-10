@@ -19,6 +19,7 @@ Imports:
 	ggplot2,
 	patchwork,
 	rcartocolor,
+	RColorBrewer,
 	tibble,
 	tidyr,
 	treemapify
