@@ -73,7 +73,7 @@ fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
 <h2 align="center">
 connected</h2>
 
-The `connected()` function produces generative art using voronoi tiles.
+The `connected()` function produces generative art by connected points on a circle.
 
 ``` r
 connected(n=100, n_geom=10, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
