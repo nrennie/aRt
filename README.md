@@ -7,22 +7,6 @@ devtools::install_github("nrennie/aRt")
 ```
 
 <h2 align="center">
-circular</h2>
-
-The `circular()` function produces circular generative art produced by many random paths from the centre of the circle.
-
-``` r
-circular(n=2, main_col="black", bg_col="white", s=56)
-circular(n=10, main_col="black", bg_col="white", s=56)
-circular(n=100, main_col="black", bg_col="white", s=56)
-```
-<p align="center">
-<img src="/images/circular_n2.jpeg?raw=true" width="30%">
-<img src="/images/circular_n10.jpeg?raw=true" width="30%">
-<img src="/images/circular_n100.jpeg?raw=true" width="30%">
-</p>
-
-<h2 align="center">
 boxes</h2>
 
 The `boxes()` function produces generative art of many boxes.
@@ -55,19 +39,19 @@ bullseye(main_col="black", bg_col="white", s=2021)
 </p>
 
 <h2 align="center">
-fading</h2>
+circular</h2>
 
-The `fading()` function produces generative art using voronoi tiles.
+The `circular()` function produces circular generative art produced by many random paths from the centre of the circle.
 
 ``` r
-fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
-fading(n_layers=6, n_points=1, col_palette="Sunset", s=1234)
-fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
+circular(n=2, main_col="black", bg_col="white", s=56)
+circular(n=10, main_col="black", bg_col="white", s=56)
+circular(n=100, main_col="black", bg_col="white", s=56)
 ```
 <p align="center">
-<img src="/images/fading_6_10.jpeg?raw=true" width="30%">
-<img src="/images/fading_6_1.jpeg?raw=true" width="30%">
-<img src="/images/fading_10_10.jpeg?raw=true" width="30%">
+<img src="/images/circular_n2.jpeg?raw=true" width="30%">
+<img src="/images/circular_n10.jpeg?raw=true" width="30%">
+<img src="/images/circular_n100.jpeg?raw=true" width="30%">
 </p>
 
 <h2 align="center">
@@ -86,21 +70,36 @@ connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=123
 <img src="/images/connected_250_2F.jpeg?raw=true" width="30%">
 </p>
 
-
 <h2 align="center">
-vortex</h2>
+fading</h2>
 
-The `vortex()` function produces circular vortex generative art produced by a line plot and polar coordinates.
+The `fading()` function produces generative art using voronoi tiles.
 
 ``` r
-vortex(n=25, start_val=90, col_scheme="mono", bg_col="black", s=1234)
-vortex(n=100, start_val=90, col_scheme="mono", bg_col="black", s=1234)
-vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
+fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
+fading(n_layers=6, n_points=1, col_palette="Sunset", s=1234)
+fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
 ```
 <p align="center">
-<img src="/images/vortex_n25_m.jpeg?raw=true" width="30%">
-<img src="/images/vortex_n100_m.jpeg?raw=true" width="30%">
-<img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
+<img src="/images/fading_6_10.jpeg?raw=true" width="30%">
+<img src="/images/fading_6_1.jpeg?raw=true" width="30%">
+<img src="/images/fading_10_10.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
+heart</h2>
+
+The `heart()` function draws a heart from many overlapping lines.
+
+``` r
+heart(n=25, col_scheme="mono", bg_col="black", s=1234)
+heart(n=100, col_scheme="mono", bg_col="black", s=1234)
+heart(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/heart_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/heart_n25_r.jpeg?raw=true" width="30%">
 </p>
 
 <h2 align="center">
@@ -120,22 +119,20 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 <h2 align="center">
-heart</h2>
+spirals</h2>
 
-The `heart()` function draws a heart from many overlapping lines.
+The `spirals()` function produces generative art consisting of dots arranged in a spiral.
 
 ``` r
-heart(n=25, col_scheme="mono", bg_col="black", s=1234)
-heart(n=100, col_scheme="mono", bg_col="black", s=1234)
-heart(n=25, col_scheme="rainbow", bg_col="black", s=1234)
+spirals(perc=0.2, s=1234)
+spirals(perc=0.5, s=1234)
+spirals(perc=0.8, s=1234)
 ```
 <p align="center">
-<img src="/images/heart_n25_m.jpeg?raw=true" width="30%">
-<img src="/images/heart_n100_m.jpeg?raw=true" width="30%">
-<img src="/images/heart_n25_r.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p2.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p5.jpeg?raw=true" width="30%">
+<img src="/images/spirals_p8.jpeg?raw=true" width="30%">
 </p>
-
-
 
 <h2 align="center">
 static</h2>
@@ -170,19 +167,19 @@ stripes(perc=1, n=3, s=1234)
 <img src="/images/stripes_p100_n3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-spirals</h2>
 
-The `spirals()` function produces generative art consisting of dots arranged in a spiral.
+<h2 align="center">
+vortex</h2>
+
+The `vortex()` function produces circular vortex generative art produced by a line plot and polar coordinates.
 
 ``` r
-spirals(perc=0.2, s=1234)
-spirals(perc=0.5, s=1234)
-spirals(perc=0.8, s=1234)
+vortex(n=25, start_val=90, col_scheme="mono", bg_col="black", s=1234)
+vortex(n=100, start_val=90, col_scheme="mono", bg_col="black", s=1234)
+vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 ```
 <p align="center">
-<img src="/images/spirals_p2.jpeg?raw=true" width="30%">
-<img src="/images/spirals_p5.jpeg?raw=true" width="30%">
-<img src="/images/spirals_p8.jpeg?raw=true" width="30%">
+<img src="/images/vortex_n25_m.jpeg?raw=true" width="30%">
+<img src="/images/vortex_n100_m.jpeg?raw=true" width="30%">
+<img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
 </p>
-
