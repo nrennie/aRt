@@ -183,3 +183,21 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 <img src="/images/vortex_n100_m.jpeg?raw=true" width="30%">
 <img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
 </p>
+
+
+<h2 align="center">
+waves</h2>
+
+The `waves()` function produces generative art using sine and cosine waves.
+
+``` r
+waves(a=23, b=6, main_col="white", bg_col="black", s=2021)
+waves(a=23, b=6, main_col="Prism", bg_col="#edad08", s=2021)
+waves(a=6, b=23, main_col="black", bg_col="white", s=2021)
+```
+<p align="center">
+<img src="/images/waves23_6_bw.jpeg?raw=true" width="30%">
+<img src="/images/waves23_6_col.jpeg?raw=true" width="30%">
+<img src="/images/waves6_23_bw.jpeg?raw=true" width="30%">
+</p>
+
