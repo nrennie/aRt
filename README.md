@@ -119,6 +119,24 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 <h2 align="center">
+polygons</h2>
+
+The `polygons()` function draws multiple polygons.
+
+``` r
+polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+polygons(n_x=6, n_y=9, gap_size=0.2, deg_jitter=0.1, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Burg"), bg_col="gray97")
+
+```
+<p align="center">
+<img src="/images/polygons1.jpeg?raw=true" width="30%">
+<img src="/images/polygons2.jpeg?raw=true" width="30%">
+<img src="/images/polygons3.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
 spirals</h2>
 
 The `spirals()` function produces generative art consisting of dots arranged in a spiral.
@@ -183,3 +201,21 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 <img src="/images/vortex_n100_m.jpeg?raw=true" width="30%">
 <img src="/images/vortex_n25_r.jpeg?raw=true" width="30%">
 </p>
+
+
+<h2 align="center">
+waves</h2>
+
+The `waves()` function produces generative art using sine and cosine waves.
+
+``` r
+waves(a=23, b=6, main_col="white", bg_col="black", s=2021)
+waves(a=23, b=6, main_col="Prism", bg_col="#edad08", s=2021)
+waves(a=6, b=23, main_col="black", bg_col="white", s=2021)
+```
+<p align="center">
+<img src="/images/waves23_6_bw.jpeg?raw=true" width="30%">
+<img src="/images/waves23_6_col.jpeg?raw=true" width="30%">
+<img src="/images/waves6_23_bw.jpeg?raw=true" width="30%">
+</p>
+
