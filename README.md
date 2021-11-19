@@ -71,6 +71,22 @@ connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=123
 </p>
 
 <h2 align="center">
+crawling</h2>
+
+The `crawling()` function produces generative art using dendograms and tree graphs.
+
+``` r
+crawling(n=50, edge_colour="black", node_size=1, node_colour="black", bg_col="white", s=1234)
+crawling(n=250, edge_colour="black", node_size=1, node_colour="black", bg_col="white", s=1234)
+crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="white", s=1234)
+```
+<p align="center">
+<img src="/images/crawling50.jpeg?raw=true" width="30%">
+<img src="/images/crawling250.jpeg?raw=true" width="30%">
+<img src="/images/crawling1000.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
 fading</h2>
 
 The `fading()` function produces generative art using voronoi tiles.

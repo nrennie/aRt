@@ -18,7 +18,7 @@ waves <- function(a=23, b=6, main_col="black", bg_col="white", s=2021){
   y <- sample(1:8, size=1)*sin(a*x) + sample(1:8, size=1)*cos(b*x)
   df <- data.frame(x=x, y=y)
   #check if colour palette used
-  all_palettes <- cartocolors$Name
+  all_palettes <- rcartocolor::cartocolors$Name
   if (main_col %in% all_palettes){
     p <- ggplot(df, aes(x=x,y=y)) +
       geom_path(aes(colour=y)) +
