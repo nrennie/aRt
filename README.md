@@ -87,6 +87,22 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 </p>
 
 <h2 align="center">
+dots</h2>
+
+The `dots()` function produces generative art using jittered points.
+
+``` r
+dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = "Purp", bg_col="#63589f", s=1234)
+```
+<p align="center">
+<img src="/images/dots1.jpeg?raw=true" width="30%">
+<img src="/images/dots2.jpeg?raw=true" width="30%">
+<img src="/images/dots3.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
 fading</h2>
 
 The `fading()` function produces generative art using voronoi tiles.
