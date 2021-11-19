@@ -12,6 +12,7 @@
 #' @import ggplot2
 #' @import ggforce
 #' @import ggraph
+#' @importFrom igraph gsize
 #' @import rcartocolor
 #' @export
 #'
