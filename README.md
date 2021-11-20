@@ -23,6 +23,24 @@ boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
 </p>
 
 <h2 align="center">
+bricks</h2>
+
+The `bricks()` function draws multiple rectangular polygons in rows.
+
+``` r
+bricks(n_y=20, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+bricks(n_y=200, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
+
+```
+<p align="center">
+<img src="/images/bricks1.jpeg?raw=true" width="30%">
+<img src="/images/bricks2.jpeg?raw=true" width="30%">
+<img src="/images/bricks3.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
 bullseye</h2>
 
 The `bullseye()` function produces generative art using layered polar bar charts.
@@ -36,6 +54,23 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <img src="/images/bullseye_1234.jpeg?raw=true" width="30%">
 <img src="/images/bullseye_1234n.jpeg?raw=true" width="30%">
 <img src="/images/bullseye_2021.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
+circles</h2>
+
+The `circles()` function produces generative art using dendograms and circular graphs.
+
+``` r
+circles(n=100, smoothness=100, col_palette="Bold", line_col=NA, bg_col="black", s=1234)
+circles(n=10, smoothness=100, col_palette="Bold", line_col=NA, bg_col="#e73f74", s=1234)
+circles(n=2, smoothness=3, col_palette="Bold", line_col="black", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/circles1.jpeg?raw=true" width="30%">
+<img src="/images/circles2.jpeg?raw=true" width="30%">
+<img src="/images/circles3.jpeg?raw=true" width="30%">
 </p>
 
 <h2 align="center">
@@ -84,6 +119,22 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 <img src="/images/crawling50.jpeg?raw=true" width="30%">
 <img src="/images/crawling250.jpeg?raw=true" width="30%">
 <img src="/images/crawling1000.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
+dots</h2>
+
+The `dots()` function produces generative art using jittered points.
+
+``` r
+dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = "Purp", bg_col="#63589f", s=1234)
+```
+<p align="center">
+<img src="/images/dots1.jpeg?raw=true" width="30%">
+<img src="/images/dots2.jpeg?raw=true" width="30%">
+<img src="/images/dots3.jpeg?raw=true" width="30%">
 </p>
 
 <h2 align="center">
