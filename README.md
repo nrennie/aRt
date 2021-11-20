@@ -23,6 +23,24 @@ boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
 </p>
 
 <h2 align="center">
+bricks</h2>
+
+The `bricks()` function draws multiple rectangular polygons in rows.
+
+``` r
+bricks(n_y=20, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+bricks(n_y=200, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
+bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
+
+```
+<p align="center">
+<img src="/images/bricks1.jpeg?raw=true" width="30%">
+<img src="/images/bricks2.jpeg?raw=true" width="30%">
+<img src="/images/bricks3.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
 bullseye</h2>
 
 The `bullseye()` function produces generative art using layered polar bar charts.
