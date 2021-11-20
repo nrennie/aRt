@@ -38,6 +38,23 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <img src="/images/bullseye_2021.jpeg?raw=true" width="30%">
 </p>
 
+
+<h2 align="center">
+circles</h2>
+
+The `circles()` function produces generative art using dendograms and circular graphs.
+
+``` r
+circles(n=100, smoothness=100, col_palette="Bold", line_col=NA, bg_col="black", s=1234)
+circles(n=10, smoothness=100, col_palette="Bold", line_col=NA, bg_col="#e73f74", s=1234)
+circles(n=2, smoothness=3, col_palette="Bold", line_col="black", bg_col="black", s=1234)
+```
+<p align="center">
+<img src="/images/circles1.jpeg?raw=true" width="30%">
+<img src="/images/circles2.jpeg?raw=true" width="30%">
+<img src="/images/circles3.jpeg?raw=true" width="30%">
+</p>
+
 <h2 align="center">
 circular</h2>
 
