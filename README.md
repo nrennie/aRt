@@ -252,6 +252,22 @@ stripes(perc=1, n=3, s=1234)
 <img src="/images/stripes_p100_n3.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+tiles</h2>
+
+The `tiles()` function produces generative art using square polygons.
+
+``` r
+tiles(n_x=12, n_y=12, col_palette="Veronese", num_colours=5, s=1234)
+tiles(n_x=50, n_y=50, col_palette="Veronese", num_colours=6, s=1234)
+tiles(n_x=12, n_y=12, col_palette="Pissaro", num_colours=5, s=1234)
+```
+<p align="center">
+<img src="/images/tiles_veronese1.jpeg?raw=true" width="30%">
+<img src="/images/tiles_veronese2.jpeg?raw=true" width="30%">
+<img src="/images/tiles_pissaro1.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 vortex</h2>
