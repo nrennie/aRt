@@ -16,8 +16,6 @@ tiles(n_x = 12, n_y = 12, col_palette = "Veronese", num_colours = 5, s = 1234)
 \item{num_colours}{Number of colours to use.}
 
 \item{s}{Seed value. Default 1234.}
-
-\item{gap_size}{Numeric between 0 and 1 specifying the size of the gap in the polygons. Default 0.5.}
 }
 \value{
 A ggplot object.

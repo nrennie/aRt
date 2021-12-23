@@ -10,7 +10,6 @@
 #' @param bg_col Background colour. Default "gray97".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @import ggplot2
 #' @export
 #'
 
@@ -22,15 +21,15 @@ polygons <- function(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9
   n_x <- round(n_x)
   n_y <- round(n_y)
   #generate data
-  x1 <- rep(1:n_x, times=n_y) + runif(n_x*n_y, 0, deg_jitter)
-  x2 <- rep(2:(n_x+1), times=n_y) - runif(n_x*n_y, 0, deg_jitter)
-  x3 <- rep(2:(n_x+1), times=n_y) - runif(n_x*n_y, 0, deg_jitter)
-  x4 <- rep(1:n_x, times=n_y) + runif(n_x*n_y, 0, deg_jitter)
+  x1 <- rep(1:n_x, times=n_y) + stats::runif(n_x*n_y, 0, deg_jitter)
+  x2 <- rep(2:(n_x+1), times=n_y) - stats::runif(n_x*n_y, 0, deg_jitter)
+  x3 <- rep(2:(n_x+1), times=n_y) - stats::runif(n_x*n_y, 0, deg_jitter)
+  x4 <- rep(1:n_x, times=n_y) + stats::runif(n_x*n_y, 0, deg_jitter)
   x <- c(matrix(c(x1, x2, x3, x4), byrow=T, nrow=4, ncol=length(x1)))
-  y1 <- rep(1:n_y, each=n_x) + runif(n_x*n_y, 0, deg_jitter)
-  y2 <- rep(1:n_y, each=n_x) + runif(n_x*n_y, 0, deg_jitter)
-  y3 <- rep(2:(n_y+1), each=n_x) - runif(n_x*n_y, 0, deg_jitter)
-  y4 <- rep(2:(n_y+1), each=n_x) - runif(n_x*n_y, 0, deg_jitter)
+  y1 <- rep(1:n_y, each=n_x) + stats::runif(n_x*n_y, 0, deg_jitter)
+  y2 <- rep(1:n_y, each=n_x) + stats::runif(n_x*n_y, 0, deg_jitter)
+  y3 <- rep(2:(n_y+1), each=n_x) - stats::runif(n_x*n_y, 0, deg_jitter)
+  y4 <- rep(2:(n_y+1), each=n_x) - stats::runif(n_x*n_y, 0, deg_jitter)
   y <- c(matrix(c(y1, y2, y4, y3), byrow=T, nrow=4, ncol=length(y1)))
   id <- rep(1:(n_x*n_y), each=4)
   positions <- data.frame(x=x, y=y, id=id)
@@ -45,23 +44,23 @@ polygons <- function(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9
   holes$subid <- 2L
   datapoly <- rbind(datapoly, holes)
   #plot
-  p <- ggplot(datapoly, aes(x = x, y = y)) +
-    geom_polygon(aes(group = id, fill=cols, subgroup = subid), colour=NA) +
-    scale_fill_manual(values=colours) +
-    theme(panel.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.title = element_blank(),
-          plot.subtitle = element_blank(),
+  p <- ggplot2::ggplot(datapoly, aes(x = x, y = y)) +
+    ggplot2::geom_polygon(ggplot2::aes(group = id, fill=.data$cols, subgroup = .data$subid), colour=NA) +
+    ggplot2::scale_fill_manual(values=colours) +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
+          plot.title = ggplot2::element_blank(),
+          plot.subtitle = ggplot2::element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= element_blank(),
-          axis.title.y= element_blank(),
-          axis.text.x= element_blank(),
-          axis.text.y= element_blank(),
-          axis.ticks.x= element_blank(),
-          axis.ticks.y= element_blank(),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank())
+          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
+          axis.title.x= ggplot2::element_blank(),
+          axis.title.y= ggplot2::element_blank(),
+          axis.text.x= ggplot2::element_blank(),
+          axis.text.y= ggplot2::element_blank(),
+          axis.ticks.x= ggplot2::element_blank(),
+          axis.ticks.y= ggplot2::element_blank(),
+          panel.grid.major = ggplot2::element_blank(),
+          panel.grid.minor = ggplot2::element_blank())
   p
 }
 

@@ -12,17 +12,16 @@
 #' @importFrom ggraph ggraph geom_edge_diagonal geom_node_point
 #' @importFrom ggplot2 coord_fixed element_rect element_blank unit
 #' @importFrom igraph degree graph.edgelist
-#' @importFrom ape as.phylo
 #' @export
 #'
 
 crawling <- function(n=50, edge_colour="black", node_size=1, node_colour="black", bg_col="white", s=1234){
   set.seed(s)
-  x <- c(rnorm(n, 25, 25), rnorm(n, 50, 25), rnorm(n, 75, 25))
-  y <- c(rnorm(n, 25, 25), rnorm(n, 50, 25), rnorm(n, 75, 25))
+  x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
+  y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
   d <- data.frame(x,y)
-  dg <- hclust(dist(d))
-  phylo_tree = as.phylo(dg)
+  dg <- stats::hclust(stats::dist(d))
+  phylo_tree = ape::as.phylo(dg)
   graph_edges = phylo_tree$edge
   graph_net = graph.edgelist(graph_edges)
   p <- ggraph(graph_net, 'igraph', algorithm = 'tree', circular = T) +

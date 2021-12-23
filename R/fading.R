@@ -22,9 +22,9 @@ fading <- function(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234){
   y_widths <- 4*(n_layers:1)
   y_lower <- cumsum(4*(n_layers:1))
   y_upper <- y_lower + y_widths
-  y <- unlist(lapply(1:n_layers, function(i) round(runif(n_points[i], y_lower[i], y_upper[i]), 1)))
-  x <- round(-0.5*y + unlist(lapply(1:n_layers, function(i) round(runif(n_points[i], x_lower[i], x_upper[i]), 1))), 1)
-  z <- y + rnorm(length(x), 0, 0.5)
+  y <- unlist(lapply(1:n_layers, function(i) round(stats::runif(n_points[i], y_lower[i], y_upper[i]), 1)))
+  x <- round(-0.5*y + unlist(lapply(1:n_layers, function(i) round(stats::runif(n_points[i], x_lower[i], x_upper[i]), 1))), 1)
+  z <- y + stats::rnorm(length(x), 0, 0.5)
   df <- tibble(x=x, y=y, z=z) %>% filter(!is.na(y))
 
   #make plot

@@ -36,9 +36,9 @@ connected <- function(n=100, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae
   }
   g1 <- igraph::graph_from_data_frame(d)
   g2 <- g1 %>%
-    igraph::set_edge_attr("e_val", value = sort(rnorm(gsize(g1))))
+    igraph::set_edge_attr("e_val", value = sort(stats::rnorm(gsize(g1))))
   p <- ggraph(g2, layout = 'linear', circular = TRUE) +
-    geom_edge_arc(aes(colour=e_val), n=n_geom) +
+    geom_edge_arc(aes(colour=.data$e_val), n=n_geom) +
     coord_fixed() +
     scale_edge_colour_distiller(palette=col_palette) +
     theme(panel.background = element_rect(fill = bg_col, colour=bg_col),

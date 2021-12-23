@@ -22,7 +22,7 @@ circular <- function(n=100, main_col="black", bg_col="white", s=56){
   colnames(output_mat) <- 1:n
   plot_data <- tibble(val=1:360, tibble::as_tibble(output_mat)) %>%
     pivot_longer(cols=2:(n+1))
-  p <- ggplot(plot_data, aes(x=val, y=name, group=val)) +
+  p <- ggplot(plot_data, aes(x=.data$val, y=.data$name, group=.data$val)) +
     geom_line(colour=main_col) +
     coord_polar(start = 0) +
     theme(panel.background = element_rect(fill = bg_col, colour=bg_col),

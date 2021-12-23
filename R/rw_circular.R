@@ -18,11 +18,11 @@ rw_circular <- function(n, p=0.5, lower_limit=10, mid_limit=90, upper_limit=100,
   output[1] <- 0
   for (i in 2:n){
     if (output[i-1] < lower_limit) {
-      output[i] <- max(0+runif(1,0,0.5), output[i-1] + sample(c(-1, (rgeom(n=1, prob=0.8)+1)), size=1, prob=c(p, 1-p)))
+      output[i] <- max(0+stats::runif(1,0,0.5), output[i-1] + sample(c(-1, (stats::rgeom(n=1, prob=0.8)+1)), size=1, prob=c(p, 1-p)))
     } else if(output[i-1] >= lower_limit & output[i-1] < mid_limit) {
-      output[i] <- output[i-1] + sample(c(-1, (rgeom(n=1, prob=0.2)+1)), size=1, prob=c(p, 1-p))
+      output[i] <- output[i-1] + sample(c(-1, (stats::rgeom(n=1, prob=0.2)+1)), size=1, prob=c(p, 1-p))
     } else if(output[i-1] >= mid_limit & output[i-1] < upper_limit) {
-      output[i] <- output[i-1] + sample(c(-1, (rgeom(n=1, prob=0.7)+1)), size=1, prob=c(p, 1-p))
+      output[i] <- output[i-1] + sample(c(-1, (stats::rgeom(n=1, prob=0.7)+1)), size=1, prob=c(p, 1-p))
     } else if (output[i-1] >= upper_limit){
       output[i] <- upper_limit
     }
