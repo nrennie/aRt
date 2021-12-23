@@ -11,7 +11,7 @@ spirals <- function(perc = 0.2, s = 1234){
   if(perc < 0 | perc > 1) stop('perc not between 0 and 1')
   set.seed(s)
   theta <- seq(0, 20 * pi, 0.1)
-  theta[sample(seq_len(theta), size = round(perc * length(theta)), prob=1/((seq_len(theta))^1.5))] <- NA
+  theta[sample(seq_len(length(theta)), size = round(perc * length(theta)), prob=1/((seq_len(length(theta)))^1.5))] <- NA
   r <- 0.5 + 0.5*theta
   df <- data.frame(x = r * cos(theta), y = r * sin(-theta))
   df$col_val <- stats::runif(length(theta), -1, 1)
