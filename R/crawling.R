@@ -9,43 +9,42 @@
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @importFrom ggraph ggraph geom_edge_diagonal geom_node_point
-#' @importFrom ggplot2 coord_fixed element_rect element_blank unit
-#' @importFrom igraph degree graph.edgelist
 #' @export
 #'
 
-crawling <- function(n=50, edge_colour="black", node_size=1, node_colour="black", bg_col="white", s=1234){
+crawling <- function(n = 50,
+                     edge_colour = "black",
+                     node_size = 1,
+                     node_colour = "black",
+                     bg_col = "white",
+                     s = 1234) {
   set.seed(s)
   x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
   y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
-  d <- data.frame(x,y)
+  d <- data.frame(x, y)
   dg <- stats::hclust(stats::dist(d))
-  phylo_tree = ape::as.phylo(dg)
-  graph_edges = phylo_tree$edge
-  graph_net = graph.edgelist(graph_edges)
-  p <- ggraph(graph_net, 'igraph', algorithm = 'tree', circular = T) +
-    geom_edge_diagonal(colour=edge_colour) +
-    coord_fixed() +
-    geom_node_point(aes(filter = degree(graph_net, mode = 'out') == 0),
+  phylo_tree <- ape::as.phylo(dg)
+  graph_edges <- phylo_tree$edge
+  graph_net <- igraph::graph.edgelist(graph_edges)
+  p <- ggraph::ggraph(graph_net, "igraph", algorithm = "tree", circular = TRUE) +
+    ggraph::geom_edge_diagonal(colour = edge_colour) +
+    ggraph::geom_node_point(aes(filter = igraph::degree(graph_net, mode = "out") == 0),
                     color = node_colour, size = node_size) +
-    theme(panel.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.title = element_blank(),
-          plot.subtitle = element_blank(),
-          legend.position="none",
-          plot.margin = unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= element_blank(),
-          axis.title.y= element_blank(),
-          axis.text.x= element_blank(),
-          axis.text.y= element_blank(),
-          axis.ticks.x= element_blank(),
-          axis.ticks.y= element_blank(),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()
+    ggplot2::coord_fixed() +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+          plot.title = ggplot2::element_blank(),
+          plot.subtitle = ggplot2::element_blank(),
+          legend.position = "none",
+          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+          axis.title.x = ggplot2::element_blank(),
+          axis.title.y = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_blank(),
+          axis.ticks.x = ggplot2::element_blank(),
+          axis.ticks.y = ggplot2::element_blank(),
+          panel.grid.major = ggplot2::element_blank(),
+          panel.grid.minor = ggplot2::element_blank()
     )
   p
 }
-
-
-

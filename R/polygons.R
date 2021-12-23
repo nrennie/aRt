@@ -13,27 +13,38 @@
 #' @export
 #'
 
-polygons <- function(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97", s=1234){
-  if (n_x < 1 | n_y < 1) {stop("Number of rows and columns must be at least 1")}
-  if (gap_size < 0 | gap_size > 1) {stop("gap_size must be between 0 and 1")}
-  if (deg_jitter < 0 | deg_jitter > 0.5) {stop("deg_jitter must be between 0 and 0.5")}
+polygons <- function(n_x = 12,
+                     n_y = 18,
+                     gap_size = 0.5,
+                     deg_jitter = 0.1,
+                     colours = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+                     bg_col = "gray97",
+                     s = 1234) {
+  if (n_x < 1 | n_y < 1) {
+    stop("Number of rows and columns must be at least 1")
+    }
+  if (gap_size < 0 | gap_size > 1) {
+    stop("gap_size must be between 0 and 1")
+    }
+  if (deg_jitter < 0 | deg_jitter > 0.5) {
+    stop("deg_jitter must be between 0 and 0.5")
+    }
   set.seed(s)
   n_x <- round(n_x)
   n_y <- round(n_y)
-  #generate data
-  x1 <- rep(1:n_x, times=n_y) + stats::runif(n_x*n_y, 0, deg_jitter)
-  x2 <- rep(2:(n_x+1), times=n_y) - stats::runif(n_x*n_y, 0, deg_jitter)
-  x3 <- rep(2:(n_x+1), times=n_y) - stats::runif(n_x*n_y, 0, deg_jitter)
-  x4 <- rep(1:n_x, times=n_y) + stats::runif(n_x*n_y, 0, deg_jitter)
-  x <- c(matrix(c(x1, x2, x3, x4), byrow=T, nrow=4, ncol=length(x1)))
-  y1 <- rep(1:n_y, each=n_x) + stats::runif(n_x*n_y, 0, deg_jitter)
-  y2 <- rep(1:n_y, each=n_x) + stats::runif(n_x*n_y, 0, deg_jitter)
-  y3 <- rep(2:(n_y+1), each=n_x) - stats::runif(n_x*n_y, 0, deg_jitter)
-  y4 <- rep(2:(n_y+1), each=n_x) - stats::runif(n_x*n_y, 0, deg_jitter)
-  y <- c(matrix(c(y1, y2, y4, y3), byrow=T, nrow=4, ncol=length(y1)))
-  id <- rep(1:(n_x*n_y), each=4)
-  positions <- data.frame(x=x, y=y, id=id)
-  values <- data.frame(id=unique(id), cols=n_col_select(n=length(colours), size=n_x*n_y, s=s))
+  x1 <- rep(1:n_x, times = n_y) + stats::runif(n_x * n_y, 0, deg_jitter)
+  x2 <- rep(2:(n_x + 1), times = n_y) - stats::runif(n_x * n_y, 0, deg_jitter)
+  x3 <- rep(2:(n_x + 1), times = n_y) - stats::runif(n_x * n_y, 0, deg_jitter)
+  x4 <- rep(1:n_x, times = n_y) + stats::runif(n_x * n_y, 0, deg_jitter)
+  x <- c(matrix(c(x1, x2, x3, x4), byrow = TRUE, nrow = 4, ncol = length(x1)))
+  y1 <- rep(1:n_y, each = n_x) + stats::runif(n_x * n_y, 0, deg_jitter)
+  y2 <- rep(1:n_y, each = n_x) + stats::runif(n_x * n_y, 0, deg_jitter)
+  y3 <- rep(2:(n_y + 1), each = n_x) - stats::runif(n_x * n_y, 0, deg_jitter)
+  y4 <- rep(2:(n_y + 1), each = n_x) - stats::runif(n_x * n_y, 0, deg_jitter)
+  y <- c(matrix(c(y1, y2, y4, y3), byrow = TRUE, nrow = 4, ncol = length(y1)))
+  id <- rep(1:(n_x * n_y), each = 4)
+  positions <- data.frame(x = x, y = y, id = id)
+  values <- data.frame(id = unique(id), cols = n_col_select(n = length(colours), size = n_x * n_y, s = s))
   datapoly <- merge(values, positions, by = c("id"))
   holes <- do.call(rbind, lapply(split(datapoly, datapoly$id), function(df) {
     df$x <- df$x + gap_size * (mean(df$x) - df$x)
@@ -43,26 +54,23 @@ polygons <- function(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9
   datapoly$subid <- 1L
   holes$subid <- 2L
   datapoly <- rbind(datapoly, holes)
-  #plot
+  # plot
   p <- ggplot2::ggplot(datapoly, aes(x = x, y = y)) +
-    ggplot2::geom_polygon(ggplot2::aes(group = id, fill=.data$cols, subgroup = .data$subid), colour=NA) +
-    ggplot2::scale_fill_manual(values=colours) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
-          plot.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
+    ggplot2::geom_polygon(ggplot2::aes(group = id, fill = .data$cols, subgroup = .data$subid), colour = NA) +
+    ggplot2::scale_fill_manual(values = colours) +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
-          legend.position="none",
-          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= ggplot2::element_blank(),
-          axis.title.y= ggplot2::element_blank(),
-          axis.text.x= ggplot2::element_blank(),
-          axis.text.y= ggplot2::element_blank(),
-          axis.ticks.x= ggplot2::element_blank(),
-          axis.ticks.y= ggplot2::element_blank(),
+          legend.position = "none",
+          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+          axis.title.x = ggplot2::element_blank(),
+          axis.title.y = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_blank(),
+          axis.ticks.x = ggplot2::element_blank(),
+          axis.ticks.y = ggplot2::element_blank(),
           panel.grid.major = ggplot2::element_blank(),
           panel.grid.minor = ggplot2::element_blank())
   p
 }
-
-
-

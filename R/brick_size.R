@@ -7,17 +7,16 @@
 #' @noRd
 #'
 
-brick_size <- function(n){
+brick_size <- function(n) {
   size <- 100
   r <- sample(1:n)
-  o1 <- size*(r/sum(r))
+  o1 <- size * (r / sum(r))
   output <- round(o1)
-  if (sum(output) < size){
+  if (sum(output) < size) {
     output[1] <- output[1] + (size - sum(output))
   }
-  if (sum(output) > size){
+  if (sum(output) > size) {
     output[1] <- output[1] - (size - sum(output))
   }
   return(output)
 }
-

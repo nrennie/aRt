@@ -7,7 +7,7 @@
 connected(
   n = 100,
   n_geom = 2,
-  random = F,
+  random = FALSE,
   col_palette = "RdPu",
   bg_col = "#ae217e",
   s = 1234

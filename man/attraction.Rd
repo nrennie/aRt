@@ -5,7 +5,7 @@
 \title{Attraction}
 \usage{
 attraction(
-  n = 50000,
+  n = 5000,
   a = -3,
   b = 1,
   c = 0.5,
@@ -15,7 +15,7 @@ attraction(
 )
 }
 \arguments{
-\item{n}{Number of points. Default 50000.}
+\item{n}{Number of points. Default 5000.}
 
 \item{a}{Parameter. Default -3.}
 

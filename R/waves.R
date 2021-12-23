@@ -12,7 +12,11 @@
 #' @return A ggplot object.
 #' @export
 
-waves <- function(a = 23, b = 6, main_col = "black", bg_col = "white", s = 2021) {
+waves <- function(a = 23,
+                  b = 6,
+                  main_col = "black",
+                  bg_col = "white",
+                  s = 2021) {
   set.seed(s)
   x <- seq(0, 50 * pi, 0.01)
   y <- sample(1:8, size = 1) * sin(a * x) +
@@ -30,7 +34,7 @@ waves <- function(a = 23, b = 6, main_col = "black", bg_col = "white", s = 2021)
             plot.title = ggplot2::element_blank(),
             plot.subtitle = ggplot2::element_blank(),
             legend.position = "none",
-            plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), #top, right, bottom, left
+            plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
             axis.title.x = ggplot2::element_blank(),
             axis.title.y = ggplot2::element_blank(),
             axis.text.x = ggplot2::element_blank(),

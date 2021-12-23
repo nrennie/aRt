@@ -9,13 +9,12 @@
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @import rcartocolor
 #' @export
 #'
 
 circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = NA, bg_col = "black", s = 1234) {
   set.seed(s)
-  #generate data
+  # generate data
   x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
   y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
   d <- data.frame(x, y)
@@ -27,7 +26,7 @@ circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = 
                                name = "cols",
                                index = igraph::V(graph_net),
                                value = stats::runif(igraph::gorder(graph_net)))
-  #plot
+  # plot
   p <- ggraph::ggraph(graph_net, "circlepack") +
     ggraph::geom_node_circle(ggplot2::aes(fill = .data$cols),
                              size = 0.25,
@@ -38,8 +37,8 @@ circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = 
           plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
-          legend.position="none",
-          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
+          legend.position = "none",
+          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
           axis.title.x = ggplot2::element_blank(),
           axis.title.y = ggplot2::element_blank(),
           axis.text.x = ggplot2::element_blank(),
@@ -51,4 +50,3 @@ circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = 
     )
   p
 }
-
