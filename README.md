@@ -5,6 +5,11 @@ aRt is an R package to create generative art. Install using:
 ``` r
 devtools::install_github("nrennie/aRt")
 ```
+or
+``` r
+remotes::install_github("nrennie/aRt")
+```
+
 <h2 align="center">
 attraction</h2>
 
