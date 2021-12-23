@@ -23,8 +23,8 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
   df8 <- data.frame(id=seq(1,80), value=sample(seq(-20,100), 80, replace=T))
   #make plot layers
   p1 <- ggplot() +
-    geom_bar(data=df1, mapping=aes(x=as.factor(id), y=value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
-    geom_bar(data=df2, mapping=aes(x=as.factor(id), y=value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df1, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df2, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
     ylim(-20,100) +
     coord_polar(start = 0) +
     theme(panel.background = element_rect(fill = bg_col, colour=bg_col),
@@ -43,8 +43,8 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           panel.grid.minor = element_blank()
     )
   p2 <- ggplot() +
-    geom_bar(data=df3, mapping=aes(x=as.factor(id), y=value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
-    geom_bar(data=df4, mapping=aes(x=as.factor(id), y=value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df3, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df4, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
     ylim(-30,100) +
     coord_polar(start = 45) +
     theme(panel.background = element_rect(fill = "transparent", colour="transparent"),
@@ -63,8 +63,8 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           panel.grid.minor = element_blank()
     )
   p3 <- ggplot() +
-    geom_bar(data=df5, mapping=aes(x=as.factor(id), y=value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
-    geom_bar(data=df6, mapping=aes(x=as.factor(id), y=value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df5, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df6, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=0.2, fill=alpha(main_col, 0.3)) +
     ylim(-40,100) +
     coord_polar(start = 90) +
     theme(panel.background = element_rect(fill = "transparent", colour="transparent"),
@@ -83,8 +83,8 @@ bullseye <- function(main_col="black", bg_col="white", s=1234){
           panel.grid.minor = element_blank()
     )
   p4 <- ggplot() +
-    geom_bar(data=df7, mapping=aes(x=as.factor(id), y=value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
-    geom_bar(data=df8, mapping=aes(x=as.factor(id), y=value), stat="identity", width=0.2, fill=alpha(main_col, 0.4)) +
+    geom_bar(data=df7, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=1, fill=alpha(main_col, 0.3)) +
+    geom_bar(data=df8, mapping=aes(x=as.factor(id), y=.data$value), stat="identity", width=0.2, fill=alpha(main_col, 0.4)) +
     ylim(-50,100) +
     coord_polar(start = 135) +
     theme(panel.background = element_rect(fill = "transparent", colour="transparent"),

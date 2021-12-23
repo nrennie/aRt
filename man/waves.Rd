@@ -11,7 +11,8 @@ waves(a = 23, b = 6, main_col = "black", bg_col = "white", s = 2021)
 
 \item{b}{Cosine wave parameter. Default 6.}
 
-\item{main_col}{Colour of lines. Either a single colour or one of the colour palettes from rcartocolor. Default "black".}
+\item{main_col}{Colour of lines. Either a single colour or
+one of the colour palettes from rcartocolor. Default "black".}
 
 \item{bg_col}{Background colour. Default "white".}
 
@@ -21,5 +22,6 @@ waves(a = 23, b = 6, main_col = "black", bg_col = "white", s = 2021)
 A ggplot object.
 }
 \description{
-This function generates a generative art ggplot object from sine and cosine waves.
+This function generates a generative art ggplot object
+from sine and cosine waves.
 }

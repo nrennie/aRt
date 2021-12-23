@@ -9,43 +9,45 @@
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @importFrom ggplot2 coord_fixed theme element_rect element_blank unit aes
-#' @importFrom ggraph ggraph  geom_edge_arc
-#' @importFrom igraph graph.edgelist set_vertex_attr V gorder
-#' @importFrom ape as.phylo
 #' @import rcartocolor
 #' @export
 #'
 
-circles <- function(n=100, smoothness=100, col_palette="Bold", line_col=NA, bg_col="black", s=1234){
+circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = NA, bg_col = "black", s = 1234) {
   set.seed(s)
   #generate data
-  x <- c(rnorm(n, 25, 25), rnorm(n, 50, 25), rnorm(n, 75, 25))
-  y <- c(rnorm(n, 25, 25), rnorm(n, 50, 25), rnorm(n, 75, 25))
-  d <- data.frame(x,y)
-  dg <- hclust(dist(d))
-  phylo_tree = as.phylo(dg)
-  graph_edges = phylo_tree$edge
-  graph_net = graph.edgelist(graph_edges)
-  graph_net = set_vertex_attr(graph_net, name="cols", index = V(graph_net), value=runif(gorder(graph_net)))
+  x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
+  y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
+  d <- data.frame(x, y)
+  dg <- stats::hclust(stats::dist(d))
+  phylo_tree <- ape::as.phylo(dg)
+  graph_edges <- phylo_tree$edge
+  graph_net <- igraph::graph.edgelist(graph_edges)
+  graph_net <- igraph::set_vertex_attr(graph_net,
+                               name = "cols",
+                               index = igraph::V(graph_net),
+                               value = stats::runif(igraph::gorder(graph_net)))
   #plot
-  p <- ggraph(graph_net, 'circlepack') +
-    geom_node_circle(aes(fill=cols), size = 0.25, n=smoothness, colour=line_col) +
-    scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    theme(panel.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.background = element_rect(fill = bg_col, colour=bg_col),
-          plot.title = element_blank(),
-          plot.subtitle = element_blank(),
+  p <- ggraph::ggraph(graph_net, "circlepack") +
+    ggraph::geom_node_circle(ggplot2::aes(fill = .data$cols),
+                             size = 0.25,
+                             n = smoothness,
+                             colour = line_col) +
+    rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
+    ggplot2::theme(panel.background = element_rect(fill = bg_col, colour = bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+          plot.title = ggplot2::element_blank(),
+          plot.subtitle = ggplot2::element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= element_blank(),
-          axis.title.y= element_blank(),
-          axis.text.x= element_blank(),
-          axis.text.y= element_blank(),
-          axis.ticks.x= element_blank(),
-          axis.ticks.y= element_blank(),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()
+          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
+          axis.title.x = ggplot2::element_blank(),
+          axis.title.y = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_blank(),
+          axis.ticks.x = ggplot2::element_blank(),
+          axis.ticks.y = ggplot2::element_blank(),
+          panel.grid.major = ggplot2::element_blank(),
+          panel.grid.minor = ggplot2::element_blank()
     )
   p
 }

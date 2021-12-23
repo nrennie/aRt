@@ -6,10 +6,6 @@
 #' @param n Number of squares. Default 500.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @import ggplot2
-#' @import tibble
-#' @import dplyr
-#' @import tidyr
 #' @export
 
 static <- function(perc=0.1, n=500, s=1234){
@@ -19,21 +15,22 @@ static <- function(perc=0.1, n=500, s=1234){
   plot_df <- matrix(NA, ncol=n, nrow=n)
   colnames(plot_df) <- 1:ncol(plot_df)
   rownames(plot_df) <- 1:nrow(plot_df)
-  plot_data <- tibble(times=1:nrow(plot_df), tibble::as_tibble(plot_df)) %>%
-    pivot_longer(cols=2:(ncol(plot_df)+1))
-  plot_data$value[sample(x=1:(ncol(plot_df)*nrow(plot_df)), size=round(perc*ncol(plot_df)*nrow(plot_df)), replace=F)] <- runif(round(perc*ncol(plot_df)*nrow(plot_df)))
-  p <- ggplot(data=plot_data, aes(x=times, y=name, fill=value)) +
-    geom_tile() +
-    coord_cartesian(expand=F) +
-    scale_fill_gradient(low="gray27", high="gray95", na.value = "gray27") +
-    theme(panel.background = element_rect(fill = "transparent"),
-          plot.background = element_rect(fill = "transparent"),
-          axis.text=element_blank(),
-          axis.ticks = element_blank(),
-          axis.title=element_blank(),
-          plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+  plot_data <- tibble::tibble(times=1:nrow(plot_df), tibble::as_tibble(plot_df)) %>%
+    tidyr::pivot_longer(cols=2:(ncol(plot_df)+1))
+  plot_data$value[sample(x=1:(ncol(plot_df)*nrow(plot_df)), size=round(perc*ncol(plot_df)*nrow(plot_df)), replace=F)] <- stats::runif(round(perc*ncol(plot_df)*nrow(plot_df)))
+  p <- ggplot2::ggplot(data=plot_data,
+                       ggplot2::aes(x=.data$times, y=.data$name, fill=.data$value)) +
+    ggplot2::geom_tile() +
+    ggplot2::coord_cartesian(expand=F) +
+    ggplot2::scale_fill_gradient(low="gray27", high="gray95", na.value = "gray27") +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent"),
+          plot.background = ggplot2::element_rect(fill = "transparent"),
+          axis.text=ggplot2::element_blank(),
+          axis.ticks = ggplot2::element_blank(),
+          axis.title=ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
           legend.position="none",
-          legend.key = element_blank())
+          legend.key = ggplot2::element_blank())
   return(p)
 }
 

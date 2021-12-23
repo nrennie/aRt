@@ -4,7 +4,6 @@
 #'
 #' @param n_x Number of polygons per row. Default 12.
 #' @param n_y Number of polygons per column. Default 18.
-#' @param gap_size Numeric between 0 and 1 specifying the size of the gap in the polygons. Default 0.5.
 #' @param col_palette Colour palette from MetBrewer.
 #' @param num_colours Number of colours to use.
 #' @param s Seed value. Default 1234.
@@ -76,26 +75,26 @@ tiles <- function(n_x=12, n_y=12, col_palette="Veronese", num_colours=5, s=1234)
   }
   #plot
   p <- ggplot() +
-    geom_polygon(data=datapoly, mapping=aes(x = x, y = y, group = id, fill=as.character(cols)), colour=NA) +
-    geom_polygon(data=datapoly2, mapping=aes(x = x, y = y, group = id, fill=as.character(cols)), colour=NA) +
-    geom_polygon(data=datapoly3, mapping=aes(x = x, y = y, group = id, fill=as.character(cols)), colour=NA) +
-    scale_fill_manual(values=met.brewer(col_palette, num_colours)) +
-    coord_fixed(expand=F, xlim=c(1,n_x), ylim=c(1,n_y)) +
-    theme(panel.background = element_rect(fill = NA, colour=NA),
-          plot.background = element_rect(fill = NA, colour=NA),
-          plot.title = element_blank(),
-          plot.subtitle = element_blank(),
+    ggplot2::geom_polygon(data=datapoly, mapping=ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill=as.character(.data$cols)), colour=NA) +
+    ggplot2::geom_polygon(data=datapoly2, mapping=ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill=as.character(.data$cols)), colour=NA) +
+    ggplot2::geom_polygon(data=datapoly3, mapping=ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill=as.character(.data$cols)), colour=NA) +
+    ggplot2::scale_fill_manual(values=met.brewer(col_palette, num_colours)) +
+    ggplot2::coord_fixed(expand=F, xlim=c(1,n_x), ylim=c(1,n_y)) +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA, colour=NA),
+          plot.background = ggplot2::element_rect(fill = NA, colour=NA),
+          plot.title = ggplot2::element_blank(),
+          plot.subtitle = ggplot2::element_blank(),
           legend.position="none",
-          plot.margin = unit(c(0,0,-0.1,-0.1), "cm"), #top, right, bottom, left
-          axis.title.x= element_blank(),
-          axis.title.y= element_blank(),
-          axis.text.x= element_blank(),
-          axis.text.y= element_blank(),
-          axis.ticks.x= element_blank(),
-          axis.ticks.y= element_blank(),
-          panel.border = element_blank(),
-          axis.line = element_blank(),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank())
+          plot.margin = ggplot2::unit(c(0,0,-0.1,-0.1), "cm"), #top, right, bottom, left
+          axis.title.x= ggplot2::element_blank(),
+          axis.title.y= ggplot2::element_blank(),
+          axis.text.x= ggplot2::element_blank(),
+          axis.text.y= ggplot2::element_blank(),
+          axis.ticks.x= ggplot2::element_blank(),
+          axis.ticks.y= ggplot2::element_blank(),
+          panel.border = ggplot2::element_blank(),
+          axis.line = ggplot2::element_blank(),
+          panel.grid.major = ggplot2::element_blank(),
+          panel.grid.minor = ggplot2::element_blank())
   p
 }
