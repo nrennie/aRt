@@ -1,2 +1,5 @@
 ^aRt\.Rproj$
 ^\.Rproj\.user$
+.lintr
+images/
+aRt/

@@ -9,21 +9,20 @@
 #' @noRd
 #'
 
-n_col_select <- function(n, size, random=F, s=1234){
+n_col_select <- function(n, size, random = FALSE, s = 1234) {
   r <- sample(1:n)
-  o1 <- size*(r/sum(r))
+  o1 <- size * (r / sum(r))
   output <- round(o1)
-  if (sum(output) < size){
+  if (sum(output) < size) {
     output[1] <- output[1] + (size - sum(output))
   }
-  if (sum(output) > size){
+  if (sum(output) > size) {
     output[1] <- output[1] - (size - sum(output))
   }
-  final_output <- rep(1:n, times=output)
-  if (random == T){
-    return(factor(sample(final_output, size=size, replace=F)))
-  } else{
+  final_output <- rep(1:n, times = output)
+  if (random == TRUE) {
+    return(factor(sample(final_output, size = size, replace = FALSE)))
+  } else {
     return(factor(final_output))
   }
 }
-

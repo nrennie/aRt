@@ -8,57 +8,56 @@
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @import rcartocolor
 #' @import patchwork
 #' @export
 
-boxes <- function(n=100, perc=0.1,  col_palette="DarkMint", bg_col="black", s=1234){
+boxes <- function(n = 100, perc = 0.1, col_palette = "DarkMint", bg_col = "black", s = 1234) {
   set.seed(s)
   x <- stats::rexp(n, 0.02)
-  y <- perc*x + (1-perc)*stats::runif(n, 1, 60)
+  y <- perc * x + (1 - perc) * stats::runif(n, 1, 60)
   plot_data <- tibble::tibble(id = 1:n, areas = x, values = y)
-  #make plots
+  # make plots
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
-    treemapify::geom_treemap(alpha = 0.5,colour=NA) +
+    treemapify::geom_treemap(alpha = 0.5, colour = NA) +
     rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
     rcartocolor::scale_colour_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
-          plot.background = ggplot2::element_rect(fill = bg_col, colour=bg_col),
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
-          legend.position="none",
-          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= ggplot2::element_blank(),
-          axis.title.y= ggplot2::element_blank(),
-          axis.text.x= ggplot2::element_blank(),
-          axis.text.y= ggplot2::element_blank(),
-          axis.ticks.x= ggplot2::element_blank(),
-          axis.ticks.y= ggplot2::element_blank(),
+          legend.position = "none",
+          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"),
+          axis.title.x = ggplot2::element_blank(),
+          axis.title.y = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_blank(),
+          axis.ticks.x = ggplot2::element_blank(),
+          axis.ticks.y = ggplot2::element_blank(),
           panel.grid.major = ggplot2::element_blank(),
           panel.grid.minor = ggplot2::element_blank()
     )
   p1 <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
-    treemapify::geom_treemap(alpha = 0.5,colour=NA) +
+    treemapify::geom_treemap(alpha = 0.5, colour = NA) +
     rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
     rcartocolor::scale_colour_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent", colour="transparent"),
-          plot.background = ggplot2::element_rect(fill = "transparent", colour="transparent"),
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
+          plot.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
-          legend.position="none",
-          plot.margin = ggplot2::unit(c(0,0,0,0), "cm"), #top, right, bottom, left
-          axis.title.x= ggplot2::element_blank(),
-          axis.title.y= ggplot2::element_blank(),
-          axis.text.x= ggplot2::element_blank(),
-          axis.text.y= ggplot2::element_blank(),
-          axis.ticks.x= ggplot2::element_blank(),
-          axis.ticks.y= ggplot2::element_blank(),
+          legend.position = "none",
+          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+          axis.title.x = ggplot2::element_blank(),
+          axis.title.y = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_blank(),
+          axis.ticks.x = ggplot2::element_blank(),
+          axis.ticks.y = ggplot2::element_blank(),
           panel.grid.major = ggplot2::element_blank(),
           panel.grid.minor = ggplot2::element_blank()
     )
   q <- p +
     inset_element(p1, left = 0.1, bottom = 0.1, right = 1.1, top = 1.1) +
     inset_element(p1, left = -0.1, bottom = -0.1, right = 0.9, top = 0.9) &
-    theme(plot.margin = unit(c(-0.5,-0.5,-0.5,-0.5), "cm"))
+    theme(plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"))
   q
 }
