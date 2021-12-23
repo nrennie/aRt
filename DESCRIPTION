@@ -1,17 +1,19 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
            role = c("aut", "cre"),
            email = "nrennie35@gmail.com")
 Description: Creates generative art using R.
-License: `use_gpl3_license()` 
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Depends: 
+    R (>= 3.6)
 Imports:
   ape,
   dplyr,
@@ -20,9 +22,11 @@ Imports:
 	ggplot2,
 	ggraph,
 	igraph,
+	MetBrewer,
 	patchwork,
 	rcartocolor,
 	RColorBrewer,
+	stats,
 	tibble,
 	tidyr,
 	treemapify

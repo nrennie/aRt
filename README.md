@@ -5,6 +5,22 @@ aRt is an R package to create generative art. Install using:
 ``` r
 devtools::install_github("nrennie/aRt")
 ```
+<h2 align="center">
+attraction</h2>
+
+The `attraction()` function produces generative art based on strange attractors.
+
+``` r
+attraction(n=50000, a=-3, b=1, c=0.5, d=-1, main_col="black", bg_col="white")
+attraction(n=50000, a=-6, b=1, c=0.5, d=-2, main_col="black", bg_col="white")
+attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col="SunsetDark", bg_col="white")
+```
+<p align="center">
+<img src="/images/attraction1.jpeg?raw=true" width="30%">
+<img src="/images/attraction2.jpeg?raw=true" width="30%">
+<img src="/images/attraction3.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 boxes</h2>
