@@ -225,6 +225,23 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Bur
 
 
 <h2 align="center">
+shell</h2>
+
+The `shell()` function produces generative art using sine and cosine waves.
+
+``` r
+shell(n = 4, alpha = 1, main_col = "black", bg_col = "white")
+shell(n = 10, alpha = 1, main_col = "black", bg_col = "white")
+shell(n = 6, alpha = 0.5, main_col = "#CC338B", bg_col = alpha("#CC338B", 0.2))
+```
+<p align="center">
+<img src="/images/shell1.jpeg?raw=true" width="30%">
+<img src="/images/shell2.jpeg?raw=true" width="30%">
+<img src="/images/shell3.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
 spirals</h2>
 
 The `spirals()` function produces generative art consisting of dots arranged in a spiral.
