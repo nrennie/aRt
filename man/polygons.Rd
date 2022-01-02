@@ -10,6 +10,7 @@ polygons(
   gap_size = 0.5,
   deg_jitter = 0.1,
   colours = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+  rand = FALSE,
   bg_col = "gray97",
   s = 1234
 )
@@ -24,6 +25,8 @@ polygons(
 \item{deg_jitter}{Numeric between 0 and 0.5 specifying the degree of jitter. Default 0.1.}
 
 \item{colours}{Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").}
+
+\item{rand}{Boolean for whether colours should be random or ordered. Default FALSE.}
 
 \item{bg_col}{Background colour. Default "gray97".}
 
