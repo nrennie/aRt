@@ -1,4 +1,4 @@
-#' Shell
+#' Shells
 #'
 #' This function generates a layered generative art ggplot object sine and cosine waves and lines.
 #'
@@ -10,7 +10,7 @@
 #' @export
 
 
-shell <- function(n = 4, alpha = 1, main_col = "black", bg_col = "white") {
+shells <- function(n = 4, alpha = 1, main_col = "black", bg_col = "white") {
   theta <- seq(0, (n + 0.5) * pi, 0.01)
   r <- 0.5 + 0.5 * theta
   df <- data.frame(x = r * cos(theta), y = r * sin(theta))
