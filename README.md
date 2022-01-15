@@ -280,9 +280,9 @@ stripes</h2>
 The `stripes()` function produces generative art consisting of rows of vertical stripes.
 
 ``` r
-stripes(perc=0, n=3, s=1234)
-stripes(perc=0.5, n=3, s=1234)
-stripes(perc=1, n=3, s=1234)
+stripes(perc=0, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
+stripes(perc=0.5, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
+stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
 ```
 <p align="center">
 <img src="/images/stripes_p00_n3.jpeg?raw=true" width="30%">
