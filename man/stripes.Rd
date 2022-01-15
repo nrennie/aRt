@@ -4,12 +4,16 @@
 \alias{stripes}
 \title{Stripes}
 \usage{
-stripes(perc = 0.5, n = 3, s = 1234)
+stripes(perc = 0.5, n = 3, col_palette = "TealGrn", alpha = 1, s = 1234)
 }
 \arguments{
 \item{perc}{Percentage of data points to be sorted. Default 0.5.}
 
 \item{n}{Number of rows. Default 3.}
+
+\item{col_palette}{Colour palette from rcartocolor.}
+
+\item{alpha}{Transparancy of fill}
 
 \item{s}{Seed value. Default 1234.}
 }
