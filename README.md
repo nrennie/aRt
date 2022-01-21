@@ -223,6 +223,23 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Bur
 <img src="/images/polygons3.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+rectangles</h2>
+
+The `rectangles()` function draws multiple rectangles.
+
+``` r
+rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
+rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
+rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = "Prism", bg_col = "black", s = 123)
+
+```
+<p align="center">
+<img src="/images/rectangles1.jpeg?raw=true" width="30%">
+<img src="/images/rectangles2.jpeg?raw=true" width="30%">
+<img src="/images/rectangles3.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 shell</h2>
