@@ -1,5 +1,9 @@
 # aRt 
 
+# aRt 1.1.1
+
+* `bubbles()` has been added.
+
 # aRt 1.1.0
 
 * `rectangles()` has been added.
