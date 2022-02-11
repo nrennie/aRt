@@ -62,6 +62,23 @@ bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
 
 
 <h2 align="center">
+bubbles</h2>
+
+The `bubbles()` function produces generative art using layered polar bar charts.
+
+``` r
+bubbles(num_circles = 20, main_col = "black", col_palette = "Bold", bg_col = "white", s = 1234)
+bubbles(num_circles = 20, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
+bubbles(num_circles = 10, main_col = "white", col_palette = "Prism", bg_col = "black", s = 2022)
+```
+<p align="center">
+<img src="/images/bubbles1.jpeg?raw=true" width="30%">
+<img src="/images/bubbles2.jpeg?raw=true" width="30%">
+<img src="/images/bubbles3.jpeg?raw=true" width="30%">
+</p>
+
+
+<h2 align="center">
 bullseye</h2>
 
 The `bullseye()` function produces generative art using layered polar bar charts.
