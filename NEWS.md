@@ -1,5 +1,9 @@
 # aRt 
 
+# aRt 1.1.2
+
+* `bubbles()` function fixed
+
 # aRt 1.1.1
 
 * `bubbles()` has been added.
