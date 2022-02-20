@@ -1,5 +1,9 @@
 # aRt 
 
+# aRt 1.1.3
+
+* Installation bug fix
+
 # aRt 1.1.2
 
 * `bubbles()` function fixed
