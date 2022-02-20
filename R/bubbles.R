@@ -28,7 +28,7 @@ bubbles <- function(num_circles = 20,
     plot_data <- rbind(plot_data, k)
   }
   plot_data <- plot_data %>%
-    tidyr::unite(.data$new_group, .data$group:.data$group_circle, sep = ":", remove = FALSE)
+    tidyr::unite(new_group, .data$group:.data$group_circle, sep = ":", remove = FALSE)
   pal <- c(rcartocolor::carto_pal(12, col_palette), main_col)
   names(pal) <- 1:13
   ggplot2::ggplot(data = plot_data,
