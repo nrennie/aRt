@@ -33,7 +33,7 @@ circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = 
                              n = smoothness,
                              colour = line_col) +
     rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    ggplot2::theme(panel.background = element_rect(fill = bg_col, colour = bg_col),
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
           plot.subtitle = ggplot2::element_blank(),
