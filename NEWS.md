@@ -1,5 +1,11 @@
 # aRt 
 
+# aRt 1.1.4
+
+* Add `flow_fields()`
+* Fix missing `ggplot2::` in circles
+* Fix `no visible binding for global variable "new_group"`
+
 # aRt 1.1.3
 
 * Installation bug fix

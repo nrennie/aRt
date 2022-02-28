@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.1.3
+Version: 1.1.4
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -15,6 +15,7 @@ RoxygenNote: 7.1.2
 Depends: 
     R (>= 3.6)
 Imports:
+  ambient,
   ape,
   deldir,
   dplyr,
@@ -24,11 +25,13 @@ Imports:
 	ggraph,
 	igraph,
 	MetBrewer,
+	particles,
 	patchwork,
 	rcartocolor,
 	RColorBrewer,
 	stats,
 	tibble,
+	tidygraph,
 	tidyr,
 	treemapify
 Remotes:
