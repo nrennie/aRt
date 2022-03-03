@@ -59,7 +59,7 @@ flow_fields <- function(n = 10000,
                                      colour = .data$colour),
               size = 0.3,
               alpha = alpha) +
-    ggplot2::coord_fixed(expand = FALSE) +
+    ggplot2::coord_cartesian(expand = FALSE) +
     ggplot2::scale_color_identity(guide = "none") +
     ggplot2::theme_void() +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),

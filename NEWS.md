@@ -1,5 +1,9 @@
 # aRt 
 
+# aRt 1.1.5
+
+* Switch `flow_fields()` to cartesian coords
+
 # aRt 1.1.4
 
 * Add `flow_fields()`
