@@ -26,6 +26,23 @@ attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col="SunsetDark", bg_col="white"
 <img src="/images/attraction3.jpeg?raw=true" width="30%">
 </p>
 
+<h2 align="center">
+blending</h2>
+
+The `blending()` function produces generative art of many boxes.
+
+``` r
+blending(n = 100, down = "white", up = "black", s = 1234)
+blending(n = 500, down = "white", up = "black", s = 1234)
+blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
+
+```
+<p align="center">
+<img src="/images/blending1.jpeg?raw=true" width="30%">
+<img src="/images/blending2.jpeg?raw=true" width="30%">
+<img src="/images/blending3.jpeg?raw=true" width="30%">
+</p>
+
 
 <h2 align="center">
 boxes</h2>

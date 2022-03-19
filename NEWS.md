@@ -1,5 +1,12 @@
 # aRt 
 
+# aRt 1.1.6
+
+* Fix issues with `flow_fields()` rendering
+* Add custom `ggplot2` theme
+* add aRtData dependency
+* add `blending()` function
+
 # aRt 1.1.5
 
 * Switch `flow_fields()` to cartesian coords
