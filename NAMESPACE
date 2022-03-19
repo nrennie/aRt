@@ -2,7 +2,6 @@
 
 export(attraction)
 export(blending)
-export(blending_walk)
 export(boxes)
 export(bricks)
 export(bubbles)
