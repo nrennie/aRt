@@ -34,7 +34,7 @@ flow_fields <- function(n = 10000,
   curl <- ambient::curl_noise(ambient::gen_perlin, x = grid$x1, y = grid$y1)
   grid$angle <- atan2(curl$y, curl$x) - atan2(grid$y1, grid$x1)
 
-  field <- as.matrix(grid, x = grid$x, value = grid$angle)
+  field <- as.matrix(grid, grid$x, value = grid$angle)
 
   sim <- tidygraph::create_empty(n) %>%
     particles::simulate(alpha_decay = 0, setup = particles::aquarium_genesis(vel_max = 0)) %>%
@@ -51,7 +51,7 @@ flow_fields <- function(n = 10000,
     dplyr::group_by(.data$particle) %>%
     dplyr::mutate(colour = sample(line_col, 1, replace = TRUE))
 
-  ggplot2::ggplot() +
+  p <- ggplot2::ggplot() +
     ggplot2::geom_path(data = traces,
               mapping = ggplot2::aes(x = .data$x,
                                      y = .data$y,
@@ -66,4 +66,5 @@ flow_fields <- function(n = 10000,
                  plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
                  legend.position = "none",
                  plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"))
+  p
 }
