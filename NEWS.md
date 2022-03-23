@@ -1,5 +1,10 @@
 # aRt 
 
+# aRt 1.1.7
+
+* add GitHub actions
+* fix CI
+
 # aRt 1.1.6
 
 * Fix issues with `flow_fields()` rendering
