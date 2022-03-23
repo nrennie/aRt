@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.1.6
+Version: 1.1.7
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -36,5 +36,5 @@ Imports:
 	tidyr,
 	treemapify
 Remotes:
-  BlakeRMills/MetBrewer
+  BlakeRMills/MetBrewer,
   nrennie/aRtData
