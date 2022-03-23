@@ -35,6 +35,3 @@ Imports:
 	tidygraph,
 	tidyr,
 	treemapify
-Remotes:
-  BlakeRMills/MetBrewer,
-  nrennie/aRtData
