@@ -1,5 +1,5 @@
-<h1 align="center">
-aRt</h1>
+# aRt <img src="images/aRt.png" align="right" width="120" />
+
 
 aRt is an R package to create generative art. Install using:
 ``` r
