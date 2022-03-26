@@ -1,7 +1,12 @@
-# aRt <img src="images/aRt.png" align="right" width="120" />
+# aRt <img src="aRt.png" align="right" width="120" />
 
 
-aRt is an R package to create generative art. Install using:
+aRt is an R package to create generative art. 
+
+## Installation
+
+Install using:
+
 ``` r
 devtools::install_github("nrennie/aRt")
 ```
