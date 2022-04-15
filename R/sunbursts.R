@@ -40,6 +40,8 @@ sunbursts <- function(n = 100,
     ggplot2::coord_fixed() +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none",
-                   plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"))
+                   plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+                   plot.background = ggplot2::element_rect(fill = low, colour = low),
+                   panel.background = ggplot2::element_rect(fill = low, colour = low))
   p
 }

@@ -35,6 +35,8 @@ sunbursts_panel <- function(n = 100,
                                         s = i))
   patchwork::wrap_plots(p) +
     patchwork::plot_layout(ncol = ncol, nrow = nrow) &
-    ggplot2::theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
+    ggplot2::theme(plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+                   plot.background = ggplot2::element_rect(fill = low, colour = low),
+                   panel.background = ggplot2::element_rect(fill = low, colour = low))
 
 }
