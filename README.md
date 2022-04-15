@@ -363,6 +363,22 @@ stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
 </p>
 
 <h2 align="center">
+sunbursts</h2>
+
+The `sunbursts()` function produces generative art consisting of two-dimesional density plots.
+
+``` r
+sunbursts(n = 100, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 5, low = "#074050", high = "#d3f2a3", s = 1234)
+sunbursts(n = 5, x_means = c(0, 1, 15), y_means = c(0, 2, 16), xy_var = 10, low = "#4e0550", high = "#facdfc", s = 1234)
+sunbursts(n = 250, x_means = c(1, 2, 9, 50), y_means = c(3, 6, 8, -3), xy_var = 100, low = "white", high = "black", s = 1234)
+```
+<p align="center">
+<img src="/images/sunbursts1.jpeg?raw=true" width="30%">
+<img src="/images/sunbursts2.jpeg?raw=true" width="30%">
+<img src="/images/sunbursts3.jpeg?raw=true" width="30%">
+</p>
+
+<h2 align="center">
 tiles</h2>
 
 The `tiles()` function produces generative art using square polygons.
