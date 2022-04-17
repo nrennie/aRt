@@ -1,4 +1,4 @@
-# aRt <img src="aRt.png" align="right" width="120" />
+# aRt <img src="https://github.com/nrennie/aRt/blob/main/man/figures/aRt.png?raw=true" align="right" width="120" />
 
 
 aRt is an R package to create generative art. 
@@ -189,12 +189,6 @@ dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette
 dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = "Purp", bg_col="#63589f", s=1234)
 dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = "Purp", bg_col="#63589f", s=1234)
 ```
-<p align="center">
-<img src="/man/figures/dots1.jpeg?raw=true" width="30%">
-<img src="/man/figures/dots2.jpeg?raw=true" width="30%">
-<img src="/man/figures/dots3.jpeg?raw=true" width="30%">
-</p>
-
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots2.jpeg?raw=true" width="30%">
