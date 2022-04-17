@@ -1,5 +1,11 @@
 # aRt 
 
+# aRt 1.1.8
+
+* add `sunbursts()` function
+* add panel function
+* add {pkgdown website}
+
 # aRt 1.1.7
 
 * add GitHub actions
