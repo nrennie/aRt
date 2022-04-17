@@ -5,3 +5,4 @@ aRt.png
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^\.github$
