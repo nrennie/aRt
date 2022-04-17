@@ -1,5 +1,7 @@
 ^aRt\.Rproj$
 ^\.Rproj\.user$
 .lintr
-images/
 aRt.png
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

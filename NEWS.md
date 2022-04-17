@@ -4,6 +4,7 @@
 
 * add `sunbursts()` function
 * add panel function
+* add {pkgdown website}
 
 # aRt 1.1.7
 
