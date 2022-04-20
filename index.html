@@ -66,281 +66,332 @@
 <p>or</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nrennie/aRt"</span><span class="op">)</span></code></pre></div>
-<h2 align="center" id="installation-1">
-attraction
-<a class="anchor" aria-label="anchor" href="#installation-1"></a>
+</div>
+<div class="section level2">
+<h2 id="colour-palettes">Colour palettes<a class="anchor" aria-label="anchor" href="#colour-palettes"></a>
 </h2>
+<p>Some of the functions in the {aRt} package take names of colour palettes as arguments. These colour palettes come from external R packages, and the names of the palettes are not necessarily obvious. In future, these functions will likely change to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes.</p>
+<p>In the meantime, the following colour palette packages are used for the following functions:</p>
+<ul>
+<li>
+<a href="https://github.com/BlakeRMills/MetBrewer" class="external-link">{MetBrewer}</a>
+<ul>
+<li>
+<code><a href="reference/tiles.html">tiles()</a></code>: <code>col_palette</code> is the name of a colour palette from {MetBrewer}</li>
+</ul>
+</li>
+<li>
+<a href="https://jakubnowosad.com/rcartocolor/" class="external-link">{rcartocolor}</a>
+<ul>
+<li>
+<code><a href="reference/attraction.html">attraction()</a></code>: <code>main_col</code> is either a single colour or the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/boxes.html">boxes()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/bubbles.html">bubbles()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/circles.html">circles()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/dots.html">dots()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/fading.html">fading()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/rectangles.html">rectangles()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+<li>
+<code><a href="reference/stripes.html">stripes()</a></code>: <code>col_palette</code> is the name of a colour palette from {rcartocolor}</li>
+</ul>
+</li>
+<li>
+<a href="https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf" class="external-link">{RColorBrewer}</a>
+<ul>
+<li>
+<code><a href="reference/connected.html">connected()</a></code>: <code>col_palette</code> is the name of a colour palette from {RColorBrewer}</li>
+</ul>
+</li>
+</ul>
+<p>Please use the documentation for these packages to find suitable colour palette names, or run the following code:</p>
+<pre><code><span class="fu">MetBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MetBrewer/man/display_all.html" class="external-link">display_all</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">rcartocolor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rcartocolor/man/display_carto_all.html" class="external-link">display_carto_all</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html" class="external-link">display.brewer.all</a></span><span class="op">(</span><span class="op">)</span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<div class="section level3">
+<h3 id="attraction">attraction<a class="anchor" aria-label="anchor" href="#attraction"></a>
+</h3>
 <p>The <code><a href="reference/attraction.html">attraction()</a></code> function produces generative art based on strange attractors.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">3</span>, b<span class="op">=</span><span class="fl">1</span>, c<span class="op">=</span><span class="fl">0.5</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">1</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">6</span>, b<span class="op">=</span><span class="fl">1</span>, c<span class="op">=</span><span class="fl">0.5</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">3</span>, b<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, c<span class="op">=</span><span class="fl">1</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">1</span>, main_col<span class="op">=</span><span class="st">"SunsetDark"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-2">
-blending
-<a class="anchor" aria-label="anchor" href="#installation-2"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="blending">blending<a class="anchor" aria-label="anchor" href="#blending"></a>
+</h3>
 <p>The <code><a href="reference/blending.html">blending()</a></code> function produces generative art of many boxes.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, down <span class="op">=</span> <span class="st">"white"</span>, up <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">500</span>, down <span class="op">=</span> <span class="st">"white"</span>, up <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, down <span class="op">=</span> <span class="st">"#ba1141"</span>, up <span class="op">=</span> <span class="st">"#003366"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-3">
-boxes
-<a class="anchor" aria-label="anchor" href="#installation-3"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="boxes">boxes<a class="anchor" aria-label="anchor" href="#boxes"></a>
+</h3>
 <p>The <code><a href="reference/boxes.html">boxes()</a></code> function produces generative art of many boxes.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, perc<span class="op">=</span><span class="fl">0.1</span>, col_palette<span class="op">=</span><span class="st">"DarkMint"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">20</span>, perc<span class="op">=</span><span class="fl">0.1</span>, col_palette<span class="op">=</span><span class="st">"DarkMint"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, perc<span class="op">=</span><span class="fl">0.5</span>, col_palette<span class="op">=</span><span class="st">"Magenta"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n20_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p5.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-4">
-bricks
-<a class="anchor" aria-label="anchor" href="#installation-4"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="bricks">bricks<a class="anchor" aria-label="anchor" href="#bricks"></a>
+</h3>
 <p>The <code><a href="reference/bricks.html">bricks()</a></code> function draws multiple rectangular polygons in rows.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">20</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">200</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">20</span>, colours<span class="op">=</span><span class="fu">carto_pal</span><span class="op">(</span><span class="fl">7</span>, <span class="st">"Burg"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-5">
-bubbles
-<a class="anchor" aria-label="anchor" href="#installation-5"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="bubbles">bubbles<a class="anchor" aria-label="anchor" href="#bubbles"></a>
+</h3>
 <p>The <code><a href="reference/bubbles.html">bubbles()</a></code> function produces generative art using layered polar bar charts.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">20</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">20</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">10</span>, main_col <span class="op">=</span> <span class="st">"white"</span>, col_palette <span class="op">=</span> <span class="st">"Prism"</span>, bg_col <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">2022</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-6">
-bullseye
-<a class="anchor" aria-label="anchor" href="#installation-6"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="bullseye">bullseye<a class="anchor" aria-label="anchor" href="#bullseye"></a>
+</h3>
 <p>The <code><a href="reference/bullseye.html">bullseye()</a></code> function produces generative art using layered polar bar charts.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"white"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234n.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_2021.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-7">
-circles
-<a class="anchor" aria-label="anchor" href="#installation-7"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="circles">circles<a class="anchor" aria-label="anchor" href="#circles"></a>
+</h3>
 <p>The <code><a href="reference/circles.html">circles()</a></code> function produces generative art using dendograms and circular graphs.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, smoothness<span class="op">=</span><span class="fl">100</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="cn">NA</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, smoothness<span class="op">=</span><span class="fl">100</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="cn">NA</span>, bg_col<span class="op">=</span><span class="st">"#e73f74"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">2</span>, smoothness<span class="op">=</span><span class="fl">3</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-8">
-circular
-<a class="anchor" aria-label="anchor" href="#installation-8"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="circular">circular<a class="anchor" aria-label="anchor" href="#circular"></a>
+</h3>
 <p>The <code><a href="reference/circular.html">circular()</a></code> function produces circular generative art produced by many random paths from the centre of the circle.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">2</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span>
 <span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span>
 <span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n100.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-9">
-connected
-<a class="anchor" aria-label="anchor" href="#installation-9"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="connected">connected<a class="anchor" aria-label="anchor" href="#connected"></a>
+</h3>
 <p>The <code><a href="reference/connected.html">connected()</a></code> function produces generative art by connected points on a circle.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, n_geom<span class="op">=</span><span class="fl">10</span>, random<span class="op">=</span><span class="cn">F</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, n_geom<span class="op">=</span><span class="fl">10</span>, random<span class="op">=</span><span class="cn">T</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">250</span>, n_geom<span class="op">=</span><span class="fl">2</span>, random<span class="op">=</span><span class="cn">F</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10F.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10T.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-10">
-crawling
-<a class="anchor" aria-label="anchor" href="#installation-10"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="crawling">crawling<a class="anchor" aria-label="anchor" href="#crawling"></a>
+</h3>
 <p>The <code><a href="reference/crawling.html">crawling()</a></code> function produces generative art using dendograms and tree graphs.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">250</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">1000</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling50.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling250.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-11">
-dots
-<a class="anchor" aria-label="anchor" href="#installation-11"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="dots">dots<a class="anchor" aria-label="anchor" href="#dots"></a>
+</h3>
 <p>The <code><a href="reference/dots.html">dots()</a></code> function produces generative art using jittered points.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.5</span>, jitter_size_height<span class="op">=</span><span class="fl">0.5</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">500</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.5</span>, jitter_size_height<span class="op">=</span><span class="fl">5</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.05</span>, jitter_size_height<span class="op">=</span><span class="fl">50</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-12">
-fading
-<a class="anchor" aria-label="anchor" href="#installation-12"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="fading">fading<a class="anchor" aria-label="anchor" href="#fading"></a>
+</h3>
 <p>The <code><a href="reference/fading.html">fading()</a></code> function produces generative art using voronoi tiles.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">6</span>, n_points<span class="op">=</span><span class="fl">10</span>, col_palette<span class="op">=</span><span class="st">"SunsetDark"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">6</span>, n_points<span class="op">=</span><span class="fl">1</span>, col_palette<span class="op">=</span><span class="st">"Sunset"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">10</span>, n_points<span class="op">=</span><span class="fl">10</span>, col_palette<span class="op">=</span><span class="st">"SunsetDark"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_10_10.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-13">
-flow fields
-<a class="anchor" aria-label="anchor" href="#installation-13"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="flow-fields">flow fields<a class="anchor" aria-label="anchor" href="#flow-fields"></a>
+</h3>
 <p>The <code><a href="reference/flow_fields.html">flow_fields()</a></code> function produces generative art using particle traces. These functions are inspired by a blog post by <a href="https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/" class="external-link">Will Chase</a>.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">1</span>, y_freq <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">1</span>, line_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#edf8fb"</span>,<span class="st">"#bfd3e6"</span>,<span class="st">"#9ebcda"</span>,<span class="st">"#8c96c6"</span>,<span class="st">"#8c6bb1"</span>,<span class="st">"#88419d"</span>,<span class="st">"#6e016b"</span><span class="op">)</span>, bg_col <span class="op">=</span> <span class="st">"lightgrey"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">1</span>, y_freq <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.3</span>, line_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">3</span>, y_freq <span class="op">=</span> <span class="fl">0.2</span>, alpha <span class="op">=</span> <span class="fl">1</span>, line_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#edf8fb"</span>,<span class="st">"#bfd3e6"</span>,<span class="st">"#9ebcda"</span>,<span class="st">"#8c96c6"</span>,<span class="st">"#8c6bb1"</span>,<span class="st">"#88419d"</span>,<span class="st">"#6e016b"</span><span class="op">)</span>, bg_col <span class="op">=</span> <span class="st">"lightgrey"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-14">
-heart
-<a class="anchor" aria-label="anchor" href="#installation-14"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="heart">heart<a class="anchor" aria-label="anchor" href="#heart"></a>
+</h3>
 <p>The <code><a href="reference/heart.html">heart()</a></code> function draws a heart from many overlapping lines.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_r.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-15">
-infinity
-<a class="anchor" aria-label="anchor" href="#installation-15"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="infinity">infinity<a class="anchor" aria-label="anchor" href="#infinity"></a>
+</h3>
 <p>The <code><a href="reference/infinity.html">infinity()</a></code> function draws an infinity symbol from many overlapping lines.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_r.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-16">
-polygons
-<a class="anchor" aria-label="anchor" href="#installation-16"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="polygons">polygons<a class="anchor" aria-label="anchor" href="#polygons"></a>
+</h3>
 <p>The <code><a href="reference/polygons.html">polygons()</a></code> function draws multiple polygons.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">18</span>, gap_size<span class="op">=</span><span class="fl">0.5</span>, deg_jitter<span class="op">=</span><span class="fl">0.1</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">6</span>, n_y<span class="op">=</span><span class="fl">9</span>, gap_size<span class="op">=</span><span class="fl">0.2</span>, deg_jitter<span class="op">=</span><span class="fl">0.1</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">18</span>, gap_size<span class="op">=</span><span class="fl">0.5</span>, deg_jitter<span class="op">=</span><span class="fl">0.5</span>, colours<span class="op">=</span><span class="fu">carto_pal</span><span class="op">(</span><span class="fl">7</span>, <span class="st">"Burg"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-17">
-rectangles
-<a class="anchor" aria-label="anchor" href="#installation-17"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="rectangles">rectangles<a class="anchor" aria-label="anchor" href="#rectangles"></a>
+</h3>
 <p>The <code><a href="reference/rectangles.html">rectangles()</a></code> function draws multiple rectangles.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, max_height <span class="op">=</span> <span class="fl">7</span>, max_width <span class="op">=</span> <span class="fl">5</span>, size <span class="op">=</span> <span class="fl">2</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, max_height <span class="op">=</span> <span class="fl">15</span>, max_width <span class="op">=</span> <span class="fl">15</span>, size <span class="op">=</span> <span class="fl">4</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, max_height <span class="op">=</span> <span class="fl">4</span>, max_width <span class="op">=</span> <span class="fl">6</span>, size <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/alpha.html" class="external-link">alpha</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="fl">0.5</span><span class="op">)</span>, col_palette <span class="op">=</span> <span class="st">"Prism"</span>, bg_col <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-18">
-shell
-<a class="anchor" aria-label="anchor" href="#installation-18"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="shell">shell<a class="anchor" aria-label="anchor" href="#shell"></a>
+</h3>
 <p>The <code><a href="reference/shells.html">shells()</a></code> function produces generative art using sine and cosine waves.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, alpha <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">6</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, main_col <span class="op">=</span> <span class="st">"#CC338B"</span>, bg_col <span class="op">=</span> <span class="fu">alpha</span><span class="op">(</span><span class="st">"#CC338B"</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-19">
-spirals
-<a class="anchor" aria-label="anchor" href="#installation-19"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="spirals">spirals<a class="anchor" aria-label="anchor" href="#spirals"></a>
+</h3>
 <p>The <code><a href="reference/spirals.html">spirals()</a></code> function produces generative art consisting of dots arranged in a spiral.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.2</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.8</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p5.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-20">
-static
-<a class="anchor" aria-label="anchor" href="#installation-20"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="static">static<a class="anchor" aria-label="anchor" href="#static"></a>
+</h3>
 <p>The <code><a href="reference/static.html">static()</a></code> function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.01</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.1</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.3</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p01_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p10_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-21">
-stripes
-<a class="anchor" aria-label="anchor" href="#installation-21"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="stripes">stripes<a class="anchor" aria-label="anchor" href="#stripes"></a>
+</h3>
 <p>The <code><a href="reference/stripes.html">stripes()</a></code> function produces generative art consisting of rows of vertical stripes.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.5</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-22">
-sunbursts
-<a class="anchor" aria-label="anchor" href="#installation-22"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="sunbursts">sunbursts<a class="anchor" aria-label="anchor" href="#sunbursts"></a>
+</h3>
 <p>The <code><a href="reference/sunbursts.html">sunbursts()</a></code> function produces generative art consisting of two-dimesional density plots.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7</span>, <span class="fl">8</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">5</span>, low <span class="op">=</span> <span class="st">"#074050"</span>, high <span class="op">=</span> <span class="st">"#d3f2a3"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">15</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">16</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">10</span>, low <span class="op">=</span> <span class="st">"#4e0550"</span>, high <span class="op">=</span> <span class="st">"#facdfc"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">250</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">9</span>, <span class="fl">50</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="op">-</span><span class="fl">3</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">100</span>, low <span class="op">=</span> <span class="st">"white"</span>, high <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts3.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-23">
-tiles
-<a class="anchor" aria-label="anchor" href="#installation-23"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="tiles">tiles<a class="anchor" aria-label="anchor" href="#tiles"></a>
+</h3>
 <p>The <code><a href="reference/tiles.html">tiles()</a></code> function produces generative art using square polygons.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">12</span>, col_palette<span class="op">=</span><span class="st">"Veronese"</span>, num_colours<span class="op">=</span><span class="fl">5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">50</span>, col_palette<span class="op">=</span><span class="st">"Veronese"</span>, num_colours<span class="op">=</span><span class="fl">6</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">12</span>, col_palette<span class="op">=</span><span class="st">"Pissaro"</span>, num_colours<span class="op">=</span><span class="fl">5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_pissaro1.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-24">
-vortex
-<a class="anchor" aria-label="anchor" href="#installation-24"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="vortex">vortex<a class="anchor" aria-label="anchor" href="#vortex"></a>
+</h3>
 <p>The <code><a href="reference/vortex.html">vortex()</a></code> function produces circular vortex generative art produced by a line plot and polar coordinates.</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_r.jpeg?raw=true" width="30%"></p>
-<h2 align="center" id="installation-25">
-waves
-<a class="anchor" aria-label="anchor" href="#installation-25"></a>
-</h2>
+</div>
+<div class="section level3">
+<h3 id="waves">waves<a class="anchor" aria-label="anchor" href="#waves"></a>
+</h3>
 <p>The <code><a href="reference/waves.html">waves()</a></code> function produces generative art using sine and cosine waves.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">23</span>, b<span class="op">=</span><span class="fl">6</span>, main_col<span class="op">=</span><span class="st">"white"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span>
 <span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">23</span>, b<span class="op">=</span><span class="fl">6</span>, main_col<span class="op">=</span><span class="st">"Prism"</span>, bg_col<span class="op">=</span><span class="st">"#edad08"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span>
 <span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">6</span>, b<span class="op">=</span><span class="fl">23</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></code></pre></div>
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_bw.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_col.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves6_23_bw.jpeg?raw=true" width="30%"></p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
