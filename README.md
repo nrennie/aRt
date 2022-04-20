@@ -39,8 +39,9 @@ In the meantime, the following colour palette packages are used for the followin
 
 Please use the documentation for these packages to find suitable colour palette names.
 
-<h2 align="center">
-attraction</h2>
+## Functions
+
+### attraction
 
 The `attraction()` function produces generative art based on strange attractors.
 
@@ -55,8 +56,7 @@ attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col="SunsetDark", bg_col="white"
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-blending</h2>
+### blending
 
 The `blending()` function produces generative art of many boxes.
 
@@ -72,8 +72,7 @@ blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-boxes</h2>
+### boxes
 
 The `boxes()` function produces generative art of many boxes.
 
@@ -88,8 +87,7 @@ boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p5.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-bricks</h2>
+### bricks
 
 The `bricks()` function draws multiple rectangular polygons in rows.
 
@@ -106,8 +104,7 @@ bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
 </p>
 
 
-<h2 align="center">
-bubbles</h2>
+### bubbles
 
 The `bubbles()` function produces generative art using layered polar bar charts.
 
@@ -123,8 +120,7 @@ bubbles(num_circles = 10, main_col = "white", col_palette = "Prism", bg_col = "b
 </p>
 
 
-<h2 align="center">
-bullseye</h2>
+### bullseye
 
 The `bullseye()` function produces generative art using layered polar bar charts.
 
@@ -139,8 +135,7 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_2021.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-circles</h2>
+### circles
 
 The `circles()` function produces generative art using dendograms and circular graphs.
 
@@ -155,8 +150,7 @@ circles(n=2, smoothness=3, col_palette="Bold", line_col="black", bg_col="black",
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-circular</h2>
+### circular
 
 The `circular()` function produces circular generative art produced by many random paths from the centre of the circle.
 
@@ -171,8 +165,7 @@ circular(n=100, main_col="black", bg_col="white", s=56)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n100.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-connected</h2>
+### connected
 
 The `connected()` function produces generative art by connected points on a circle.
 
@@ -187,8 +180,7 @@ connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=123
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-crawling</h2>
+### crawling
 
 The `crawling()` function produces generative art using dendograms and tree graphs.
 
@@ -203,8 +195,7 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-dots</h2>
+### dots
 
 The `dots()` function produces generative art using jittered points.
 
@@ -219,8 +210,7 @@ dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-fading</h2>
+### fading
 
 The `fading()` function produces generative art using voronoi tiles.
 
@@ -235,8 +225,7 @@ fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_10_10.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-flow fields</h2>
+### flow fields
 
 The `flow_fields()` function produces generative art using particle traces. These functions are inspired by a blog post by [Will Chase](https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/). 
 
@@ -252,8 +241,7 @@ flow_fields(n = 10000, granualarity = 1000, x_freq = 3, y_freq = 0.2, alpha = 1,
 </p>
 
 
-<h2 align="center">
-heart</h2>
+### heart
 
 The `heart()` function draws a heart from many overlapping lines.
 
@@ -269,8 +257,7 @@ heart(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 
-<h2 align="center">
-infinity</h2>
+### infinity
 
 The `infinity()` function draws an infinity symbol from many overlapping lines.
 
@@ -286,8 +273,7 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 
-<h2 align="center">
-polygons</h2>
+### polygons
 
 The `polygons()` function draws multiple polygons.
 
@@ -304,8 +290,7 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Bur
 </p>
 
 
-<h2 align="center">
-rectangles</h2>
+### rectangles
 
 The `rectangles()` function draws multiple rectangles.
 
@@ -321,8 +306,7 @@ rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2:
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-shell</h2>
+### shell
 
 The `shells()` function produces generative art using sine and cosine waves.
 
@@ -337,8 +321,7 @@ shells(n = 6, alpha = 0.5, main_col = "#CC338B", bg_col = alpha("#CC338B", 0.2))
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-spirals</h2>
+### spirals
 
 The `spirals()` function produces generative art consisting of dots arranged in a spiral.
 
@@ -353,8 +336,7 @@ spirals(perc=0.8, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-static</h2>
+### static
 
 The `static()` function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.
 
@@ -370,8 +352,7 @@ static(perc=0.3, n=500, s=1234)
 </p>
 
 
-<h2 align="center">
-stripes</h2>
+### stripes
 
 The `stripes()` function produces generative art consisting of rows of vertical stripes.
 
@@ -387,8 +368,7 @@ stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
 </p>
 
 
-<h2 align="center">
-sunbursts</h2>
+### sunbursts
 
 The `sunbursts()` function produces generative art consisting of two-dimesional density plots.
 
@@ -403,8 +383,7 @@ sunbursts(n = 250, x_means = c(1, 2, 9, 50), y_means = c(3, 6, 8, -3), xy_var = 
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts3.jpeg?raw=true" width="30%">
 </p>
 
-<h2 align="center">
-tiles</h2>
+### tiles
 
 The `tiles()` function produces generative art using square polygons.
 
@@ -420,8 +399,7 @@ tiles(n_x=12, n_y=12, col_palette="Pissaro", num_colours=5, s=1234)
 </p>
 
 
-<h2 align="center">
-vortex</h2>
+### vortex
 
 The `vortex()` function produces circular vortex generative art produced by a line plot and polar coordinates.
 
@@ -437,8 +415,7 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 
-<h2 align="center">
-waves</h2>
+### waves
 
 The `waves()` function produces generative art using sine and cosine waves.
 
