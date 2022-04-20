@@ -21,7 +21,7 @@ Some of the functions in the {aRt} package take names of colour palettes as argu
 
 In the meantime, the following colour palette packages are used for the following functions:
 
-- [MetBrewer](https://github.com/BlakeRMills/MetBrewer)
+- [{MetBrewer}](https://github.com/BlakeRMills/MetBrewer)
   - `tiles()`: `col_palette` is the name of a colour palette from {MetBrewer}
 
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
