@@ -37,7 +37,14 @@ In the meantime, the following colour palette packages are used for the followin
 - [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf)
   - `connected()`: `col_palette` is the name of a colour palette from {RColorBrewer}
 
-Please use the documentation for these packages to find suitable colour palette names.
+Please use the documentation for these packages to find suitable colour palette names. or run the following code:
+
+```
+MetBrewer::display_all()
+rcartocolor::display_carto_all()
+RColorBrewer::display.brewer.all()
+
+```
 
 ## Functions
 
