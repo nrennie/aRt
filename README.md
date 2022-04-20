@@ -15,6 +15,30 @@ or
 remotes::install_github("nrennie/aRt")
 ```
 
+## Colour palettes
+
+Some of the functions in the {aRt} package take names of colour palettes as arguments. These colour palettes come from external R packages, and the names of the palettes are not necessarily obvious. In future, these functions will likely change to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
+
+In the meantime, the following colour palette packages are used for the following functions:
+
+- [MetBrewer](https://github.com/BlakeRMills/MetBrewer)
+  - `tiles()`: `col_palette` is the name of a colour palette from {MetBrewer}
+
+- [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+  - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
+  - `boxes()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `circles()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `dots()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  - `stripes()`: `col_palette` is the name of a colour palette from {rcartocolor}
+  
+- [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf)
+  - `connected()`: `col_palette` is the name of a colour palette from {RColorBrewer}
+
+Please use the documentation for these packages to find suitable colour palette names.
+
 <h2 align="center">
 attraction</h2>
 
