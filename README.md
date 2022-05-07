@@ -1,4 +1,4 @@
-# aRt <img src="https://github.com/nrennie/aRt/blob/main/man/figures/aRt.png?raw=true" align="right" width="120" />
+# aRt <img src="man/figures/logo.png" align="right" width="120" />
 
 
 aRt is an R package to create generative art. 

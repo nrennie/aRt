@@ -6,3 +6,4 @@ aRt.png
 ^docs$
 ^pkgdown$
 ^\.github$
+^LICENSE\.md$
