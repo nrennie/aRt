@@ -1,4 +1,15 @@
 url: https://nrennie.github.io/aRt/
 template:
   bootstrap: 5
+authors:
+  Nicola Rennie:
+    href: https://nrennie.rbind.io/
+home:
+  links:
+  - text: Home
+    href: https://nrennie.github.io/
+  - text: Website
+    href: https://nrennie.rbind.io/
+  - text: Twitter
+    href: https://twitter.com/nrennie35
 
