@@ -7,12 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Creates generative art using R.">
 <title>Generative Art with R • aRt</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Generative Art with R">
 <meta property="og:description" content="Creates generative art using R.">
+<meta property="og:image" content="https://nrennie.github.io/aRt/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -26,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">aRt</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.9</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +61,10 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="art-">aRt <img src="https://github.com/nrennie/aRt/blob/main/man/figures/aRt.png?raw=true" align="right" width="120"><a class="anchor" aria-label="anchor" href="#art-"></a>
-</h1></div>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="art-">aRt <a class="anchor" aria-label="anchor" href="#art-"></a>
+</h1>
+</div>
 <p>aRt is an R package to create generative art.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -74,15 +83,11 @@
 <p>In the meantime, the following colour palette packages are used for the following functions:</p>
 <ul>
 <li>
-<a href="https://github.com/BlakeRMills/MetBrewer" class="external-link">{MetBrewer}</a>
-<ul>
-<li>
-<code><a href="reference/tiles.html">tiles()</a></code>: <code>col_palette</code> is the name of a colour palette from {MetBrewer}</li>
-</ul>
+<a href="https://github.com/BlakeRMills/MetBrewer" class="external-link">{MetBrewer}</a><ul><li>
+<code><a href="reference/tiles.html">tiles()</a></code>: <code>col_palette</code> is the name of a colour palette from {MetBrewer}</li></ul>
 </li>
 <li>
-<a href="https://jakubnowosad.com/rcartocolor/" class="external-link">{rcartocolor}</a>
-<ul>
+<a href="https://jakubnowosad.com/rcartocolor/" class="external-link">{rcartocolor}</a><ul>
 <li>
 <code><a href="reference/attraction.html">attraction()</a></code>: <code>main_col</code> is either a single colour or the name of a colour palette from {rcartocolor}</li>
 <li>
@@ -102,11 +107,8 @@
 </ul>
 </li>
 <li>
-<a href="https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf" class="external-link">{RColorBrewer}</a>
-<ul>
-<li>
-<code><a href="reference/connected.html">connected()</a></code>: <code>col_palette</code> is the name of a colour palette from {RColorBrewer}</li>
-</ul>
+<a href="https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf" class="external-link">{RColorBrewer}</a><ul><li>
+<code><a href="reference/connected.html">connected()</a></code>: <code>col_palette</code> is the name of a colour palette from {RColorBrewer}</li></ul>
 </li>
 </ul>
 <p>Please use the documentation for these packages to find suitable colour palette names, or run the following code:</p>
@@ -125,8 +127,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">3</span>, b<span class="op">=</span><span class="fl">1</span>, c<span class="op">=</span><span class="fl">0.5</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">1</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">6</span>, b<span class="op">=</span><span class="fl">1</span>, c<span class="op">=</span><span class="fl">0.5</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/attraction.html">attraction</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50000</span>, a<span class="op">=</span><span class="op">-</span><span class="fl">3</span>, b<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, c<span class="op">=</span><span class="fl">1</span>, d<span class="op">=</span><span class="op">-</span><span class="fl">1</span>, main_col<span class="op">=</span><span class="st">"SunsetDark"</span>, bg_col<span class="op">=</span><span class="st">"white"</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="blending">blending<a class="anchor" aria-label="anchor" href="#blending"></a>
@@ -136,8 +137,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, down <span class="op">=</span> <span class="st">"white"</span>, up <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">500</span>, down <span class="op">=</span> <span class="st">"white"</span>, up <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/blending.html">blending</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, down <span class="op">=</span> <span class="st">"#ba1141"</span>, up <span class="op">=</span> <span class="st">"#003366"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="boxes">boxes<a class="anchor" aria-label="anchor" href="#boxes"></a>
@@ -147,8 +147,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, perc<span class="op">=</span><span class="fl">0.1</span>, col_palette<span class="op">=</span><span class="st">"DarkMint"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">20</span>, perc<span class="op">=</span><span class="fl">0.1</span>, col_palette<span class="op">=</span><span class="st">"DarkMint"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/boxes.html">boxes</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, perc<span class="op">=</span><span class="fl">0.5</span>, col_palette<span class="op">=</span><span class="st">"Magenta"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n20_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p5.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n20_p1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p5.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="bricks">bricks<a class="anchor" aria-label="anchor" href="#bricks"></a>
@@ -158,8 +157,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">20</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">200</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/bricks.html">bricks</a></span><span class="op">(</span>n_y<span class="op">=</span><span class="fl">20</span>, colours<span class="op">=</span><span class="fu">carto_pal</span><span class="op">(</span><span class="fl">7</span>, <span class="st">"Burg"</span><span class="op">)</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bricks3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="bubbles">bubbles<a class="anchor" aria-label="anchor" href="#bubbles"></a>
@@ -169,8 +167,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">20</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">20</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/bubbles.html">bubbles</a></span><span class="op">(</span>num_circles <span class="op">=</span> <span class="fl">10</span>, main_col <span class="op">=</span> <span class="st">"white"</span>, col_palette <span class="op">=</span> <span class="st">"Prism"</span>, bg_col <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">2022</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="bullseye">bullseye<a class="anchor" aria-label="anchor" href="#bullseye"></a>
@@ -180,8 +177,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"white"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/bullseye.html">bullseye</a></span><span class="op">(</span>main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234n.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_2021.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_1234n.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_2021.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="circles">circles<a class="anchor" aria-label="anchor" href="#circles"></a>
@@ -191,8 +187,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, smoothness<span class="op">=</span><span class="fl">100</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="cn">NA</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, smoothness<span class="op">=</span><span class="fl">100</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="cn">NA</span>, bg_col<span class="op">=</span><span class="st">"#e73f74"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/circles.html">circles</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">2</span>, smoothness<span class="op">=</span><span class="fl">3</span>, col_palette<span class="op">=</span><span class="st">"Bold"</span>, line_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="circular">circular<a class="anchor" aria-label="anchor" href="#circular"></a>
@@ -202,8 +197,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">2</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span>
 <span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span>
 <span class="fu"><a href="reference/circular.html">circular</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">56</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n100.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n100.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="connected">connected<a class="anchor" aria-label="anchor" href="#connected"></a>
@@ -213,8 +207,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, n_geom<span class="op">=</span><span class="fl">10</span>, random<span class="op">=</span><span class="cn">F</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, n_geom<span class="op">=</span><span class="fl">10</span>, random<span class="op">=</span><span class="cn">T</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/connected.html">connected</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">250</span>, n_geom<span class="op">=</span><span class="fl">2</span>, random<span class="op">=</span><span class="cn">F</span>, col_palette<span class="op">=</span><span class="st">"RdPu"</span>, bg_col<span class="op">=</span><span class="st">"#ae217e"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10F.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10T.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10F.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10T.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="crawling">crawling<a class="anchor" aria-label="anchor" href="#crawling"></a>
@@ -224,8 +217,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">50</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">250</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/crawling.html">crawling</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">1000</span>, edge_colour<span class="op">=</span><span class="st">"black"</span>, node_size<span class="op">=</span><span class="fl">1</span>, node_colour<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling50.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling250.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling50.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling250.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="dots">dots<a class="anchor" aria-label="anchor" href="#dots"></a>
@@ -235,8 +227,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.5</span>, jitter_size_height<span class="op">=</span><span class="fl">0.5</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">500</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.5</span>, jitter_size_height<span class="op">=</span><span class="fl">5</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/dots.html">dots</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">100</span>, jitter_size_width<span class="op">=</span><span class="fl">0.05</span>, jitter_size_height<span class="op">=</span><span class="fl">50</span>, col_palette <span class="op">=</span> <span class="st">"Purp"</span>, bg_col<span class="op">=</span><span class="st">"#63589f"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="fading">fading<a class="anchor" aria-label="anchor" href="#fading"></a>
@@ -246,8 +237,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">6</span>, n_points<span class="op">=</span><span class="fl">10</span>, col_palette<span class="op">=</span><span class="st">"SunsetDark"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">6</span>, n_points<span class="op">=</span><span class="fl">1</span>, col_palette<span class="op">=</span><span class="st">"Sunset"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/fading.html">fading</a></span><span class="op">(</span>n_layers<span class="op">=</span><span class="fl">10</span>, n_points<span class="op">=</span><span class="fl">10</span>, col_palette<span class="op">=</span><span class="st">"SunsetDark"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_10_10.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_10.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_10_10.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="flow-fields">flow fields<a class="anchor" aria-label="anchor" href="#flow-fields"></a>
@@ -257,8 +247,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">1</span>, y_freq <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">1</span>, line_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#edf8fb"</span>,<span class="st">"#bfd3e6"</span>,<span class="st">"#9ebcda"</span>,<span class="st">"#8c96c6"</span>,<span class="st">"#8c6bb1"</span>,<span class="st">"#88419d"</span>,<span class="st">"#6e016b"</span><span class="op">)</span>, bg_col <span class="op">=</span> <span class="st">"lightgrey"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">1</span>, y_freq <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.3</span>, line_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/flow_fields.html">flow_fields</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10000</span>, granualarity <span class="op">=</span> <span class="fl">1000</span>, x_freq <span class="op">=</span> <span class="fl">3</span>, y_freq <span class="op">=</span> <span class="fl">0.2</span>, alpha <span class="op">=</span> <span class="fl">1</span>, line_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#edf8fb"</span>,<span class="st">"#bfd3e6"</span>,<span class="st">"#9ebcda"</span>,<span class="st">"#8c96c6"</span>,<span class="st">"#8c6bb1"</span>,<span class="st">"#88419d"</span>,<span class="st">"#6e016b"</span><span class="op">)</span>, bg_col <span class="op">=</span> <span class="st">"lightgrey"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="heart">heart<a class="anchor" aria-label="anchor" href="#heart"></a>
@@ -268,8 +257,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/heart.html">heart</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_r.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/heart_n25_r.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="infinity">infinity<a class="anchor" aria-label="anchor" href="#infinity"></a>
@@ -279,8 +267,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/infinity.html">infinity</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_r.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/infinity_n25_r.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="polygons">polygons<a class="anchor" aria-label="anchor" href="#polygons"></a>
@@ -290,8 +277,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">18</span>, gap_size<span class="op">=</span><span class="fl">0.5</span>, deg_jitter<span class="op">=</span><span class="fl">0.1</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">6</span>, n_y<span class="op">=</span><span class="fl">9</span>, gap_size<span class="op">=</span><span class="fl">0.2</span>, deg_jitter<span class="op">=</span><span class="fl">0.1</span>, colours<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#9B1D20"</span>, <span class="st">"#3D2B3D"</span>, <span class="st">"#CBEFB6"</span>, <span class="st">"#635D5C"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span>
 <span class="fu"><a href="reference/polygons.html">polygons</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">18</span>, gap_size<span class="op">=</span><span class="fl">0.5</span>, deg_jitter<span class="op">=</span><span class="fl">0.5</span>, colours<span class="op">=</span><span class="fu">carto_pal</span><span class="op">(</span><span class="fl">7</span>, <span class="st">"Burg"</span><span class="op">)</span>, rand <span class="op">=</span> <span class="cn">FALSE</span>, bg_col<span class="op">=</span><span class="st">"gray97"</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/polygons3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="rectangles">rectangles<a class="anchor" aria-label="anchor" href="#rectangles"></a>
@@ -301,8 +287,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, max_height <span class="op">=</span> <span class="fl">7</span>, max_width <span class="op">=</span> <span class="fl">5</span>, size <span class="op">=</span> <span class="fl">2</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, max_height <span class="op">=</span> <span class="fl">15</span>, max_width <span class="op">=</span> <span class="fl">15</span>, size <span class="op">=</span> <span class="fl">4</span>, main_col <span class="op">=</span> <span class="st">"lightgrey"</span>, col_palette <span class="op">=</span> <span class="st">"Bold"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span>
 <span class="fu"><a href="reference/rectangles.html">rectangles</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, max_height <span class="op">=</span> <span class="fl">4</span>, max_width <span class="op">=</span> <span class="fl">6</span>, size <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/alpha.html" class="external-link">alpha</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="fl">0.5</span><span class="op">)</span>, col_palette <span class="op">=</span> <span class="st">"Prism"</span>, bg_col <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">123</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="shell">shell<a class="anchor" aria-label="anchor" href="#shell"></a>
@@ -312,8 +297,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, alpha <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, alpha <span class="op">=</span> <span class="fl">1</span>, main_col <span class="op">=</span> <span class="st">"black"</span>, bg_col <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>
 <span class="fu"><a href="reference/shells.html">shells</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">6</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, main_col <span class="op">=</span> <span class="st">"#CC338B"</span>, bg_col <span class="op">=</span> <span class="fu">alpha</span><span class="op">(</span><span class="st">"#CC338B"</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="spirals">spirals<a class="anchor" aria-label="anchor" href="#spirals"></a>
@@ -323,8 +307,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.2</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/spirals.html">spirals</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.8</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p5.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p5.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="static">static<a class="anchor" aria-label="anchor" href="#static"></a>
@@ -334,8 +317,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.01</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.1</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/static.html">static</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.3</span>, n<span class="op">=</span><span class="fl">500</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p01_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p10_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p01_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p10_n500.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="stripes">stripes<a class="anchor" aria-label="anchor" href="#stripes"></a>
@@ -345,8 +327,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">0.5</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/stripes.html">stripes</a></span><span class="op">(</span>perc<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="fl">3</span>, col_palette <span class="op">=</span> <span class="st">"TealGrn"</span>, alpha <span class="op">=</span> <span class="fl">1</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="sunbursts">sunbursts<a class="anchor" aria-label="anchor" href="#sunbursts"></a>
@@ -356,8 +337,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7</span>, <span class="fl">8</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">5</span>, low <span class="op">=</span> <span class="st">"#074050"</span>, high <span class="op">=</span> <span class="st">"#d3f2a3"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">15</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">16</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">10</span>, low <span class="op">=</span> <span class="st">"#4e0550"</span>, high <span class="op">=</span> <span class="st">"#facdfc"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/sunbursts.html">sunbursts</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">250</span>, x_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">9</span>, <span class="fl">50</span><span class="op">)</span>, y_means <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="op">-</span><span class="fl">3</span><span class="op">)</span>, xy_var <span class="op">=</span> <span class="fl">100</span>, low <span class="op">=</span> <span class="st">"white"</span>, high <span class="op">=</span> <span class="st">"black"</span>, s <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts3.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts3.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="tiles">tiles<a class="anchor" aria-label="anchor" href="#tiles"></a>
@@ -367,8 +347,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">12</span>, col_palette<span class="op">=</span><span class="st">"Veronese"</span>, num_colours<span class="op">=</span><span class="fl">5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">50</span>, n_y<span class="op">=</span><span class="fl">50</span>, col_palette<span class="op">=</span><span class="st">"Veronese"</span>, num_colours<span class="op">=</span><span class="fl">6</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/tiles.html">tiles</a></span><span class="op">(</span>n_x<span class="op">=</span><span class="fl">12</span>, n_y<span class="op">=</span><span class="fl">12</span>, col_palette<span class="op">=</span><span class="st">"Pissaro"</span>, num_colours<span class="op">=</span><span class="fl">5</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_pissaro1.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese1.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese2.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_pissaro1.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="vortex">vortex<a class="anchor" aria-label="anchor" href="#vortex"></a>
@@ -378,8 +357,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"mono"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span>
 <span class="fu"><a href="reference/vortex.html">vortex</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">25</span>, start_val<span class="op">=</span><span class="fl">90</span>, col_scheme<span class="op">=</span><span class="st">"rainbow"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">1234</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_r.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n100_m.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/vortex_n25_r.jpeg?raw=true" width="30%"></p>
 </div>
 <div class="section level3">
 <h3 id="waves">waves<a class="anchor" aria-label="anchor" href="#waves"></a>
@@ -389,15 +367,24 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">23</span>, b<span class="op">=</span><span class="fl">6</span>, main_col<span class="op">=</span><span class="st">"white"</span>, bg_col<span class="op">=</span><span class="st">"black"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span>
 <span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">23</span>, b<span class="op">=</span><span class="fl">6</span>, main_col<span class="op">=</span><span class="st">"Prism"</span>, bg_col<span class="op">=</span><span class="st">"#edad08"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span>
 <span class="fu"><a href="reference/waves.html">waves</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">6</span>, b<span class="op">=</span><span class="fl">23</span>, main_col<span class="op">=</span><span class="st">"black"</span>, bg_col<span class="op">=</span><span class="st">"white"</span>, s<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></code></pre></div>
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_bw.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_col.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves6_23_bw.jpeg?raw=true" width="30%"></p>
+<p align="center"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_bw.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_col.jpeg?raw=true" width="30%"><img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves6_23_bw.jpeg?raw=true" width="30%"></p>
 </div>
 </div>
 </div>
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://nrennie.github.io/" class="external-link">Home</a></li>
+<li><a href="https://nrennie.rbind.io/" class="external-link">Website</a></li>
+<li><a href="https://twitter.com/nrennie35" class="external-link">Twitter</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>GPL (&gt;= 2)</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -412,7 +399,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Nicola Rennie <br><small class="roles"> Author, maintainer </small>  </li>
+<li>
+<a href="https://nrennie.rbind.io/" class="external-link">Nicola Rennie</a> <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
@@ -424,12 +412,12 @@
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by Nicola Rennie.</p>
+<p>Developed by <a href="https://nrennie.rbind.io/" class="external-link">Nicola Rennie</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
