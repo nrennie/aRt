@@ -16,7 +16,7 @@ tiles(
 
 \item{n_y}{Number of polygons per column. Default 18.}
 
-\item{col_palette}{Vector of colours. Default colour palette from MetBrewer.}
+\item{col_palette}{Vector of colours. Default Veronese palette from MetBrewer.}
 
 \item{s}{Seed value. Default 1234.}
 }

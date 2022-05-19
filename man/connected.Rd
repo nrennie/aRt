@@ -8,7 +8,7 @@ connected(
   n = 100,
   n_geom = 2,
   random = FALSE,
-  col_palette = "RdPu",
+  col_palette = RColorBrewer::brewer.pal(n = 9, "RdPu"),
   bg_col = "#ae217e",
   s = 1234
 )
@@ -20,7 +20,7 @@ connected(
 
 \item{random}{Boolean value for whether to randomise plotting order of edges.}
 
-\item{col_palette}{Colour palette from RColorBrewer. Default "RdPu".}
+\item{col_palette}{Vector of colours. Default "RdPu" colour palette from RColorBrewer.}
 
 \item{bg_col}{Background colour. Default "#ae217e".}
 
