@@ -30,16 +30,11 @@ In the meantime, the following colour palette packages are used for the followin
   - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `stripes()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  
-- [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf)
-  - `connected()`: `col_palette` is the name of a colour palette from {RColorBrewer}
 
 Please use the documentation for these packages to find suitable colour palette names, or run the following code:
 
 ```
 rcartocolor::display_carto_all()
-RColorBrewer::display.brewer.all()
-
 ```
 
 ## Functions
@@ -173,9 +168,9 @@ circular(n=100, main_col="black", bg_col="white", s=56)
 The `connected()` function produces generative art by connected points on a circle.
 
 ``` r
-connected(n=100, n_geom=10, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
-connected(n=100, n_geom=10, random=T, col_palette="RdPu", bg_col="#ae217e", s=1234)
-connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
+connected(n=100, n_geom=10, random=F, col_palette=RColorBrewer::brewer.pal(n = 9,"RdPu"), bg_col="#ae217e", s=1234)
+connected(n=100, n_geom=10, random=T, col_palette=RColorBrewer::brewer.pal(n = 9,"RdPu"), bg_col="#ae217e", s=1234)
+connected(n=250, n_geom=2, random=F, col_palette=RColorBrewer::brewer.pal(n = 5,"RdPu"), bg_col="#ae217e", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10F.jpeg?raw=true" width="30%">

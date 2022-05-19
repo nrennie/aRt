@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.1.10
+Version: 1.2.0
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -29,12 +29,12 @@ Imports:
 	patchwork,
 	purrr,
 	rcartocolor,
-	RColorBrewer,
 	stats,
 	tibble,
 	tidygraph,
 	tidyr,
 	treemapify
 Suggests:
-  	MetBrewer
+  	MetBrewer, 
+  	RColorBrewer
 URL: https://nrennie.github.io/aRt/

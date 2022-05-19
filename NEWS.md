@@ -1,7 +1,8 @@
-## aRt 1.1.10
+## aRt 1.2.0
 
 * add `streams()` function
 * Move {MetBrewer} to Suggests
+* Move {RColorBrewer} to Suggests
 
 ## aRt 1.1.9
 
