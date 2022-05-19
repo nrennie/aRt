@@ -1,3 +1,7 @@
+## aRt 1.1.10
+
+* add `streams()` function
+
 ## aRt 1.1.9
 
 * update license

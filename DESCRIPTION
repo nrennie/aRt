@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.1.9
+Version: 1.1.10
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -23,6 +23,7 @@ Imports:
   ggforce,
 	ggplot2,
 	ggraph,
+	ggstream,
 	igraph,
 	MetBrewer,
 	particles,

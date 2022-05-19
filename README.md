@@ -358,10 +358,9 @@ static(perc=0.3, n=500, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
+### streams
 
-### stripes
-
-The `stripes()` function produces generative art consisting of rows of vertical stripes.
+The `streams()` function produces generative art consisting of stream charts.
 
 ``` r
 stripes(perc=0, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
@@ -372,6 +371,36 @@ stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%">
+</p>
+
+
+### stripes
+
+The `stripes()` function produces generative art consisting of rows of vertical stripes.
+
+``` r
+streams(bg_col = "white", 
+        line_col = "white",
+        fill_col = c("#5F4690", "#1D6996", "#38A6A5", "#0F8554",
+                     "#73AF48", "#EDAD08", "#E17C05", "#CC503E", 
+                     "#94346E", "#6F4070"),
+        type = "right",
+        s = 1234)
+streams(bg_col = "black",
+        line_col = NA,
+        fill_col = grey.colors(n = 25),
+        type = "up",
+        s = 450)
+streams(bg_col = "white",
+        line_col = "white",
+        fill_col = "purple",
+        type = "left",
+        s = 24)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams3.jpeg?raw=true" width="30%">
 </p>
 
 
