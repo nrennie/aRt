@@ -7,7 +7,7 @@
 boxes(
   n = 100,
   perc = 0.1,
-  col_palette = rev(rcartocolor::carto_pal(n = 7, "DarkMint")),
+  col_palette = rcartocolor::carto_pal(n = 7, "DarkMint"),
   bg_col = "black",
   s = 1234
 )

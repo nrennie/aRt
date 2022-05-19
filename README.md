@@ -25,7 +25,6 @@ In the meantime, the following colour palette packages are used for the followin
   - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
   - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `circles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `dots()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
 
@@ -73,9 +72,9 @@ blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
 The `boxes()` function produces generative art of many boxes.
 
 ``` r
-boxes(n=100, perc=0.1, col_palette=rev(rcartocolor::carto_pal(n = 7, "DarkMint")), bg_col="black", s=1234)
-boxes(n=20, perc=0.1, col_palette=rev(rcartocolor::carto_pal(n = 7, "DarkMint")), bg_col="black", s=1234)
-boxes(n=100, perc=0.5, col_palette=rev(rcartocolor::carto_pal(n = 7, "Magenta")), bg_col="black", s=1234)
+boxes(n=100, perc=0.1, col_palette=rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col="black", s=1234)
+boxes(n=20, perc=0.1, col_palette=rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col="black", s=1234)
+boxes(n=100, perc=0.5, col_palette=rcartocolor::carto_pal(n = 7, "Magenta"), bg_col="black", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%">
@@ -196,9 +195,9 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 The `dots()` function produces generative art using jittered points.
 
 ``` r
-dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = "Purp", bg_col="#63589f", s=1234)
-dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = "Purp", bg_col="#63589f", s=1234)
-dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
+dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%">

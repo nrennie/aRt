@@ -11,7 +11,7 @@
 #' @import patchwork
 #' @export
 
-boxes <- function(n = 100, perc = 0.1, col_palette = rev(rcartocolor::carto_pal(n = 7, "DarkMint")), bg_col = "black", s = 1234) {
+boxes <- function(n = 100, perc = 0.1, col_palette = rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col = "black", s = 1234) {
   set.seed(s)
   x <- stats::rexp(n, 0.02)
   y <- perc * x + (1 - perc) * stats::runif(n, 1, 60)
@@ -19,8 +19,8 @@ boxes <- function(n = 100, perc = 0.1, col_palette = rev(rcartocolor::carto_pal(
   # make plots
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
     treemapify::geom_treemap(alpha = 0.5, colour = NA) +
-    ggplot2::scale_fill_gradientn(colours = col_palette) +
-    ggplot2::scale_colour_gradientn(colours = col_palette) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
+    ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
@@ -38,8 +38,8 @@ boxes <- function(n = 100, perc = 0.1, col_palette = rev(rcartocolor::carto_pal(
     )
   p1 <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
     treemapify::geom_treemap(alpha = 0.5, colour = NA) +
-    ggplot2::scale_fill_gradientn(colours = col_palette) +
-    ggplot2::scale_colour_gradientn(colours = col_palette) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
+    ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
           plot.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
           plot.title = ggplot2::element_blank(),
