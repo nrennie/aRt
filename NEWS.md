@@ -3,6 +3,7 @@
 * add `streams()` function
 * Move {MetBrewer} to Suggests
 * Move {RColorBrewer} to Suggests
+* Functions take colour vectors instead of palette names as inputs
 
 ## aRt 1.1.9
 

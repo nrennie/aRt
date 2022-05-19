@@ -23,13 +23,11 @@ In the meantime, the following colour palette packages are used for the followin
 
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
   - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
-  - `boxes()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `circles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `dots()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `stripes()`: `col_palette` is the name of a colour palette from {rcartocolor}
 
 Please use the documentation for these packages to find suitable colour palette names, or run the following code:
 
@@ -75,9 +73,9 @@ blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
 The `boxes()` function produces generative art of many boxes.
 
 ``` r
-boxes(n=100, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
-boxes(n=20, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
-boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
+boxes(n=100, perc=0.1, col_palette=rev(rcartocolor::carto_pal(n = 7, "DarkMint")), bg_col="black", s=1234)
+boxes(n=20, perc=0.1, col_palette=rev(rcartocolor::carto_pal(n = 7, "DarkMint")), bg_col="black", s=1234)
+boxes(n=100, perc=0.5, col_palette=rev(rcartocolor::carto_pal(n = 7, "Magenta")), bg_col="black", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%">
@@ -354,22 +352,6 @@ static(perc=0.3, n=500, s=1234)
 The `streams()` function produces generative art consisting of stream charts.
 
 ``` r
-stripes(perc=0, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
-stripes(perc=0.5, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
-stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
-```
-<p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%">
-</p>
-
-
-### stripes
-
-The `stripes()` function produces generative art consisting of rows of vertical stripes.
-
-``` r
 streams(bg_col = "white", 
         line_col = "white",
         fill_col = c("#5F4690", "#1D6996", "#38A6A5", "#0F8554",
@@ -394,6 +376,21 @@ streams(bg_col = "white",
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams3.jpeg?raw=true" width="30%">
 </p>
 
+### stripes
+
+The `stripes()` function produces generative art consisting of rows of vertical stripes.
+
+
+``` r
+stripes(perc=0, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
+stripes(perc=0.5, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
+stripes(perc=1, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%">
+</p>
 
 ### sunbursts
 
