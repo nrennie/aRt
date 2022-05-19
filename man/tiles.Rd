@@ -4,16 +4,19 @@
 \alias{tiles}
 \title{Tiles}
 \usage{
-tiles(n_x = 12, n_y = 12, col_palette = "Veronese", num_colours = 5, s = 1234)
+tiles(
+  n_x = 12,
+  n_y = 12,
+  col_palette = MetBrewer::met.brewer("Veronese", 5),
+  s = 1234
+)
 }
 \arguments{
 \item{n_x}{Number of polygons per row. Default 12.}
 
 \item{n_y}{Number of polygons per column. Default 18.}
 
-\item{col_palette}{Colour palette from MetBrewer.}
-
-\item{num_colours}{Number of colours to use.}
+\item{col_palette}{Vector of colours. Default colour palette from MetBrewer.}
 
 \item{s}{Seed value. Default 1234.}
 }

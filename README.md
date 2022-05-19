@@ -21,9 +21,6 @@ Some of the functions in the {aRt} package take names of colour palettes as argu
 
 In the meantime, the following colour palette packages are used for the following functions:
 
-- [{MetBrewer}](https://github.com/BlakeRMills/MetBrewer)
-  - `tiles()`: `col_palette` is the name of a colour palette from {MetBrewer}
-
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
   - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
   - `boxes()`: `col_palette` is the name of a colour palette from {rcartocolor}
@@ -40,7 +37,6 @@ In the meantime, the following colour palette packages are used for the followin
 Please use the documentation for these packages to find suitable colour palette names, or run the following code:
 
 ```
-MetBrewer::display_all()
 rcartocolor::display_carto_all()
 RColorBrewer::display.brewer.all()
 
@@ -424,9 +420,9 @@ sunbursts(n = 250, x_means = c(1, 2, 9, 50), y_means = c(3, 6, 8, -3), xy_var = 
 The `tiles()` function produces generative art using square polygons.
 
 ``` r
-tiles(n_x=12, n_y=12, col_palette="Veronese", num_colours=5, s=1234)
-tiles(n_x=50, n_y=50, col_palette="Veronese", num_colours=6, s=1234)
-tiles(n_x=12, n_y=12, col_palette="Pissaro", num_colours=5, s=1234)
+tiles(n_x=12, n_y=12, col_palette=MetBrewer::met.brewer("Veronese", 5), s=1234)
+tiles(n_x=50, n_y=50, col_palette=MetBrewer::met.brewer("Veronese", 6), s=1234)
+tiles(n_x=12, n_y=12, col_palette=MetBrewer::met.brewer("Pissaro", 5), s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese1.jpeg?raw=true" width="30%">

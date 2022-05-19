@@ -25,7 +25,6 @@ Imports:
 	ggraph,
 	ggstream,
 	igraph,
-	MetBrewer,
 	particles,
 	patchwork,
 	purrr,
@@ -36,4 +35,6 @@ Imports:
 	tidygraph,
 	tidyr,
 	treemapify
+Suggests:
+  	MetBrewer
 URL: https://nrennie.github.io/aRt/
