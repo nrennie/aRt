@@ -388,10 +388,10 @@ streams(bg_col = "black",
         type = "up",
         s = 450)
 streams(bg_col = "white",
-        line_col = "white",
-        fill_col = "purple",
+        line_col = NA,
+        fill_col = rep("purple", 8),
         type = "left",
-        s = 24)
+        s = 13)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams1.jpeg?raw=true" width="30%">

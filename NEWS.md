@@ -1,6 +1,7 @@
 ## aRt 1.1.10
 
 * add `streams()` function
+* Move {MetBrewer} to Suggests
 
 ## aRt 1.1.9
 
