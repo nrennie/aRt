@@ -7,7 +7,7 @@
 #' @param max_width Maximum width of rectangle. Default 5.
 #' @param size Line width of rectangles. Default 2.
 #' @param main_col Colour of non-highlighted rectangles. Default "lightgrey".
-#' @param col_palette Colour palette from rcartocolor for highlighted rectangles. Must have 12 colours.
+#' @param col_palette Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 123.
 #' @return A ggplot object
@@ -18,7 +18,7 @@ rectangles <- function(n = 100,
                        max_width = 5,
                        size = 2,
                        main_col = "lightgrey",
-                       col_palette = "Bold",
+                       col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
                        bg_col = "white",
                        s = 123) {
   if (max_height <= 2 | max_width <= 2) {
@@ -39,7 +39,7 @@ rectangles <- function(n = 100,
     plot_data <- rbind(plot_data, k)
   }
   # set colours
-  pal <- c(rcartocolor::carto_pal(12, col_palette), main_col)
+  pal <- c(col_palette, main_col)
   names(pal) <- 1:13
   # plot
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(x = .data$x, y = .data$y)) +

@@ -10,7 +10,7 @@ rectangles(
   max_width = 5,
   size = 2,
   main_col = "lightgrey",
-  col_palette = "Bold",
+  col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
   bg_col = "white",
   s = 123
 )
@@ -26,7 +26,7 @@ rectangles(
 
 \item{main_col}{Colour of non-highlighted rectangles. Default "lightgrey".}
 
-\item{col_palette}{Colour palette from rcartocolor for highlighted rectangles. Must have 12 colours.}
+\item{col_palette}{Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.}
 
 \item{bg_col}{Background colour. Default "white".}
 

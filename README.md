@@ -19,11 +19,6 @@ remotes::install_github("nrennie/aRt")
 
 Some of the functions in previous releases of the {aRt} package took names of colour palettes as arguments. These colour palettes came from external R packages, and the names of the palettes were not necessarily obvious. These functions have been updated to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
 
-# to remove
-- [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
-  - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-
-
 ## Functions
 
 ### attraction
@@ -280,9 +275,9 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Bur
 The `rectangles()` function draws multiple rectangles.
 
 ``` r
-rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = "Prism", bg_col = "black", s = 123)
+rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = rcartocolor::carto_pal(n = 12, "Prism"), bg_col = "black", s = 123)
 
 ```
 <p align="center">
