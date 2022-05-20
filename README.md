@@ -21,7 +21,6 @@ Some of the functions in previous releases of the {aRt} package took names of co
 
 # to remove
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
-  - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
 
 
@@ -95,9 +94,9 @@ bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
 The `bubbles()` function produces generative art using layered polar bar charts.
 
 ``` r
-bubbles(num_circles = 20, main_col = "black", col_palette = "Bold", bg_col = "white", s = 1234)
-bubbles(num_circles = 20, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-bubbles(num_circles = 10, main_col = "white", col_palette = "Prism", bg_col = "black", s = 2022)
+bubbles(num_circles = 20, main_col = "black", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 1234)
+bubbles(num_circles = 20, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+bubbles(num_circles = 10, main_col = "white", col_palette = rcartocolor::carto_pal(n = 12, "Prism"), bg_col = "black", s = 2022)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles1.jpeg?raw=true" width="30%">

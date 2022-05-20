@@ -4,7 +4,7 @@
 #'
 #' @param num_circles Number of circles. Default 20.
 #' @param main_col Colour of non-highlighted rectangles. Default "black".
-#' @param col_palette Colour palette from rcartocolor for highlighted rectangles. Must have 12 colours.
+#' @param col_palette Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 1234.
 #' @importFrom dplyr %>%
@@ -13,9 +13,12 @@
 
 bubbles <- function(num_circles = 20,
                     main_col = "black",
-                    col_palette = "Bold",
+                    col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
                     bg_col = "white",
                     s = 1234) {
+  if (length(col_palette) != 12) {
+    stop("col_palette must be a vector of length 12")
+  }
   set.seed(s)
   x0 <- sample(1:(4 * num_circles), size = num_circles, replace = FALSE)
   y0 <- sample(1:(4 * num_circles), size = num_circles, replace = FALSE)
@@ -28,7 +31,7 @@ bubbles <- function(num_circles = 20,
     plot_data <- rbind(plot_data, k)
   }
   plot_data <- tidyr::unite(plot_data, col = "new_group", .data$group:.data$group_circle, sep = ":", remove = FALSE)
-  pal <- c(rcartocolor::carto_pal(12, col_palette), main_col)
+  pal <- c(col_palette, main_col)
   names(pal) <- 1:13
   ggplot2::ggplot(data = plot_data,
                   mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$new_group, colour = .data$circle_col)) +
