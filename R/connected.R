@@ -15,7 +15,7 @@
 connected <- function(n = 100,
                       n_geom = 2,
                       random = FALSE,
-                      col_palette = RColorBrewer::brewer.pal(n = 9,"RdPu"),
+                      col_palette = RColorBrewer::brewer.pal(n = 9, "RdPu"),
                       bg_col = "#ae217e",
                       s = 1234) {
   n <- round(n)

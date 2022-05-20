@@ -28,7 +28,6 @@ Imports:
 	particles,
 	patchwork,
 	purrr,
-	rcartocolor,
 	stats,
 	tibble,
 	tidygraph,
@@ -36,5 +35,6 @@ Imports:
 	treemapify
 Suggests:
   	MetBrewer, 
+  	rcartocolor,
   	RColorBrewer
 URL: https://nrennie.github.io/aRt/

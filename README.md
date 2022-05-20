@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/nrennie/aRt/workflows/R-CMD-check/badge.svg)](https://github.com/nrennie/aRt/actions)
+<!-- badges: end -->
+
 # aRt <img src="man/figures/logo.png" align="right" width="120" />
 
 
