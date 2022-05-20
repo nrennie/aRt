@@ -22,7 +22,6 @@ Some of the functions in previous releases of the {aRt} package took names of co
 # to remove
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
   - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
 
 
@@ -202,9 +201,9 @@ dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette
 The `fading()` function produces generative art using voronoi tiles.
 
 ``` r
-fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
-fading(n_layers=6, n_points=1, col_palette="Sunset", s=1234)
-fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
+fading(n_layers=6, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "SunsetDark"), s=1234)
+fading(n_layers=6, n_points=1, col_palette=rcartocolor::carto_pal(n = 7, "Sunset"), s=1234)
+fading(n_layers=10, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "SunsetDark"), s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_10.jpeg?raw=true" width="30%">
