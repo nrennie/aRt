@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">aRt</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">circles</span><span class="op">(</span>
   n <span class="op">=</span> <span class="fl">100</span>,
   smoothness <span class="op">=</span> <span class="fl">100</span>,
-  col_palette <span class="op">=</span> <span class="st">"Bold"</span>,
+  col_palette <span class="op">=</span> <span class="fu">rcartocolor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rcartocolor/man/carto_pal.html" class="external-link">carto_pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">12</span>, <span class="st">"Bold"</span><span class="op">)</span>,
   line_col <span class="op">=</span> <span class="cn">NA</span>,
   bg_col <span class="op">=</span> <span class="st">"black"</span>,
   s <span class="op">=</span> <span class="fl">1234</span>
@@ -62,7 +62,7 @@
 <dt>smoothness</dt>
 <dd><p>Smoothness of lines on circles. Default 100.</p></dd>
 <dt>col_palette</dt>
-<dd><p>Colour palette from rcartocolor. Default "Bold".</p></dd>
+<dd><p>Vector of colours. Default "Bold" colour palette from rcartocolor.</p></dd>
 <dt>line_col</dt>
 <dd><p>Background colour. Default NA.</p></dd>
 <dt>bg_col</dt>

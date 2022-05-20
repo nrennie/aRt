@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">aRt</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">boxes</span><span class="op">(</span>
   n <span class="op">=</span> <span class="fl">100</span>,
   perc <span class="op">=</span> <span class="fl">0.1</span>,
-  col_palette <span class="op">=</span> <span class="st">"DarkMint"</span>,
+  col_palette <span class="op">=</span> <span class="fu">rcartocolor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rcartocolor/man/carto_pal.html" class="external-link">carto_pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">7</span>, <span class="st">"DarkMint"</span><span class="op">)</span>,
   bg_col <span class="op">=</span> <span class="st">"black"</span>,
   s <span class="op">=</span> <span class="fl">1234</span>
 <span class="op">)</span></code></pre></div>
@@ -61,7 +61,7 @@
 <dt>perc</dt>
 <dd><p>Relationship between box size and colour. Value between 0 and 1 where 0 represents randomness and 1 perfect identical. Default 0.1.</p></dd>
 <dt>col_palette</dt>
-<dd><p>Colour palette from rcartocolor. Default "DarkMint".</p></dd>
+<dd><p>Vector of colours. Default "DarkMint" colour palette from rcartocolor.</p></dd>
 <dt>bg_col</dt>
 <dd><p>Background colour. Default "black".</p></dd>
 <dt>s</dt>
