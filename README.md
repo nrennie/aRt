@@ -17,22 +17,15 @@ remotes::install_github("nrennie/aRt")
 
 ## Colour palettes
 
-Some of the functions in the {aRt} package take names of colour palettes as arguments. These colour palettes come from external R packages, and the names of the palettes are not necessarily obvious. In future, these functions will likely change to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
+Some of the functions in previous releases of the {aRt} package took names of colour palettes as arguments. These colour palettes came from external R packages, and the names of the palettes were not necessarily obvious. These functions have been updated to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
 
-In the meantime, the following colour palette packages are used for the following functions:
-
+# to remove
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
   - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
   - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `circles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
 
-Please use the documentation for these packages to find suitable colour palette names, or run the following code:
-
-```
-rcartocolor::display_carto_all()
-```
 
 ## Functions
 
@@ -135,9 +128,9 @@ bullseye(main_col="black", bg_col="white", s=2021)
 The `circles()` function produces generative art using dendograms and circular graphs.
 
 ``` r
-circles(n=100, smoothness=100, col_palette="Bold", line_col=NA, bg_col="black", s=1234)
-circles(n=10, smoothness=100, col_palette="Bold", line_col=NA, bg_col="#e73f74", s=1234)
-circles(n=2, smoothness=3, col_palette="Bold", line_col="black", bg_col="black", s=1234)
+circles(n=100, smoothness=100, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col=NA, bg_col="black", s=1234)
+circles(n=10, smoothness=100, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col=NA, bg_col="#e73f74", s=1234)
+circles(n=2, smoothness=3, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col="black", bg_col="black", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles1.jpeg?raw=true" width="30%">
