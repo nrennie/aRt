@@ -4,14 +4,14 @@
 #'
 #' @param n_layers Number of layers. Default 6.
 #' @param n_points Number of points per layer area. Default 10.
-#' @param col_palette Colour palette from rcartocolor. Default "SunsetDark".
+#' @param col_palette Vector of colours. Default "SunsetDark" colour palette from rcartocolor.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @export
 
 fading <- function(n_layers = 6,
                    n_points = 10,
-                   col_palette = "SunsetDark",
+                   col_palette = rcartocolor::carto_pal(n = 7, "SunsetDark"),
                    s = 1234) {
   n_points <- n_points * (n_layers:1)
   x_widths <- 2 * (n_layers:1)
@@ -28,7 +28,7 @@ fading <- function(n_layers = 6,
   p <- ggplot2::ggplot(df, ggplot2::aes(x = x, y = y, group = -1L)) +
     ggforce::geom_voronoi_tile(ggplot2::aes(fill = z)) +
     ggplot2::coord_cartesian(expand = FALSE) +
-    rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = "white", colour = "white"),
         plot.background = ggplot2::element_rect(fill = "white", colour = "white"),
         plot.title = ggplot2::element_blank(),

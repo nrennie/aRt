@@ -7,7 +7,7 @@
 circles(
   n = 100,
   smoothness = 100,
-  col_palette = "Bold",
+  col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
   line_col = NA,
   bg_col = "black",
   s = 1234
@@ -18,7 +18,7 @@ circles(
 
 \item{smoothness}{Smoothness of lines on circles. Default 100.}
 
-\item{col_palette}{Colour palette from rcartocolor. Default "Bold".}
+\item{col_palette}{Vector of colours. Default "Bold" colour palette from rcartocolor.}
 
 \item{line_col}{Background colour. Default NA.}
 

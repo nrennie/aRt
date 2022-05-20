@@ -4,14 +4,14 @@
 #'
 #' @param n Number of boxes
 #' @param perc Relationship between box size and colour. Value between 0 and 1 where 0 represents randomness and 1 perfect identical. Default 0.1.
-#' @param col_palette Colour palette from rcartocolor. Default "DarkMint".
+#' @param col_palette Vector of colours. Default "DarkMint" colour palette from rcartocolor.
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @import patchwork
 #' @export
 
-boxes <- function(n = 100, perc = 0.1, col_palette = "DarkMint", bg_col = "black", s = 1234) {
+boxes <- function(n = 100, perc = 0.1, col_palette = rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col = "black", s = 1234) {
   set.seed(s)
   x <- stats::rexp(n, 0.02)
   y <- perc * x + (1 - perc) * stats::runif(n, 1, 60)
@@ -19,8 +19,8 @@ boxes <- function(n = 100, perc = 0.1, col_palette = "DarkMint", bg_col = "black
   # make plots
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
     treemapify::geom_treemap(alpha = 0.5, colour = NA) +
-    rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    rcartocolor::scale_colour_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
+    ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),
@@ -38,8 +38,8 @@ boxes <- function(n = 100, perc = 0.1, col_palette = "DarkMint", bg_col = "black
     )
   p1 <- ggplot2::ggplot(plot_data, ggplot2::aes(area = .data$areas, fill = .data$values)) +
     treemapify::geom_treemap(alpha = 0.5, colour = NA) +
-    rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
-    rcartocolor::scale_colour_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
+    ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
           plot.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
           plot.title = ggplot2::element_blank(),

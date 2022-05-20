@@ -9,7 +9,7 @@ dots(
   n_y = 100,
   jitter_size_width = 0.5,
   jitter_size_height = 0.5,
-  col_palette = "Purp",
+  col_palette = rcartocolor::carto_pal(n = 7, "Purp"),
   bg_col = "#63589f",
   s = 1234
 )
@@ -23,7 +23,7 @@ dots(
 
 \item{jitter_size_height}{Size of jitter height. Default 0.5.}
 
-\item{col_palette}{Colour palette from rcartocolor. Default "Purp".}
+\item{col_palette}{Vector of colours. Default "Purp" colour palette from rcartocolor.}
 
 \item{bg_col}{Background colour. Default "#63589f".}
 

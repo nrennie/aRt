@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/nrennie/aRt/workflows/R-CMD-check/badge.svg)](https://github.com/nrennie/aRt/actions)
+<!-- badges: end -->
+
 # aRt <img src="man/figures/logo.png" align="right" width="120" />
 
 
@@ -17,34 +21,7 @@ remotes::install_github("nrennie/aRt")
 
 ## Colour palettes
 
-Some of the functions in the {aRt} package take names of colour palettes as arguments. These colour palettes come from external R packages, and the names of the palettes are not necessarily obvious. In future, these functions will likely change to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
-
-In the meantime, the following colour palette packages are used for the following functions:
-
-- [{MetBrewer}](https://github.com/BlakeRMills/MetBrewer)
-  - `tiles()`: `col_palette` is the name of a colour palette from {MetBrewer}
-
-- [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
-  - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
-  - `boxes()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `circles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `dots()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  - `stripes()`: `col_palette` is the name of a colour palette from {rcartocolor}
-  
-- [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf)
-  - `connected()`: `col_palette` is the name of a colour palette from {RColorBrewer}
-
-Please use the documentation for these packages to find suitable colour palette names, or run the following code:
-
-```
-MetBrewer::display_all()
-rcartocolor::display_carto_all()
-RColorBrewer::display.brewer.all()
-
-```
+Some of the functions in previous releases of the {aRt} package took names of colour palettes as arguments. These colour palettes came from external R packages, and the names of the palettes were not necessarily obvious. These functions have been updated to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
 
 ## Functions
 
@@ -55,7 +32,7 @@ The `attraction()` function produces generative art based on strange attractors.
 ``` r
 attraction(n=50000, a=-3, b=1, c=0.5, d=-1, main_col="black", bg_col="white")
 attraction(n=50000, a=-6, b=1, c=0.5, d=-2, main_col="black", bg_col="white")
-attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col="SunsetDark", bg_col="white")
+attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col=rcartocolor::carto_pal(n = 7, "SunsetDark"), bg_col="white")
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction1.jpeg?raw=true" width="30%">
@@ -84,9 +61,9 @@ blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
 The `boxes()` function produces generative art of many boxes.
 
 ``` r
-boxes(n=100, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
-boxes(n=20, perc=0.1, col_palette="DarkMint", bg_col="black", s=1234)
-boxes(n=100, perc=0.5, col_palette="Magenta", bg_col="black", s=1234)
+boxes(n=100, perc=0.1, col_palette=rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col="black", s=1234)
+boxes(n=20, perc=0.1, col_palette=rcartocolor::carto_pal(n = 7, "DarkMint"), bg_col="black", s=1234)
+boxes(n=100, perc=0.5, col_palette=rcartocolor::carto_pal(n = 7, "Magenta"), bg_col="black", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p1.jpeg?raw=true" width="30%">
@@ -116,9 +93,9 @@ bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
 The `bubbles()` function produces generative art using layered polar bar charts.
 
 ``` r
-bubbles(num_circles = 20, main_col = "black", col_palette = "Bold", bg_col = "white", s = 1234)
-bubbles(num_circles = 20, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-bubbles(num_circles = 10, main_col = "white", col_palette = "Prism", bg_col = "black", s = 2022)
+bubbles(num_circles = 20, main_col = "black", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 1234)
+bubbles(num_circles = 20, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+bubbles(num_circles = 10, main_col = "white", col_palette = rcartocolor::carto_pal(n = 12, "Prism"), bg_col = "black", s = 2022)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bubbles1.jpeg?raw=true" width="30%">
@@ -147,9 +124,9 @@ bullseye(main_col="black", bg_col="white", s=2021)
 The `circles()` function produces generative art using dendograms and circular graphs.
 
 ``` r
-circles(n=100, smoothness=100, col_palette="Bold", line_col=NA, bg_col="black", s=1234)
-circles(n=10, smoothness=100, col_palette="Bold", line_col=NA, bg_col="#e73f74", s=1234)
-circles(n=2, smoothness=3, col_palette="Bold", line_col="black", bg_col="black", s=1234)
+circles(n=100, smoothness=100, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col=NA, bg_col="black", s=1234)
+circles(n=10, smoothness=100, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col=NA, bg_col="#e73f74", s=1234)
+circles(n=2, smoothness=3, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), line_col="black", bg_col="black", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles1.jpeg?raw=true" width="30%">
@@ -177,9 +154,9 @@ circular(n=100, main_col="black", bg_col="white", s=56)
 The `connected()` function produces generative art by connected points on a circle.
 
 ``` r
-connected(n=100, n_geom=10, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
-connected(n=100, n_geom=10, random=T, col_palette="RdPu", bg_col="#ae217e", s=1234)
-connected(n=250, n_geom=2, random=F, col_palette="RdPu", bg_col="#ae217e", s=1234)
+connected(n=100, n_geom=10, random=F, col_palette=RColorBrewer::brewer.pal(n = 9,"RdPu"), bg_col="#ae217e", s=1234)
+connected(n=100, n_geom=10, random=T, col_palette=RColorBrewer::brewer.pal(n = 9,"RdPu"), bg_col="#ae217e", s=1234)
+connected(n=250, n_geom=2, random=F, col_palette=RColorBrewer::brewer.pal(n = 5,"RdPu"), bg_col="#ae217e", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10F.jpeg?raw=true" width="30%">
@@ -207,9 +184,9 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 The `dots()` function produces generative art using jittered points.
 
 ``` r
-dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = "Purp", bg_col="#63589f", s=1234)
-dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = "Purp", bg_col="#63589f", s=1234)
-dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = "Purp", bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.5, jitter_size_height=0.5, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
+dots(n_x=500, n_y=100, jitter_size_width=0.5, jitter_size_height=5, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
+dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette = rcartocolor::carto_pal(n = 7, "Purp"), bg_col="#63589f", s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots1.jpeg?raw=true" width="30%">
@@ -222,9 +199,9 @@ dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette
 The `fading()` function produces generative art using voronoi tiles.
 
 ``` r
-fading(n_layers=6, n_points=10, col_palette="SunsetDark", s=1234)
-fading(n_layers=6, n_points=1, col_palette="Sunset", s=1234)
-fading(n_layers=10, n_points=10, col_palette="SunsetDark", s=1234)
+fading(n_layers=6, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "SunsetDark"), s=1234)
+fading(n_layers=6, n_points=1, col_palette=rcartocolor::carto_pal(n = 7, "Sunset"), s=1234)
+fading(n_layers=10, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "SunsetDark"), s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_6_10.jpeg?raw=true" width="30%">
@@ -302,9 +279,9 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Bur
 The `rectangles()` function draws multiple rectangles.
 
 ``` r
-rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = "Bold", bg_col = "white", s = 123)
-rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = "Prism", bg_col = "black", s = 123)
+rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
+rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = rcartocolor::carto_pal(n = 12, "Prism"), bg_col = "black", s = 123)
 
 ```
 <p align="center">
@@ -358,22 +335,50 @@ static(perc=0.3, n=500, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
+### streams
+
+The `streams()` function produces generative art consisting of stream charts.
+
+``` r
+streams(bg_col = "white", 
+        line_col = "white",
+        fill_col = c("#5F4690", "#1D6996", "#38A6A5", "#0F8554",
+                     "#73AF48", "#EDAD08", "#E17C05", "#CC503E", 
+                     "#94346E", "#6F4070"),
+        type = "right",
+        s = 1234)
+streams(bg_col = "black",
+        line_col = NA,
+        fill_col = grey.colors(n = 25),
+        type = "up",
+        s = 450)
+streams(bg_col = "white",
+        line_col = NA,
+        fill_col = rep("purple", 8),
+        type = "left",
+        s = 13)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams3.jpeg?raw=true" width="30%">
+</p>
 
 ### stripes
 
 The `stripes()` function produces generative art consisting of rows of vertical stripes.
 
+
 ``` r
-stripes(perc=0, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
-stripes(perc=0.5, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
-stripes(perc=1, n=3, col_palette = "TealGrn", alpha = 1, s=1234)
+stripes(perc=0, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
+stripes(perc=0.5, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
+stripes(perc=1, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alpha = 1, s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p00_n3.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p50_n3.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%">
 </p>
-
 
 ### sunbursts
 
@@ -395,9 +400,9 @@ sunbursts(n = 250, x_means = c(1, 2, 9, 50), y_means = c(3, 6, 8, -3), xy_var = 
 The `tiles()` function produces generative art using square polygons.
 
 ``` r
-tiles(n_x=12, n_y=12, col_palette="Veronese", num_colours=5, s=1234)
-tiles(n_x=50, n_y=50, col_palette="Veronese", num_colours=6, s=1234)
-tiles(n_x=12, n_y=12, col_palette="Pissaro", num_colours=5, s=1234)
+tiles(n_x=12, n_y=12, col_palette=MetBrewer::met.brewer("Veronese", 5), s=1234)
+tiles(n_x=50, n_y=50, col_palette=MetBrewer::met.brewer("Veronese", 6), s=1234)
+tiles(n_x=12, n_y=12, col_palette=MetBrewer::met.brewer("Pissaro", 5), s=1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/tiles_veronese1.jpeg?raw=true" width="30%">

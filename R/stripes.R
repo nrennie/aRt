@@ -4,7 +4,7 @@
 #'
 #' @param perc Percentage of data points to be sorted. Default 0.5.
 #' @param n Number of rows. Default 3.
-#' @param col_palette Colour palette from rcartocolor.
+#' @param col_palette Vector of colours. Default "TealGrn" colour palette from rcartocolor.
 #' @param alpha Transparancy of fill
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object
@@ -12,7 +12,7 @@
 
 stripes <- function(perc = 0.5,
                     n = 3,
-                    col_palette = "TealGrn",
+                    col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"),
                     alpha = 1,
                     s = 1234) {
   if (perc < 0 | perc > 1) {
@@ -37,7 +37,7 @@ stripes <- function(perc = 0.5,
                        ggplot2::aes(x = .data$times, y = as.numeric(.data$name), fill = .data$value)) +
     ggplot2::geom_tile(alpha = alpha) +
     ggplot2::coord_flip(expand = FALSE) +
-    rcartocolor::scale_fill_carto_c(palette = col_palette) +
+    ggplot2::scale_fill_gradientn(colours = col_palette) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent"),
                    plot.background = ggplot2::element_rect(fill = "transparent"),
                    axis.text = ggplot2::element_blank(),

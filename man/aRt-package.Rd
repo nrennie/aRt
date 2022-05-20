@@ -6,7 +6,16 @@
 \alias{aRt-package}
 \title{aRt: Generative Art with R}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Creates generative art using R.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://nrennie.github.io/aRt/}
+}
+
 }
 \author{
 \strong{Maintainer}: Nicola Rennie \email{nrennie35@gmail.com}

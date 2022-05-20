@@ -4,7 +4,7 @@
 #'
 #' @param n Number of nodes. Default 10.
 #' @param smoothness Smoothness of lines on circles. Default 100.
-#' @param col_palette Colour palette from rcartocolor. Default "Bold".
+#' @param col_palette Vector of colours. Default "Bold" colour palette from rcartocolor.
 #' @param line_col Background colour. Default NA.
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
@@ -12,7 +12,12 @@
 #' @export
 #'
 
-circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = NA, bg_col = "black", s = 1234) {
+circles <- function(n = 100,
+                    smoothness = 100,
+                    col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
+                    line_col = NA,
+                    bg_col = "black",
+                    s = 1234) {
   set.seed(s)
   # generate data
   x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
@@ -32,7 +37,7 @@ circles <- function(n = 100, smoothness = 100, col_palette = "Bold", line_col = 
                              size = 0.25,
                              n = smoothness,
                              colour = line_col) +
-    rcartocolor::scale_fill_carto_c("", type = "diverging", palette = col_palette, direction = -1) +
+    ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
           plot.title = ggplot2::element_blank(),

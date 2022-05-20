@@ -4,8 +4,7 @@
 #'
 #' @param n_x Number of polygons per row. Default 12.
 #' @param n_y Number of polygons per column. Default 18.
-#' @param col_palette Colour palette from MetBrewer.
-#' @param num_colours Number of colours to use.
+#' @param col_palette Vector of colours. Default Veronese palette from MetBrewer.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @export
@@ -13,8 +12,7 @@
 
 tiles <- function(n_x = 12,
                   n_y = 12,
-                  col_palette = "Veronese",
-                  num_colours = 5,
+                  col_palette = MetBrewer::met.brewer("Veronese", 5),
                   s = 1234) {
   if (n_x < 1 | n_y < 1) {
     stop("Number of rows and columns must be at least 1")
@@ -22,6 +20,7 @@ tiles <- function(n_x = 12,
   set.seed(s)
   n_x <- round(n_x)
   n_y <- round(n_y)
+  num_colours <- length(col_palette)
   # generate data for large polygons
   x1 <- rep(1:n_x, times = n_y)
   x2 <- rep(2:(n_x + 1), times = n_y)
@@ -82,7 +81,7 @@ tiles <- function(n_x = 12,
     ggplot2::geom_polygon(data = datapoly, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::geom_polygon(data = datapoly2, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::geom_polygon(data = datapoly3, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
-    ggplot2::scale_fill_manual(values = MetBrewer::met.brewer(col_palette, num_colours)) +
+    ggplot2::scale_fill_manual(values = col_palette) +
     ggplot2::coord_fixed(expand = FALSE, xlim = c(1, n_x), ylim = c(1, n_y)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA, colour = NA),
           plot.background = ggplot2::element_rect(fill = NA, colour = NA),
