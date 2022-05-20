@@ -433,7 +433,7 @@ The `waves()` function produces generative art using sine and cosine waves.
 
 ``` r
 waves(a=23, b=6, main_col="white", bg_col="black", s=2021)
-waves(a=23, b=6, main_col="Prism", bg_col="#edad08", s=2021)
+waves(a=23, b=6, main_col=rcartocolor::carto_pal(n = 7, "Prism"), bg_col="#edad08", s=2021)
 waves(a=6, b=23, main_col="black", bg_col="white", s=2021)
 ```
 <p align="center">

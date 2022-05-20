@@ -1,3 +1,7 @@
+## aRt 1.2.1
+
+* update `waves()` to use vector of colours
+
 ## aRt 1.2.0
 
 * add `streams()` function
