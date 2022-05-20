@@ -25,9 +25,7 @@ attraction(
 
 \item{d}{Parameter. Default -1.}
 
-\item{main_col}{Colour of lines. Either a single
-colour or one of the colour palettes from rcartocolor.
-Default "black".}
+\item{main_col}{Vector of colours (or single colour). Default "black".}
 
 \item{bg_col}{Background colour. Default "white".}
 }

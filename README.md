@@ -21,7 +21,6 @@ Some of the functions in previous releases of the {aRt} package took names of co
 
 # to remove
 - [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
-  - `attraction()`: `main_col` is either a single colour or the name of a colour palette from {rcartocolor}
   - `bubbles()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `fading()`: `col_palette` is the name of a colour palette from {rcartocolor}
   - `rectangles()`: `col_palette` is the name of a colour palette from {rcartocolor}
@@ -36,7 +35,7 @@ The `attraction()` function produces generative art based on strange attractors.
 ``` r
 attraction(n=50000, a=-3, b=1, c=0.5, d=-1, main_col="black", bg_col="white")
 attraction(n=50000, a=-6, b=1, c=0.5, d=-2, main_col="black", bg_col="white")
-attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col="SunsetDark", bg_col="white")
+attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col=rcartocolor::carto_pal(n = 7, "SunsetDark"), bg_col="white")
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction1.jpeg?raw=true" width="30%">
