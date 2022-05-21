@@ -1,3 +1,7 @@
+## aRt 1.2.2
+
+* update pkgdown website
+
 ## aRt 1.2.1
 
 * update `waves()` to use vector of colours

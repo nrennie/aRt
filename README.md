@@ -78,7 +78,7 @@ The `bricks()` function draws multiple rectangular polygons in rows.
 ``` r
 bricks(n_y=20, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
 bricks(n_y=200, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), bg_col="gray97")
-bricks(n_y=20, colours=carto_pal(7, "Burg"), bg_col="gray97")
+bricks(n_y=20, colours=rcartocolor::carto_pal(7, "Burg"), bg_col="gray97")
 
 ```
 <p align="center">
@@ -264,7 +264,7 @@ The `polygons()` function draws multiple polygons.
 ``` r
 polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.1, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), rand = FALSE, bg_col="gray97")
 polygons(n_x=6, n_y=9, gap_size=0.2, deg_jitter=0.1, colours=c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"), rand = FALSE, bg_col="gray97")
-polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=carto_pal(7, "Burg"), rand = FALSE, bg_col="gray97")
+polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=rcartocolor::carto_pal(7, "Burg"), rand = FALSE, bg_col="gray97")
 
 ```
 <p align="center">
