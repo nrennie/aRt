@@ -2,7 +2,7 @@ pandoc: 2.14.2
 pkgdown: 2.0.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-05-31T09:25Z
+last_built: 2022-05-31T10:17Z
 urls:
   reference: https://nrennie.github.io/aRt/reference
   article: https://nrennie.github.io/aRt/articles
