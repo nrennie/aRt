@@ -1,3 +1,7 @@
+## aRt 1.2.3
+
+* add `fractals()` function
+
 ## aRt 1.2.2
 
 * update pkgdown website
