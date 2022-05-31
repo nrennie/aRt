@@ -224,6 +224,26 @@ flow_fields(n = 10000, granualarity = 1000, x_freq = 3, y_freq = 0.2, alpha = 1,
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields3.jpeg?raw=true" width="30%">
 </p>
 
+### fractals
+
+The `fractals()` function produces generative art based on fractal patterns. These functions are inspired by a blog post on [R-bloggers](https://www.r-bloggers.com/2010/08/fractals-in-r/).
+
+``` r
+fractals(N = 25, col_palette = MetBrewer::met.brewer("Demuth", n = 25),
+         shift = 0, left = -1, right = 1,
+         y_param = 3, resolution = 0.005, dist_max = 4)
+fractals(N = 25, col_palette = rev(MetBrewer::met.brewer("Benedictus", n = 25)),
+         shift = 0, left = -3, right = 3,
+         y_param = 2, resolution = 0.005, dist_max = 4)
+fractals(N = 20, col_palette = grey.colors(30),
+         shift = -1, left = -1, right = 1,
+         y_param = 2, resolution = 0.005, dist_max = 3)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/fractals1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/fractals2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/fractals3.jpeg?raw=true" width="30%">
+</p>
 
 ### heart
 
