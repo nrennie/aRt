@@ -29,7 +29,6 @@ Imports:
 	particles,
 	patchwork,
 	purrr,
-	remotes,
 	stats,
 	tibble,
 	tidygraph,
