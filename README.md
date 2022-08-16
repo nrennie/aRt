@@ -340,6 +340,21 @@ spirals(perc=0.8, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%">
 </p>
 
+### squares
+
+The `squares()` function produces generative art consisting of pattern-filled squares.
+
+``` r
+squares(n = 7, line_col = "white", pattern_col = "white", pattern_fill = "black", pattern_size = 0.4, size = 1.5, s = 1234)
+squares(n = 5, line_col = "#2DC2BD", pattern_col = "#392759", pattern_fill = "#2DC2BD", pattern_size = 0.4, size = 1.5, s = 5678)
+squares(n = 20, line_col = "white", pattern_col = "white", pattern_fill = "black", pattern_size = 0.4, size = 1.5, s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squares_01.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squares_02.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squares_03.jpeg?raw=true" width="30%">
+</p>
+
 ### static
 
 The `static()` function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.

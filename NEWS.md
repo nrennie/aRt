@@ -1,3 +1,8 @@
+## aRt 1.2.4
+
+* add `squares()` function
+* fix linting
+
 ## aRt 1.2.3
 
 * add `fractals()` function
