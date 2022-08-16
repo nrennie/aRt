@@ -38,7 +38,7 @@ fractals <- function(N = 25, #nolint
       y <- 0
       n <- 0
       dist <- 0
-      while (n < N & dist < dist_max) {
+      while (all(c(n < N, dist < dist_max))) {
         n <- n + 1
         x1 <- i + x^2 - y^2
         y1 <- j + (y_param * x * y)

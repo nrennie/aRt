@@ -11,7 +11,7 @@
 static <- function(perc = 0.1,
                    n = 500,
                    s = 1234) {
-  if (perc < 0 | perc > 1) {
+  if (perc < 0 || perc > 1) {
     stop("perc not between 0 and 1")
   }
   if (n < 1) {

@@ -27,19 +27,19 @@ squares <- function(n = 7,
     dplyr::mutate(fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
                   angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE))
   ggplot2::ggplot(data = plot_data,
-                  mapping = ggplot2::aes(x = x,
-                                         y = y,
-                                         pattern = fill,
-                                         pattern_angle = angle)) +
+                  mapping = ggplot2::aes(x = .data$x,
+                                         y = .data$y,
+                                         pattern = .data$fill,
+                                         pattern_angle = .data$angle)) +
     ggpattern::geom_tile_pattern(colour = line_col,
                                  pattern_colour = pattern_col,
                                  pattern_fill = pattern_fill,
                                  pattern_size = pattern_size,
                                  size = size) +
-    ggpattern::scale_pattern_manual(values=c("stripe",
-                                             "wave",
-                                             "crosshatch",
-                                             "weave")) +
+    ggpattern::scale_pattern_manual(values = c("stripe",
+                                               "wave",
+                                               "crosshatch",
+                                               "weave")) +
     ggplot2::coord_fixed(expand = FALSE) +
     theme_void() +
     ggplot2::theme(legend.position = "none",

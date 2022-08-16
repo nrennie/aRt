@@ -15,7 +15,7 @@ stripes <- function(perc = 0.5,
                     col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"),
                     alpha = 1,
                     s = 1234) {
-  if (perc < 0 | perc > 1) {
+  if (perc < 0 || perc > 1) {
     stop("perc not between 0 and 1")
   }
   if (n < 1) {

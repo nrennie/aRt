@@ -22,13 +22,13 @@ polygons <- function(n_x = 12,
                      rand = FALSE,
                      bg_col = "gray97",
                      s = 1234) {
-  if (n_x < 1 | n_y < 1) {
+  if (n_x < 1 || n_y < 1) {
     stop("Number of rows and columns must be at least 1")
     }
-  if (gap_size < 0 | gap_size > 1) {
+  if (gap_size < 0 || gap_size > 1) {
     stop("gap_size must be between 0 and 1")
     }
-  if (deg_jitter < 0 | deg_jitter > 0.5) {
+  if (deg_jitter < 0 || deg_jitter > 0.5) {
     stop("deg_jitter must be between 0 and 0.5")
     }
   set.seed(s)
