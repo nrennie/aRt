@@ -9,7 +9,7 @@
 
 spirals <- function(perc = 0.2,
                     s = 1234) {
-  if (perc < 0 | perc > 1) {
+  if (perc < 0 || perc > 1) {
     stop("perc not between 0 and 1")
   }
   set.seed(s)

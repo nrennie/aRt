@@ -48,14 +48,11 @@ streams <- function(bg_col = "white",
   #rotate
   if (type == "up") {
     p <- p + coord_flip(expand = FALSE)
-  }
-  else if (type == "left") {
+  } else if (type == "left") {
     p <- p + coord_cartesian(expand = FALSE) + scale_x_reverse()
-  }
-  else if (type == "down") {
+  } else if (type == "down") {
     p <- p + coord_flip(expand = FALSE) + scale_x_reverse()
-  }
-  else if (type == "right") {
+  } else if (type == "right") {
     p <- p + coord_cartesian(expand = FALSE)
   }
   return(p)

@@ -21,7 +21,7 @@ rectangles <- function(n = 100,
                        col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
                        bg_col = "white",
                        s = 123) {
-  if (max_height <= 2 | max_width <= 2) {
+  if (max_height <= 2 || max_width <= 2) {
     stop("height and width should be > 2")
   }
   # generate data

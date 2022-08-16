@@ -26,13 +26,7 @@ sunbursts_panel <- function(n = 100,
                             s = 1234) {
   set.seed(s)
   ss <- sample(5:100, size = ncol * nrow)
-  p <- lapply(ss, function(i) sunbursts(n = i,
-                                        x_means = x_means,
-                                        y_means = y_means,
-                                        xy_var = xy_var,
-                                        low = low,
-                                        high = high,
-                                        s = i))
+  p <- lapply(ss, function(i) sunbursts(n = i, x_means = x_means, y_means = y_means, xy_var = xy_var, low = low, high = high, s = i))
   patchwork::wrap_plots(p) +
     patchwork::plot_layout(ncol = ncol, nrow = nrow) &
     ggplot2::theme(plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),

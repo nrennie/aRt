@@ -14,7 +14,7 @@ tiles <- function(n_x = 12,
                   n_y = 12,
                   col_palette = MetBrewer::met.brewer("Veronese", 5),
                   s = 1234) {
-  if (n_x < 1 | n_y < 1) {
+  if (n_x < 1 || n_y < 1) {
     stop("Number of rows and columns must be at least 1")
     }
   set.seed(s)
