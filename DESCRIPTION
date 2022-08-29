@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.2.4
+Version: 1.2.5
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -25,6 +25,7 @@ Imports:
 	ggplot2,
 	ggraph,
 	ggstream,
+	ggvoronoi,
 	igraph,
 	particles,
 	patchwork,
@@ -37,6 +38,6 @@ Imports:
 Suggests:
   	MetBrewer, 
   	rcartocolor,
-  	RColorBrewer
+  	RColorBrewer,
 Config/Needs/website: nrennie/nrenniepkgdown
 URL: https://nrennie.github.io/aRt/

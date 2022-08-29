@@ -277,6 +277,22 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 
+### mosaic
+
+The `mosaic()` function creates a set of voronoi tiles.
+
+``` r
+mosaic(n = 100, fill_cols = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"), line_col = "white", bg_col = "white", line_size = 1, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
+mosaic(n = 100, fill_cols = "white", line_col = "black", bg_col = "black", line_size = 1, x_means = 0, y_means = 0, xy_var = 5, s = 1234)
+mosaic(n = 500, fill_cols = c("#436f85", "#432263", "#de7a00", "#416322", "#860a4d"), line_col = "white", bg_col = "white", line_size = 0.5, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic1.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic2.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic3.png?raw=true" width="30%">
+</p>
+
+
 ### polygons
 
 The `polygons()` function draws multiple polygons.
@@ -375,23 +391,9 @@ static(perc=0.3, n=500, s=1234)
 The `streams()` function produces generative art consisting of stream charts.
 
 ``` r
-streams(bg_col = "white", 
-        line_col = "white",
-        fill_col = c("#5F4690", "#1D6996", "#38A6A5", "#0F8554",
-                     "#73AF48", "#EDAD08", "#E17C05", "#CC503E", 
-                     "#94346E", "#6F4070"),
-        type = "right",
-        s = 1234)
-streams(bg_col = "black",
-        line_col = NA,
-        fill_col = grey.colors(n = 25),
-        type = "up",
-        s = 450)
-streams(bg_col = "white",
-        line_col = NA,
-        fill_col = rep("purple", 8),
-        type = "left",
-        s = 13)
+streams(bg_col = "white", line_col = "white", fill_col = c("#5F4690", "#1D6996", "#38A6A5", "#0F8554", "#73AF48", "#EDAD08", "#E17C05", "#CC503E", "#94346E", "#6F4070"), type = "right", s = 1234)
+streams(bg_col = "black", line_col = NA, fill_col = grey.colors(n = 25), type = "up", s = 450)
+streams(bg_col = "white", line_col = NA, fill_col = rep("purple", 8), type = "left", s = 13)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams1.jpeg?raw=true" width="30%">

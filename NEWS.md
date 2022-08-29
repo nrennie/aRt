@@ -1,3 +1,7 @@
+## aRt 1.2.5
+
+* add `mosaic()` function
+
 ## aRt 1.2.4
 
 * add `squares()` function

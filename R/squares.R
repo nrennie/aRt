@@ -41,7 +41,7 @@ squares <- function(n = 7,
                                                "crosshatch",
                                                "weave")) +
     ggplot2::coord_fixed(expand = FALSE) +
-    theme_void() +
+    ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none",
                    plot.margin = ggplot2::unit(c(0.3, 0.3, 0.3, 0.3), unit = "cm"),
                    plot.background = ggplot2::element_rect(fill = line_col, colour = line_col),
