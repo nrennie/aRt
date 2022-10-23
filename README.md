@@ -317,9 +317,9 @@ mosaic_sketch(n = 20, fill_cols = c("white", "#008080"), line_col = "white", bg_
 mosaic_sketch(n = 6, fill_cols = "black", line_col = "white", bg_col = "white", line_size = 2, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
 ```
 <p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch1.png?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch2.png?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch3.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch3.jpeg?raw=true" width="30%">
 </p>
 
 
