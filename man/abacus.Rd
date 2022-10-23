@@ -22,7 +22,9 @@ abacus(
 
 \item{main_col}{Vector of colours (or single colour). Default "black".}
 
-\item{s}{Random seed. Default 123}
+\item{bg_col}{Background colour. Default "white".}
+
+\item{s}{Random seed. Default 123.}
 }
 \value{
 A ggplot object.

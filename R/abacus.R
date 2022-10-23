@@ -7,7 +7,8 @@
 #' @param ny Number of points per line. Default 100.
 #' @param max_size Maximum size of points. Default 2.
 #' @param main_col Vector of colours (or single colour). Default "black".
-#' @param s Random seed. Default 123
+#' @param bg_col Background colour. Default "white".
+#' @param s Random seed. Default 123.
 #' @return A ggplot object.
 #' @export
 #'
