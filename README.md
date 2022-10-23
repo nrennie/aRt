@@ -25,6 +25,21 @@ Some of the functions in previous releases of the {aRt} package took names of co
 
 ## Functions
 
+### abacus
+
+The `abacus()` function produces generative art based on points and lines.
+
+``` r
+abacus(nx = 30, ny = 100, max_size = 2, main_col = "black", bg_col = "white", s = 123)
+abacus(nx = 20, ny = 10, max_size = 4, main_col = "white", bg_col = "black", s = 12)
+abacus(nx = 100, ny = 100, max_size = 3, main_col = "#008080", bg_col = "white", s = 123)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/abacus1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/abacus2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/abacus3.jpeg?raw=true" width="30%">
+</p>
+
 ### attraction
 
 The `attraction()` function produces generative art based on strange attractors.

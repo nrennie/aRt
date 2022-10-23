@@ -1,3 +1,7 @@
+## aRt 1.2.6
+
+* add `abacus()` function
+
 ## aRt 1.2.5
 
 * add `mosaic()` function
