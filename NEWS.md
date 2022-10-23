@@ -1,6 +1,7 @@
 ## aRt 1.2.6
 
 * add `abacus()` function
+* add `mosaic_sketch()` function
 
 ## aRt 1.2.5
 

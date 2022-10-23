@@ -307,6 +307,21 @@ mosaic(n = 500, fill_cols = c("#436f85", "#432263", "#de7a00", "#416322", "#860a
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic3.png?raw=true" width="30%">
 </p>
 
+### mosaic sketch
+
+The `mosaic_sketch()` function creates a set of voronoi tiles with a hand-drawn feel.
+
+``` r
+mosaic_sketch(n = 10, fill_cols = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"), line_col = "white", bg_col = "white", line_size = 2, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
+mosaic_sketch(n = 20, fill_cols = c("white", "#008080"), line_col = "white", bg_col = "#008080", line_size = 1.5, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
+mosaic_sketch(n = 6, fill_cols = "black", line_col = "white", bg_col = "white", line_size = 2, x_means = c(0, 10, 5), y_means = c(0, 7, 8), xy_var = 2, s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch1.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch2.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic_sketch3.png?raw=true" width="30%">
+</p>
+
 
 ### polygons
 
