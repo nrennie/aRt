@@ -1,3 +1,8 @@
+## aRt 1.2.7
+
+* add `black_hole()` function
+* move internal functions to different files
+
 ## aRt 1.2.6
 
 * add `abacus()` function

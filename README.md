@@ -55,6 +55,21 @@ attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col=rcartocolor::carto_pal(n = 7
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%">
 </p>
 
+### black hole
+
+The `black_hole()` function produces generative art of many boxes.
+
+``` r
+black_hole(r_max = c(50, 150, 250, 350), n = 10000, lim = 300, main_cols = rcartocolor::carto_pal(n = 7, name = "SunsetDark"), bg_col = "black", size = 0.01, a = 0.5, s = 1234)
+black_hole(r_max = 100, n = 50000, lim = 300, main_cols = rev(rcartocolor::carto_pal(n = 7, name = "Teal")), bg_col = "white", size = 0.05, a = 0.3, s = 1234)
+black_hole(r_max = c(50, 150, 250), n = 20000, lim = 500, main_cols = rcartocolor::carto_pal(n = 7, name = "SunsetDark"), bg_col = "black", size = 0.01, a = 0.75, s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/black_hole1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/black_hole2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/black_hole3.jpeg?raw=true" width="30%">
+</p>
+
 ### blending
 
 The `blending()` function produces generative art of many boxes.

@@ -2,6 +2,7 @@
 
 export(abacus)
 export(attraction)
+export(black_hole)
 export(blending)
 export(boxes)
 export(bricks)
