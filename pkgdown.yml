@@ -1,8 +1,8 @@
-pandoc: 2.14.2
+pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-10-23T18:54Z
+last_built: 2022-10-27T20:45Z
 urls:
   reference: https://nrennie.github.io/aRt/reference
   article: https://nrennie.github.io/aRt/articles
