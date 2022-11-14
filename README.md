@@ -355,6 +355,22 @@ polygons(n_x=12, n_y=18, gap_size=0.5, deg_jitter=0.5, colours=rcartocolor::cart
 </p>
 
 
+### puzzles
+
+The `puzzles()` function draws multiple polygons.
+
+``` r
+puzzles(n = 200, num_groups = 30, col_palette = PrettyCols::prettycols("Beach"), bg_col = "white", s = 1234)
+puzzles(n = 200, num_groups = 50, col_palette = c("black", "white"), bg_col = "black", s = 59)
+puzzles(n = 1000, num_groups = 700, col_palette = PrettyCols::prettycols("Beach"), bg_col = "white", s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/puzzles1.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/puzzles2.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/puzzles3.png?raw=true" width="30%">
+</p>
+
+
 ### rectangles
 
 The `rectangles()` function draws multiple rectangles.

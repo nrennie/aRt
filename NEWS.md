@@ -1,3 +1,7 @@
+## aRt 1.2.8
+
+* add `puzzles()` function
+
 ## aRt 1.2.7
 
 * add `black_hole()` function
