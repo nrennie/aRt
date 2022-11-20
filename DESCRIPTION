@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.2.8
+Version: 1.2.9
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -19,6 +19,7 @@ Imports:
   ape,
   deldir,
   dplyr,
+  elevatr,
   ExtDist,
   ggforce,
   ggpattern,
@@ -27,9 +28,11 @@ Imports:
 	ggstream,
 	ggvoronoi,
 	igraph,
+	metR,
 	particles,
 	patchwork,
 	purrr,
+	raster,
 	stats,
 	tibble,
 	tidygraph,

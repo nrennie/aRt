@@ -194,6 +194,21 @@ connected(n=250, n_geom=2, random=F, col_palette=RColorBrewer::brewer.pal(n = 5,
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%">
 </p>
 
+### contours
+
+The `contours()` function produces generative art based on elevation of geographic areas.
+
+``` r
+contours(xmin = -3.27, xmax = -3.15, ymin = 54.43, ymax = 54.49, col_palette = MetBrewer::met.brewer("Hokusai3"), light = "white", dark = "black", range = c(0.5, 1)) 
+contours(xmin = -3.27, xmax = -3.15, ymin = 54.43, ymax = 54.49, col_palette = "white", light = "lightgrey", dark = "black", range = c(1, 2)) 
+contours(xmin = -5.45, xmax = -5.04, ymin = 55.43, ymax = 55.72, col_palette = PrettyCols::prettycols("Teals"), light = "white", dark = "black", range = c(0.5, 1)) 
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/contours1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/contours2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/contours3.jpeg?raw=true" width="30%">
+</p>
+
 ### crawling
 
 The `crawling()` function produces generative art using dendograms and tree graphs.

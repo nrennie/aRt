@@ -1,3 +1,8 @@
+## aRt 1.2.9
+
+* add `contours()` function
+* add {metR}, {elevatr}, and {raster} dependencies
+
 ## aRt 1.2.8
 
 * add `puzzles()` function
