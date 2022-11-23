@@ -1,7 +1,9 @@
 ## aRt 1.2.9
 
 * add `contours()` function
-* add {metR}, {elevatr}, and {raster} dependencies
+* add `stacked()` function
+* add {metR}, {elevatr}, {raster}, and {rayshader} dependencies
+* Minor bug fix to `tiles()`
 
 ## aRt 1.2.8
 

@@ -447,6 +447,21 @@ squares(n = 20, line_col = "white", pattern_col = "white", pattern_fill = "black
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/squares_03.jpeg?raw=true" width="30%">
 </p>
 
+### stacked
+
+The `stacked()` function produces generative art created through square tiles with 3D effects.
+
+``` r
+stacked(n_x = 5, n_y = 5, col_palette = MetBrewer::met.brewer("Hiroshige", 9), shadow_intensity = 0.5, sunangle = 315, s = 1234)
+stacked(n_x = 4, n_y = 4, col_palette = MetBrewer::met.brewer("Monet", 6), shadow_intensity = 0.1, sunangle = 315, s = 123)
+stacked(n_x = 20, n_y = 20, col_palette = MetBrewer::met.brewer("Hiroshige", 8), shadow_intensity = 0.3, sunangle = 180, s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stacked1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stacked2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/stacked3.jpeg?raw=true" width="30%">
+</p>
+
 ### static
 
 The `static()` function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.

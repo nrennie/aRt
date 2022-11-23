@@ -33,6 +33,7 @@ Imports:
 	patchwork,
 	purrr,
 	raster,
+	rayshader,
 	stats,
 	tibble,
 	tidygraph,
