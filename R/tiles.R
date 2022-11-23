@@ -77,12 +77,12 @@ tiles <- function(n_x = 12,
     }
   }
   # plot
-  p <- ggplot() +
+  p <- ggplot2::ggplot() +
     ggplot2::geom_polygon(data = datapoly, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::geom_polygon(data = datapoly2, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::geom_polygon(data = datapoly3, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::scale_fill_manual(values = col_palette) +
-    ggplot2::coord_fixed(expand = FALSE, xlim = c(1, n_x), ylim = c(1, n_y)) +
+    ggplot2::coord_fixed(expand = FALSE, xlim = c(1, n_x+1), ylim = c(1, n_y+1)) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA, colour = NA),
           plot.background = ggplot2::element_rect(fill = NA, colour = NA),
           plot.title = ggplot2::element_blank(),
