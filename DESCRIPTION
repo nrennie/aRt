@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "nrennie35@gmail.com")
 Description: Creates generative art using R.
-License: MIT + file LICENSE
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
