@@ -369,6 +369,22 @@ lines(n = 50, max_length = 10, linewidth = 0.5, main_col = "#C03221", bg_col = "
 </p>
 
 
+### moire
+
+The `moire()` function creating generative art inspired by the Moiré effect - a visual perception that occurs when viewing a set of lines or dots that is superimposed on another set of lines or dots, where the sets differ in relative size, angle, or spacing.
+
+``` r
+moire(inner_n = 20, dist = 10, inner_col = "grey40", outer_col = "grey60", bg_col = "grey10", inner_r = 0.5, outer_r = 0.2)
+moire(inner_n = 20, dist = 4, inner_col = "grey50", outer_col = "#616283", bg_col = "#fafafa", inner_r = 0.5, outer_r = 0.3)
+moire(inner_n = 4, dist = 2, inner_col = "#533E2D", outer_col = "#A27035", bg_col = "#B88B4A", inner_r = 0.35, outer_r = 0.2)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/moire1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/moire2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/moire3.jpeg?raw=true" width="30%">
+</p>
+
+
 ### mosaic
 
 The `mosaic()` function creates a set of voronoi tiles.
