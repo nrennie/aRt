@@ -409,13 +409,29 @@ The `rectangles()` function draws multiple rectangles.
 rectangles(n = 100, max_height = 7, max_width = 5, size = 2, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
 rectangles(n = 10, max_height = 15, max_width = 15, size = 4, main_col = "lightgrey", col_palette = rcartocolor::carto_pal(n = 12, "Bold"), bg_col = "white", s = 123)
 rectangles(n = 100, max_height = 4, max_width = 6, size = 1, main_col = ggplot2::alpha("white", 0.5), col_palette = rcartocolor::carto_pal(n = 12, "Prism"), bg_col = "black", s = 123)
-
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles1.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/rectangles3.jpeg?raw=true" width="30%">
 </p>
+
+
+### riley
+
+The `riley()` function draws multiple ellipses in a grid, with varying transparency.
+
+``` r
+riley(n_x = 9, n_y = 9, offset = 3, main_col = "black", bg_col = "white")
+riley(n_x = 3, n_y = 9, offset = 3, main_col = "#0E1116", bg_col = "#374A67")
+riley(n_x = 12, n_y = 6, offset = 0, main_col = "#481620", bg_col = "#fafafa")
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/riley1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/riley2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/riley3.jpeg?raw=true" width="30%">
+</p>
+
 
 ### shell
 

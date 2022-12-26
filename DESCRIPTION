@@ -17,6 +17,7 @@ Depends:
 Imports:
     ambient,
     ape,
+    cowplot,
     deldir,
     dplyr,
     elevatr,
@@ -36,6 +37,7 @@ Imports:
     purrr,
     raster,
     rayshader,
+    sf,
     stats,
     tibble,
     tidygraph,
