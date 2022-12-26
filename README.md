@@ -478,6 +478,23 @@ squares(n = 20, line_col = "white", pattern_col = "white", pattern_fill = "black
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/squares_03.jpeg?raw=true" width="30%">
 </p>
 
+
+### squiggles
+
+The `squiggles()` function produces generative art consisting of mulitple smooth lines.
+
+``` r
+squiggles(res = 100, num_lines = 100, perc = 0.1, alpha_low = 0.5, alpha_high = 1, line_col = "white", bg_col = "black", s = 1234)
+squiggles(res = 1000, num_lines = 1000, perc = 0.01, alpha_low = 0.15, alpha_high = 1, line_col = "#374A67", bg_col = "white", s = 12)
+squiggles(res = 100, num_lines = 10, perc = 0.5, alpha_low = 0.5, alpha_high = 1, line_col = "#348954", bg_col = "#fafafa", s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles01.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles02.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles03.jpeg?raw=true" width="30%">
+</p>
+
+
 ### stacked
 
 The `stacked()` function produces generative art created through square tiles with 3D effects.
@@ -591,9 +608,9 @@ vortex(n=25, start_val=90, col_scheme="rainbow", bg_col="black", s=1234)
 The `waves()` function produces generative art using sine and cosine waves.
 
 ``` r
-waves(a=23, b=6, main_col="white", bg_col="black", s=2021)
-waves(a=23, b=6, main_col=rcartocolor::carto_pal(n = 7, "Prism"), bg_col="#edad08", s=2021)
-waves(a=6, b=23, main_col="black", bg_col="white", s=2021)
+waves(a=23, b=6, linewidth = 0.5, main_col="white", bg_col="black", s=2021)
+waves(a=23, b=6, linewidth = 0.5, main_col=rcartocolor::carto_pal(n = 7, "Prism"), bg_col="#edad08", s=2021)
+waves(a=6, b=23, linewidth = 0.5, main_col="black", bg_col="white", s=2021)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_bw.jpeg?raw=true" width="30%">
