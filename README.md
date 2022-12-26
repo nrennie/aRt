@@ -40,6 +40,7 @@ abacus(nx = 100, ny = 100, max_size = 3, main_col = "#008080", bg_col = "white",
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/abacus3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### attraction
 
 The `attraction()` function produces generative art based on strange attractors.
@@ -55,6 +56,7 @@ attraction(n=50000, a=-3, b=-2, c=1, d=-1, main_col=rcartocolor::carto_pal(n = 7
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/attraction3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### black hole
 
 The `black_hole()` function produces generative art of many boxes.
@@ -69,6 +71,7 @@ black_hole(r_max = c(50, 150, 250), n = 20000, lim = 500, main_cols = rcartocolo
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/black_hole2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/black_hole3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### blending
 
@@ -86,6 +89,7 @@ blending(n = 100, down = "#ba1141", up = "#003366", s = 1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/blending3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### boxes
 
 The `boxes()` function produces generative art of many boxes.
@@ -100,6 +104,7 @@ boxes(n=100, perc=0.5, col_palette=rcartocolor::carto_pal(n = 7, "Magenta"), bg_
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n20_p1.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/boxes_n100_p5.jpeg?raw=true" width="30%">
 </p>
+
 
 ### bricks
 
@@ -149,6 +154,7 @@ bullseye(main_col="black", bg_col="white", s=2021)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/bullseye_2021.jpeg?raw=true" width="30%">
 </p>
 
+
 ### circles
 
 The `circles()` function produces generative art using dendograms and circular graphs.
@@ -163,6 +169,7 @@ circles(n=2, smoothness=3, col_palette=rcartocolor::carto_pal(n = 12, "Bold"), l
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circles3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### circular
 
@@ -179,6 +186,7 @@ circular(n=100, main_col="black", bg_col="white", s=56)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/circular_n100.jpeg?raw=true" width="30%">
 </p>
 
+
 ### connected
 
 The `connected()` function produces generative art by connected points on a circle.
@@ -193,6 +201,7 @@ connected(n=250, n_geom=2, random=F, col_palette=RColorBrewer::brewer.pal(n = 5,
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_100_10T.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/connected_250_2F.jpeg?raw=true" width="30%">
 </p>
+
 
 ### contours
 
@@ -209,6 +218,7 @@ contours(xmin = -5.45, xmax = -5.04, ymin = 55.43, ymax = 55.72, col_palette = P
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/contours3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### crawling
 
 The `crawling()` function produces generative art using dendograms and tree graphs.
@@ -223,6 +233,7 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling250.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%">
 </p>
+
 
 ### divide
 
@@ -239,6 +250,7 @@ divide(num_lines = 15, col_palette = MetBrewer::met.brewer("OKeeffe2"), s = 2022
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide33.jpeg?raw=true" width="30%">
 </p>
 
+
 ### dots
 
 The `dots()` function produces generative art using jittered points.
@@ -253,6 +265,7 @@ dots(n_x=50, n_y=100, jitter_size_width=0.05, jitter_size_height=50, col_palette
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/dots3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### fading
 
@@ -269,6 +282,7 @@ fading(n_layers=10, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "Suns
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fading_10_10.jpeg?raw=true" width="30%">
 </p>
 
+
 ### flow fields
 
 The `flow_fields()` function produces generative art using particle traces. These functions are inspired by a blog post by [Will Chase](https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/). 
@@ -283,6 +297,7 @@ flow_fields(n = 10000, granualarity = 1000, x_freq = 3, y_freq = 0.2, alpha = 1,
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### fractals
 
@@ -304,6 +319,7 @@ fractals(N = 20, col_palette = grey.colors(30),
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fractals2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/fractals3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### heart
 
@@ -351,6 +367,7 @@ mosaic(n = 500, fill_cols = c("#436f85", "#432263", "#de7a00", "#416322", "#860a
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic2.png?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/mosaic3.png?raw=true" width="30%">
 </p>
+
 
 ### mosaic sketch
 
@@ -448,6 +465,23 @@ shells(n = 6, alpha = 0.5, main_col = "#CC338B", bg_col = alpha("#CC338B", 0.2))
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/shell3.jpeg?raw=true" width="30%">
 </p>
 
+
+### smudge
+
+The `smudge()` function produces generative art using contours.
+
+``` r
+smudge(n = 25, binwidth = 0.01, col_palette = PrettyCols::prettycols("TangerineBlues"), s = 1234)
+smudge(n = 25, binwidth = 0.1, col_palette = PrettyCols::prettycols("Dark"), s = 2022)
+smudge(n = 15, binwidth = 0.05, col_palette = grey.colors(12, 0, 0.9), s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/smudge1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/smudge2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/smudge3.jpeg?raw=true" width="30%">
+</p>
+
+
 ### spirals
 
 The `spirals()` function produces generative art consisting of dots arranged in a spiral.
@@ -462,6 +496,7 @@ spirals(perc=0.8, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p5.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/spirals_p8.jpeg?raw=true" width="30%">
 </p>
+
 
 ### squares
 
@@ -510,6 +545,7 @@ stacked(n_x = 20, n_y = 20, col_palette = MetBrewer::met.brewer("Hiroshige", 8),
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stacked3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### static
 
 The `static()` function produces generative art reminiscent of the noise displayed on analog televisions when no transmission signal is received.
@@ -525,6 +561,7 @@ static(perc=0.3, n=500, s=1234)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/static_p30_n500.jpeg?raw=true" width="30%">
 </p>
 
+
 ### streams
 
 The `streams()` function produces generative art consisting of stream charts.
@@ -539,6 +576,7 @@ streams(bg_col = "white", line_col = NA, fill_col = rep("purple", 8), type = "le
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/streams3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### stripes
 
@@ -556,6 +594,7 @@ stripes(perc=1, n=3, col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"), alp
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/stripes_p100_n3.jpeg?raw=true" width="30%">
 </p>
 
+
 ### sunbursts
 
 The `sunbursts()` function produces generative art consisting of two-dimesional density plots.
@@ -570,6 +609,7 @@ sunbursts(n = 250, x_means = c(1, 2, 9, 50), y_means = c(3, 6, 8, -3), xy_var = 
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts2.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/sunbursts3.jpeg?raw=true" width="30%">
 </p>
+
 
 ### tiles
 

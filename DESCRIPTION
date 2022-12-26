@@ -28,6 +28,7 @@ Imports:
     ggraph,
     ggstream,
     ggvoronoi,
+    grDevices,
     igraph,
     lwgeom,
     magrittr,
