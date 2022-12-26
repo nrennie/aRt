@@ -353,6 +353,22 @@ infinity(n=25, col_scheme="rainbow", bg_col="black", s=1234)
 </p>
 
 
+### lines
+
+The `lines()` function creating generative art from many perpendicular lines.
+
+``` r
+lines(n = 100, max_length = 7, linewidth = 0.5, main_col = "black", bg_col = "white", s = 123)
+lines(n = 1000, max_length = 5, linewidth = 0.1, main_col = "#32A287", bg_col = "white", s = 12)
+lines(n = 50, max_length = 10, linewidth = 0.5, main_col = "#C03221", bg_col = "#f2d6d2", s = 2023)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/lines1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/lines2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/lines3.jpeg?raw=true" width="30%">
+</p>
+
+
 ### mosaic
 
 The `mosaic()` function creates a set of voronoi tiles.
