@@ -247,7 +247,7 @@ divide(num_lines = 15, col_palette = MetBrewer::met.brewer("OKeeffe2"), s = 2022
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide1.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide2.jpeg?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide33.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide3.jpeg?raw=true" width="30%">
 </p>
 
 
@@ -556,9 +556,9 @@ squiggles(res = 1000, num_lines = 1000, perc = 0.01, alpha_low = 0.15, alpha_hig
 squiggles(res = 100, num_lines = 10, perc = 0.5, alpha_low = 0.5, alpha_high = 1, line_col = "#348954", bg_col = "#fafafa", s = 1234)
 ```
 <p align="center">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles01.jpeg?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles02.jpeg?raw=true" width="30%">
-<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles03.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/squiggles3.jpeg?raw=true" width="30%">
 </p>
 
 
