@@ -11,7 +11,7 @@ divide <- function(num_lines = 30,
                    col_palette = PrettyCols::prettycols("Beach"),
                    s = 1234) {
   set.seed(s)
-  polygon1 <- sf::st_polygon(list(cbind(c(0,1,1,0,0), c(0,0,1,1,0))))
+  polygon1 <- sf::st_polygon(list(cbind(c(0, 1, 1, 0, 0), c(0, 0, 1, 1, 0))))
   endpoints <- tibble::tibble(x = c(seq(0, 1, length = 100),
                                     seq(0, 1, length = 100),
                                     rep(0, 100),
@@ -26,7 +26,8 @@ divide <- function(num_lines = 30,
   cropped_sf <- lwgeom::st_split(polygon1, make_lines) %>%
     sf::st_collection_extract(c("POLYGON")) %>%
     sf::st_as_sf() %>%
-    dplyr::mutate(col = sample(1:length(col_palette), size = nrow(.), replace = TRUE))
+    dplyr::mutate(col = sample(seq_len(length(col_palette)),
+                               size = nrow(.), replace = TRUE))
   g <- ggplot2::ggplot() +
     ggplot2::geom_sf(data = cropped_sf,
                      mapping = ggplot2::aes(fill = col),
