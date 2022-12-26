@@ -6,8 +6,8 @@
 #' @return A numeric vector
 
 make_lines <- function(res = 100) {
-  r <- rnorm(1, 0, 1)
-  yx <- smooth(r + stats::smooth(cumsum(stats::rnorm(res, 0, 0.3))))
+  r <- stats::rnorm(1, 0, 1)
+  yx <- stats::smooth(r + stats::smooth(cumsum(stats::rnorm(res, 0, 0.3))))
   return(yx)
 }
 
