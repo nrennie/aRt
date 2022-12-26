@@ -1,3 +1,13 @@
+## aRt 1.3.0
+
+* add {lwgeom}, {cowplot}, {sf}, {grdevices} to Imports
+* add `divide()` function
+* add `riley()` function
+* add `squiggles()` function
+* add `smudge()` function
+* add `lines()` function
+* add `moire()` function
+
 ## aRt 1.2.9
 
 * add `contours()` function
