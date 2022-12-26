@@ -7,7 +7,7 @@
 
 make_lines <- function(res = 100) {
   r <- rnorm(1, 0, 1)
-  yx <- smooth(r + smooth(cumsum(rnorm(res, 0, 0.3))))
+  yx <- smooth(r + stats::smooth(cumsum(stats::rnorm(res, 0, 0.3))))
   return(yx)
 }
 
