@@ -4,12 +4,21 @@
 \alias{waves}
 \title{Waves}
 \usage{
-waves(a = 23, b = 6, main_col = "black", bg_col = "white", s = 2021)
+waves(
+  a = 23,
+  b = 6,
+  linewidth = 0.5,
+  main_col = "black",
+  bg_col = "white",
+  s = 2021
+)
 }
 \arguments{
 \item{a}{sine wave parameter. Default 23.}
 
 \item{b}{Cosine wave parameter. Default 6.}
+
+\item{linewidth}{Width of lines. Default 0.5.}
 
 \item{main_col}{Vector of colours (or single colour) for lines. Default "black".}
 
