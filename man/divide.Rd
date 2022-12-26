@@ -4,12 +4,16 @@
 \alias{divide}
 \title{Divide}
 \usage{
-divide(num_lines = 30, col_palette = PrettyCols::prettycols("Beach"), s = 1234)
+divide(
+  num_lines = 30,
+  col_palette = PrettyCols::prettycols("TangerineBlues"),
+  s = 1234
+)
 }
 \arguments{
 \item{num_lines}{Number of intersecting lines. Default 30.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("Beach").}
+\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("TangerineBlues").}
 
 \item{s}{Seed value. Default 1234.}
 }

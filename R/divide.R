@@ -3,13 +3,18 @@
 #' This function generates a coloured generative art ggplot object from intersecting lines.
 #'
 #' @param num_lines Number of intersecting lines. Default 30.
-#' @param col_palette Vector of colours. Default PrettyCols::prettycols("Beach").
+#' @param col_palette Vector of colours. Default PrettyCols::prettycols("TangerineBlues").
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @export
 
 divide <- function(num_lines = 30,
-                   col_palette = PrettyCols::prettycols("Beach"),
+                   col_palette = PrettyCols::prettycols("TangerineBlues"),
                    s = 1234) {
+  num_lines <- ceiling(num_lines)
+  if (num_lines < 3) {
+    stop("num_lines must be at least 3")
+  }
   set.seed(s)
   polygon1 <- sf::st_polygon(list(cbind(c(0, 1, 1, 0, 0), c(0, 0, 1, 1, 0))))
   endpoints <- tibble::tibble(x = c(seq(0, 1, length = 100),

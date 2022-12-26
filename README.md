@@ -224,6 +224,21 @@ crawling(n=1000, edge_colour="black", node_size=1, node_colour="black", bg_col="
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/crawling1000.jpeg?raw=true" width="30%">
 </p>
 
+### divide
+
+The `divide()` function produces generative art using intersecting lines.
+
+``` r
+divide(num_lines = 30, col_palette = PrettyCols::prettycols("TangerineBlues"), s = 1234)
+divide(num_lines = 80, col_palette = grey.colors(n = 80), s = 1234)
+divide(num_lines = 15, col_palette = MetBrewer::met.brewer("OKeeffe2"), s = 2022)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide1.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide2.jpeg?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/divide33.jpeg?raw=true" width="30%">
+</p>
+
 ### dots
 
 The `dots()` function produces generative art using jittered points.
