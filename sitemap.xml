@@ -4,9 +4,6 @@
     <loc>https://nrennie.github.io/aRt/404.html</loc>
   </url>
   <url>
-    <loc>https://nrennie.github.io/aRt/LICENSE-text.html</loc>
-  </url>
-  <url>
     <loc>https://nrennie.github.io/aRt/LICENSE.html</loc>
   </url>
   <url>
@@ -61,6 +58,9 @@
     <loc>https://nrennie.github.io/aRt/reference/crawling.html</loc>
   </url>
   <url>
+    <loc>https://nrennie.github.io/aRt/reference/divide.html</loc>
+  </url>
+  <url>
     <loc>https://nrennie.github.io/aRt/reference/dots.html</loc>
   </url>
   <url>
@@ -82,10 +82,22 @@
     <loc>https://nrennie.github.io/aRt/reference/infinity.html</loc>
   </url>
   <url>
+    <loc>https://nrennie.github.io/aRt/reference/lines.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/make_lines.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/moire.html</loc>
+  </url>
+  <url>
     <loc>https://nrennie.github.io/aRt/reference/mosaic.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/mosaic_sketch.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/pipe.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/polygons.html</loc>
@@ -97,13 +109,22 @@
     <loc>https://nrennie.github.io/aRt/reference/rectangles.html</loc>
   </url>
   <url>
+    <loc>https://nrennie.github.io/aRt/reference/riley.html</loc>
+  </url>
+  <url>
     <loc>https://nrennie.github.io/aRt/reference/shells.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/smudge.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/spirals.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/squares.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/squiggles.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/stacked.html</loc>
