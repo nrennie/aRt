@@ -6,7 +6,7 @@
 \usage{
 flow_fields(
   n = 10000,
-  granualarity = 1000,
+  granularity = 1000,
   x_freq = 1,
   y_freq = 1,
   alpha = 1,
@@ -19,7 +19,7 @@ flow_fields(
 \arguments{
 \item{n}{Number of lines. Default 10000.}
 
-\item{granualarity}{How fine to draw the grid. Default 1000.}
+\item{granularity}{How fine to draw the grid. Default 1000.}
 
 \item{x_freq}{Frequency of x simplex noise. Default 1.}
 

@@ -288,9 +288,9 @@ fading(n_layers=10, n_points=10, col_palette=rcartocolor::carto_pal(n = 7, "Suns
 The `flow_fields()` function produces generative art using particle traces. These functions are inspired by a blog post by [Will Chase](https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/). 
 
 ``` r
-flow_fields(n = 10000, granualarity = 1000, x_freq = 1, y_freq = 1, alpha = 1, line_col = c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b"), bg_col = "lightgrey", s = 1234)
-flow_fields(n = 10000, granualarity = 1000, x_freq = 1, y_freq = 1, alpha = 0.3, line_col = "black", bg_col = "white", s = 1234)
-flow_fields(n = 10000, granualarity = 1000, x_freq = 3, y_freq = 0.2, alpha = 1, line_col = c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b"), bg_col = "lightgrey", s = 1234)
+flow_fields(n = 10000, granularity = 1000, x_freq = 1, y_freq = 1, alpha = 1, line_col = c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b"), bg_col = "lightgrey", s = 1234)
+flow_fields(n = 10000, granularity = 1000, x_freq = 1, y_freq = 1, alpha = 0.3, line_col = "black", bg_col = "white", s = 1234)
+flow_fields(n = 10000, granularity = 1000, x_freq = 3, y_freq = 0.2, alpha = 1, line_col = c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b"), bg_col = "lightgrey", s = 1234)
 ```
 <p align="center">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/flow_fields1.jpeg?raw=true" width="30%">

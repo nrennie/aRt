@@ -1,3 +1,7 @@
+## aRt 1.3.1
+
+* Fix spelling of `granularity` in `flow_fields()`
+
 ## aRt 1.3.0
 
 * add {lwgeom}, {cowplot}, {sf}, {grdevices} to Imports

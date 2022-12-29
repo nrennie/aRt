@@ -4,7 +4,7 @@
 #' See also https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/
 #'
 #' @param n Number of lines. Default 10000.
-#' @param granualarity How fine to draw the grid. Default 1000.
+#' @param granularity How fine to draw the grid. Default 1000.
 #' @param x_freq Frequency of x simplex noise. Default 1.
 #' @param y_freq Frequency of y simplex noise. Default 1.
 #' @param alpha Transparency of lines. Default 1.
@@ -16,7 +16,7 @@
 #' @export
 
 flow_fields <- function(n = 10000,
-                        granualarity = 1000,
+                        granularity = 1000,
                         x_freq = 1,
                         y_freq = 1,
                         alpha = 1,
