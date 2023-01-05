@@ -39,7 +39,7 @@ rough_tiles <- function(n = 10,
     ggvoronoi::geom_voronoi() +
     ggvoronoi::stat_voronoi(geom = "path",
                             colour = line_col,
-                            size = line_size) +
+                            linewidth = line_size) +
     ggplot2::scale_fill_manual(values = fill_cols)
   return(p)
 
@@ -99,7 +99,7 @@ mosaic_sketch <- function(n = 10,
                        ggplot2::aes(x = .data$x,
                                     y = .data$y,
                                     group = .data$group,
-                                    size = I(.data$size),
+                                    linewidth = I(.data$linewidth),
                                     colour = I(.data$colour))) +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none",
