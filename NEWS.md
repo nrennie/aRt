@@ -1,3 +1,9 @@
+## aRt 1.3.2
+
+* Fix bug in `flow_fields()`
+* Update `mosaic_sketch()` to use `linewidth`
+* Minimum ggplot2 version 3.4.0
+
 ## aRt 1.3.1
 
 * Fix spelling of `granularity` in `flow_fields()`
