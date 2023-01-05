@@ -24,8 +24,8 @@ flow_fields <- function(n = 10000,
                         bg_col = "lightgrey",
                         s = 1234) {
   set.seed(s)
-  grid <- ambient::long_grid(seq(1, 10, length.out = granualarity),
-                             seq(1, 10, length.out = granualarity)) %>%
+  grid <- ambient::long_grid(seq(1, 10, length.out = granularity),
+                             seq(1, 10, length.out = granularity)) %>%
     dplyr::mutate(
       x1 = .data$x + ambient::gen_simplex(x = .data$x, y = .data$y, frequency = x_freq),
       y1 = .data$y + ambient::gen_simplex(x = .data$x, y = .data$y, frequency = y_freq)
