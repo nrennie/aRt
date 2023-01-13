@@ -689,3 +689,20 @@ waves(a=6, b=23, linewidth = 0.5, main_col="black", bg_col="white", s=2021)
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves23_6_col.jpeg?raw=true" width="30%">
 <img src="https://github.com/nrennie/aRt/blob/main/man/figures/waves6_23_bw.jpeg?raw=true" width="30%">
 </p>
+
+
+### windows
+
+The `windows()` function produces generative art using a grid of squares.
+
+``` r
+windows(n_x = 10, n_y = 10, col_palette = PrettyCols::prettycols("Beach", n = 5), linewidth = 2) 
+windows(n_x = 12, n_y = 12, col_palette = gray.colors(20), linewidth = 2) 
+windows(n_x = 5, n_y = 5, col_palette = PrettyCols::prettycols("TangerineBlues"), linewidth = 1) 
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/windows1.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/windows2.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/windows3.png?raw=true" width="30%">
+</p>
+
