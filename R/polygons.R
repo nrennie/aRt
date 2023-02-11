@@ -92,7 +92,7 @@ polygons <- function(n_x = 12,
   holes$subid <- 2L
   datapoly <- rbind(datapoly, holes)
   # plot
-  p <- ggplot2::ggplot(datapoly, aes(x = x, y = y)) +
+  p <- ggplot2::ggplot(datapoly, ggplot2::aes(x = x, y = y)) +
     ggplot2::geom_polygon(ggplot2::aes(group = id, fill = .data$cols, subgroup = .data$subid), colour = NA) +
     ggplot2::scale_fill_manual(values = colours) +
     ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
