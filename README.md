@@ -482,6 +482,22 @@ riley(n_x = 12, n_y = 6, offset = 0, main_col = "#481620", bg_col = "#fafafa")
 </p>
 
 
+### Shatter
+
+The `shatter()` function produces generative art using a grid of polygons.
+
+``` r
+shatter(n_x = 25, n_y = 25, decay = 0.9, colour = "black", bg_col = "gray97", s = 1234)
+shatter(n_x = 100, n_y = 100, decay = 0.7, colour = "gray90", bg_col = "gray10", s = 1234)
+shatter(n_x = 20, n_y = 20, decay = 0.5, colour = "#D455B8", bg_col = "#55D471", s = 1234)
+```
+<p align="center">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/shatter1.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/shatter2.png?raw=true" width="30%">
+<img src="https://github.com/nrennie/aRt/blob/main/man/figures/shatter3.png?raw=true" width="30%">
+</p>
+
+
 ### shell
 
 The `shells()` function produces generative art using sine and cosine waves.
