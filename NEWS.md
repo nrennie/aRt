@@ -1,3 +1,8 @@
+## aRt 1.3.4
+
+* Add `shatter()`
+* Fix missing namespace in `polygons()`
+
 ## aRt 1.3.3
 
 * Add `windows()`
