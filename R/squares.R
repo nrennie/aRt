@@ -10,7 +10,6 @@
 #' @param pattern_size Size of pattern. Default 0.4.
 #' @param size Size of lines between squares. Default 1.5.
 #' @param s Random seed. Default 1234.
-#' @importFrom dplyr %>%
 #' @return A ggplot object.
 #' @export
 
@@ -23,7 +22,7 @@ squares <- function(n = 7,
                     s = 1234) {
   set.seed(s)
   df <- expand.grid(x = 1:n, y = 1:n)
-  plot_data <- df %>%
+  plot_data <- df |>
     dplyr::mutate(fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
                   angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE))
   ggplot2::ggplot(data = plot_data,

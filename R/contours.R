@@ -32,10 +32,10 @@ contours <- function(xmin = -3.27,
   plot_matrix <- raster::as.matrix(elev_data)
   colnames(plot_matrix) <- seq_len(ncol(plot_matrix))
   rownames(plot_matrix) <- seq_len(nrow(plot_matrix))
-  plot_data <- plot_matrix %>%
-    tibble::as_tibble() %>%
-    tibble::rownames_to_column(var = "y") %>%
-    tidyr::pivot_longer(-c(.data$y), names_to = "x", values_to = "z") %>%
+  plot_data <- plot_matrix |>
+    tibble::as_tibble() |>
+    tibble::rownames_to_column(var = "y") |>
+    tidyr::pivot_longer(-c(.data$y), names_to = "x", values_to = "z") |>
     dplyr::mutate(x = as.numeric(.data$x),
                   y = as.numeric(.data$y))
   # plot

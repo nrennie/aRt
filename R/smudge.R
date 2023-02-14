@@ -16,8 +16,8 @@ smudge <- function(n = 25,
   set.seed(s)
   new_palette <- grDevices::colorRampPalette(col_palette)(1 / binwidth)
   plot_data <- expand.grid(x = seq(1, n, 1),
-                           y = seq(1, n, 1)) %>%
-    tibble::as_tibble() %>%
+                           y = seq(1, n, 1)) |>
+    tibble::as_tibble() |>
     dplyr::mutate(z = stats::runif(n^2))
   ggplot2::ggplot(data = plot_data,
          mapping = ggplot2::aes(x = .data$x,

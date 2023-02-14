@@ -20,7 +20,7 @@ puzzles <- function(n = 200,
   }
   set.seed(s)
   x <- stats::rexp(n, 0.02)
-  plot_data <- tibble::tibble(id = 1:n, areas = x) %>%
+  plot_data <- tibble::tibble(id = 1:n, areas = x) |>
     dplyr::mutate(groups = factor(sample(seq_len(num_groups),
                                          size = n,
                                          replace = TRUE)),

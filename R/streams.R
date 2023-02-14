@@ -7,7 +7,6 @@
 #' @param fill_col Vector of fill colours.
 #' @param type Rotation of stream. Default "right".
 #' @param s Seed value. Default 1234.
-#' @importFrom dplyr %>%
 #' @return A ggplot object.
 #' @export
 
@@ -27,7 +26,7 @@ streams <- function(bg_col = "white",
   df <- purrr::map_dfr(.x = 1:n,
                        .f = ~{
                          x <- 1:sample(1:10, 1)
-                         tibble::tibble(x = x + sample(1:25, 1)) %>%
+                         tibble::tibble(x = x + sample(1:25, 1)) |>
                          dplyr::mutate(y = sample(1:10, length(x), replace = TRUE),
                                        z = as.character(.x))
                        })

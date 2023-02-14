@@ -32,9 +32,9 @@ divide <- function(num_lines = 30,
   choose_ends <- purrr::map(.x = 1:num_lines,
                             .f = ~as.matrix(dplyr::slice_sample(endpoints, n = 2)))
   make_lines <- sf::st_multilinestring(x = choose_ends)
-  cropped_sf <- lwgeom::st_split(polygon1, make_lines) %>%
-    sf::st_collection_extract(c("POLYGON")) %>%
-    sf::st_as_sf() %>%
+  cropped_sf <- lwgeom::st_split(polygon1, make_lines) |>
+    sf::st_collection_extract(c("POLYGON")) |>
+    sf::st_as_sf() |>
     dplyr::mutate(col = sample(seq_len(length(col_palette)),
                                size = nrow(.), replace = TRUE))
   g <- ggplot2::ggplot() +

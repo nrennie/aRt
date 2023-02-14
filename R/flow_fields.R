@@ -11,7 +11,6 @@
 #' @param line_col Line colours. Vector (or single element) of colours. Default c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b")
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 1234.
-#' @importFrom dplyr %>%
 #' @return A ggplot object.
 #' @export
 
@@ -25,7 +24,7 @@ flow_fields <- function(n = 10000,
                         s = 1234) {
   set.seed(s)
   grid <- ambient::long_grid(seq(1, 10, length.out = granularity),
-                             seq(1, 10, length.out = granularity)) %>%
+                             seq(1, 10, length.out = granularity)) |>
     dplyr::mutate(
       x1 = .data$x + ambient::gen_simplex(x = .data$x, y = .data$y, frequency = x_freq),
       y1 = .data$y + ambient::gen_simplex(x = .data$x, y = .data$y, frequency = y_freq)
@@ -36,19 +35,19 @@ flow_fields <- function(n = 10000,
 
   field <- as.matrix(grid, grid$x, value = grid$angle)
 
-  sim <- tidygraph::create_empty(n) %>%
-    particles::simulate(alpha_decay = 0, setup = particles::aquarium_genesis(vel_max = 0)) %>%
-    particles::wield(particles::reset_force, xvel = 0, yvel = 0) %>%
-    particles::wield(particles::field_force, angle = field, vel = 0.1, xlim = c(-5, 5), ylim = c(-5, 5)) %>%
+  sim <- tidygraph::create_empty(n) |>
+    particles::simulate(alpha_decay = 0, setup = particles::aquarium_genesis(vel_max = 0)) |>
+    particles::wield(particles::reset_force, xvel = 0, yvel = 0) |>
+    particles::wield(particles::field_force, angle = field, vel = 0.1, xlim = c(-5, 5), ylim = c(-5, 5)) |>
     particles::evolve(100, particles::record)
 
   traces <- data.frame(do.call(rbind, lapply(sim$history, particles::position)))
   names(traces) <- c("x", "y")
 
   traces <-
-    traces %>%
-    dplyr::mutate(particle = rep(1:n, 100)) %>%
-    dplyr::group_by(.data$particle) %>%
+    traces |>
+    dplyr::mutate(particle = rep(1:n, 100)) |>
+    dplyr::group_by(.data$particle) |>
     dplyr::mutate(colour = sample(line_col, 1, replace = TRUE))
 
   p <- ggplot2::ggplot() +

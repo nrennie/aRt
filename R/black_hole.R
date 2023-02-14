@@ -3,18 +3,17 @@
 #' @param r_maxi Radius of i^{th} internal circle
 #' @param n Number of points per circle
 #' @param lim Numeric specifying size of grid
-#' @importFrom dplyr %>%
 #' @noRd
 
 black_hole_points <- function(r_maxi, n, lim) {
   r <- 1 / sqrt(stats::runif(n)) * r_maxi
   theta <- stats::runif(n, 0, 2 * pi)
   plot_data <- tibble::tibble(x = cos(theta) * r,
-                              y = sin(theta) * r) %>%
+                              y = sin(theta) * r)  |>
     dplyr::filter(.data$x <= lim,
                   .data$x >= -1 * lim,
                   .data$y <= lim,
-                  .data$y >= -1 * lim) %>%
+                  .data$y >= -1 * lim) |>
     dplyr::mutate(dists = sqrt((.data$x^2 + .data$y^2)) - r_maxi)
   return(plot_data)
 }

@@ -19,8 +19,8 @@ riley <- function(n_x = 9,
   x <- -n_x:n_x
   y <- -n_y:n_y + offset
   df <- expand.grid(x = x, y = y)
-  plot_data <- df %>%
-    dplyr::mutate(y = .data$y + c(rep(c(0.5, 0), times = n_y), 0.5)) %>%
+  plot_data <- df |>
+    dplyr::mutate(y = .data$y + c(rep(c(0.5, 0), times = n_y), 0.5)) |>
     dplyr::filter(y != min(.data$y))
   p <- ggplot2::ggplot(plot_data) +
     ggforce::geom_ellipse(mapping = ggplot2::aes(

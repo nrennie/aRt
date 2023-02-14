@@ -4,8 +4,9 @@
 * Fix missing namespace in `polygons()`
 * Move {rayshader}, {deldir} from Imports to Suggests
 * Add {PrettyCols} to Suggests
-* Combine `mosiac()` and `mosaic_sketch()` (`sketch` is now an argument)
 * Lines in `lines()` are now centre aligned
+* Remove {magrittr} from Imports and use native pipe
+* Bump R version in Depends to 4.1
 
 ## aRt 1.3.3
 

@@ -9,7 +9,6 @@
 #' @param group group to identify part of same rectangle. Default 1.
 #' @return a data frame
 #' @noRd
-#'
 
 generate_line <- function(x, y, length, angle, group = 1) {
   if (!(angle %in% c("v", "h"))) {

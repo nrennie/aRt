@@ -58,7 +58,6 @@ draw_ellipse_in_circle <- function(x0 = 0,
 #' @param col_palette Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 1234.
-#' @importFrom dplyr %>%
 #' @return A ggplot object
 #' @export
 
@@ -76,7 +75,7 @@ bubbles <- function(num_circles = 20,
   r <- sample(1:(0.75 * num_circles), size = num_circles, replace = TRUE)
   plot_data <- data.frame(x = c(), y = c(), group = c(), group_circle = c())
   for (i in 1:num_circles) {
-    k <- draw_ellipse_in_circle(x0 = x0[i], y0 = y0[i], r = r[i]) %>%
+    k <- draw_ellipse_in_circle(x0 = x0[i], y0 = y0[i], r = r[i]) |>
       dplyr::mutate(group_circle = i,
                     circle_col = as.character(sample(1:13, size = 1, prob = c(rep(0.01, 12), 0.78))))
     plot_data <- rbind(plot_data, k)

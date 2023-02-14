@@ -24,13 +24,15 @@ moire <- function(inner_n = 20,
                        y = seq(1, inner_n, by = 2))
   main2 <- expand.grid(x = seq(2, inner_n, by = 2),
                        y = seq(2, inner_n, by = 2))
-  main_square <- rbind(main1, main2) %>% tibble::as_tibble()
+  main_square <- rbind(main1, main2) |>
+    tibble::as_tibble()
   # top right
   tr1 <- expand.grid(x = seq(inner_n - dist, inner_n + dist + 0.5, by = 1),
                      y = seq(inner_n - dist, inner_n + dist + 0.5, by = 1))
   tr2 <- expand.grid(x = seq(inner_n - dist + 0.5, inner_n + dist + 0.5, by = 1),
                      y = seq(inner_n - dist + 0.5, inner_n + dist + 0.5, by = 1))
-  topright <- rbind(tr1, tr2) %>% tibble::as_tibble()
+  topright <- rbind(tr1, tr2) |>
+    tibble::as_tibble()
 
   # plot
   p <- ggplot2::ggplot() +
