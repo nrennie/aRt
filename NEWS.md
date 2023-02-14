@@ -2,7 +2,7 @@
 
 * Add `shatter()`
 * Fix missing namespace in `polygons()`
-* Move {rayshader}, {deldir}, {elevatr} from Imports to Suggests
+* Move {rayshader}, {deldir}, {elevatr}, {metR}, {particles} from Imports to Suggests
 * Add {PrettyCols} to Suggests
 * Lines in `lines()` are now centre aligned
 * Remove {magrittr} from Imports and use native pipe
