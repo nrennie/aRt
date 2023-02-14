@@ -22,3 +22,7 @@ remotes::install_github("nrennie/aRt")
 ## Colour palettes
 
 Some of the functions in previous releases of the {aRt} package took names of colour palettes as arguments. These colour palettes came from external R packages, and the names of the palettes were not necessarily obvious. These functions have been updated to allow any choice of colours, rather than restricting a user to a single package from which to choose palettes. 
+
+## Examples
+
+More examples (including code) can be found on my [website](https://nrennie.rbind.io/portfolio/rtistry/).
