@@ -24,7 +24,6 @@ Imports:
     ggpattern,
     ggplot2 (>= 3.4.0),
     ggraph,
-    ggstream,
     ggvoronoi,
     grDevices,
     igraph,
@@ -41,6 +40,7 @@ Imports:
 Suggests:
     deldir,
     elevatr,
+    ggstream,
   	MetBrewer,
   	metR,
   	particles,
