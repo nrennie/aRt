@@ -19,7 +19,6 @@ Imports:
     ape,
     cowplot,
     dplyr,
-    elevatr,
     ExtDist,
     ggforce,
     ggpattern,
@@ -43,6 +42,7 @@ Imports:
     treemapify
 Suggests:
     deldir,
+    elevatr,
   	MetBrewer,
   	PrettyCols,
   	rayshader,
