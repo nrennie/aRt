@@ -2,8 +2,8 @@
 #'
 #' This function generates a vertical or horizontal line.
 #'
-#' @param x x-cordinate of bottom left corner
-#' @param y y-cordinate of bottom left corner
+#' @param x x-cordinate of middle of line
+#' @param y y-cordinate of middle of line
 #' @param length length of line
 #' @param angle horizontal or vertical line. One of c("v", "h").
 #' @param group group to identify part of same rectangle. Default 1.
@@ -16,8 +16,8 @@ generate_line <- function(x, y, length, angle, group = 1) {
     stop("angle must be one of c('v', 'h').")
   }
   if (angle == "h") {
-    output <- data.frame(x = x,
-                         xend = x + length,
+    output <- data.frame(x = x - 0.5 * length,
+                         xend = x + 0.5 * length,
                          y = y,
                          yend = y,
                          group = group)
@@ -25,8 +25,8 @@ generate_line <- function(x, y, length, angle, group = 1) {
   if (angle == "v") {
     output <- data.frame(x = x,
                          xend = x,
-                         y = y,
-                         yend = y + length,
+                         y = y - 0.5 * length,
+                         yend = y + 0.5 * length,
                          group = group)
   }
   return(output)
