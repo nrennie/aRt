@@ -1,7 +1,11 @@
-## aRt 1.3.4
+## aRt 1.4.0
 
 * Add `shatter()`
 * Fix missing namespace in `polygons()`
+* Move {rayshader}, {deldir} from Imports to Suggests
+* Add {PrettyCols} to Suggests
+* Combine `mosiac()` and `mosaic_sketch()` (`sketch` is now an argument)
+* Lines in `lines()` are now centre aligned
 
 ## aRt 1.3.3
 
