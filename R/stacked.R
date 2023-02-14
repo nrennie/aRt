@@ -5,6 +5,9 @@
 #' @param n_x Number of polygons per row. Default 5.
 #' @param n_y Number of polygons per column. Default 5.
 #' @param col_palette Vector of colours. Default Hiroshige palette from MetBrewer.
+#' @param rayshade Boolean determining whether the returned plot should be converted to
+#' three dimensional using rayshader. If `TRUE`, {rayshader} is required to be installed.
+#' Default `FALSE`.
 #' @param shadow_intensity Intensity of shading for 3D elements, Default 0.5.
 #' @param sunangle Angle of the sun. Default 315.
 #' @param s Seed value. Default 1234.
@@ -15,6 +18,7 @@
 stacked <- function(n_x = 5,
                     n_y = 5,
                     col_palette = MetBrewer::met.brewer("Hiroshige", 9),
+                    rayshade = FALSE,
                     shadow_intensity = 0.5,
                     sunangle = 315,
                     s = 1234) {
@@ -96,12 +100,19 @@ stacked <- function(n_x = 5,
                    axis.line = ggplot2::element_blank(),
                    panel.grid.major = ggplot2::element_blank(),
                    panel.grid.minor = ggplot2::element_blank())
-  p
-  return(rayshader::plot_gg(p,
-                            fov = 0,
-                            theta = 0,
-                            phi = 90,
-                            shadow_intensity = shadow_intensity,
-                            sunangle = sunangle,
-                            preview = TRUE))
+  if (rayshade) {
+    if (!requireNamespace("rayshader")) {
+      stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
+    } else {
+      rayshader::plot_gg(p,
+                         fov = 0,
+                         theta = 0,
+                         phi = 90,
+                         shadow_intensity = shadow_intensity,
+                         sunangle = sunangle,
+                         preview = TRUE)
+    }
+  } else {
+    p
+  }
 }

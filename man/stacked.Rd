@@ -8,6 +8,7 @@ stacked(
   n_x = 5,
   n_y = 5,
   col_palette = MetBrewer::met.brewer("Hiroshige", 9),
+  rayshade = FALSE,
   shadow_intensity = 0.5,
   sunangle = 315,
   s = 1234
@@ -19,6 +20,10 @@ stacked(
 \item{n_y}{Number of polygons per column. Default 5.}
 
 \item{col_palette}{Vector of colours. Default Hiroshige palette from MetBrewer.}
+
+\item{rayshade}{Boolean determining whether the returned plot should be converted to
+three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+Default \code{FALSE}.}
 
 \item{shadow_intensity}{Intensity of shading for 3D elements, Default 0.5.}
 

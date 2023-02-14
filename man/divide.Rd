@@ -7,15 +7,20 @@
 divide(
   num_lines = 30,
   col_palette = PrettyCols::prettycols("TangerineBlues"),
+  rayshade = FALSE,
   s = 1234
 )
 }
 \arguments{
-\item{num_lines}{Number of intersecting lines. Default 30.}
+\item{num_lines}{Number of intersecting lines. Default \code{30}.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("TangerineBlues").}
+\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("TangerineBlues")}.}
 
-\item{s}{Seed value. Default 1234.}
+\item{rayshade}{Boolean determining whether the returned plot should be converted to
+three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+Default \code{FALSE}.}
+
+\item{s}{Seed value. Default \code{1234}.}
 }
 \value{
 A ggplot object.

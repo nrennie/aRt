@@ -8,7 +8,8 @@ windows(
   n_x = 10,
   n_y = 10,
   col_palette = PrettyCols::prettycols("Beach", n = 5),
-  linewidth = 2
+  linewidth = 2,
+  rayshade = FALSE
 )
 }
 \arguments{
@@ -19,6 +20,10 @@ windows(
 \item{col_palette}{Vector of colours. Default PrettyCols::prettycols("Beach", n = 5).}
 
 \item{linewidth}{Width of borders around squares. Default 2.}
+
+\item{rayshade}{Boolean determining whether the returned plot should be converted to
+three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+Default \code{FALSE}.}
 }
 \value{
 A ggplot object.

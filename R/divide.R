@@ -2,14 +2,18 @@
 #'
 #' This function generates a coloured generative art ggplot object from intersecting lines.
 #'
-#' @param num_lines Number of intersecting lines. Default 30.
-#' @param col_palette Vector of colours. Default PrettyCols::prettycols("TangerineBlues").
-#' @param s Seed value. Default 1234.
+#' @param num_lines Number of intersecting lines. Default `30`.
+#' @param col_palette Vector of colours. Default `PrettyCols::prettycols("TangerineBlues")`.
+#' @param rayshade Boolean determining whether the returned plot should be converted to
+#' three dimensional using rayshader. If `TRUE`, {rayshader} is required to be installed.
+#' Default `FALSE`.
+#' @param s Seed value. Default `1234`.
 #' @return A ggplot object.
 #' @export
 
 divide <- function(num_lines = 30,
                    col_palette = PrettyCols::prettycols("TangerineBlues"),
+                   rayshade = FALSE,
                    s = 1234) {
   num_lines <- ceiling(num_lines)
   if (num_lines < 3) {
@@ -41,10 +45,17 @@ divide <- function(num_lines = 30,
     ggplot2::coord_sf(expand = FALSE) +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
-  rayshader::plot_gg(g,
-                     fov = 0,
-                     theta = 0,
-                     phi = 90,
-                     preview = TRUE)
-
+  if (rayshade) {
+    if (!requireNamespace("rayshader")) {
+      stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
+    } else {
+      rayshader::plot_gg(g,
+                         fov = 0,
+                         theta = 0,
+                         phi = 90,
+                         preview = TRUE)
+    }
+  } else {
+    g
+  }
 }
