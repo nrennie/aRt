@@ -34,9 +34,10 @@ divide <- function(num_lines = 30,
   make_lines <- sf::st_multilinestring(x = choose_ends)
   cropped_sf <- lwgeom::st_split(polygon1, make_lines) |>
     sf::st_collection_extract(c("POLYGON")) |>
-    sf::st_as_sf() |>
-    dplyr::mutate(col = sample(seq_len(length(col_palette)),
-                               size = nrow(.), replace = TRUE))
+    sf::st_as_sf()
+  cropped_sf$col <- sample(seq_len(length(col_palette)),
+                           size = nrow(cropped_sf),
+                           replace = TRUE)
   g <- ggplot2::ggplot() +
     ggplot2::geom_sf(data = cropped_sf,
                      mapping = ggplot2::aes(fill = col),
