@@ -5,7 +5,7 @@
 \alias{theme_aRt}
 \title{aRt theme}
 \format{
-An object of class \code{theme} (inherits from \code{gg}) of length 93.
+An object of class \code{theme} (inherits from \code{gg}) of length 97.
 }
 \usage{
 theme_aRt
