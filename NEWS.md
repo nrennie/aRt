@@ -1,6 +1,8 @@
 ## aRt 1.4.1
 
 * Fix: bug introduced in `divide()` when switching to native pipe
+* Fix: change to using `after_stat()`
+* Fix: use `quietly = TRUE` when checking packages 
 
 ## aRt 1.4.0
 
