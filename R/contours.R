@@ -23,10 +23,10 @@ contours <- function(xmin = -3.27,
                      dark = "black",
                      range = c(0.5, 1)) {
   # check if {elevatr} loaded
-  if (!requireNamespace("elevatr")) {
+  if (!requireNamespace("elevatr", quietly = TRUE)) {
     stop("Please install {elevatr} to use this function.")
   } else {
-    if (!requireNamespace("metR")) {
+    if (!requireNamespace("metR", quietly = TRUE)) {
       stop("Please install {metR} to use this function.")
     } else {
       # get elevation data

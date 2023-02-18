@@ -101,7 +101,7 @@ stacked <- function(n_x = 5,
                    panel.grid.major = ggplot2::element_blank(),
                    panel.grid.minor = ggplot2::element_blank())
   if (rayshade) {
-    if (!requireNamespace("rayshader")) {
+    if (!requireNamespace("rayshader", quietly = TRUE)) {
       stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
     } else {
       rayshader::plot_gg(p,
