@@ -47,7 +47,7 @@ divide <- function(num_lines = 30,
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
   if (rayshade) {
-    if (!requireNamespace("rayshader")) {
+    if (!requireNamespace("rayshader", quietly = TRUE)) {
       stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
     } else {
       rayshader::plot_gg(g,
