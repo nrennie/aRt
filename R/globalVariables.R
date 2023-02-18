@@ -1,1 +1,1 @@
-globalVariables(c("..density..", "."))
+globalVariables(c("density", "."))

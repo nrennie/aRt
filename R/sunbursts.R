@@ -28,7 +28,7 @@ sunbursts <- function(n = 100,
   # plot
   p <- ggplot2::ggplot(data = plot_data,
                   mapping = ggplot2::aes(x = .data$x, y = .data$y)) +
-    ggplot2::stat_density_2d(mapping = ggplot2::aes(fill = ..density..),
+    ggplot2::stat_density_2d(mapping = ggplot2::aes(fill = ggplot2::after_stat(density)),
                              geom = "raster", contour = FALSE, na.rm = TRUE) +
     ggplot2::scale_x_continuous(expand = c(0, 0),
                                 limits = c(min(c(plot_data$x, plot_data$y)),
@@ -74,7 +74,14 @@ sunbursts_panel <- function(n = 100,
                             s = 1234) {
   set.seed(s)
   ss <- sample(5:100, size = ncol * nrow)
-  p <- lapply(ss, function(i) sunbursts(n = i, x_means = x_means, y_means = y_means, xy_var = xy_var, low = low, high = high, s = i))
+  p <- lapply(ss, function(i) {
+    sunbursts(n = i,
+              x_means = x_means,
+              y_means = y_means,
+              xy_var = xy_var,
+              low = low,
+              high = high,
+              s = i)})
   patchwork::wrap_plots(p) +
     patchwork::plot_layout(ncol = ncol, nrow = nrow) &
     ggplot2::theme(plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
