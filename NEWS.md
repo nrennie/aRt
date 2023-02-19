@@ -1,3 +1,7 @@
+## aRt 1.4.2
+
+* Add `gradients()`
+
 ## aRt 1.4.1
 
 * Fix: bug introduced in `divide()` when switching to native pipe

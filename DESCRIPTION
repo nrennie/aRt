@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.4.1
+Version: 1.4.2
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
@@ -33,6 +33,7 @@ Imports:
     raster,
     sf,
     stats,
+    stringr,
     tibble,
     tidygraph,
     tidyr,
