@@ -1,6 +1,7 @@
 ## aRt 1.4.2
 
 * Add `gradients()`
+* Move {ambient} to Suggests
 
 ## aRt 1.4.1
 

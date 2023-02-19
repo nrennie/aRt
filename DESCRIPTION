@@ -15,7 +15,6 @@ RoxygenNote: 7.2.3
 Depends: 
     R (>= 4.1)
 Imports:
-    ambient,
     ape,
     cowplot,
     dplyr,
@@ -39,6 +38,7 @@ Imports:
     tidyr,
     treemapify
 Suggests:
+    ambient,
     deldir,
     elevatr,
     ggstream,
