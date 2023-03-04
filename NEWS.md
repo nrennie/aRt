@@ -1,3 +1,7 @@
+## aRt 1.4.3
+
+* Add `random_tessellation()`
+
 ## aRt 1.4.2
 
 * Add `gradients()`
