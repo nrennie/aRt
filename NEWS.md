@@ -1,6 +1,7 @@
 ## aRt 1.4.3
 
 * Add `random_tessellation()`
+* Add `sunsets()`
 
 ## aRt 1.4.2
 
