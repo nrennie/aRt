@@ -2,6 +2,7 @@
 
 * Add `random_tessellation()`
 * Add `sunsets()`
+* Add `spiro()`
 
 ## aRt 1.4.2
 
