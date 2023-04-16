@@ -3,6 +3,8 @@
 * Add `random_tessellation()`
 * Add `sunsets()`
 * Add `spiro()`
+* Rename `windows()` to `window_boxes()`
+* Rename `lines()` to `perpendicular()`
 
 ## aRt 1.4.2
 
