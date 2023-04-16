@@ -1,4 +1,4 @@
-#' Windows
+#' Window Boxes
 #'
 #' This function generates a coloured generative art ggplot object using rectangles.
 #'
@@ -13,19 +13,25 @@
 #' @export
 #'
 
-windows <- function(n_x = 10,
-                    n_y = 10,
-                    col_palette = PrettyCols::prettycols("Beach", n = 5),
-                    linewidth = 2,
-                    rayshade = FALSE) {
-  plot_data <- expand.grid(x = 1:n_x,
-                           y = 1:n_y)
+window_boxes <- function(n_x = 10,
+                         n_y = 10,
+                         col_palette = PrettyCols::prettycols("Beach", n = 5),
+                         linewidth = 2,
+                         rayshade = FALSE) {
+  plot_data <- expand.grid(
+    x = 1:n_x,
+    y = 1:n_y
+  )
   g <- ggplot2::ggplot(data = plot_data) +
-    ggplot2::geom_tile(mapping = ggplot2::aes(x = .data$x,
-                                              y = .data$y,
-                                              fill = .data$x,
-                                              colour = .data$y),
-                       linewidth = linewidth) +
+    ggplot2::geom_tile(
+      mapping = ggplot2::aes(
+        x = .data$x,
+        y = .data$y,
+        fill = .data$x,
+        colour = .data$y
+      ),
+      linewidth = linewidth
+    ) +
     ggplot2::scale_fill_gradientn(colours = col_palette) +
     ggplot2::scale_colour_gradientn(colours = col_palette) +
     ggplot2::coord_fixed(expand = FALSE) +
@@ -36,11 +42,12 @@ windows <- function(n_x = 10,
       stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
     } else {
       rayshader::plot_gg(g,
-                         height_aes = "colour",
-                         fov = 0,
-                         theta = 0,
-                         phi = 90,
-                         preview = TRUE)
+        height_aes = "colour",
+        fov = 0,
+        theta = 0,
+        phi = 90,
+        preview = TRUE
+      )
     }
   } else {
     g
