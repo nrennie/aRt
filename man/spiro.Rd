@@ -10,21 +10,24 @@ spiro(
   d = 10,
   R = 4,
   r = 1,
+  linewidth = 0.5,
   col_palette = "white",
   bg_col = "grey20",
   s = 1234
 )
 }
 \arguments{
-\item{n_x}{Number of spirals per row.}
+\item{n_x}{Number of spirals per row. Default 10.}
 
-\item{n_y}{Number of spirals per column.}
+\item{n_y}{Number of spirals per column. Default 10.}
 
-\item{d}{Diameter.}
+\item{d}{Diameter. Default 10.}
 
-\item{R}{Outer radius.}
+\item{R}{Outer radius. Default 4.}
 
-\item{r}{Inner radius.}
+\item{r}{Inner radius. Default 1.}
+
+\item{linewidth}{Width on lines. Default 0.5.}
 
 \item{col_palette}{Vector of colours. Default "white".}
 
