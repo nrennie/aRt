@@ -85,9 +85,6 @@
     <loc>https://nrennie.github.io/aRt/reference/infinity.html</loc>
   </url>
   <url>
-    <loc>https://nrennie.github.io/aRt/reference/lines.html</loc>
-  </url>
-  <url>
     <loc>https://nrennie.github.io/aRt/reference/make_lines.html</loc>
   </url>
   <url>
@@ -103,6 +100,9 @@
     <loc>https://nrennie.github.io/aRt/reference/mosaic_sketch.html</loc>
   </url>
   <url>
+    <loc>https://nrennie.github.io/aRt/reference/perpendicular.html</loc>
+  </url>
+  <url>
     <loc>https://nrennie.github.io/aRt/reference/polygons.html</loc>
   </url>
   <url>
@@ -110,6 +110,9 @@
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/random_hex.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/random_tessellation.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/rectangles.html</loc>
@@ -128,6 +131,9 @@
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/spirals.html</loc>
+  </url>
+  <url>
+    <loc>https://nrennie.github.io/aRt/reference/spiro.html</loc>
   </url>
   <url>
     <loc>https://nrennie.github.io/aRt/reference/squares.html</loc>
@@ -154,6 +160,9 @@
     <loc>https://nrennie.github.io/aRt/reference/sunbursts_panel.html</loc>
   </url>
   <url>
+    <loc>https://nrennie.github.io/aRt/reference/sunsets.html</loc>
+  </url>
+  <url>
     <loc>https://nrennie.github.io/aRt/reference/theme_aRt.html</loc>
   </url>
   <url>
@@ -166,6 +175,6 @@
     <loc>https://nrennie.github.io/aRt/reference/waves.html</loc>
   </url>
   <url>
-    <loc>https://nrennie.github.io/aRt/reference/windows.html</loc>
+    <loc>https://nrennie.github.io/aRt/reference/window_boxes.html</loc>
   </url>
 </urlset>
