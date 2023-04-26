@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.4.3
+Version: 1.4.4
 Authors@R: 
     person(given = "Nicola",
            family = "Rennie",
