@@ -10,7 +10,7 @@
 #' @param r_ring Vector of radii for centre of gaps. Default c(0.6, 0.4).
 #' @param x0 Vector of x-co-ordinates for pie charts. Default c(0, 1).
 #' @param y0 Vector of y-co-ordinates for pie charts. Default c(0, 2).
-#' @param r0 Vector of radii for pie charts. Default c(1, 0.7).
+#' @param r Vector of radii for pie charts. Default c(1, 0.7).
 #' @param n Vector of slices per pie chart. Default c(80, 80).
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -30,8 +30,12 @@ rings <- function(col_palette = PrettyCols::prettycols("Lively"),
   set.seed(s)
   n_rings <- length(n)
   if (any(c(
-    length(x_ring), length(y_ring), length(r_ring),
-    length(x0), length(y0), length(r)
+    length(x_ring),
+    length(y_ring),
+    length(r_ring),
+    length(x0),
+    length(y0),
+    length(r)
   ) != n_rings)) {
     stop("All of x_ring, y_ring, r_ring, x0, y0, r, and n must have the same length.")
   }
@@ -47,7 +51,7 @@ rings <- function(col_palette = PrettyCols::prettycols("Lively"),
   for (i in 1:n_rings) {
     temp_df <- data.frame(
       group = rep(i, n[i]),
-      value = runif(n[i], 0, 0.1),
+      value = stats::runif(n[i], 0, 0.1),
       x0 = rep(x0[i], n[i]),
       y0 = rep(y0[i], n[i]),
       r = rep(r[i], n[i]),
@@ -59,13 +63,13 @@ rings <- function(col_palette = PrettyCols::prettycols("Lively"),
     ggforce::geom_arc_bar(
       data = plot_data,
       ggplot2::aes(
-        x0 = x0,
-        y0 = y0,
+        x0 = .data$x0,
+        y0 = .data$y0,
         r0 = 0,
-        r = r,
-        amount = value,
-        fill = col,
-        group = group
+        r = .data$r,
+        amount = .data$value,
+        fill = .data$col,
+        group = .data$group
       ),
       stat = "pie",
       linewidth = 0,

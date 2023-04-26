@@ -32,11 +32,11 @@ rings(
 
 \item{y0}{Vector of y-co-ordinates for pie charts. Default c(0, 2).}
 
+\item{r}{Vector of radii for pie charts. Default c(1, 0.7).}
+
 \item{n}{Vector of slices per pie chart. Default c(80, 80).}
 
 \item{s}{Seed value. Default 1234.}
-
-\item{r0}{Vector of radii for pie charts. Default c(1, 0.7).}
 }
 \value{
 A ggplot object.
