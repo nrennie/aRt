@@ -1,3 +1,7 @@
+## aRt 1.4.4
+
+* Add `rings()`
+
 ## aRt 1.4.3
 
 * Add `random_tessellation()`
