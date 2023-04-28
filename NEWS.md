@@ -1,6 +1,7 @@
 ## aRt 1.4.4
 
 * Add `rings()`
+* Add `mirrored()`
 
 ## aRt 1.4.3
 
