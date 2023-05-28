@@ -2,6 +2,7 @@
 
 * Add `rings()`
 * Add `mirrored()`
+* Add `chaos()`
 
 ## aRt 1.4.3
 
