@@ -3,6 +3,7 @@
 * Add `rings()`
 * Add `mirrored()`
 * Add `chaos()`
+* Add `criss_cross()`
 
 ## aRt 1.4.3
 
