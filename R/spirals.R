@@ -18,7 +18,7 @@ spirals <- function(perc = 0.2,
   r <- 0.5 + 0.5 * theta
   df <- data.frame(x = r * cos(theta), y = r * sin(-theta))
   df$col_val <- stats::runif(length(theta), -1, 1)
-  df$size_val <- ExtDist::rBeta_ab(n = length(theta), shape1 = 3, shape2 = 9, a = 0, b = 40)
+  df$size_val <- (40 - 0) * stats::rbeta(n = length(theta), shape1 = 3, shape2 = 9) + 0
   # bg noise
   bg_value <- 500
   df2 <- data.frame(x = stats::runif(bg_value, -20, 20),

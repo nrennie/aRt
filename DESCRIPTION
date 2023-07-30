@@ -18,7 +18,6 @@ Imports:
     ape,
     cowplot,
     dplyr,
-    ExtDist,
     ggforce,
     ggpattern,
     ggplot2 (>= 3.4.0),
@@ -49,7 +48,6 @@ Suggests:
   	rayshader,
   	rcartocolor,
   	RColorBrewer
-Remotes:
-    jhollist/elevatr
+Remotes: jhollist/elevatr
 Config/Needs/website: nrennie/nrenniepkgdown
 URL: https://nrennie.github.io/aRt/
