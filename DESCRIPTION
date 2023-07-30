@@ -29,18 +29,18 @@ Imports:
     lwgeom,
     patchwork,
     purrr,
-    raster,
     sf,
     stats,
     stringr,
+    terra,
     tibble,
     tidygraph,
     tidyr,
+    tidyterra,
     treemapify
 Suggests:
     ambient,
     deldir,
-    elevatr,
     ggstream,
   	MetBrewer,
   	metR,
@@ -49,5 +49,7 @@ Suggests:
   	rayshader,
   	rcartocolor,
   	RColorBrewer
+Remotes:
+    jhollist/elevatr
 Config/Needs/website: nrennie/nrenniepkgdown
 URL: https://nrennie.github.io/aRt/
