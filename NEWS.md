@@ -5,6 +5,8 @@
 * Add `wander()`
 * Add {terra} and {tidyterra} to Imports
 * Refactor `contours()` to use {tidyterra}
+* Refactor `spirals()` to remove {ExtDist} dependency
+* Use dev version of {elevatr}
 
 ## aRt 1.4.4
 
