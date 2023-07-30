@@ -1,3 +1,9 @@
+## aRt 1.4.5
+
+* Add `split_grid()`
+* Add `split_jitter()`
+* Add `wander()`
+
 ## aRt 1.4.4
 
 * Add `rings()`
