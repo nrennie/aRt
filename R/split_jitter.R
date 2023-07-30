@@ -79,7 +79,7 @@ split_jitter <- function(n_x = 5,
   )
   for (i in seq_len(length(polygons))) {
     p <- polygons[i]
-    p_data <- filter(plot_data, group == p)
+    p_data <- dplyr::filter(plot_data, group == p)
     x_corners <- p_data$x
     y_corners <- p_data$y
     # convert to polygon

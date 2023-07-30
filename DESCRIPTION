@@ -41,9 +41,9 @@ Imports:
 Suggests:
     ambient,
     deldir,
+    elevatr,
     ggstream,
   	MetBrewer,
-  	metR,
   	particles,
   	PrettyCols,
   	rayshader,

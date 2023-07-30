@@ -63,8 +63,8 @@ wander <- function(n_lines = 100,
   plot_data <- line_data |>
     tibble::as_tibble() |>
     dplyr::mutate(
-      x = x0 + noise_x,
-      y = y0 + noise_y
+      x = .data$x0 + .data$noise_x,
+      y = .data$y0 + .data$noise_y
     )
   lims <- ceiling(max(abs(c(plot_data$x, plot_data$y))))
 
@@ -73,21 +73,21 @@ wander <- function(n_lines = 100,
     ggplot2::geom_path(
       data = plot_data,
       mapping = ggplot2::aes(
-        x = x,
-        y = y,
-        group = grp,
-        colour = col
+        x = .data$x,
+        y = .data$y,
+        group = .data$grp,
+        colour = .data$col
       ),
       alpha = 0.7,
       linewidth = linewidth
     ) +
     ggplot2::geom_path(
       data = plot_data,
-      mapping = aes(
-        x = x,
-        y = y,
-        group = grp,
-        colour = col
+      mapping = ggplot2::aes(
+        x = .data$x,
+        y = .data$y,
+        group = .data$grp,
+        colour = .data$col
       ),
       position = ggplot2::position_jitter(
         width = deg_jitter,
@@ -99,10 +99,10 @@ wander <- function(n_lines = 100,
     ggplot2::geom_path(
       data = plot_data,
       mapping = ggplot2::aes(
-        x = x,
-        y = y,
-        group = grp,
-        colour = col
+        x = .data$x,
+        y = .data$y,
+        group = .data$grp,
+        colour = .data$col
       ),
       position = ggplot2::position_jitter(
         width = deg_jitter * 2,
