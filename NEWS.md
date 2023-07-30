@@ -3,6 +3,8 @@
 * Add `split_grid()`
 * Add `split_jitter()`
 * Add `wander()`
+* Add {terra} and {tidyterra} to Imports
+* Refactor `contours()` to use {tidyterra}
 
 ## aRt 1.4.4
 
