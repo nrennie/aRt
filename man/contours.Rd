@@ -10,9 +10,9 @@ contours(
   ymin = 54.43,
   ymax = 54.49,
   col_palette = MetBrewer::met.brewer("Hokusai3"),
-  light = "white",
-  dark = "black",
-  range = c(0.5, 1)
+  res = 50,
+  line_col = "#0a2e57",
+  linewidth = 0.5
 )
 }
 \arguments{
@@ -24,13 +24,14 @@ contours(
 
 \item{ymax}{Maximum y value og geographic area. Default 54.49.}
 
-\item{col_palette}{Colour palette to colour in contours. Default MetBrewer::met.brewer("Hokusai3").}
+\item{col_palette}{Colour palette to colour in contours.
+Default MetBrewer::met.brewer("Hokusai3").}
 
-\item{light}{Colour of light shading. Default "white".}
+\item{res}{Resolution of elevation. Default 50.}
 
-\item{dark}{Colour of dark shading. Default "black".}
+\item{line_col}{Colour of contours. Default "#0a2e57".}
 
-\item{range}{Numeric vector of length 2 with the minimum and maximum size of lines. Default c(0.5, 1).}
+\item{linewidth}{Width of contours. 0.5.}
 }
 \value{
 A ggplot object.
