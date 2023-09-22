@@ -2,16 +2,10 @@ Package: aRt
 Title: Generative Art with R
 Version: 1.4.4
 Authors@R: 
-    person(given = "Nicola",
-           family = "Rennie",
-           role = c("aut", "cre"),
-           email = "nrennie35@gmail.com")
+    person("Nicola", "Rennie", , "nrennie35@gmail.com", role = c("aut", "cre"))
 Description: Creates generative art using R.
 License: Apache License (>= 2)
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+URL: https://nrennie.github.io/aRt/
 Depends: 
     R (>= 4.1)
 Imports:
@@ -44,14 +38,16 @@ Suggests:
     deldir,
     elevatr,
     ggstream,
-  	MetBrewer,
-  	particles,
-  	PrettyCols,
-  	rayshader,
-  	rcartocolor,
-  	RColorBrewer
+    MetBrewer,
+    particles,
+    PrettyCols,
+    rayshader,
+    rcartocolor,
+    RColorBrewer
 Remotes:
-    jhollist/elevatr
     thomasp85/ggfx
 Config/Needs/website: nrennie/nrenniepkgdown
-URL: https://nrennie.github.io/aRt/
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3

@@ -13,7 +13,6 @@
 * Refactor `contours()` to use {tidyterra}
 * Refactor `spirals()` to remove {ExtDist} dependency
 * Add {terra} and {tidyterra} to Imports
-* Use dev version of {elevatr}
 * Update linting
 
 ## aRt 1.4.3
