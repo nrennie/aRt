@@ -20,13 +20,17 @@ polygons(
 
 \item{n_y}{Number of polygons per column. Default 18.}
 
-\item{gap_size}{Numeric between 0 and 1 specifying the size of the gap in the polygons. Default 0.5.}
+\item{gap_size}{Numeric between 0 and 1 specifying the size of the gap in
+the polygons. Default 0.5.}
 
-\item{deg_jitter}{Numeric between 0 and 0.5 specifying the degree of jitter. Default 0.1.}
+\item{deg_jitter}{Numeric between 0 and 0.5 specifying the degree of jitter.
+Default 0.1.}
 
-\item{colours}{Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").}
+\item{colours}{Vector of colours. Can be any length. Default
+\code{c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")}.}
 
-\item{rand}{Boolean for whether colours should be random or ordered. Default FALSE.}
+\item{rand}{Boolean for whether colours should be random or ordered.
+Default FALSE.}
 
 \item{bg_col}{Background colour. Default "gray97".}
 
@@ -36,5 +40,6 @@ polygons(
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object using polygons.
+This function generates a coloured generative art ggplot object using
+polygons.
 }

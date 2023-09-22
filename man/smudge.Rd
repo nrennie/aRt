@@ -16,7 +16,8 @@ smudge(
 
 \item{binwidth}{Binwidth for colours. Default 0.01.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("TangerineBlues").}
+\item{col_palette}{Vector of colours. Default
+\code{PrettyCols::prettycols("TangerineBlues")}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -24,5 +25,6 @@ smudge(
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object from contours.
+This function generates a coloured generative art ggplot object from
+contours.
 }

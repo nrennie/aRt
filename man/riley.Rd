@@ -21,6 +21,7 @@ riley(n_x = 9, n_y = 9, offset = 3, main_col = "black", bg_col = "white")
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object from intersecting lines.
+This function generates a coloured generative art ggplot object from
+intersecting lines.
 Inspired by Balm by Bridget Riley.
 }

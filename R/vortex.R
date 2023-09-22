@@ -29,20 +29,21 @@ vortex <- function(n = 25,
     ggplot2::geom_line(data = df1, mapping = ggplot2::aes(x = .data$id, y = .data$value, group = .data$type, colour = .data$type)) +
     ggplot2::scale_color_manual("", values = cols) +
     ggplot2::coord_polar(start = start_val, theta = "y") +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-                   plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-                   plot.title = ggplot2::element_blank(),
-                   plot.subtitle = ggplot2::element_blank(),
-                   legend.position = "none",
-                   plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
-                   axis.title.x = ggplot2::element_blank(),
-                   axis.title.y = ggplot2::element_blank(),
-                   axis.text.x = ggplot2::element_blank(),
-                   axis.text.y = ggplot2::element_blank(),
-                   axis.ticks.x = ggplot2::element_blank(),
-                   axis.ticks.y = ggplot2::element_blank(),
-                   panel.grid.major = ggplot2::element_blank(),
-                   panel.grid.minor = ggplot2::element_blank()
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
     )
   return(p)
 }

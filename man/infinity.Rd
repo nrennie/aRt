@@ -9,7 +9,8 @@ infinity(n = 25, col_scheme = "mono", bg_col = "black", s = 1234)
 \arguments{
 \item{n}{Number of lines per colour. Default 25.}
 
-\item{col_scheme}{Colour scheme of art. One of c("mono", "rainbow). Default 0.1.}
+\item{col_scheme}{Colour scheme of art. One of c("mono", "rainbow). Default
+0.1.}
 
 \item{bg_col}{Background colour. Default "black".}
 
@@ -19,5 +20,6 @@ infinity(n = 25, col_scheme = "mono", bg_col = "black", s = 1234)
 A ggplot object.
 }
 \description{
-This function generates a greyscale or rainbow coloured generative art ggplot object in the shape of an infinity symbol.
+This function generates a greyscale or rainbow coloured generative art
+ggplot object in the shape of an infinity symbol.
 }

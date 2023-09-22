@@ -21,34 +21,46 @@ spirals <- function(perc = 0.2,
   df$size_val <- (40 - 0) * stats::rbeta(n = length(theta), shape1 = 3, shape2 = 9) + 0
   # bg noise
   bg_value <- 500
-  df2 <- data.frame(x = stats::runif(bg_value, -20, 20),
-                    y = stats::runif(bg_value, -20, 20))
+  df2 <- data.frame(
+    x = stats::runif(bg_value, -20, 20),
+    y = stats::runif(bg_value, -20, 20)
+  )
   # plot
   p <- ggplot2::ggplot() +
-    ggplot2::geom_point(data = df,
-                        ggplot2::aes(x = .data$x, y = .data$y, col = .data$col_val, size = .data$size_val)) +
-    ggplot2::geom_point(data = df2,
-                        ggplot2::aes(x = .data$x, y = .data$y),
-                        colour = "white",
-                        size = 0.1) +
+    ggplot2::geom_point(
+      data = df,
+      mapping = ggplot2::aes(
+        x = .data$x,
+        y = .data$y,
+        col = .data$col_val,
+        size = .data$size_val
+      )
+    ) +
+    ggplot2::geom_point(
+      data = df2,
+      ggplot2::aes(x = .data$x, y = .data$y),
+      colour = "white",
+      size = 0.1
+    ) +
     ggplot2::coord_fixed(expand = FALSE) +
     ggplot2::xlim(-20, 20) +
     ggplot2::ylim(-20, 20) +
     ggplot2::scale_size(range = c(0, 12)) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "black", colour = "black"),
-          plot.background = ggplot2::element_rect(fill = "black", colour = "black"),
-          plot.title = ggplot2::element_blank(),
-          plot.subtitle = ggplot2::element_blank(),
-          legend.position = "none",
-          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
-          axis.title.x = ggplot2::element_blank(),
-          axis.title.y = ggplot2::element_blank(),
-          axis.text.x = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank(),
-          axis.ticks.x = ggplot2::element_blank(),
-          axis.ticks.y = ggplot2::element_blank(),
-          panel.grid.major = ggplot2::element_blank(),
-          panel.grid.minor = ggplot2::element_blank()
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = "black", colour = "black"),
+      plot.background = ggplot2::element_rect(fill = "black", colour = "black"),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
     )
   suppressWarnings(print(p))
 }

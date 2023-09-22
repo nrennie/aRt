@@ -18,7 +18,8 @@ circles(
 
 \item{smoothness}{Smoothness of lines on circles. Default 100.}
 
-\item{col_palette}{Vector of colours. Default "Bold" colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default "Bold" colour palette from
+rcartocolor.}
 
 \item{line_col}{Background colour. Default NA.}
 
@@ -30,5 +31,6 @@ circles(
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object using dendograms and circular graphs.
+This function generates a coloured generative art ggplot object using
+dendograms and circular graphs.
 }

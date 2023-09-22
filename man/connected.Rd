@@ -20,7 +20,8 @@ connected(
 
 \item{random}{Boolean value for whether to randomise plotting order of edges.}
 
-\item{col_palette}{Vector of colours. Default "RdPu" colour palette from RColorBrewer.}
+\item{col_palette}{Vector of colours. Default "RdPu" colour palette from
+RColorBrewer.}
 
 \item{bg_col}{Background colour. Default "#ae217e".}
 
@@ -30,5 +31,6 @@ connected(
 A ggplot object.
 }
 \description{
-This function generates a generative art ggplot object connecting points through arcs on a circle.
+This function generates a generative art ggplot object connecting points
+through arcs on a circle.
 }

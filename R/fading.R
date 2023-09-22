@@ -1,10 +1,12 @@
 #' Fading
 #'
-#' This function generates a coloured generative art ggplot object using voronoi tiles.
+#' This function generates a coloured generative art ggplot object using
+#' voronoi tiles.
 #'
 #' @param n_layers Number of layers. Default 6.
 #' @param n_points Number of points per layer area. Default 10.
-#' @param col_palette Vector of colours. Default "SunsetDark" colour palette from rcartocolor.
+#' @param col_palette Vector of colours. Default "SunsetDark" colour palette
+#' from rcartocolor.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @export
@@ -29,20 +31,21 @@ fading <- function(n_layers = 6,
     ggforce::geom_voronoi_tile(ggplot2::aes(fill = z)) +
     ggplot2::coord_cartesian(expand = FALSE) +
     ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "white", colour = "white"),
-        plot.background = ggplot2::element_rect(fill = "white", colour = "white"),
-        plot.title = ggplot2::element_blank(),
-        plot.subtitle = ggplot2::element_blank(),
-        legend.position = "none",
-        plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), # top, right, bottom, left
-        axis.title.x = ggplot2::element_blank(),
-        axis.title.y = ggplot2::element_blank(),
-        axis.text.x = ggplot2::element_blank(),
-        axis.text.y = ggplot2::element_blank(),
-        axis.ticks.x = ggplot2::element_blank(),
-        axis.ticks.y = ggplot2::element_blank(),
-        panel.grid.major = ggplot2::element_blank(),
-        panel.grid.minor = ggplot2::element_blank()
-  )
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = "white", colour = "white"),
+      plot.background = ggplot2::element_rect(fill = "white", colour = "white"),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"), # top, right, bottom, left
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
+    )
   suppressWarnings(print(p))
 }

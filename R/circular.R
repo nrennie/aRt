@@ -9,8 +9,6 @@
 #' @param upper_limit Outer radius of circle. Default 100.
 #' @param seed Seed value. Default 1234.
 #' @noRd
-#'
-#'
 
 rw_circular <- function(n, p = 0.5, lower_limit = 10, mid_limit = 90, upper_limit = 100, seed = 1234) {
   set.seed(seed)
@@ -59,20 +57,21 @@ circular <- function(n = 100,
   p <- ggplot2::ggplot(plot_data, ggplot2::aes(x = .data$val, y = .data$name, group = .data$val)) +
     ggplot2::geom_line(colour = main_col) +
     ggplot2::coord_polar(start = 0) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          plot.title = ggplot2::element_blank(),
-          plot.subtitle = ggplot2::element_blank(),
-          legend.position = "none",
-          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
-          axis.title.x = ggplot2::element_blank(),
-          axis.title.y = ggplot2::element_blank(),
-          axis.text.x = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank(),
-          axis.ticks.x = ggplot2::element_blank(),
-          axis.ticks.y = ggplot2::element_blank(),
-          panel.grid.major = ggplot2::element_blank(),
-          panel.grid.minor = ggplot2::element_blank()
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
     )
   return(p)
 }

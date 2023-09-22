@@ -17,12 +17,15 @@ window_boxes(
 
 \item{n_y}{Number of squares per column. Default 10.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("Beach", n = 5).}
+\item{col_palette}{Vector of colours. Default
+\code{PrettyCols::prettycols("Beach", n = 5)}.}
 
 \item{linewidth}{Width of borders around squares. Default 2.}
 
-\item{rayshade}{Boolean determining whether the returned plot should be converted to
-three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+\item{rayshade}{Boolean determining whether the returned plot should be
+converted to
+three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be
+installed.
 Default \code{FALSE}.}
 }
 \value{

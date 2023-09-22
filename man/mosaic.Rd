@@ -19,7 +19,8 @@ mosaic(
 \arguments{
 \item{n}{Number of points to generate tiles from. Default 100.}
 
-\item{fill_cols}{Vector of colours to fill tiles with, Default c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E").}
+\item{fill_cols}{Vector of colours to fill tiles with, Default
+\code{c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E")}.}
 
 \item{line_col}{Colour of lines between tiles, Default "white".}
 
@@ -27,11 +28,13 @@ mosaic(
 
 \item{line_size}{Thickness of lines between tiles. Default 1.}
 
-\item{x_means}{Vector of any number of means for the x-coordinate. Default c(0, 10, 5).}
+\item{x_means}{Vector of any number of means for the x-coordinate.
+Default \code{c(0, 10, 5)}.}
 
-\item{y_means}{Vector of any number of means for the y-coordinate. Default c(0, 7, 8).}
+\item{y_means}{Vector of any number of means for the y-coordinate.
+Default \code{c(0, 7, 8)}.}
 
-\item{xy_var}{Numeric varaince of x and y points. Default 2.}
+\item{xy_var}{Numeric variance of x and y points. Default 2.}
 
 \item{s}{Seed value. Default 1234.}
 }

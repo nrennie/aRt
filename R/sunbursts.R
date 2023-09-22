@@ -21,28 +21,44 @@ sunbursts <- function(n = 100,
                       s = 1234) {
   set.seed(s)
   # generate data
-  df <- purrr::map2(.x = x_means,
-              .y = y_means,
-              .f = ~data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var)))
+  df <- purrr::map2(
+    .x = x_means,
+    .y = y_means,
+    .f = ~ data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var))
+  )
   plot_data <- dplyr::bind_rows(df)
   # plot
-  p <- ggplot2::ggplot(data = plot_data,
-                  mapping = ggplot2::aes(x = .data$x, y = .data$y)) +
-    ggplot2::stat_density_2d(mapping = ggplot2::aes(fill = ggplot2::after_stat(density)),
-                             geom = "raster", contour = FALSE, na.rm = TRUE) +
-    ggplot2::scale_x_continuous(expand = c(0, 0),
-                                limits = c(min(c(plot_data$x, plot_data$y)),
-                                           (max(c(plot_data$x, plot_data$y))))) +
-    ggplot2::scale_y_continuous(expand = c(0, 0),
-                                limits = c(min(c(plot_data$x, plot_data$y)),
-                                           (max(c(plot_data$x, plot_data$y))))) +
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(x = .data$x, y = .data$y)
+  ) +
+    ggplot2::stat_density_2d(
+      mapping = ggplot2::aes(fill = ggplot2::after_stat(density)),
+      geom = "raster", contour = FALSE, na.rm = TRUE
+    ) +
+    ggplot2::scale_x_continuous(
+      expand = c(0, 0),
+      limits = c(
+        min(c(plot_data$x, plot_data$y)),
+        (max(c(plot_data$x, plot_data$y)))
+      )
+    ) +
+    ggplot2::scale_y_continuous(
+      expand = c(0, 0),
+      limits = c(
+        min(c(plot_data$x, plot_data$y)),
+        (max(c(plot_data$x, plot_data$y)))
+      )
+    ) +
     ggplot2::scale_fill_gradient(low = low, high = high) +
     ggplot2::coord_fixed() +
     ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none",
-                   plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
-                   plot.background = ggplot2::element_rect(fill = low, colour = low),
-                   panel.background = ggplot2::element_rect(fill = low, colour = low))
+    ggplot2::theme(
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+      plot.background = ggplot2::element_rect(fill = low, colour = low),
+      panel.background = ggplot2::element_rect(fill = low, colour = low)
+    )
   p
 }
 
@@ -75,17 +91,21 @@ sunbursts_panel <- function(n = 100,
   set.seed(s)
   ss <- sample(5:100, size = ncol * nrow)
   p <- lapply(ss, function(i) {
-    sunbursts(n = i,
-              x_means = x_means,
-              y_means = y_means,
-              xy_var = xy_var,
-              low = low,
-              high = high,
-              s = i)})
+    sunbursts(
+      n = i,
+      x_means = x_means,
+      y_means = y_means,
+      xy_var = xy_var,
+      low = low,
+      high = high,
+      s = i
+    )
+  })
   patchwork::wrap_plots(p) +
     patchwork::plot_layout(ncol = ncol, nrow = nrow) &
-    ggplot2::theme(plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
-                   plot.background = ggplot2::element_rect(fill = low, colour = low),
-                   panel.background = ggplot2::element_rect(fill = low, colour = low))
-
+    ggplot2::theme(
+      plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
+      plot.background = ggplot2::element_rect(fill = low, colour = low),
+      panel.background = ggplot2::element_rect(fill = low, colour = low)
+    )
 }

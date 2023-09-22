@@ -28,23 +28,26 @@ crawling <- function(n = 50,
   graph_net <- igraph::graph.edgelist(graph_edges)
   p <- ggraph::ggraph(graph_net, "igraph", algorithm = "tree", circular = TRUE) +
     ggraph::geom_edge_diagonal(colour = edge_colour) +
-    ggraph::geom_node_point(aes(filter = igraph::degree(graph_net, mode = "out") == 0),
-                    color = node_colour, size = node_size) +
+    ggraph::geom_node_point(
+      ggplot2::aes(filter = igraph::degree(graph_net, mode = "out") == 0),
+      color = node_colour, size = node_size
+    ) +
     ggplot2::coord_fixed() +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          plot.title = ggplot2::element_blank(),
-          plot.subtitle = ggplot2::element_blank(),
-          legend.position = "none",
-          plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
-          axis.title.x = ggplot2::element_blank(),
-          axis.title.y = ggplot2::element_blank(),
-          axis.text.x = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank(),
-          axis.ticks.x = ggplot2::element_blank(),
-          axis.ticks.y = ggplot2::element_blank(),
-          panel.grid.major = ggplot2::element_blank(),
-          panel.grid.minor = ggplot2::element_blank()
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
     )
   p
 }

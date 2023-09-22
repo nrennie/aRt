@@ -16,7 +16,7 @@ tiles <- function(n_x = 12,
                   s = 1234) {
   if (n_x < 1 || n_y < 1) {
     stop("Number of rows and columns must be at least 1")
-    }
+  }
   set.seed(s)
   n_x <- round(n_x)
   n_y <- round(n_y)
@@ -83,21 +83,23 @@ tiles <- function(n_x = 12,
     ggplot2::geom_polygon(data = datapoly3, mapping = ggplot2::aes(x = .data$x, y = .data$y, group = .data$id, fill = as.character(.data$cols)), colour = NA) +
     ggplot2::scale_fill_manual(values = col_palette) +
     ggplot2::coord_fixed(expand = FALSE, xlim = c(1, n_x + 1), ylim = c(1, n_y + 1)) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA, colour = NA),
-          plot.background = ggplot2::element_rect(fill = NA, colour = NA),
-          plot.title = ggplot2::element_blank(),
-          plot.subtitle = ggplot2::element_blank(),
-          legend.position = "none",
-          plot.margin = ggplot2::unit(c(0, 0, -0.1, -0.1), "cm"), # top, right, bottom, left
-          axis.title.x = ggplot2::element_blank(),
-          axis.title.y = ggplot2::element_blank(),
-          axis.text.x = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank(),
-          axis.ticks.x = ggplot2::element_blank(),
-          axis.ticks.y = ggplot2::element_blank(),
-          panel.border = ggplot2::element_blank(),
-          axis.line = ggplot2::element_blank(),
-          panel.grid.major = ggplot2::element_blank(),
-          panel.grid.minor = ggplot2::element_blank())
+    ggplot2::theme(
+      panel.background = ggplot2::element_rect(fill = NA, colour = NA),
+      plot.background = ggplot2::element_rect(fill = NA, colour = NA),
+      plot.title = ggplot2::element_blank(),
+      plot.subtitle = ggplot2::element_blank(),
+      legend.position = "none",
+      plot.margin = ggplot2::unit(c(0, 0, -0.1, -0.1), "cm"),
+      axis.title.x = ggplot2::element_blank(),
+      axis.title.y = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      panel.border = ggplot2::element_blank(),
+      axis.line = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
+    )
   p
 }

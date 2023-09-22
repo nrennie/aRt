@@ -26,7 +26,8 @@ rectangles(
 
 \item{main_col}{Colour of non-highlighted rectangles. Default "lightgrey".}
 
-\item{col_palette}{Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.}
+\item{col_palette}{Vector of colours. Default "Bold" colour palette from
+rcartocolor. Must have 12 colours.}
 
 \item{bg_col}{Background colour. Default "white".}
 
@@ -36,5 +37,6 @@ rectangles(
 A ggplot object
 }
 \description{
-This function generates a generative art ggplot object featuring multiple coloured rectangles.
+This function generates a generative art ggplot object featuring multiple
+coloured rectangles.
 }

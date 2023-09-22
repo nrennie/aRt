@@ -1,6 +1,7 @@
 #' Riley
 #'
-#' This function generates a coloured generative art ggplot object from intersecting lines.
+#' This function generates a coloured generative art ggplot object from
+#' intersecting lines.
 #' Inspired by Balm by Bridget Riley.
 #'
 #' @param n_x Number of circles in x-direction. Default 9.
@@ -23,21 +24,32 @@ riley <- function(n_x = 9,
     dplyr::mutate(y = .data$y + c(rep(c(0.5, 0), times = n_y), 0.5)) |>
     dplyr::filter(y != min(.data$y))
   p <- ggplot2::ggplot(plot_data) +
-    ggforce::geom_ellipse(mapping = ggplot2::aes(
-      x0 = .data$x,
-      y0 = .data$y,
-      b = 0.35 / (((abs(.data$y) + 1))^(1 / 3)),
-      a = 0.35,
-      alpha = abs(.data$y),
-      angle = 0),
+    ggforce::geom_ellipse(
+      mapping = ggplot2::aes(
+        x0 = .data$x,
+        y0 = .data$y,
+        b = 0.35 / (((abs(.data$y) + 1))^(1 / 3)),
+        a = 0.35,
+        alpha = abs(.data$y),
+        angle = 0
+      ),
       fill = main_col,
-      colour = "transparent") +
+      colour = "transparent"
+    ) +
     ggplot2::coord_fixed() +
     ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none",
-                   plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-                   panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col))
+    ggplot2::theme(
+      legend.position = "none",
+      plot.background = ggplot2::element_rect(
+        fill = bg_col, colour = bg_col
+      ),
+      panel.background = ggplot2::element_rect(
+        fill = bg_col, colour = bg_col
+      )
+    )
   cowplot::ggdraw() +
     cowplot::draw_plot(p) +
-    ggplot2::theme(plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col))
+    ggplot2::theme(plot.background = ggplot2::element_rect(
+      fill = bg_col, colour = bg_col
+    ))
 }

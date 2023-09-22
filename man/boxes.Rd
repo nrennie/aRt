@@ -15,9 +15,11 @@ boxes(
 \arguments{
 \item{n}{Number of boxes}
 
-\item{perc}{Relationship between box size and colour. Value between 0 and 1 where 0 represents randomness and 1 perfect identical. Default 0.1.}
+\item{perc}{Relationship between box size and colour. Value between 0 and 1
+where 0 represents randomness and 1 perfect identical. Default 0.1.}
 
-\item{col_palette}{Vector of colours. Default "DarkMint" colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default "DarkMint" colour palette from
+rcartocolor.}
 
 \item{bg_col}{Background colour. Default "black".}
 
@@ -27,5 +29,6 @@ boxes(
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object from treemaps.
+This function generates a coloured generative art ggplot object from
+treemaps.
 }

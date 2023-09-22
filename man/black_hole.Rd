@@ -16,13 +16,14 @@ black_hole(
 )
 }
 \arguments{
-\item{r_max}{Vector of radii for the internal circle. Default c(50, 150, 250, 350).}
+\item{r_max}{Vector of radii for the internal circle. Default \code{c(50, 150, 250, 350)}.}
 
 \item{n}{Number of points per circle. Default 10000.}
 
 \item{lim}{Numeric specifying size of grid. Default 400.}
 
-\item{main_cols}{Vector of colours (or single colour). Default rcartocolor::carto_pal(n = 7, name = "SunsetDark").}
+\item{main_cols}{Vector of colours (or single colour). Default
+\code{rcartocolor::carto_pal(n = 7, name = "SunsetDark")}.}
 
 \item{bg_col}{Background colour. Default "black".}
 

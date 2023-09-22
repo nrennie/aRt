@@ -16,7 +16,8 @@ fading(
 
 \item{n_points}{Number of points per layer area. Default 10.}
 
-\item{col_palette}{Vector of colours. Default "SunsetDark" colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default "SunsetDark" colour palette
+from rcartocolor.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -24,5 +25,6 @@ fading(
 A ggplot object.
 }
 \description{
-This function generates a coloured generative art ggplot object using voronoi tiles.
+This function generates a coloured generative art ggplot object using
+voronoi tiles.
 }

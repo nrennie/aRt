@@ -35,28 +35,35 @@ squiggles <- function(res = 100,
                       bg_col = "black",
                       s = 1234) {
   set.seed(s)
-  all_lines <- purrr::map(.x = 1:num_lines, .f = ~make_lines(res = res))
-  plot_data <- tibble::tibble(x = rep(1:res, times = num_lines),
-                              y = unlist(all_lines),
-                              group = rep(1:num_lines, each = res))
+  all_lines <- purrr::map(.x = 1:num_lines, .f = ~ make_lines(res = res))
+  plot_data <- tibble::tibble(
+    x = rep(1:res, times = num_lines),
+    y = unlist(all_lines),
+    group = rep(1:num_lines, each = res)
+  )
   full_lines <- sample(1:num_lines, round(perc * num_lines), replace = FALSE)
   p <- ggplot2::ggplot(data = plot_data) +
-    ggplot2::geom_line(mapping = ggplot2::aes(x = .data$x,
-                                              y = .data$y,
-                                              group = .data$group,
-                                              alpha = (.data$group %in% full_lines)),
-                       method = "gam",
-                       stat = "smooth",
-                       se = FALSE,
-                       colour = line_col,
-                       linewidth = 0.4) +
+    ggplot2::geom_line(
+      mapping = ggplot2::aes(
+        x = .data$x,
+        y = .data$y,
+        group = .data$group,
+        alpha = (.data$group %in% full_lines)
+      ),
+      method = "gam",
+      stat = "smooth",
+      se = FALSE,
+      colour = line_col,
+      linewidth = 0.4
+    ) +
     ggplot2::scale_alpha_manual(values = c(alpha_low, alpha_high)) +
     ggplot2::scale_x_continuous(expand = ggplot2::expansion(0, 0)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0, add = 1)) +
     ggplot2::theme_void() +
-    ggplot2::theme(plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-          legend.position = "none")
+    ggplot2::theme(
+      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
+      legend.position = "none"
+    )
   suppressMessages(print(p))
-
 }
