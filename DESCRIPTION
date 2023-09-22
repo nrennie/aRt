@@ -19,6 +19,7 @@ Imports:
     cowplot,
     dplyr,
     ggforce,
+    ggfx,
     ggpattern,
     ggplot2 (>= 3.4.0),
     ggraph,
@@ -26,6 +27,7 @@ Imports:
     grDevices,
     igraph,
     lwgeom,
+    magick,
     patchwork,
     purrr,
     sf,
@@ -48,6 +50,8 @@ Suggests:
   	rayshader,
   	rcartocolor,
   	RColorBrewer
-Remotes: jhollist/elevatr
+Remotes:
+    jhollist/elevatr
+    thomasp85/ggfx
 Config/Needs/website: nrennie/nrenniepkgdown
 URL: https://nrennie.github.io/aRt/
