@@ -1,4 +1,4 @@
-## aRt 1.4.5
+## aRt 1.4.4
 
 * Add `riso_circles()`
 * Add `crosshatch()`
@@ -6,18 +6,15 @@
 * Add `split_grid()`
 * Add `split_jitter()`
 * Add `wander()`
-* Add {terra} and {tidyterra} to Imports
-* Refactor `contours()` to use {tidyterra}
-* Refactor `spirals()` to remove {ExtDist} dependency
-* Use dev version of {elevatr}
-* Update linting
-
-## aRt 1.4.4
-
 * Add `rings()`
 * Add `mirrored()`
 * Add `chaos()`
 * Add `criss_cross()`
+* Refactor `contours()` to use {tidyterra}
+* Refactor `spirals()` to remove {ExtDist} dependency
+* Add {terra} and {tidyterra} to Imports
+* Use dev version of {elevatr}
+* Update linting
 
 ## aRt 1.4.3
 
