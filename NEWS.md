@@ -1,5 +1,8 @@
 ## aRt 1.4.5
 
+* Add `riso_circles()`
+* Add `crosshatch()`
+* Add `imploding_hexagon()`
 * Add `split_grid()`
 * Add `split_jitter()`
 * Add `wander()`
