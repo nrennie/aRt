@@ -11,7 +11,7 @@
 #' @param jitter_y Jitter in y direction for circle positions. Default 0.3.
 #' @param alpha Transparency of circles. Default 0.5.
 #' @param col_palette Vector of colours. Default `c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")`.
-#' @param cicrle_bg Background colour of circles. Default "#fafafa".
+#' @param circle_bg Background colour of circles. Default "#fafafa".
 #' @param bg_col Background colour. Default "gray10".
 #' @param interpolate Boolean indicating if colours should be interpolated. Default TRUE.
 #' @param s Seed value. Default 1234.
@@ -46,12 +46,17 @@ riso_circles <- function(n_x = 4,
   # plot
   g <- ggplot2::ggplot(data = plot_data) +
     ggforce::geom_circle(
-      mapping = ggplot2::aes(x0 = x0, y0 = y0, r = r),
+      mapping = ggplot2::aes(
+        x0 = .data$x0, y0 = .data$y0, r = .data$r
+      ),
       fill = circle_bg,
       colour = "transparent"
     ) +
     ggforce::geom_circle(
-      mapping = ggplot2::aes(x0 = x0, y0 = y0, r = r, fill = cols),
+      mapping = ggplot2::aes(
+        x0 = .data$x0, y0 = .data$y0,
+        r = .data$r, fill = .data$cols
+      ),
       colour = "transparent",
       alpha = alpha
     ) +

@@ -8,7 +8,7 @@ imploding_hexagon(
   n = 25000,
   size = 0.05,
   bg_col = "grey10",
-  col_palette = grey.colors(n = 10, start = 0.1, end = 0.9),
+  col_palette = grDevices::grey.colors(n = 10, start = 0.1, end = 0.9),
   random = TRUE,
   implode_factor = 0.5,
   s = 1234
@@ -22,7 +22,7 @@ imploding_hexagon(
 \item{bg_col}{Background colour. Default "grey10".}
 
 \item{col_palette}{Colour palette. Default
-\code{grey.colors(n = 10, start = 0.1, end = 0.7)}.}
+\code{grDevices::grey.colors(n = 10, start = 0.1, end = 0.7)}.}
 
 \item{random}{Boolean. Should colours be arranged randomly or not?
 Default \code{TRUE}.}

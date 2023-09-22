@@ -18,7 +18,7 @@ implode <- function(x, implode_factor = 0.5) {
 #' @param size Size of points. Default 0.1.
 #' @param bg_col Background colour. Default "grey10".
 #' @param col_palette Colour palette. Default
-#' `grey.colors(n = 10, start = 0.1, end = 0.7)`.
+#' `grDevices::grey.colors(n = 10, start = 0.1, end = 0.7)`.
 #' @param random Boolean. Should colours be arranged randomly or not?
 #' Default `TRUE`.
 #' @param implode_factor Image implode factor. Default 0.5.
@@ -28,9 +28,11 @@ implode <- function(x, implode_factor = 0.5) {
 imploding_hexagon <- function(n = 25000,
                               size = 0.05,
                               bg_col = "grey10",
-                              col_palette = grey.colors(n = 10,
-                                                        start = 0.1,
-                                                        end = 0.9),
+                              col_palette = grDevices::grey.colors(
+                                n = 10,
+                                start = 0.1,
+                                end = 0.9
+                              ),
                               random = TRUE,
                               implode_factor = 0.5,
                               s = 1234) {
@@ -54,8 +56,8 @@ imploding_hexagon <- function(n = 25000,
     points_sf$col <- sample(col_palette, size = n, replace = TRUE)
   } else {
     points_sf <- points_sf |>
-      dplyr::mutate(dist_0 = sqrt(x^2 + y^2)) |>
-      dplyr::arrange(dplyr::desc(dist_0))
+      dplyr::mutate(dist_0 = sqrt(.data$x^2 + .data$y^2)) |>
+      dplyr::arrange(dplyr::desc(.data$dist_0))
     points_sf$col <- grDevices::colorRampPalette(col_palette)(n)
   }
 

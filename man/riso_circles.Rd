@@ -36,13 +36,13 @@ riso_circles(
 
 \item{col_palette}{Vector of colours. Default \code{c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")}.}
 
+\item{circle_bg}{Background colour of circles. Default "#fafafa".}
+
 \item{bg_col}{Background colour. Default "gray10".}
 
 \item{interpolate}{Boolean indicating if colours should be interpolated. Default TRUE.}
 
 \item{s}{Seed value. Default 1234.}
-
-\item{cicrle_bg}{Background colour of circles. Default "#fafafa".}
 }
 \value{
 A ggplot object.
