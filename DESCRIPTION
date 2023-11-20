@@ -45,7 +45,7 @@ Suggests:
     rcartocolor,
     RColorBrewer
 Remotes:
-    thomasp85/ggfx
+    thomasp85/ggfx,
     nrennie/ggvoronoi
 Config/Needs/website: nrennie/nrenniepkgdown
 Encoding: UTF-8
