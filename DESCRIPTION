@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.4.4
+Version: 1.4.5
 Authors@R: 
     person("Nicola", "Rennie", , "nrennie35@gmail.com", role = c("aut", "cre"))
 Description: Creates generative art using R.
@@ -46,6 +46,7 @@ Suggests:
     RColorBrewer
 Remotes:
     thomasp85/ggfx
+    nrennie/ggvoronoi
 Config/Needs/website: nrennie/nrenniepkgdown
 Encoding: UTF-8
 LazyData: true

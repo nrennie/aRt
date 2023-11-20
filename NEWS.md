@@ -1,3 +1,7 @@
+## aRt 1.4.5
+
+* Use remote dependency for {ggvoronoi}
+
 ## aRt 1.4.4
 
 * Add `riso_circles()`
