@@ -1,6 +1,6 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.4.5
+Version: 1.4.6
 Authors@R: 
     person("Nicola", "Rennie", , "nrennie35@gmail.com", role = c("aut", "cre"))
 Description: Creates generative art using R.
@@ -51,4 +51,4 @@ Config/Needs/website: nrennie/nrenniepkgdown
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
