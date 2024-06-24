@@ -5,7 +5,7 @@
 #' @param num_lines Number of intersecting lines. Default `30`.
 #' @param col_palette Vector of colours. Default `PrettyCols::prettycols("TangerineBlues")`.
 #' @param rayshade Boolean determining whether the returned plot should be converted to
-#' three dimensional using rayshader. If `TRUE`, {rayshader} is required to be installed.
+#' three dimensional using rayshader. If `TRUE`, `{rayshader}` is required to be installed.
 #' Default `FALSE`.
 #' @param s Seed value. Default `1234`.
 #' @return A ggplot object.

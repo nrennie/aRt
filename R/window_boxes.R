@@ -9,7 +9,7 @@
 #' @param linewidth Width of borders around squares. Default 2.
 #' @param rayshade Boolean determining whether the returned plot should be
 #' converted to
-#' three dimensional using rayshader. If `TRUE`, {rayshader} is required to be
+#' three dimensional using rayshader. If `TRUE`, `{rayshader}` is required to be
 #' installed.
 #' Default `FALSE`.
 #' @return A ggplot object.
