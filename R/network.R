@@ -30,19 +30,19 @@ network <- function(
     tibble::as_tibble() |>
     dplyr::slice_sample(prop = prop) |>
     dplyr::mutate(id = dplyr::row_number())
-  plot_data$r <- runif(nrow(plot_data), 0.1, 0.45)
+  plot_data$r <- stats::runif(nrow(plot_data), 0.1, 0.45)
   plot_data$fill <- sample(col_palette, nrow(plot_data), replace = TRUE)
   # make graph
   to_graph <- plot_data |>
-    dplyr::select(id, x, y) |>
+    dplyr::select(.data$id, .data$x, .data$y) |>
     dplyr::mutate(k = 1)
   new_graph <- to_graph |>
     dplyr::full_join(to_graph, by = "k", relationship = "many-to-many") |>
-    dplyr::mutate(dist = sqrt((x.x - x.y)^2 + (y.x - y.y)^2)) |>
-    dplyr::select(-k) |>
-    dplyr::select(id.x, id.y, dist) |>
+    dplyr::mutate(dist = sqrt((.data$x.x - .data$x.y)^2 + (.data$y.x - .data$y.y)^2)) |>
+    dplyr::select(-.data$k) |>
+    dplyr::select(.data$id.x, .data$id.y, .data$dist) |>
     tidyr::pivot_wider(
-      names_from = id.y, values_from = dist
+      names_from = .data$id.y, values_from = .data$dist
     ) |>
     tibble::column_to_rownames(var = "id.x") |>
     as.matrix() |>
@@ -50,32 +50,35 @@ network <- function(
   mst_g <- igraph::mst(new_graph)
   # prep line data
   line_data <- igraph::as_data_frame(mst_g, what = "edges") |>
-    dplyr::select(from, to) |>
+    dplyr::select(.data$from, .data$to) |>
     tibble::as_tibble() |>
-    dplyr::mutate(across(everything(), as.numeric)) |>
+    dplyr::mutate(dplyr::across(dplyr::everything(), as.numeric)) |>
     dplyr::left_join(to_graph[, -4], by = c("from" = "id")) |>
-    dplyr::rename(from_x = x, from_y = y) |>
+    dplyr::rename(from_x = .data$x, from_y = .data$y) |>
     dplyr::left_join(to_graph[, -4], by = c("to" = "id")) |>
-    dplyr::rename(to_x = x, to_y = y) |>
-    dplyr::select(-c(from, to))
+    dplyr::rename(to_x = .data$x, to_y = .data$y) |>
+    dplyr::select(-c(.data$from, .data$to))
   # plot
   g <- ggplot2::ggplot() +
     ggplot2::geom_tile(
       data = plot_data,
-      mapping = ggplot2::aes(x = x, y = y),
+      mapping = ggplot2::aes(x = .data$x, y = .data$y),
       fill = NA,
       colour = bg_line_col
     ) +
     ggforce::geom_circle(
       data = plot_data,
-      mapping = ggplot2::aes(x0 = x, y0 = y, r = r, fill = fill),
+      mapping = ggplot2::aes(
+        x0 = .data$x, y0 = .data$y,
+        r = .data$r, fill = .data$fill
+      ),
       colour = NA
     ) +
     ggplot2::geom_segment(
       data = line_data,
       mapping = ggplot2::aes(
-        x = from_x, xend = to_x,
-        y = from_y, yend = to_y
+        x = .data$from_x, xend = .data$to_x,
+        y = .data$from_y, yend = .data$to_y
       ),
       colour = line_col
     ) +
