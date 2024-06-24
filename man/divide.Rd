@@ -17,7 +17,7 @@ divide(
 \item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("TangerineBlues")}.}
 
 \item{rayshade}{Boolean determining whether the returned plot should be converted to
-three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be installed.
 Default \code{FALSE}.}
 
 \item{s}{Seed value. Default \code{1234}.}

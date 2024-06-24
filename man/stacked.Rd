@@ -22,7 +22,7 @@ stacked(
 \item{col_palette}{Vector of colours. Default Hiroshige palette from MetBrewer.}
 
 \item{rayshade}{Boolean determining whether the returned plot should be converted to
-three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be installed.
+three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be installed.
 Default \code{FALSE}.}
 
 \item{shadow_intensity}{Intensity of shading for 3D elements, Default 0.5.}

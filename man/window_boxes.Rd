@@ -24,7 +24,7 @@ window_boxes(
 
 \item{rayshade}{Boolean determining whether the returned plot should be
 converted to
-three dimensional using rayshader. If \code{TRUE}, {rayshader} is required to be
+three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be
 installed.
 Default \code{FALSE}.}
 }
