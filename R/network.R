@@ -64,6 +64,8 @@ network <- function(
       data = plot_data,
       mapping = ggplot2::aes(x = .data$x, y = .data$y),
       fill = NA,
+      width = 1, 
+      height = 1,
       colour = bg_line_col
     ) +
     ggforce::geom_circle(
