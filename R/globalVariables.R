@@ -1,1 +1,1 @@
-globalVariables(c("density", "."))
+utils::globalVariables(c("density", ".", ".data"))

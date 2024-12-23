@@ -31,14 +31,14 @@ bullseye <- function(main_col = "black",
   )
   p1 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 1),
+      data = dplyr::filter(plot_data, .data$grp == 1),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 2),
+      data = dplyr::filter(plot_data, .data$grp == 2),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -49,14 +49,14 @@ bullseye <- function(main_col = "black",
     theme_aRt(bg_col, -0.5)
   p2 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 3),
+      data = dplyr::filter(plot_data, .data$grp == 3),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 4),
+      data = dplyr::filter(plot_data, .data$grp == 4),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -67,14 +67,14 @@ bullseye <- function(main_col = "black",
     theme_aRt("transparent", -0.5)
   p3 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 5),
+      data = dplyr::filter(plot_data, .data$grp == 5),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 6),
+      data = dplyr::filter(plot_data, .data$grp == 6),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -85,14 +85,14 @@ bullseye <- function(main_col = "black",
     theme_aRt("transparent", -0.5)
   p4 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 7),
+      data = dplyr::filter(plot_data, .data$grp == 7),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = dplyr::filter(plot_data, grp == 8),
+      data = dplyr::filter(plot_data, .data$grp == 8),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,

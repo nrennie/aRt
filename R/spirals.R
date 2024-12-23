@@ -37,7 +37,7 @@ spirals <- function(perc = 0.3,
       df$size_val <- (40 - 0) * stats::rbeta(n = length(theta), shape1 = 3, shape2 = 9) + 0
       plot_data <- df |>
         tidyr::drop_na() |>
-        dplyr::filter(abs(x) <= limit, abs(y) <= limit)
+        dplyr::filter(abs(.data$x) <= limit, abs(.data$y) <= limit)
       plot_data
     }
   )
@@ -71,8 +71,8 @@ spirals <- function(perc = 0.3,
       size = 0.1
     ) +
     ggplot2::scale_colour_gradientn(colors = col_palette) +
-    scale_x_continuous(limits = c(-limit, limit)) +
-    scale_y_continuous(limits = c(-limit, limit)) +
+    ggplot2::scale_x_continuous(limits = c(-limit, limit)) +
+    ggplot2::scale_y_continuous(limits = c(-limit, limit)) +
     ggplot2::coord_fixed(expand = FALSE) +
     ggplot2::scale_size(range = c(0, max_size)) +
     theme_aRt(bg_col)

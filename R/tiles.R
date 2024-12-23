@@ -30,7 +30,7 @@ tiles <- function(n_x = 12,
         tibble::as_tibble() |>
         dplyr::rowwise() |>
         dplyr::mutate(cols = stringr::str_flatten(sample(col_palette, 3), "-")) |>
-        tidyr::separate_wider_delim(cols,
+        tidyr::separate_wider_delim(.data$cols,
           delim = "-",
           names = c("col1", "col2", "col3")
         )
@@ -39,20 +39,20 @@ tiles <- function(n_x = 12,
   )
   p <- ggplot2::ggplot(
     data = plot_data,
-    mapping = ggplot2::aes(x = x, y = y)
+    mapping = ggplot2::aes(x = .data$x, y = .data$y)
   ) +
     ggplot2::geom_tile(
-      mapping = ggplot2::aes(fill = col1),
+      mapping = ggplot2::aes(fill = .data$col1),
       width = 1, height = 1,
       colour = NA
     ) +
     ggplot2::geom_tile(
-      mapping = ggplot2::aes(fill = col2),
+      mapping = ggplot2::aes(fill = .data$col2),
       width = (2 / 3), height = (2 / 3),
       colour = NA
     ) +
     ggplot2::geom_tile(
-      mapping = ggplot2::aes(fill = col3),
+      mapping = ggplot2::aes(fill = .data$col3),
       width = (1 / 3), height = (1 / 3),
       colour = NA
     ) +

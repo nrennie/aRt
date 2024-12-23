@@ -86,7 +86,7 @@ sunbursts <- function(ncol = 4,
                       low = "#4e0550",
                       high = "#facdfc",
                       s = 1234) {
-  plot_data <- withr::with_seed(
+  p <- withr::with_seed(
     seed = s,
     code = {
       ss <- sample(5:100, size = ncol * nrow)
@@ -101,7 +101,7 @@ sunbursts <- function(ncol = 4,
           s = i
         )
       })
-      plot_data
+      p
     }
   )
 

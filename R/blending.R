@@ -33,7 +33,7 @@ blending <- function(n = 100,
   plot_data <- withr::with_seed(
     seed = s,
     code = {
-      walks <- unlist(purrr::map(.x = 1:n, .f = ~ blending_walk(n = n, s = s + .x)))
+      walks <- unlist(purrr::map(.x = 1:n, .f = ~ blending_walk(n = n)))
       plot_data <- expand.grid(x = 1:n, y = 1:n)
       plot_data$colour <- walks
       plot_data
@@ -50,6 +50,6 @@ blending <- function(n = 100,
     ggplot2::geom_raster(interpolate = TRUE) +
     ggplot2::coord_flip(expand = FALSE) +
     ggplot2::scale_fill_gradient(low = down, high = up) +
-    theme_aRt(bg_col)
+    theme_aRt("transparent")
   return(p)
 }

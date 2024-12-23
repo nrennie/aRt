@@ -21,17 +21,14 @@ Imports:
   grDevices,
   igraph,
   lwgeom,
-  magick,
   patchwork,
   purrr,
   sf,
   stats,
   stringr,
-  terra,
   tibble,
   tidygraph,
   tidyr,
-  tidyterra,
   treemapify,
   withr
 Suggests:

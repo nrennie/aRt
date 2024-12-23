@@ -45,7 +45,7 @@ squiggles <- function(res = 100,
         y = unlist(all_lines),
         group = factor(rep(1:num_lines, each = res)),
       ) |>
-        dplyr::group_by(group) |>
+        dplyr::group_by(.data$group) |>
         dplyr::mutate(
           alpha = stats::runif(1, alpha_low, alpha_high)
         ) |>

@@ -49,6 +49,8 @@ boxes <- function(n = 100,
   q <- p +
     inset_element(p1, left = 0.1, bottom = 0.1, right = 1.1, top = 1.1) +
     inset_element(p1, left = -0.1, bottom = -0.1, right = 0.9, top = 0.9) &
-    theme(plot.margin = unit(c(-0.5, -0.5, -0.5, -0.5), "cm"))
+    ggplot2::theme(
+      plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm")
+    )
   return(q)
 }

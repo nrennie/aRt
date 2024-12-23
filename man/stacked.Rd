@@ -20,10 +20,13 @@ stacked(
 
 \item{n_y}{Number of polygons per column. Default 5.}
 
-\item{col_palette}{Vector of colours. Default \code{c("#e76254", "#ef8a47", "#ffd06f", "#ffe6b7", "#aadce0", "#72bcd5", "#376795")} which is the Hiroshige palette from MetBrewer.}
+\item{col_palette}{Vector of colours. Default
+\code{c("#e76254", "#ef8a47", "#ffd06f", "#ffe6b7", "#aadce0", "#72bcd5", "#376795")}
+which is the Hiroshige palette from MetBrewer.}
 
-\item{rayshade}{Boolean determining whether the returned plot should be converted to three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be installed.
-Default \code{FALSE}.}
+\item{rayshade}{Boolean determining whether the returned plot should
+be converted to three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}}
+is required to be installed. Default \code{FALSE}.}
 
 \item{shadow_intensity}{Intensity of shading for 3D elements, Default 0.5.}
 
