@@ -1,4 +1,4 @@
-# aRt 1.4.8
+# aRt 1.5.0
 
 * use {withr} for random seeds
 * `mosiac()` no longer adds blank space
