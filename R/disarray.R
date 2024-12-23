@@ -6,10 +6,10 @@
 #' @noRd
 
 disarray_single <- function(x_nudge = 0,
-                         y_nudge = 0,
-                         x_corners = c(0, 1, 1, 0),
-                         y_corners = c(0, 0, 1, 1),
-                         col_palette) {
+                            y_nudge = 0,
+                            x_corners = c(0, 1, 1, 0),
+                            y_corners = c(0, 0, 1, 1),
+                            col_palette) {
   # checks
   if (length(x_corners) != 4) {
     stop("x_corner must be of length 4")

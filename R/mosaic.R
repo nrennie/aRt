@@ -37,8 +37,8 @@ mosaic <- function(n = 10,
       plot_data <- dplyr::bind_rows(df)
       num_cols <- length(fill_cols)
       plot_data$fill_col <- factor(sample(1:num_cols,
-                                          size = nrow(plot_data),
-                                          replace = TRUE
+        size = nrow(plot_data),
+        replace = TRUE
       ))
       plot_data
     }

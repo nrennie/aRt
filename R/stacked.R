@@ -4,9 +4,12 @@
 #'
 #' @param n_x Number of polygons per row. Default 5.
 #' @param n_y Number of polygons per column. Default 5.
-#' @param col_palette Vector of colours. Default `c("#e76254", "#ef8a47", "#ffd06f", "#ffe6b7", "#aadce0", "#72bcd5", "#376795")` which is the Hiroshige palette from MetBrewer.
-#' @param rayshade Boolean determining whether the returned plot should be converted to three dimensional using rayshader. If `TRUE`, `{rayshader}` is required to be installed.
-#' Default `FALSE`.
+#' @param col_palette Vector of colours. Default
+#' `c("#e76254", "#ef8a47", "#ffd06f", "#ffe6b7", "#aadce0", "#72bcd5", "#376795")`
+#' which is the Hiroshige palette from MetBrewer.
+#' @param rayshade Boolean determining whether the returned plot should
+#' be converted to three dimensional using rayshader. If `TRUE`, `{rayshader}`
+#' is required to be installed. Default `FALSE`.
 #' @param shadow_intensity Intensity of shading for 3D elements, Default 0.5.
 #' @param sunangle Angle of the sun. Default 315.
 #' @param s Seed value. Default 1234.

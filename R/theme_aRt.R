@@ -4,7 +4,7 @@
 #'
 #' @noRd
 
-theme_aRt <- function(bg_col, padding = 0) {
+theme_aRt <- function(bg_col, padding = 0) { # nolint
   ggplot2::theme_void() +
     ggplot2::theme(
       plot.background = ggplot2::element_rect(

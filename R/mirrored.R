@@ -25,9 +25,9 @@ mirrored <- function(n = 15,
       tr <- expand.grid(x = 0:n, y = 0:n)
       n_col <- length(col_palette)
       tr$cols <- sample(seq_along(col_palette),
-                        size = (n + 1)^2,
-                        replace = TRUE,
-                        prob = c((w / (n_col + (w - 1))), rep(1 / (n_col + (w - 1)), n_col - 1))
+        size = (n + 1)^2,
+        replace = TRUE,
+        prob = c((w / (n_col + (w - 1))), rep(1 / (n_col + (w - 1)), n_col - 1))
       )
       tl <- tr |>
         dplyr::mutate(x = -1 * .data$x)
