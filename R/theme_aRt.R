@@ -13,6 +13,9 @@ theme_aRt <- function(bg_col, padding = 0) {
       legend.position = "none",
       plot.margin = ggplot2::unit(
         c(padding, padding, padding, padding), "cm"
-      )
+      ),
+      strip.background = ggplot2::element_blank(),
+      strip.text = ggplot2::element_blank(),
+      panel.spacing = ggplot2::unit(0, "cm")
     )
 }

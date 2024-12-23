@@ -5,10 +5,9 @@
 \title{Mosiac}
 \usage{
 mosaic(
-  n = 100,
+  n = 10,
   fill_cols = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"),
   line_col = "white",
-  bg_col = "white",
   line_size = 1,
   x_means = c(0, 10, 5),
   y_means = c(0, 7, 8),
@@ -23,8 +22,6 @@ mosaic(
 \code{c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E")}.}
 
 \item{line_col}{Colour of lines between tiles, Default "white".}
-
-\item{bg_col}{Background colour. Default "white".}
 
 \item{line_size}{Thickness of lines between tiles. Default 1.}
 

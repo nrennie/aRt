@@ -32,20 +32,28 @@ riso_circles <- function(n_x = 4,
                          bg_col = "gray10",
                          interpolate = TRUE,
                          s = 1234) {
-  set.seed(s)
-  # create data
-  plot_data <- data.frame(
-    x0 = stats::runif(n_x * n_y * n_circles, -1 * jitter_x, jitter_x),
-    y0 = stats::runif(n_x * n_y * n_circles, -1 * jitter_y, jitter_y),
-    r = rep(r, n_x * n_y * n_circles),
-    grp = as.character(rep(seq_len(n_x * n_y), each = n_circles))
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      plot_data <- data.frame(
+        x0 = stats::runif(n_x * n_y * n_circles, -1 * jitter_x, jitter_x),
+        y0 = stats::runif(n_x * n_y * n_circles, -1 * jitter_y, jitter_y),
+        r = rep(r, n_x * n_y * n_circles),
+        grp = as.character(rep(seq_len(n_x * n_y), each = n_circles))
+      )
+      if (interpolate) {
+        plot_data$cols <- sample(
+          grDevices::colorRampPalette(col_palette)(n_x * n_y * n_circles)
+        )
+      } else {
+        plot_data$cols <- sample(
+          col_palette,
+          size = n_x * n_y * n_circles, replace = TRUE
+        )
+      }
+      plot_data
+    }
   )
-  if (interpolate) {
-    plot_data$cols <- sample(grDevices::colorRampPalette(col_palette)(n_x * n_y * n_circles))
-  } else {
-    plot_data$cols <- sample(col_palette, size = n_x * n_y * n_circles, replace = TRUE)
-  }
-  # plot
   g <- ggplot2::ggplot(data = plot_data) +
     ggforce::geom_circle(
       mapping = ggplot2::aes(

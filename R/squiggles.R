@@ -4,7 +4,7 @@
 #'
 #' @param res Resolution of grid. Default 100.
 #' @return A numeric vector
-
+#' @noRd
 make_lines <- function(res = 100) {
   r <- stats::rnorm(1, 0, 1)
   yx <- stats::smooth(r + stats::smooth(cumsum(stats::rnorm(res, 0, 0.3))))
@@ -24,6 +24,8 @@ make_lines <- function(res = 100) {
 #' @param bg_col Background colour. Default "black".
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' squiggles()
 #' @export
 
 squiggles <- function(res = 100,
@@ -34,21 +36,31 @@ squiggles <- function(res = 100,
                       line_col = "white",
                       bg_col = "black",
                       s = 1234) {
-  set.seed(s)
-  all_lines <- purrr::map(.x = 1:num_lines, .f = ~ make_lines(res = res))
-  plot_data <- tibble::tibble(
-    x = rep(1:res, times = num_lines),
-    y = unlist(all_lines),
-    group = rep(1:num_lines, each = res)
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      all_lines <- purrr::map(.x = 1:num_lines, .f = ~ make_lines(res = res))
+      plot_data <- tibble::tibble(
+        x = rep(1:res, times = num_lines),
+        y = unlist(all_lines),
+        group = factor(rep(1:num_lines, each = res)),
+      ) |>
+        dplyr::group_by(group) |>
+        dplyr::mutate(
+          alpha = stats::runif(1, alpha_low, alpha_high)
+        ) |>
+        dplyr::ungroup()
+      plot_data
+    }
   )
-  full_lines <- sample(1:num_lines, round(perc * num_lines), replace = FALSE)
+
   p <- ggplot2::ggplot(data = plot_data) +
     ggplot2::geom_line(
       mapping = ggplot2::aes(
         x = .data$x,
         y = .data$y,
         group = .data$group,
-        alpha = (.data$group %in% full_lines)
+        alpha = .data$alpha
       ),
       method = "gam",
       stat = "smooth",
@@ -56,9 +68,9 @@ squiggles <- function(res = 100,
       colour = line_col,
       linewidth = 0.4
     ) +
-    ggplot2::scale_alpha_manual(values = c(alpha_low, alpha_high)) +
+    ggplot2::scale_alpha_identity() +
     ggplot2::scale_x_continuous(expand = ggplot2::expansion(0, 0)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0, add = 1)) +
     theme_aRt(bg_col)
-  suppressMessages(print(p))
+  return(suppressMessages(print(p)))
 }

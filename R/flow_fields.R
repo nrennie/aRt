@@ -31,49 +31,54 @@ flow_fields <- function(n = 10000,
     if (!requireNamespace("ambient")) {
       stop("Please install {ambient} to use this function.")
     } else {
-      set.seed(s)
-      grid <- ambient::long_grid(
-        seq(1, 10, length.out = granularity),
-        seq(1, 10, length.out = granularity)
-      ) |>
-        dplyr::mutate(
-          x1 = .data$x + ambient::gen_simplex(
-            x = .data$x, y = .data$y, frequency = x_freq
-          ),
-          y1 = .data$y + ambient::gen_simplex(
-            x = .data$x, y = .data$y, frequency = y_freq
+      traces <- withr::with_seed(
+        seed = s,
+        code = {
+          grid <- ambient::long_grid(
+            seq(1, 10, length.out = granularity),
+            seq(1, 10, length.out = granularity)
+          ) |>
+            dplyr::mutate(
+              x1 = .data$x + ambient::gen_simplex(
+                x = .data$x, y = .data$y, frequency = x_freq
+              ),
+              y1 = .data$y + ambient::gen_simplex(
+                x = .data$x, y = .data$y, frequency = y_freq
+              )
+            )
+
+          curl <- ambient::curl_noise(ambient::gen_perlin, x = grid$x1, y = grid$y1)
+          grid$angle <- atan2(curl$y, curl$x) - atan2(grid$y1, grid$x1)
+
+          field <- as.matrix(grid, grid$x, value = grid$angle)
+
+          sim <- tidygraph::create_empty(n) |>
+            particles::simulate(
+              alpha_decay = 0,
+              setup = particles::aquarium_genesis(vel_max = 0)
+            ) |>
+            particles::wield(
+              particles::reset_force,
+              xvel = 0, yvel = 0
+            ) |>
+            particles::wield(
+              particles::field_force,
+              angle = field,
+              vel = 0.1, xlim = c(-5, 5), ylim = c(-5, 5)
+            ) |>
+            particles::evolve(100, particles::record)
+          traces <- data.frame(
+            do.call(rbind, lapply(sim$history, particles::position))
           )
-        )
-
-      curl <- ambient::curl_noise(ambient::gen_perlin, x = grid$x1, y = grid$y1)
-      grid$angle <- atan2(curl$y, curl$x) - atan2(grid$y1, grid$x1)
-
-      field <- as.matrix(grid, grid$x, value = grid$angle)
-
-      sim <- tidygraph::create_empty(n) |>
-        particles::simulate(
-          alpha_decay = 0,
-          setup = particles::aquarium_genesis(vel_max = 0)
-        ) |>
-        particles::wield(
-          particles::reset_force,
-          xvel = 0, yvel = 0
-        ) |>
-        particles::wield(
-          particles::field_force,
-          angle = field,
-          vel = 0.1, xlim = c(-5, 5), ylim = c(-5, 5)
-        ) |>
-        particles::evolve(100, particles::record)
-
-      traces <- data.frame(do.call(rbind, lapply(sim$history, particles::position)))
-      names(traces) <- c("x", "y")
-
-      traces <-
-        traces |>
-        dplyr::mutate(particle = rep(1:n, 100)) |>
-        dplyr::group_by(.data$particle) |>
-        dplyr::mutate(colour = sample(line_col, 1, replace = TRUE))
+          names(traces) <- c("x", "y")
+          traces <-
+            traces |>
+            dplyr::mutate(particle = rep(1:n, 100)) |>
+            dplyr::group_by(.data$particle) |>
+            dplyr::mutate(colour = sample(line_col, 1, replace = TRUE))
+          traces
+        }
+      )
       p <- ggplot2::ggplot() +
         ggplot2::geom_path(
           data = traces,

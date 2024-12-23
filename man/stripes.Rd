@@ -7,7 +7,7 @@
 stripes(
   perc = 0.5,
   n = 3,
-  col_palette = rcartocolor::carto_pal(n = 7, "TealGrn"),
+  col_palette = c("#8EA604", "#F5BB00", "#EC9F05", "#D76A03", "#BF3100"),
   alpha = 1,
   s = 1234
 )
@@ -17,7 +17,7 @@ stripes(
 
 \item{n}{Number of rows. Default 3.}
 
-\item{col_palette}{Vector of colours. Default \code{"TealGrn"} colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default \code{c("#8EA604", "#F5BB00", "#EC9F05", "#D76A03", "#BF3100")}.}
 
 \item{alpha}{Transparency of fill. Default 1.}
 

@@ -27,23 +27,26 @@ streams <- function(bg_col = "white",
     if (!(type %in% c("up", "down", "left", "right"))) {
       stop('Type must be one of "up", "down", "left", or "right"')
     }
-    set.seed(s)
-    # make data
-    n <- length(fill_col)
-    df <- purrr::map_dfr(
-      .x = 1:n,
-      .f = ~ {
-        x <- 1:sample(1:10, 1)
-        tibble::tibble(x = x + sample(1:25, 1)) |>
-          dplyr::mutate(
-            y = sample(1:10, length(x), replace = TRUE),
-            z = as.character(.x)
-          )
+    plot_data <- withr::with_seed(
+      seed = s,
+      code = {
+        n <- length(fill_col)
+        plot_data <- purrr::map_dfr(
+          .x = 1:n,
+          .f = ~ {
+            x <- 1:sample(1:10, 1)
+            tibble::tibble(x = x + sample(1:25, 1)) |>
+              dplyr::mutate(
+                y = sample(1:10, length(x), replace = TRUE),
+                z = as.character(.x)
+              )
+          }
+        )
+        plot_data
       }
     )
-    # plot
     p <- ggplot2::ggplot(
-      data = df,
+      data = plot_data,
       mapping = ggplot2::aes(
         x = .data$x,
         y = .data$y,

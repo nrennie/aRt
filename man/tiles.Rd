@@ -7,7 +7,7 @@
 tiles(
   n_x = 12,
   n_y = 12,
-  col_palette = MetBrewer::met.brewer("Veronese", 5),
+  col_palette = c("#67322e", "#99610a", "#6e948c", "#2c6b67", "#122c43"),
   s = 1234
 )
 }
@@ -16,7 +16,7 @@ tiles(
 
 \item{n_y}{Number of polygons per column. Default 18.}
 
-\item{col_palette}{Vector of colours. Default Veronese palette from MetBrewer.}
+\item{col_palette}{Vector of colours. Default \code{c("#67322e", "#99610a", "#6e948c", "#2c6b67", "#122c43")} which is the Veronese palette from MetBrewer.}
 
 \item{s}{Seed value. Default 1234.}
 }

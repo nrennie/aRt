@@ -17,14 +17,19 @@ smudge <- function(n = 25,
                    binwidth = 0.01,
                    col_palette = PrettyCols::prettycols("TangerineBlues"),
                    s = 1234) {
-  set.seed(s)
-  new_palette <- grDevices::colorRampPalette(col_palette)(1 / binwidth)
-  plot_data <- expand.grid(
-    x = seq(1, n, 1),
-    y = seq(1, n, 1)
-  ) |>
-    tibble::as_tibble() |>
-    dplyr::mutate(z = stats::runif(n^2))
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      new_palette <- grDevices::colorRampPalette(col_palette)(1 / binwidth)
+      plot_data <- expand.grid(
+        x = seq(1, n, 1),
+        y = seq(1, n, 1)
+      ) |>
+        tibble::as_tibble() |>
+        dplyr::mutate(z = stats::runif(n^2))
+      plot_data
+    }
+  )
   p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(

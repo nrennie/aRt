@@ -15,6 +15,8 @@
 #' @param n_cols Number of colours to create. Default 20.
 #' @param s Random seed. Default 123.
 #' @return A ggplot object.
+#' @examples
+#' wander()
 #' @export
 
 wander <- function(n_lines = 100,
@@ -28,96 +30,100 @@ wander <- function(n_lines = 100,
                    col_palette = c("#FF8811", "#9DD9D2", "#046E8F", "#D44D5C"),
                    n_cols = 20,
                    s = 123) {
-  # define boundaries
-  set.seed(s)
-  theta <- seq(0, 2 * pi, length.out = n_lines)
-  x_inner <- r_inner * cos(theta)
-  y_inner <- r_inner * sin(theta)
-  x_outer <- r_outer * cos(theta)
-  y_outer <- r_outer * sin(theta)
-  all_cols <- grDevices::colorRampPalette(col_palette)(n_cols)
-  # generate lines
-  line_data <- purrr::map(
-    .x = seq_len(length(theta)),
-    .f = ~ data.frame(
-      x0 = seq(x_inner[.x], x_outer[.x], length.out = n_points),
-      y0 = seq(y_inner[.x], y_outer[.x], length.out = n_points),
-      grp = .x,
-      col = sample(all_cols, size = 1)
-    )
-  ) |>
-    dplyr::bind_rows()
-  # generate noise
-  line_data$noise_x <- replicate(
-    length(theta),
-    cumsum(c(0, stats::rnorm(n = n_points - 1, mean = 0, sd = sqrt(line_var))))
-  ) |>
-    as.vector()
-  line_data$noise_y <- replicate(
-    length(theta),
-    cumsum(c(0, stats::rnorm(n = n_points - 1, mean = 0, sd = sqrt(line_var))))
-  ) |>
-    as.vector()
+  p <- withr::with_seed(
+    seed = s,
+    code = {
+      theta <- seq(0, 2 * pi, length.out = n_lines)
+      x_inner <- r_inner * cos(theta)
+      y_inner <- r_inner * sin(theta)
+      x_outer <- r_outer * cos(theta)
+      y_outer <- r_outer * sin(theta)
+      all_cols <- grDevices::colorRampPalette(col_palette)(n_cols)
+      # generate lines
+      line_data <- purrr::map(
+        .x = seq_len(length(theta)),
+        .f = ~ data.frame(
+          x0 = seq(x_inner[.x], x_outer[.x], length.out = n_points),
+          y0 = seq(y_inner[.x], y_outer[.x], length.out = n_points),
+          grp = .x,
+          col = sample(all_cols, size = 1)
+        )
+      ) |>
+        dplyr::bind_rows()
+      # generate noise
+      line_data$noise_x <- replicate(
+        length(theta),
+        cumsum(c(0, stats::rnorm(n = n_points - 1, mean = 0, sd = sqrt(line_var))))
+      ) |>
+        as.vector()
+      line_data$noise_y <- replicate(
+        length(theta),
+        cumsum(c(0, stats::rnorm(n = n_points - 1, mean = 0, sd = sqrt(line_var))))
+      ) |>
+        as.vector()
 
-  # add noise
-  plot_data <- line_data |>
-    tibble::as_tibble() |>
-    dplyr::mutate(
-      x = .data$x0 + .data$noise_x,
-      y = .data$y0 + .data$noise_y
-    )
-  lims <- ceiling(max(abs(c(plot_data$x, plot_data$y))))
+      # add noise
+      plot_data <- line_data |>
+        tibble::as_tibble() |>
+        dplyr::mutate(
+          x = .data$x0 + .data$noise_x,
+          y = .data$y0 + .data$noise_y
+        )
+      lims <- ceiling(max(abs(c(plot_data$x, plot_data$y))))
 
-  # plot
-  p <- ggplot2::ggplot() +
-    ggfx::with_blur(
-      ggplot2::geom_path(
-        data = plot_data,
-        mapping = ggplot2::aes(
-          x = .data$x,
-          y = .data$y,
-          group = .data$grp,
-          colour = .data$col
-        ),
-        position = ggplot2::position_jitter(
-          width = deg_jitter * 2,
-          height = deg_jitter * 2
-        ),
-        linewidth = linewidth * 1.5,
-        alpha = 0.3
-      ),
-      sigma = 0.5
-    ) +
-    ggplot2::geom_path(
-      data = plot_data,
-      mapping = ggplot2::aes(
-        x = .data$x,
-        y = .data$y,
-        group = .data$grp,
-        colour = .data$col
-      ),
-      position = ggplot2::position_jitter(
-        width = deg_jitter,
-        height = deg_jitter
-      ),
-      alpha = 0.5,
-      linewidth = linewidth
-    ) +
-    ggplot2::geom_path(
-      data = plot_data,
-      mapping = ggplot2::aes(
-        x = .data$x,
-        y = .data$y,
-        group = .data$grp,
-        colour = .data$col
-      ),
-      alpha = 0.7,
-      linewidth = linewidth
-    ) +
-    ggplot2::scale_x_continuous(limits = c(-lims, lims)) +
-    ggplot2::scale_y_continuous(limits = c(-lims, lims)) +
-    ggplot2::scale_colour_identity() +
-    ggplot2::coord_fixed(expand = FALSE) +
-    theme_aRt(bg_col, 5)
+      # plot
+      p <- ggplot2::ggplot() +
+        ggfx::with_blur(
+          ggplot2::geom_path(
+            data = plot_data,
+            mapping = ggplot2::aes(
+              x = .data$x,
+              y = .data$y,
+              group = .data$grp,
+              colour = .data$col
+            ),
+            position = ggplot2::position_jitter(
+              width = deg_jitter * 2,
+              height = deg_jitter * 2
+            ),
+            linewidth = linewidth * 1.5,
+            alpha = 0.3
+          ),
+          sigma = 0.5
+        ) +
+        ggplot2::geom_path(
+          data = plot_data,
+          mapping = ggplot2::aes(
+            x = .data$x,
+            y = .data$y,
+            group = .data$grp,
+            colour = .data$col
+          ),
+          position = ggplot2::position_jitter(
+            width = deg_jitter,
+            height = deg_jitter
+          ),
+          alpha = 0.5,
+          linewidth = linewidth
+        ) +
+        ggplot2::geom_path(
+          data = plot_data,
+          mapping = ggplot2::aes(
+            x = .data$x,
+            y = .data$y,
+            group = .data$grp,
+            colour = .data$col
+          ),
+          alpha = 0.7,
+          linewidth = linewidth
+        ) +
+        ggplot2::scale_x_continuous(limits = c(-lims, lims)) +
+        ggplot2::scale_y_continuous(limits = c(-lims, lims)) +
+        ggplot2::scale_colour_identity() +
+        ggplot2::coord_fixed(expand = FALSE) +
+        theme_aRt(bg_col, 0.5)
+      p
+    }
+  )
   return(p)
 }

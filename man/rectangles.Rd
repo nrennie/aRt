@@ -12,7 +12,8 @@ rectangles(
   main_col = "lightgrey",
   col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
   bg_col = "white",
-  s = 123
+  weight = 0.25,
+  s = 1234
 )
 }
 \arguments{
@@ -27,11 +28,13 @@ rectangles(
 \item{main_col}{Colour of non-highlighted rectangles. Default \code{"lightgrey"}.}
 
 \item{col_palette}{Vector of colours. Default \code{"Bold"} colour palette from
-rcartocolor. Must have 12 colours.}
+rcartocolor.}
 
 \item{bg_col}{Background colour. Default \code{"white"}.}
 
-\item{s}{Seed value. Default 123.}
+\item{weight}{Sampling weight. Default 0.25.}
+
+\item{s}{Seed value. Default 1234.}
 }
 \value{
 A ggplot object

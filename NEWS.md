@@ -1,13 +1,18 @@
 # aRt 1.4.8
 
 * use {withr} for random seeds
+* `mosiac()` no longer adds blank space
 * remove `shells()`
 * remove `static()`
 * remove `connected()`
 * remove `heart()`
 * remove `infinity()`
 * remove `contours()` (now in new package)
+* remove `imploding_hexagon()`
+* remove `mosaic_sketch()`
 * rename `random_tessellation()` as `fragmentum()`
+* rename `split_grid()` as `disarray()`
+* rename `split_jitter()` as `distort()`
 
 # aRt 1.4.7
 

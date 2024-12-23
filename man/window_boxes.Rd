@@ -23,10 +23,8 @@ window_boxes(
 \item{linewidth}{Width of borders around squares. Default 2.}
 
 \item{rayshade}{Boolean determining whether the returned plot should be
-converted to
-three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be
-installed.
-Default \code{FALSE}.}
+converted to three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}}
+is required to be installed. Default \code{FALSE}.}
 }
 \value{
 A ggplot object.

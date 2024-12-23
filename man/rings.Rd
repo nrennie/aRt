@@ -22,19 +22,19 @@ rings(
 
 \item{bg_col}{Background colour. Default \code{"#343046"}.}
 
-\item{x_ring}{Vector of x-co-ordinates for centre of gaps. Default c(0.2, 0.9).}
+\item{x_ring}{Vector of x-co-ordinates for centre of gaps. Default \code{c(0.2, 0.9)}.}
 
-\item{y_ring}{Vector of y-co-ordinates for centre of gaps. Default c(0.2, 1.8).}
+\item{y_ring}{Vector of y-co-ordinates for centre of gaps. Default \code{c(0.2, 1.8)}.}
 
-\item{r_ring}{Vector of radii for centre of gaps. Default c(0.6, 0.4).}
+\item{r_ring}{Vector of radii for centre of gaps. Default \code{c(0.6, 0.4)}.}
 
-\item{x0}{Vector of x-co-ordinates for pie charts. Default c(0, 1).}
+\item{x0}{Vector of x-co-ordinates for pie charts. Default \code{c(0, 1)}.}
 
-\item{y0}{Vector of y-co-ordinates for pie charts. Default c(0, 2).}
+\item{y0}{Vector of y-co-ordinates for pie charts. Default \code{c(0, 2)}.}
 
-\item{r}{Vector of radii for pie charts. Default c(1, 0.7).}
+\item{r}{Vector of radii for pie charts. Default \code{c(1, 0.7)}.}
 
-\item{n}{Vector of slices per pie chart. Default c(80, 80).}
+\item{n}{Vector of slices per pie chart. Default \code{c(80, 80)}.}
 
 \item{s}{Seed value. Default 1234.}
 }

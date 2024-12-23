@@ -22,13 +22,19 @@ squares <- function(n = 7,
                     pattern_size = 0.4,
                     size = 1.5,
                     s = 1234) {
-  set.seed(s)
-  df <- expand.grid(x = 1:n, y = 1:n)
-  plot_data <- df |>
-    dplyr::mutate(
-      fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
-      angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE)
-    )
+
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      df <- expand.grid(x = 1:n, y = 1:n)
+      plot_data <- df |>
+        dplyr::mutate(
+          fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
+          angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE)
+        )
+      plot_data
+    }
+  )
   p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(

@@ -19,15 +19,18 @@ sunbursts_single <- function(n = 100,
                              low = "#074050",
                              high = "#d3f2a3",
                              s = 1234) {
-  set.seed(s)
-  # generate data
-  df <- purrr::map2(
-    .x = x_means,
-    .y = y_means,
-    .f = ~ data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var))
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      df <- purrr::map2(
+        .x = x_means,
+        .y = y_means,
+        .f = ~ data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var))
+      )
+      plot_data <- dplyr::bind_rows(df)
+      plot_data
+    }
   )
-  plot_data <- dplyr::bind_rows(df)
-  # plot
   p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(x = .data$x, y = .data$y)
@@ -70,6 +73,8 @@ sunbursts_single <- function(n = 100,
 #' @param high Colour of sunburst points. Default `"#facdfc"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' sunbursts()
 #' @export
 
 sunbursts <- function(ncol = 4,
@@ -81,24 +86,31 @@ sunbursts <- function(ncol = 4,
                       low = "#4e0550",
                       high = "#facdfc",
                       s = 1234) {
-  set.seed(s)
-  ss <- sample(5:100, size = ncol * nrow)
-  p <- lapply(ss, function(i) {
-    sunbursts_single(
-      n = i,
-      x_means = x_means,
-      y_means = y_means,
-      xy_var = xy_var,
-      low = low,
-      high = high,
-      s = i
-    )
-  })
-  patchwork::wrap_plots(p) +
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      ss <- sample(5:100, size = ncol * nrow)
+      p <- lapply(ss, function(i) {
+        sunbursts_single(
+          n = i,
+          x_means = x_means,
+          y_means = y_means,
+          xy_var = xy_var,
+          low = low,
+          high = high,
+          s = i
+        )
+      })
+      plot_data
+    }
+  )
+
+  q <- patchwork::wrap_plots(p) +
     patchwork::plot_layout(ncol = ncol, nrow = nrow) &
     ggplot2::theme(
       plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
       plot.background = ggplot2::element_rect(fill = low, colour = low),
       panel.background = ggplot2::element_rect(fill = low, colour = low)
     )
+  return(q)
 }

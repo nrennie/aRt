@@ -25,21 +25,28 @@ spiro <- function(n_x = 10,
                   col_palette = "white",
                   bg_col = "grey20",
                   s = 1234) {
-  set.seed(s)
-  plot_data <- tibble::as_tibble(expand.grid(x = 1:n_x, y = 1:n_y)) |>
-    dplyr::mutate(dplyr::across(c("x", "y"), ~ .x * d))
-  plot_data$cols <- sample(col_palette, size = nrow(plot_data), replace = TRUE)
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      plot_data <- tibble::as_tibble(expand.grid(x = 1:n_x, y = 1:n_y)) |>
+        dplyr::mutate(dplyr::across(c("x", "y"), ~ .x * d))
+      plot_data$cols <- sample(col_palette, size = nrow(plot_data), replace = TRUE)
+      plot_data
+    }
+  )
   p <- ggplot2::ggplot(data = plot_data) +
-    ggforce::geom_spiro(ggplot2::aes(
-      R = R,
-      r = 1,
-      d = d,
-      x0 = .data$x,
-      y0 = .data$y,
-      colour = .data$cols,
-      outer = TRUE
-    ),
-    size = linewidth) +
+    ggforce::geom_spiro(
+      mapping = ggplot2::aes(
+        R = R,
+        r = 1,
+        d = d,
+        x0 = .data$x,
+        y0 = .data$y,
+        colour = .data$cols,
+        outer = TRUE
+      ),
+      size = linewidth
+    ) +
     ggplot2::scale_colour_identity() +
     ggplot2::coord_fixed() +
     theme_aRt(bg_col)

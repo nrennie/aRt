@@ -6,7 +6,6 @@
 #' @param fill_cols Vector of colours to fill tiles with, Default
 #' `c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E")`.
 #' @param line_col Colour of lines between tiles, Default "white".
-#' @param bg_col Background colour. Default "white".
 #' @param line_size Thickness of lines between tiles. Default 1.
 #' @param x_means Vector of any number of means for the x-coordinate.
 #' Default `c(0, 10, 5)`.
@@ -19,10 +18,9 @@
 #' mosaic()
 #' @export
 
-mosaic <- function(n = 100,
+mosaic <- function(n = 10,
                    fill_cols = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"),
                    line_col = "white",
-                   bg_col = "white",
                    line_size = 1,
                    x_means = c(0, 10, 5),
                    y_means = c(0, 7, 8),
@@ -60,21 +58,7 @@ mosaic <- function(n = 100,
       size = line_size
     ) +
     ggplot2::scale_fill_manual(values = fill_cols) +
-    ggplot2::scale_x_continuous(
-      expand = c(0, 0),
-      limits = c(
-        min(c(plot_data$x, plot_data$y)),
-        (max(c(plot_data$x, plot_data$y)))
-      )
-    ) +
-    ggplot2::scale_y_continuous(
-      expand = c(0, 0),
-      limits = c(
-        min(c(plot_data$x, plot_data$y)),
-        (max(c(plot_data$x, plot_data$y)))
-      )
-    ) +
-    ggplot2::coord_fixed(expand = FALSE) +
-    theme_aRt(bg_col)
+    ggplot2::coord_cartesian(expand = FALSE) +
+    theme_aRt(line_col)
   return(suppressWarnings(print(p)))
 }

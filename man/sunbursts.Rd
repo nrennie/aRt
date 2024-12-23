@@ -41,3 +41,6 @@ A ggplot object.
 \description{
 This function generates a grid of sunbursts pieces
 }
+\examples{
+sunbursts()
+}

@@ -5,7 +5,7 @@
 #' @param col_palette Vector of colours. Must be at least length 4.
 #' @noRd
 
-split_single <- function(x_nudge = 0,
+disarray_single <- function(x_nudge = 0,
                          y_nudge = 0,
                          x_corners = c(0, 1, 1, 0),
                          y_corners = c(0, 0, 1, 1),
@@ -53,7 +53,7 @@ split_single <- function(x_nudge = 0,
   return(plot_data)
 }
 
-#' Split grid
+#' Disarray
 #'
 #' This function generates a generative art ggplot
 #' object using polygons
@@ -67,46 +67,54 @@ split_single <- function(x_nudge = 0,
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
 #' @examples
-#' split_grid()
+#' disarray()
 #' @export
 
-split_grid <- function(n_x = 4,
-                       n_y = 4,
-                       col_palette = c("#FF8811", "#9DD9D2", "#046E8F", "#D44D5C"),
-                       grid_col = "white",
-                       grid_width = 1,
-                       s = 1234) {
+disarray <- function(n_x = 4,
+                     n_y = 4,
+                     col_palette = c("#FF8811", "#9DD9D2", "#046E8F", "#D44D5C"),
+                     grid_col = "white",
+                     grid_width = 1,
+                     s = 1234) {
   if (length(col_palette) < 4) {
     stop("col_palette must have at least 4 colours")
   }
-  set.seed(s)
   plot_grid <- expand.grid(
     x = seq_len(n_x),
     y = seq_len(n_y)
   )
-  all_data <- purrr::map2(
-    .x = plot_grid$x,
-    .y = plot_grid$y,
-    .f = ~ split_single(
-      x_nudge = .x,
-      y_nudge = .y,
-      col_palette = col_palette
-    )
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      all_data <- purrr::map2(
+        .x = plot_grid$x,
+        .y = plot_grid$y,
+        .f = ~ disarray_single(
+          x_nudge = .x,
+          y_nudge = .y,
+          col_palette = col_palette
+        )
+      )
+      names(all_data) <- seq_len(n_x * n_y)
+      plot_data <- dplyr::bind_rows(all_data, .id = "grp2") |>
+        tidyr::unite("grp", "grp", "grp2", sep = "-") |>
+        tibble::as_tibble()
+      plot_data
+    }
   )
-  names(all_data) <- seq_len(n_x * n_y)
-  plot_data <- dplyr::bind_rows(all_data, .id = "grp2") |>
-    tidyr::unite("grp", "grp", "grp2", sep = "-") |>
-    tibble::as_tibble()
-  p <- ggplot2::ggplot(data = plot_data) +
+  p <- ggplot2::ggplot() +
     ggplot2::geom_polygon(
+      data = plot_data,
       mapping = ggplot2::aes(
-        x = .data$x, y = .data$y, fill = .data$fill, group = .data$grp
+        x = .data$x, y = .data$y,
+        fill = .data$fill, group = .data$grp
       )
     ) +
     ggplot2::geom_tile(
       data = plot_grid,
       mapping = ggplot2::aes(
-        x = .data$x + 0.5, y = .data$y + 0.5
+        x = .data$x + 0.5,
+        y = .data$y + 0.5
       ),
       colour = grid_col,
       linewidth = grid_width,
@@ -114,6 +122,6 @@ split_grid <- function(n_x = 4,
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed(expand = FALSE) +
-    theme_aRt(bg_col, 0.5)
+    theme_aRt(grid_col, 0)
   return(p)
 }

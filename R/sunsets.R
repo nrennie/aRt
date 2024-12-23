@@ -10,20 +10,25 @@
 generate_sunsets_data <- function(num_bars = 8,
                                   n = 1000,
                                   s = 2023) {
-  set.seed(s)
-  min_vals <- stats::runif(num_bars, 0, 0.3)
-  max_vals <- min_vals + stats::runif(num_bars, 0, 0.7)
-  plot_data <- tibble::tibble(
-    x = rep(seq(0, 1, length.out = n), num_bars),
-    xend = rep(seq(0, 1, length.out = n), num_bars),
-    y = rep(rep(-1, n), num_bars),
-    yend = rep(rep(1, n), num_bars),
-    variable = rep(as.character(1:num_bars), each = n),
-    col = unlist(purrr::map2(
-      .x = min_vals,
-      .y = max_vals,
-      .f = ~ seq(.x, .y, length.out = n)
-    )),
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      min_vals <- stats::runif(num_bars, 0, 0.3)
+      max_vals <- min_vals + stats::runif(num_bars, 0, 0.7)
+      plot_data <- tibble::tibble(
+        x = rep(seq(0, 1, length.out = n), num_bars),
+        xend = rep(seq(0, 1, length.out = n), num_bars),
+        y = rep(rep(-1, n), num_bars),
+        yend = rep(rep(1, n), num_bars),
+        variable = rep(as.character(1:num_bars), each = n),
+        col = unlist(purrr::map2(
+          .x = min_vals,
+          .y = max_vals,
+          .f = ~ seq(.x, .y, length.out = n)
+        )),
+      )
+      plot_data
+    }
   )
   return(plot_data)
 }
@@ -41,7 +46,7 @@ generate_sunsets_data <- function(num_bars = 8,
 #' @param fade_vertical Boolean indicating whether the colouring
 #' should be vertical. Default FALSE.
 #' @param alpha Transparency of coloured bars. Default 1.
-#' @param s Random seed. Default 2023.
+#' @param s Random seed. Default 1234.
 #' @return A ggplot object.
 #' @examples
 #' sunsets()
@@ -54,7 +59,7 @@ sunsets <- function(num_bars = 8,
                     vertical = FALSE,
                     fade_vertical = FALSE,
                     alpha = 1,
-                    s = 2023) {
+                    s = 1234) {
   plot_data <- generate_sunsets_data(
     num_bars = num_bars,
     n = n,
@@ -74,7 +79,7 @@ sunsets <- function(num_bars = 8,
       colours = ggplot2::alpha(col_palette, alpha)
     ) +
     ggplot2::coord_cartesian(expand = FALSE) +
-    theme_aRt(bg_col, 1)
+    theme_aRt(bg_col, 0.5)
   if (!vertical) {
     p <- p + ggplot2::facet_wrap(~variable, ncol = 1)
   } else {

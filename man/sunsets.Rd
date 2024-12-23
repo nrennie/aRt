@@ -12,7 +12,7 @@ sunsets(
   vertical = FALSE,
   fade_vertical = FALSE,
   alpha = 1,
-  s = 2023
+  s = 1234
 )
 }
 \arguments{
@@ -32,7 +32,7 @@ should be vertical. Default FALSE.}
 
 \item{alpha}{Transparency of coloured bars. Default 1.}
 
-\item{s}{Random seed. Default 2023.}
+\item{s}{Random seed. Default 1234.}
 }
 \value{
 A ggplot object.

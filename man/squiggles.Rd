@@ -38,3 +38,6 @@ A ggplot object.
 \description{
 This function generates generative art from multiple smooth lines.
 }
+\examples{
+squiggles()
+}
