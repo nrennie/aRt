@@ -3,8 +3,8 @@
 #' This function generates a generative art ggplot object using pie charts
 #' and circles.
 #'
-#' @param col_palette Vector of colours. Default PrettyCols::prettycols("Lively").
-#' @param bg_col Background colour. Default "#343046".
+#' @param col_palette Vector of colours. Default `PrettyCols::prettycols("Lively")`.
+#' @param bg_col Background colour. Default `"#343046"`.
 #' @param x_ring Vector of x-co-ordinates for centre of gaps. Default c(0.2, 0.9).
 #' @param y_ring Vector of y-co-ordinates for centre of gaps. Default c(0.2, 1.8).
 #' @param r_ring Vector of radii for centre of gaps. Default c(0.6, 0.4).
@@ -14,8 +14,9 @@
 #' @param n Vector of slices per pie chart. Default c(80, 80).
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' rings()
 #' @export
-#'
 
 rings <- function(col_palette = PrettyCols::prettycols("Lively"),
                   bg_col = "#343046",
@@ -86,16 +87,6 @@ rings <- function(col_palette = PrettyCols::prettycols("Lively"),
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(
-        fill = bg_col,
-        colour = bg_col
-      ),
-      panel.background = ggplot2::element_rect(
-        fill = bg_col,
-        colour = bg_col
-      )
-    )
+    theme_aRt(bg_col)
   return(p)
 }

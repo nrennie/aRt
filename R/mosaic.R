@@ -15,6 +15,8 @@
 #' @param xy_var Numeric variance of x and y points. Default 2.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' mosaic()
 #' @export
 
 mosaic <- function(n = 100,
@@ -68,18 +70,6 @@ mosaic <- function(n = 100,
       )
     ) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      plot.margin = ggplot2::unit(c(0, 0, 0, 0), unit = "cm"),
-      panel.background = ggplot2::element_rect(
-        fill = bg_col,
-        colour = bg_col
-      ),
-      plot.background = ggplot2::element_rect(
-        fill = bg_col,
-        colour = bg_col
-      )
-    )
+    theme_aRt(bg_col)
   return(suppressWarnings(print(p)))
 }

@@ -7,7 +7,6 @@
 #' @param s Random seed. Default 2023.
 #' @return A tibble
 #' @noRd
-#'
 generate_sunsets_data <- function(num_bars = 8,
                                   n = 1000,
                                   s = 2023) {
@@ -44,6 +43,8 @@ generate_sunsets_data <- function(num_bars = 8,
 #' @param alpha Transparency of coloured bars. Default 1.
 #' @param s Random seed. Default 2023.
 #' @return A ggplot object.
+#' @examples
+#' sunsets()
 #' @export
 
 sunsets <- function(num_bars = 8,
@@ -73,16 +74,7 @@ sunsets <- function(num_bars = 8,
       colours = ggplot2::alpha(col_palette, alpha)
     ) +
     ggplot2::coord_cartesian(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      strip.text = ggplot2::element_blank(),
-      strip.background = ggplot2::element_blank(),
-      plot.margin = ggplot2::margin(10, 10, 10, 10),
-      panel.spacing = ggplot2::unit(0, "lines"),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col)
-    )
+    theme_aRt(bg_col, 1)
   if (!vertical) {
     p <- p + ggplot2::facet_wrap(~variable, ncol = 1)
   } else {

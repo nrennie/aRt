@@ -35,3 +35,6 @@ A ggplot object.
 \description{
 This function creates generative art inspired by the Moiré effect.
 }
+\examples{
+moire()
+}

@@ -37,8 +37,9 @@ black_hole_points <- function(r_maxi, n, lim) {
 #' @param a Transparency of points. Default 0.5.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' black_hole()
 #' @export
-#'
 
 black_hole <- function(r_max = c(50, 150, 250, 350),
                        n = 10000,
@@ -48,9 +49,15 @@ black_hole <- function(r_max = c(50, 150, 250, 350),
                        size = 0.01,
                        a = 0.5,
                        s = 1234) {
-  set.seed(s)
-  plot_data <- purrr::map(.x = r_max, .f = ~ black_hole_points(.x, n, lim))
-  plot_data <- dplyr::bind_rows(plot_data)
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      plot_data <- purrr::map(.x = r_max, .f = ~ black_hole_points(.x, n, lim))
+      plot_data <- dplyr::bind_rows(plot_data)
+      plot_data
+    }
+  )
+
   p <- ggplot2::ggplot() +
     ggplot2::geom_point(
       data = plot_data,
@@ -61,21 +68,10 @@ black_hole <- function(r_max = c(50, 150, 250, 350),
       ),
       size = size
     ) +
-    ggplot2::coord_fixed() +
-    ggplot2::scale_colour_gradientn(colours = ggplot2::alpha(main_cols,
-      alpha = a
-    )) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      panel.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      ),
-      plot.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      )
-    )
+    ggplot2::coord_fixed(expand = FALSE) +
+    ggplot2::scale_colour_gradientn(
+      colours = ggplot2::alpha(main_cols, alpha = a)
+    ) +
+    theme_aRt(bg_col)
   return(p)
 }

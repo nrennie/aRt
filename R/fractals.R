@@ -1,10 +1,10 @@
 #' Fractals
 #'
-#' This function generates a generative art ggplot
-#' object using fractal patterns. Inspired by https://www.r-bloggers.com/2010/08/fractals-in-r/
+#' This function generates a generative art ggplot object using fractal patterns.
+#' Inspired by https://www.r-bloggers.com/2010/08/fractals-in-r/
 #'
 #' @param N Number of iterations. Default 25.
-#' @param col_palette Vector of colours of length >= N. Default MetBrewer::met.brewer("Demuth", n = 25).
+#' @param col_palette Vector of colours of length >= N. Default `MetBrewer::met.brewer("Demuth", n = 25)`.
 #' @param shift Offset of y-values. Default 0.
 #' @param left Start rangle of x-axis. Default -1.
 #' @param right End range of x-axis. Default 1.
@@ -12,10 +12,11 @@
 #' @param resolution Resolution of grid. Default 0.005.
 #' @param dist_max Size of center area. Default 4.
 #' @return A ggplot object.
+#' @examples
+#' fractals()
 #' @export
-#'
 
-fractals <- function(N = 25, #nolint
+fractals <- function(N = 25, # nolint
                      col_palette = MetBrewer::met.brewer("Demuth", n = 25),
                      shift = 0,
                      left = -1,
@@ -31,7 +32,7 @@ fractals <- function(N = 25, #nolint
   }
   # create data
   step <- seq(left, right, by = resolution)
-  output <- array(0, dim = c(length(step) ^ 2, 3))
+  output <- array(0, dim = c(length(step)^2, 3))
   for (i in step) {
     for (j in step + shift) {
       x <- 0
@@ -50,7 +51,7 @@ fractals <- function(N = 25, #nolint
       if (dist < dist_max) {
         col <- num_colours
       } else {
-        col <- n * floor(num_colours   / N)
+        col <- n * floor(num_colours / N)
       }
 
       t <- t + 1
@@ -61,13 +62,16 @@ fractals <- function(N = 25, #nolint
   plot_data <- as.data.frame(output)
   colnames(plot_data) <- c("y", "x", "col")
   # plot
-  ggplot2::ggplot(data = plot_data,
-                  mapping = ggplot2::aes(x = .data$x,
-                                         y = .data$y,
-                                         fill = I(col_palette[col]))) +
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(
+      x = .data$x,
+      y = .data$y,
+      fill = I(col_palette[col])
+    )
+  ) +
     ggplot2::geom_raster() +
     ggplot2::coord_cartesian(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none",
-                   plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"))
+    theme_aRt("white")
+  return(p)
 }

@@ -40,3 +40,6 @@ A ggplot object.
 \description{
 This function creates generative art using faceted segments.
 }
+\examples{
+sunsets()
+}

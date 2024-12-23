@@ -8,9 +8,9 @@
 #' @param ymin Minimum y value og geographic area. Default 54.43.
 #' @param ymax Maximum y value og geographic area. Default 54.49.
 #' @param col_palette Colour palette to colour in contours.
-#' Default MetBrewer::met.brewer("Hokusai3").
+#' Default `MetBrewer::met.brewer("Hokusai3")`.
 #' @param res Resolution of elevation. Default 50.
-#' @param line_col Colour of contours. Default "#0a2e57".
+#' @param line_col Colour of contours. Default `"#0a2e57"`.
 #' @param linewidth Width of contours. 0.5.
 #' @return A ggplot object.
 #' @export
@@ -54,12 +54,7 @@ contours <- function(xmin = -3.27,
       ) +
       ggplot2::scale_fill_manual(values = cols) +
       ggplot2::coord_sf(expand = FALSE) +
-      ggplot2::theme_void() +
-      ggplot2::theme(
-        legend.position = "none",
-        plot.margin = ggplot2::margin(0, 0, 0, 0)
-      )
-
+      theme_aRt(col_palette[1])
     return(p)
   }
 }

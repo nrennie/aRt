@@ -6,13 +6,14 @@
 #' @param n_y Number of polygons per column. Default 10.
 #' @param deg_jitter Numeric between 0 and 0.5 specifying the degree of jitter. Default 0.1.
 #' @param linewidth Width of lines between polygons. Default 0.5.
-#' @param line_col Colour of lines between polygons. Default "black".
-#' @param bg_col Background colour. Default "black".
-#' @param col_palette Vector of colours. Can be any length. Default PrettyCols::prettycols("Lively").
+#' @param line_col Colour of lines between polygons. Default `"black"`.
+#' @param bg_col Background colour. Default `"black"`.
+#' @param col_palette Vector of colours. Can be any length. Default `PrettyCols::prettycols("Lively")`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' random_tessellation()
 #' @export
-#'
 
 random_tessellation <- function(n_x = 10,
                                 n_y = 10,
@@ -53,15 +54,31 @@ random_tessellation <- function(n_x = 10,
 
   for (i in 1:n_x) {
     for (j in 1:n_y) {
-      x1[j, i] <- dplyr::filter(poly_data, .data$x_id == i, .data$y_id == j) |> dplyr::pull(x)
-      x2[j, i] <- dplyr::filter(poly_data, .data$x_id == i + 1, .data$y_id == j) |> dplyr::pull(x)
-      x3[j, i] <- dplyr::filter(poly_data, .data$x_id == i + 1, .data$y_id == j + 1) |> dplyr::pull(x)
-      x4[j, i] <- dplyr::filter(poly_data, .data$x_id == i, .data$y_id == j + 1) |> dplyr::pull(x)
+      x1[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i, .data$y_id == j
+      ) |> dplyr::pull(x)
+      x2[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i + 1, .data$y_id == j
+      ) |> dplyr::pull(x)
+      x3[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i + 1, .data$y_id == j + 1
+      ) |> dplyr::pull(x)
+      x4[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i, .data$y_id == j + 1
+      ) |> dplyr::pull(x)
 
-      y1[j, i] <- dplyr::filter(poly_data, .data$x_id == i, .data$y_id == j) |> dplyr::pull(y)
-      y2[j, i] <- dplyr::filter(poly_data, .data$x_id == i + 1, .data$y_id == j) |> dplyr::pull(y)
-      y3[j, i] <- dplyr::filter(poly_data, .data$x_id == i + 1, .data$y_id == j + 1) |> dplyr::pull(y)
-      y4[j, i] <- dplyr::filter(poly_data, .data$x_id == i, .data$y_id == j + 1) |> dplyr::pull(y)
+      y1[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i, .data$y_id == j
+      ) |> dplyr::pull(y)
+      y2[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i + 1, .data$y_id == j
+      ) |> dplyr::pull(y)
+      y3[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i + 1, .data$y_id == j + 1
+      ) |> dplyr::pull(y)
+      y4[j, i] <- dplyr::filter(
+        poly_data, .data$x_id == i, .data$y_id == j + 1
+      ) |> dplyr::pull(y)
 
       i_val <- ifelse(i <= 9, paste0(i), paste0(0, i))
       j_val <- ifelse(j <= 9, paste0(j), paste0(0, j))
@@ -75,9 +92,14 @@ random_tessellation <- function(n_x = 10,
     group = c(as.vector(group), as.vector(group), as.vector(group), as.vector(group))
   )
 
-  ggplot2::ggplot(
+  p <- ggplot2::ggplot(
     data = plot_data,
-    mapping = ggplot2::aes(x = x, y = y, group = group, fill = group)
+    mapping = ggplot2::aes(
+      x = .data$x,
+      y = .data$y,
+      group = .data$group,
+      fill = .data$group
+    )
   ) +
     ggplot2::geom_polygon(colour = line_col, linewidth = linewidth) +
     ggplot2::scale_fill_manual(
@@ -86,10 +108,6 @@ random_tessellation <- function(n_x = 10,
         replace = TRUE
       )
     ) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      legend.position = "none"
-    )
+    theme_aRt(bg_col)
+  return(p)
 }

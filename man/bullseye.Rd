@@ -7,8 +7,7 @@
 bullseye(main_col = "black", bg_col = "white", s = 1234)
 }
 \arguments{
-\item{main_col}{Colour scheme of art. One of \verb{c("mono", "rainbow)}.
-Default "black".}
+\item{main_col}{Colour scheme of art. Default "black".}
 
 \item{bg_col}{Background colour. Default "white".}
 
@@ -20,4 +19,7 @@ A ggplot object.
 \description{
 This function generates a layered generative art ggplot object using polar
 bar charts.
+}
+\examples{
+bullseye()
 }

@@ -23,3 +23,6 @@ A ggplot object.
 This function generates a greyscale or rainbow coloured generative art
 ggplot object in the shape of a heart.
 }
+\examples{
+heart()
+}

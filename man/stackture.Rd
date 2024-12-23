@@ -14,6 +14,7 @@ stackture(
   interpolate = TRUE,
   col_palette = c("#A053A1", "#DB778F", "#E69F52", "#09A39A", "#5869C7"),
   bg_col = "#004B67",
+  alpha = 1,
   s = 1234
 )
 }
@@ -30,11 +31,13 @@ stackture(
 
 \item{max_width}{maximum width.}
 
-\item{interpolate}{Boolean indicating if colours should be interpolated. Default TRUE.}
+\item{interpolate}{Boolean indicating if colours should be interpolated. Default \code{TRUE}.}
 
 \item{col_palette}{Vector of colours. Default \code{c("#A053A1", "#DB778F", "#E69F52", "#09A39A", "#5869C7")}.}
 
-\item{bg_col}{Background colour. Default "#004B67".}
+\item{bg_col}{Background colour. Default \code{"#004B67"}.}
+
+\item{alpha}{Transparency. Default 1.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -44,4 +47,7 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object using
 overlapping semi-transparent circles.
+}
+\examples{
+stackture()
 }

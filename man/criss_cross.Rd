@@ -19,11 +19,11 @@ criss_cross(
 
 \item{bg_col}{Background colour. Default "white".}
 
-\item{line_col}{Vector of colours (or single colour). Default "grey50".}
+\item{line_col}{Vector of colours (or single colour). Default \code{"grey50"}.}
 
 \item{linewidth}{Width of lines. Default 0.1.}
 
-\item{outline_col}{Outline colour. Default "black".}
+\item{outline_col}{Outline colour. Default \code{"black"}.}
 
 \item{outline_width}{Linewidth of outline. Default 1.5.}
 

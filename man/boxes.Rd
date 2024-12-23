@@ -32,3 +32,6 @@ A ggplot object.
 This function generates a coloured generative art ggplot object from
 treemaps.
 }
+\examples{
+boxes()
+}

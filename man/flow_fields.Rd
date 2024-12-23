@@ -40,3 +40,6 @@ A ggplot object.
 This function generates a generative art ggplot object from using particle traces.
 See also https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/
 }
+\examples{
+flow_fields()
+}

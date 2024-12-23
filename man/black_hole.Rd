@@ -40,3 +40,6 @@ A ggplot object.
 This function generates a generative art ggplot
 object using points.
 }
+\examples{
+black_hole()
+}

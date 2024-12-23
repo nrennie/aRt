@@ -13,8 +13,9 @@
 #' installed.
 #' Default `FALSE`.
 #' @return A ggplot object.
+#' @examples
+#' window_boxes()
 #' @export
-#'
 
 window_boxes <- function(n_x = 10,
                          n_y = 10,
@@ -38,8 +39,7 @@ window_boxes <- function(n_x = 10,
     ggplot2::scale_fill_gradientn(colours = col_palette) +
     ggplot2::scale_colour_gradientn(colours = col_palette) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none")
+    theme_aRt(col_palette[1])
   if (rayshade) {
     if (!requireNamespace("rayshader", quietly = TRUE)) {
       stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
@@ -53,6 +53,6 @@ window_boxes <- function(n_x = 10,
       )
     }
   } else {
-    g
+    return(g)
   }
 }

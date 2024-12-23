@@ -46,6 +46,8 @@ generate_line <- function(x, y, length, angle, group = 1) {
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 123.
 #' @return A ggplot object
+#' @examples
+#' perpendicular()
 #' @export
 
 perpendicular <- function(n = 100,
@@ -97,10 +99,6 @@ perpendicular <- function(n = 100,
       (min(c(plot_data$x, plot_data$y, plot_data$xend, plot_data$yend))),
       (max(c(plot_data$x, plot_data$y, plot_data$xend, plot_data$yend)))
     ) +
-    ggplot2::theme(
-      legend.position = "none",
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col)
-    )
-  p
+    theme_aRt(bg_col)
+  return(p)
 }

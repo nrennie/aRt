@@ -12,6 +12,8 @@
 #' @param bg_col Background colour. Default "grey20".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object
+#' @examples
+#' spiro()
 #' @export
 
 spiro <- function(n_x = 10,
@@ -40,11 +42,6 @@ spiro <- function(n_x = 10,
     size = linewidth) +
     ggplot2::scale_colour_identity() +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col)
-    )
+    theme_aRt(bg_col)
   return(p)
 }

@@ -21,3 +21,6 @@ A ggplot object.
 \description{
 This function generates a generative art ggplot object using a random walk.
 }
+\examples{
+blending()
+}

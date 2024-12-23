@@ -18,6 +18,8 @@
 #' @param size Size of points. Default 0.3.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' chaos()
 #' @export
 
 chaos <- function(n_lines = 75,
@@ -34,22 +36,38 @@ chaos <- function(n_lines = 75,
                   alpha = 0.5,
                   size = 0.3,
                   s = 1234) {
-  set.seed(s)
-  line_data <- tibble::tibble(
-    x1 = stats::runif(n_lines),
-    y1 = stats::runif(n_lines),
-    x2 = stats::runif(n_lines),
-    y2 = stats::runif(n_lines),
-    grp = seq_len(n_lines)
+  line_data <- withr::with_seed(
+    seed = s,
+    code = {
+      line_data <- tibble::tibble(
+        x1 = stats::runif(n_lines),
+        y1 = stats::runif(n_lines),
+        x2 = stats::runif(n_lines),
+        y2 = stats::runif(n_lines),
+        grp = seq_len(n_lines)
+      )
+    }
   )
-  point_data <- tibble::tibble(
-    x = stats::runif(n_points),
-    y = stats::runif(n_points)
+  point_data <- withr::with_seed(
+    seed = s,
+    code = {
+      point_data <- tibble::tibble(
+        x = stats::runif(n_points),
+        y = stats::runif(n_points)
+      )
+      point_data
+    }
   )
-  circle_data <- tibble::tibble(
-    x0 = stats::runif(n_circles),
-    y0 = stats::runif(n_circles),
-    r = stats::runif(n_circles, min_circle, max_circle)
+  circle_data <- withr::with_seed(
+    seed = s,
+    code = {
+      circle_data <- tibble::tibble(
+        x0 = stats::runif(n_circles),
+        y0 = stats::runif(n_circles),
+        r = stats::runif(n_circles, min_circle, max_circle)
+      )
+      circle_data
+    }
   )
   p <- ggplot2::ggplot() +
     ggplot2::geom_segment(
@@ -86,17 +104,6 @@ chaos <- function(n_lines = 75,
       colour = circle_line_col
     ) +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      ),
-      panel.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      ),
-      plot.margin = ggplot2::margin(5, 5, 5, 5)
-    )
+    theme_aRt(bg_col, 5)
   return(p)
 }

@@ -25,11 +25,11 @@ contours(
 \item{ymax}{Maximum y value og geographic area. Default 54.49.}
 
 \item{col_palette}{Colour palette to colour in contours.
-Default MetBrewer::met.brewer("Hokusai3").}
+Default \code{MetBrewer::met.brewer("Hokusai3")}.}
 
 \item{res}{Resolution of elevation. Default 50.}
 
-\item{line_col}{Colour of contours. Default "#0a2e57".}
+\item{line_col}{Colour of contours. Default \code{"#0a2e57"}.}
 
 \item{linewidth}{Width of contours. 0.5.}
 }

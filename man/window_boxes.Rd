@@ -34,3 +34,6 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object using rectangles.
 }
+\examples{
+window_boxes()
+}

@@ -2,6 +2,7 @@
 #'
 #' @param n Number of hex codes to generate
 #' @return Character string of hex codes
+#' @noRd
 random_hex <- function(n) {
   generate_hex <- function() {
     choices <- sample(c(as.character(0:9), LETTERS[1:6]), size = 6, replace = TRUE)
@@ -21,6 +22,7 @@ random_hex <- function(n) {
 #' @param low Hex value for left colour
 #' @param high Hex value for right colour
 #' @return Tibble
+#' @noRd
 make_square <- function(xmin, xmax, ymin, ymax, low, high) {
   xvals <- seq(xmin, xmax, by = 0.001)
   plot_data <- tibble::tibble(
@@ -39,19 +41,26 @@ make_square <- function(xmin, xmax, ymin, ymax, low, high) {
 #' @param ny Number of rows. Default 5.
 #' @param s Random seed. Default 1234.
 #' @return Tibble
+#' @examples
+#' gradients()
 #' @export
 
 gradients <- function(nx = 5,
                       ny = 5,
                       s = 1234) {
-  set.seed(s)
-  inputs <- tibble::tibble(
-    xmin = rep(seq_len(nx), each = ny),
-    xmax = rep(seq_len(nx) + 1, each = ny),
-    ymin = rep(seq_len(ny), times = nx),
-    ymax = rep(seq_len(ny) + 1, times = nx),
-    low = random_hex(nx * ny),
-    high = random_hex(nx * ny)
+  inputs <- withr::with_seed(
+    seed = s,
+    code = {
+      inputs <- tibble::tibble(
+        xmin = rep(seq_len(nx), each = ny),
+        xmax = rep(seq_len(nx) + 1, each = ny),
+        ymin = rep(seq_len(ny), times = nx),
+        ymax = rep(seq_len(ny) + 1, times = nx),
+        low = random_hex(nx * ny),
+        high = random_hex(nx * ny)
+      )
+      inputs
+    }
   )
 
   plot_data <- purrr::pmap_df(inputs, make_square)
@@ -66,10 +75,6 @@ gradients <- function(nx = 5,
       )
     ) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none",
-                   plot.margin = ggplot2::margin(0, 0, 0, 0),
-                   plot.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
-                   panel.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"))
+    theme_aRt("transparent")
 
 }

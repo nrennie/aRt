@@ -59,11 +59,6 @@ squiggles <- function(res = 100,
     ggplot2::scale_alpha_manual(values = c(alpha_low, alpha_high)) +
     ggplot2::scale_x_continuous(expand = ggplot2::expansion(0, 0)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0, add = 1)) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      legend.position = "none"
-    )
+    theme_aRt(bg_col)
   suppressMessages(print(p))
 }

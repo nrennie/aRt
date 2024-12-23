@@ -57,3 +57,6 @@ A ggplot object.
 This function generates a generative art ggplot object using a
 lines, points, and circles.
 }
+\examples{
+chaos()
+}

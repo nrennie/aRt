@@ -21,3 +21,6 @@ A ggplot object.
 \description{
 This function generates an abstract circular generative art ggplot object.
 }
+\examples{
+circular()
+}

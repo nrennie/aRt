@@ -30,3 +30,6 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object from stream charts.
 }
+\examples{
+streams()
+}

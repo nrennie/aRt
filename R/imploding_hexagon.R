@@ -24,6 +24,8 @@ implode <- function(x, implode_factor = 0.5) {
 #' @param implode_factor Image implode factor. Default 0.5.
 #' @param s Random seed. Default 123.
 #' @return A ggplot object.
+#' @examples
+#' imploding_hexagon()
 #' @export
 imploding_hexagon <- function(n = 25000,
                               size = 0.05,
@@ -79,13 +81,6 @@ imploding_hexagon <- function(n = 25000,
     ggplot2::scale_x_continuous(limits = c(lower_lim, upper_lim)) +
     ggplot2::scale_y_continuous(limits = c(lower_lim, upper_lim)) +
     ggplot2::coord_fixed() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      axis.title = ggplot2::element_blank(),
-      axis.ticks = ggplot2::element_blank(),
-      axis.text = ggplot2::element_blank(),
-      panel.grid = ggplot2::element_blank()
-    )
+    theme_aRt(bg_col)
   return(g)
 }

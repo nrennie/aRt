@@ -33,3 +33,6 @@ A ggplot object.
 This function generates a generative art ggplot
 object using points and lines.
 }
+\examples{
+abacus()
+}

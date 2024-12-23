@@ -26,11 +26,11 @@ split_jitter(
 \item{col_palette}{Vector of colours. Must be at least length 4.
 Default \code{c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044", "#8dc657")}}
 
-\item{line_col}{Colour of lines. Default "transparent".}
+\item{line_col}{Colour of lines. Default \code{"transparent"}.}
 
 \item{linewidth}{Width of lines. Default 1.}
 
-\item{bg_col}{Background colour. Default "#679c35".}
+\item{bg_col}{Background colour. Default \code{"#679c35"}.}
 
 \item{s}{Random seed. Default 1234.}
 }
@@ -40,4 +40,7 @@ A ggplot object.
 \description{
 This function generates a generative art ggplot
 object using polygons
+}
+\examples{
+split_jitter()
 }

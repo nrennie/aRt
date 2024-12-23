@@ -4,9 +4,11 @@
 #'
 #' @param n Number of boxes per quadrant. Default 15.
 #' @param w Weighting towards first colour of palette. Minimum of 2. Default 4.
-#' @param col_palette Vector of colours. Default PrettyCols::prettycols("PurpleTangerines").
+#' @param col_palette Vector of colours. Default `PrettyCols::prettycols("PurpleTangerines")`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' mirrored()
 #' @export
 
 mirrored <- function(n = 15,
@@ -55,18 +57,6 @@ mirrored <- function(n = 15,
     ) +
     ggplot2::scale_fill_gradientn(colours = col_palette) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.margin = ggplot2::margin(0, 0, 0, 0),
-      legend.position = "none",
-      plot.background = ggplot2::element_rect(
-        fill = col_palette[1],
-        colour = col_palette[1]
-      ),
-      panel.background = ggplot2::element_rect(
-        fill = col_palette[1],
-        colour = col_palette[1]
-      )
-    )
+    theme_aRt(col_palette[1])
   return(p)
 }

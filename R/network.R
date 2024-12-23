@@ -7,11 +7,13 @@
 #' @param n_y Number of rows. Default 7.
 #' @param prop Proportion of squares to be nodes. Default 0.3.
 #' @param col_palette Colour palette. Default `c("#E01A4F", "#F15946", "#F9C22E", "#53B3CB", "#7DCFB6")`.
-#' @param bg_col Background colour. Default "white".
-#' @param bg_line_col Background line colour. Default "grey70".
-#' @param line_col Line colour. Default "black".
+#' @param bg_col Background colour. Default `"white"`.
+#' @param bg_line_col Background line colour. Default `"grey70"`.
+#' @param line_col Line colour. Default `"black"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' network()
 #' @export
 
 network <- function(
@@ -64,7 +66,7 @@ network <- function(
       data = plot_data,
       mapping = ggplot2::aes(x = .data$x, y = .data$y),
       fill = NA,
-      width = 1, 
+      width = 1,
       height = 1,
       colour = bg_line_col
     ) +
@@ -86,14 +88,6 @@ network <- function(
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(
-        fill = bg_col, colour = bg_col
-      ),
-      panel.background = ggplot2::element_rect(
-        fill = bg_col, colour = bg_col
-      )
-    )
+    theme_aRt(bg_col)
   return(g)
 }

@@ -34,3 +34,6 @@ A ggplot object.
 This function generates a coloured generative art ggplot object using
 dendograms and circular graphs.
 }
+\examples{
+circles()
+}

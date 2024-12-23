@@ -41,3 +41,6 @@ A ggplot object
 \description{
 This function generates a generative art ggplot object in a spirograph style.
 }
+\examples{
+spiro()
+}

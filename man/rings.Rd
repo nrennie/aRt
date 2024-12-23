@@ -18,9 +18,9 @@ rings(
 )
 }
 \arguments{
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("Lively").}
+\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("Lively")}.}
 
-\item{bg_col}{Background colour. Default "#343046".}
+\item{bg_col}{Background colour. Default \code{"#343046"}.}
 
 \item{x_ring}{Vector of x-co-ordinates for centre of gaps. Default c(0.2, 0.9).}
 
@@ -44,4 +44,7 @@ A ggplot object.
 \description{
 This function generates a generative art ggplot object using pie charts
 and circles.
+}
+\examples{
+rings()
 }

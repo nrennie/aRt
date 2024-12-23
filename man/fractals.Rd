@@ -18,7 +18,7 @@ fractals(
 \arguments{
 \item{N}{Number of iterations. Default 25.}
 
-\item{col_palette}{Vector of colours of length >= N. Default MetBrewer::met.brewer("Demuth", n = 25).}
+\item{col_palette}{Vector of colours of length >= N. Default \code{MetBrewer::met.brewer("Demuth", n = 25)}.}
 
 \item{shift}{Offset of y-values. Default 0.}
 
@@ -36,6 +36,9 @@ fractals(
 A ggplot object.
 }
 \description{
-This function generates a generative art ggplot
-object using fractal patterns. Inspired by https://www.r-bloggers.com/2010/08/fractals-in-r/
+This function generates a generative art ggplot object using fractal patterns.
+Inspired by https://www.r-bloggers.com/2010/08/fractals-in-r/
+}
+\examples{
+fractals()
 }

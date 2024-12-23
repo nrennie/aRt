@@ -38,3 +38,6 @@ A ggplot object.
 This function generates a generative art ggplot
 object using spatial hexagons and Magick.
 }
+\examples{
+imploding_hexagon()
+}

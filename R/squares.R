@@ -11,6 +11,8 @@
 #' @param size Size of lines between squares. Default 1.5.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' squares()
 #' @export
 
 squares <- function(n = 7,
@@ -23,26 +25,33 @@ squares <- function(n = 7,
   set.seed(s)
   df <- expand.grid(x = 1:n, y = 1:n)
   plot_data <- df |>
-    dplyr::mutate(fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
-                  angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE))
-  ggplot2::ggplot(data = plot_data,
-                  mapping = ggplot2::aes(x = .data$x,
-                                         y = .data$y,
-                                         pattern = .data$fill,
-                                         pattern_angle = .data$angle)) +
-    ggpattern::geom_tile_pattern(colour = line_col,
-                                 pattern_colour = pattern_col,
-                                 pattern_fill = pattern_fill,
-                                 pattern_size = pattern_size,
-                                 size = size) +
-    ggpattern::scale_pattern_manual(values = c("stripe",
-                                               "wave",
-                                               "crosshatch",
-                                               "weave")) +
+    dplyr::mutate(
+      fill = factor(sample(1:4, size = nrow(df), replace = TRUE)),
+      angle = sample(c(30, 60, 90), size = nrow(df), replace = TRUE)
+    )
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(
+      x = .data$x,
+      y = .data$y,
+      pattern = .data$fill,
+      pattern_angle = .data$angle
+    )
+  ) +
+    ggpattern::geom_tile_pattern(
+      colour = line_col,
+      pattern_colour = pattern_col,
+      pattern_fill = pattern_fill,
+      pattern_size = pattern_size,
+      size = size
+    ) +
+    ggpattern::scale_pattern_manual(values = c(
+      "stripe",
+      "wave",
+      "crosshatch",
+      "weave"
+    )) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none",
-                   plot.margin = ggplot2::unit(c(0.3, 0.3, 0.3, 0.3), unit = "cm"),
-                   plot.background = ggplot2::element_rect(fill = line_col, colour = line_col),
-                   panel.background = ggplot2::element_rect(fill = line_col, colour = line_col))
+    theme_aRt(line_col, 0.3)
+  return(p)
 }

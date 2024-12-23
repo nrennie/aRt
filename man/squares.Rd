@@ -36,3 +36,6 @@ A ggplot object.
 This function generates a generative art ggplot
 object using pattern-filled squares
 }
+\examples{
+squares()
+}

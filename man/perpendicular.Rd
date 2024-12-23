@@ -32,3 +32,6 @@ A ggplot object
 \description{
 This function generates a generative art ggplot object featuring multiple coloured perpendicular lines.
 }
+\examples{
+perpendicular()
+}

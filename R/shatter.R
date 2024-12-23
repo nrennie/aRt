@@ -9,8 +9,9 @@
 #' @param bg_col Single colour for background. Default "gray97".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' shatter()
 #' @export
-#'
 
 shatter <- function(n_x = 25,
                     n_y = 25,
@@ -55,21 +56,6 @@ shatter <- function(n_x = 25,
     ) +
     ggplot2::scale_y_reverse() +
     ggplot2::scale_fill_gradient(low = colour, high = bg_col) +
-    ggplot2::theme(
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.title = ggplot2::element_blank(),
-      plot.subtitle = ggplot2::element_blank(),
-      legend.position = "none",
-      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"),
-      axis.title.x = ggplot2::element_blank(),
-      axis.title.y = ggplot2::element_blank(),
-      axis.text.x = ggplot2::element_blank(),
-      axis.text.y = ggplot2::element_blank(),
-      axis.ticks.x = ggplot2::element_blank(),
-      axis.ticks.y = ggplot2::element_blank(),
-      panel.grid.major = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank()
-    )
+    theme_aRt(bg_col)
   return(p)
 }

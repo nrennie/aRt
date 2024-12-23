@@ -24,11 +24,11 @@ random_tessellation(
 
 \item{linewidth}{Width of lines between polygons. Default 0.5.}
 
-\item{line_col}{Colour of lines between polygons. Default "black".}
+\item{line_col}{Colour of lines between polygons. Default \code{"black"}.}
 
-\item{bg_col}{Background colour. Default "black".}
+\item{bg_col}{Background colour. Default \code{"black"}.}
 
-\item{col_palette}{Vector of colours. Can be any length. Default PrettyCols::prettycols("Lively").}
+\item{col_palette}{Vector of colours. Can be any length. Default \code{PrettyCols::prettycols("Lively")}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -37,4 +37,7 @@ A ggplot object.
 }
 \description{
 This function generates a coloured generative art ggplot object using polygons.
+}
+\examples{
+random_tessellation()
 }

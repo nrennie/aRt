@@ -1,4 +1,4 @@
-#' Sunbursts
+#' Sunbursts single
 #'
 #' This function generates a generative art ggplot object from 2d density plots
 #'
@@ -10,15 +10,15 @@
 #' @param high Colour of sunburst points. Default "#d3f2a3".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
-#' @export
+#' @noRd
 
-sunbursts <- function(n = 100,
-                      x_means = c(0, 10, 5),
-                      y_means = c(0, 7, 8),
-                      xy_var = 5,
-                      low = "#074050",
-                      high = "#d3f2a3",
-                      s = 1234) {
+sunbursts_single <- function(n = 100,
+                             x_means = c(0, 10, 5),
+                             y_means = c(0, 7, 8),
+                             xy_var = 5,
+                             low = "#074050",
+                             high = "#d3f2a3",
+                             s = 1234) {
   set.seed(s)
   # generate data
   df <- purrr::map2(
@@ -52,46 +52,39 @@ sunbursts <- function(n = 100,
     ) +
     ggplot2::scale_fill_gradient(low = low, high = high) +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      plot.margin = ggplot2::unit(c(-0.5, -0.5, -0.5, -0.5), "cm"),
-      plot.background = ggplot2::element_rect(fill = low, colour = low),
-      panel.background = ggplot2::element_rect(fill = low, colour = low)
-    )
-  p
+    theme_aRt(low, -0.5)
+  return(p)
 }
 
-#' Sunbursts panel
+#' Sunbursts
 #'
 #' This function generates a grid of sunbursts pieces
 #'
-#' @param n Granularity. Default 100.
 #' @param ncol Number of column panels. Default 4.
 #' @param nrow Number of row panels. Default 4.
-#' @param x_means Vector of any number of means for the x-coordinate. Default c(0, 10, 5).
-#' @param y_means Vector of any number of means for the y-coordinate. Default c(0, 7, 8).
+#' @param n Granularity. Default 100.
+#' @param x_means Vector of any number of means for the x-coordinate. Default `c(0, 10, 5)`.
+#' @param y_means Vector of any number of means for the y-coordinate. Default `c(0, 7, 8)`.
 #' @param xy_var Numeric varaince of x and y points. Default 5.
-#' @param low Colour of background. Default "#4e0550".
-#' @param high Colour of sunburst points. Default "#facdfc".
+#' @param low Colour of background. Default `"#4e0550"`.
+#' @param high Colour of sunburst points. Default `"#facdfc"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @export
-#'
 
-sunbursts_panel <- function(n = 100,
-                            ncol = 4,
-                            nrow = 4,
-                            x_means = c(0, 10, 5),
-                            y_means = c(0, 7, 8),
-                            xy_var = 5,
-                            low = "#4e0550",
-                            high = "#facdfc",
-                            s = 1234) {
+sunbursts <- function(ncol = 4,
+                      nrow = 4,
+                      n = 100,
+                      x_means = c(0, 10, 5),
+                      y_means = c(0, 7, 8),
+                      xy_var = 5,
+                      low = "#4e0550",
+                      high = "#facdfc",
+                      s = 1234) {
   set.seed(s)
   ss <- sample(5:100, size = ncol * nrow)
   p <- lapply(ss, function(i) {
-    sunbursts(
+    sunbursts_single(
       n = i,
       x_means = x_means,
       y_means = y_means,

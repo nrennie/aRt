@@ -23,9 +23,9 @@ dots(
 
 \item{jitter_size_height}{Size of jitter height. Default 0.5.}
 
-\item{col_palette}{Vector of colours. Default "Purp" colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default \code{"Purp"} colour palette from rcartocolor.}
 
-\item{bg_col}{Background colour. Default "#63589f".}
+\item{bg_col}{Background colour. Default \code{"#63589f"}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -34,4 +34,7 @@ A ggplot object.
 }
 \description{
 This function generates a coloured generative art ggplot object using polar coordinates.
+}
+\examples{
+dots()
 }

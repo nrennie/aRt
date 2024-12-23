@@ -17,9 +17,9 @@ puzzles(
 
 \item{num_groups}{Number of larger boxes. Default 30.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("Beach").}
+\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("Beach")}.}
 
-\item{bg_col}{Background colour. Default "white".}
+\item{bg_col}{Background colour. Default \code{"white"}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -28,4 +28,7 @@ A ggplot object.
 }
 \description{
 This function generates a coloured generative art ggplot object from treemaps.
+}
+\examples{
+puzzles()
 }

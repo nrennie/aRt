@@ -10,6 +10,8 @@
 #' @param main_col Main colour. Default "black".
 #' @param bg_col Background colour. Default "white".
 #' @return A ggplot object.
+#' @examples
+#' riley()
 #' @export
 
 riley <- function(n_x = 9,
@@ -37,19 +39,11 @@ riley <- function(n_x = 9,
       colour = "transparent"
     ) +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      plot.background = ggplot2::element_rect(
-        fill = bg_col, colour = bg_col
-      ),
-      panel.background = ggplot2::element_rect(
-        fill = bg_col, colour = bg_col
-      )
-    )
-  cowplot::ggdraw() +
+    theme_aRt(bg_col)
+  q <- cowplot::ggdraw() +
     cowplot::draw_plot(p) +
     ggplot2::theme(plot.background = ggplot2::element_rect(
       fill = bg_col, colour = bg_col
     ))
+  return(q)
 }

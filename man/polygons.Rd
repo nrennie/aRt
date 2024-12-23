@@ -43,3 +43,6 @@ A ggplot object.
 This function generates a coloured generative art ggplot object using
 polygons.
 }
+\examples{
+polygons()
+}

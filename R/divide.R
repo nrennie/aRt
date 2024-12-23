@@ -44,8 +44,7 @@ divide <- function(num_lines = 30,
                      colour = NA) +
     ggplot2::scale_fill_gradientn(colours = col_palette) +
     ggplot2::coord_sf(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none")
+    theme_aRt(col_palette[1])
   if (rayshade) {
     if (!requireNamespace("rayshader", quietly = TRUE)) {
       stop("Please install {rayshader} to use this argument, or set 'rayshade = FALSE'")
@@ -57,6 +56,6 @@ divide <- function(num_lines = 30,
                          preview = TRUE)
     }
   } else {
-    g
+    return(g)
   }
 }

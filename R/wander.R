@@ -118,11 +118,6 @@ wander <- function(n_lines = 100,
     ggplot2::scale_y_continuous(limits = c(-lims, lims)) +
     ggplot2::scale_colour_identity() +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.margin = ggplot2::margin(5, 5, 5, 5)
-    )
+    theme_aRt(bg_col, 5)
   return(p)
 }

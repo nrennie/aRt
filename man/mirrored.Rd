@@ -16,7 +16,7 @@ mirrored(
 
 \item{w}{Weighting towards first colour of palette. Minimum of 2. Default 4.}
 
-\item{col_palette}{Vector of colours. Default PrettyCols::prettycols("PurpleTangerines").}
+\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("PurpleTangerines")}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -25,4 +25,7 @@ A ggplot object.
 }
 \description{
 This function generates a coloured generative art ggplot object from rectangles.
+}
+\examples{
+mirrored()
 }

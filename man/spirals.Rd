@@ -4,10 +4,31 @@
 \alias{spirals}
 \title{Spirals}
 \usage{
-spirals(perc = 0.2, s = 1234)
+spirals(
+  perc = 0.3,
+  bg_value = 500,
+  limit = 20,
+  max_size = 12,
+  col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
+  highlight_col = "white",
+  bg_col = "black",
+  s = 1234
+)
 }
 \arguments{
-\item{perc}{Percentage of data points to be non-NA. Default 0.2.}
+\item{perc}{Percentage of data points to be non-NA. Default 0.3.}
+
+\item{bg_value}{Number of background points. Default 500.}
+
+\item{limit}{Scale limits. Default 20.}
+
+\item{max_size}{Maximum circle size. Default 12.}
+
+\item{col_palette}{Colour palette. Default \code{c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")}.}
+
+\item{highlight_col}{Colour of background dots. Default \code{"white"}.}
+
+\item{bg_col}{Background colour. Default \code{"black"}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -15,5 +36,8 @@ spirals(perc = 0.2, s = 1234)
 A ggplot object.
 }
 \description{
-This function generates a generative art ggplot object consisting of dots arranged in a spiral,
+This function generates a generative art ggplot object consisting of dots arranged in a spiral.
+}
+\examples{
+spirals()
 }

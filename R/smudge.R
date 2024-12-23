@@ -9,6 +9,8 @@
 #' `PrettyCols::prettycols("TangerineBlues")`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' smudge()
 #' @export
 
 smudge <- function(n = 25,
@@ -23,7 +25,7 @@ smudge <- function(n = 25,
   ) |>
     tibble::as_tibble() |>
     dplyr::mutate(z = stats::runif(n^2))
-  ggplot2::ggplot(
+  p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(
       x = .data$x,
@@ -34,11 +36,6 @@ smudge <- function(n = 25,
     ggplot2::geom_contour_filled(binwidth = binwidth) +
     ggplot2::scale_fill_manual(values = new_palette) +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      plot.margin = ggplot2::margin(0, 0, 0, 0),
-      plot.background = ggplot2::element_rect(fill = "transparent", colour = "transparent"),
-      panel.background = ggplot2::element_rect(fill = "transparent", colour = "transparent")
-    )
+    theme_aRt("transparent")
+  return(p)
 }

@@ -24,12 +24,12 @@ rectangles(
 
 \item{size}{Line width of rectangles. Default 2.}
 
-\item{main_col}{Colour of non-highlighted rectangles. Default "lightgrey".}
+\item{main_col}{Colour of non-highlighted rectangles. Default \code{"lightgrey"}.}
 
-\item{col_palette}{Vector of colours. Default "Bold" colour palette from
+\item{col_palette}{Vector of colours. Default \code{"Bold"} colour palette from
 rcartocolor. Must have 12 colours.}
 
-\item{bg_col}{Background colour. Default "white".}
+\item{bg_col}{Background colour. Default \code{"white"}.}
 
 \item{s}{Seed value. Default 123.}
 }
@@ -39,4 +39,7 @@ A ggplot object
 \description{
 This function generates a generative art ggplot object featuring multiple
 coloured rectangles.
+}
+\examples{
+rectangles()
 }

@@ -5,27 +5,33 @@
 \title{Sunbursts}
 \usage{
 sunbursts(
+  ncol = 4,
+  nrow = 4,
   n = 100,
   x_means = c(0, 10, 5),
   y_means = c(0, 7, 8),
   xy_var = 5,
-  low = "#074050",
-  high = "#d3f2a3",
+  low = "#4e0550",
+  high = "#facdfc",
   s = 1234
 )
 }
 \arguments{
+\item{ncol}{Number of column panels. Default 4.}
+
+\item{nrow}{Number of row panels. Default 4.}
+
 \item{n}{Granularity. Default 100.}
 
-\item{x_means}{Vector of any number of means for the x-coordinate. Default c(0, 10, 5).}
+\item{x_means}{Vector of any number of means for the x-coordinate. Default \code{c(0, 10, 5)}.}
 
-\item{y_means}{Vector of any number of means for the y-coordinate. Default c(0, 7, 8).}
+\item{y_means}{Vector of any number of means for the y-coordinate. Default \code{c(0, 7, 8)}.}
 
 \item{xy_var}{Numeric varaince of x and y points. Default 5.}
 
-\item{low}{Colour of background. Default "#074050".}
+\item{low}{Colour of background. Default \code{"#4e0550"}.}
 
-\item{high}{Colour of sunburst points. Default "#d3f2a3".}
+\item{high}{Colour of sunburst points. Default \code{"#facdfc"}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -33,5 +39,5 @@ sunbursts(
 A ggplot object.
 }
 \description{
-This function generates a generative art ggplot object from 2d density plots
+This function generates a grid of sunbursts pieces
 }

@@ -36,11 +36,11 @@ riso_circles(
 
 \item{col_palette}{Vector of colours. Default \code{c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")}.}
 
-\item{circle_bg}{Background colour of circles. Default "#fafafa".}
+\item{circle_bg}{Background colour of circles. Default \code{"#fafafa"}.}
 
-\item{bg_col}{Background colour. Default "gray10".}
+\item{bg_col}{Background colour. Default \code{"gray10"}.}
 
-\item{interpolate}{Boolean indicating if colours should be interpolated. Default TRUE.}
+\item{interpolate}{Boolean indicating if colours should be interpolated. Default \code{TRUE}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -50,4 +50,7 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object using
 overlapping semi-transparent circles.
+}
+\examples{
+riso_circles()
 }

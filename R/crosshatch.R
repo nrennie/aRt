@@ -117,7 +117,7 @@ crosshatch <- function(n_x = 4,
   ) |>
     dplyr::bind_rows()
   # plot
-  g <- ggplot2::ggplot() +
+  p <- ggplot2::ggplot() +
     ggplot2::geom_segment(
       data = plot_data,
       mapping = ggplot2::aes(
@@ -130,12 +130,6 @@ crosshatch <- function(n_x = 4,
     ) +
     ggplot2::scale_colour_identity() +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.margin = ggplot2::margin(5, 5, 5, 5)
-    )
-  return(g)
+    theme_aRt(bg_col, 0.5)
+  return(p)
 }

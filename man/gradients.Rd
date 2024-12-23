@@ -19,3 +19,6 @@ Tibble
 \description{
 Generates generative art as a grid of gradient colour fades
 }
+\examples{
+gradients()
+}

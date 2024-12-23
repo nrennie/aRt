@@ -23,3 +23,6 @@ A ggplot object.
 \description{
 This function generates a greyscale or rainbow coloured generative art ggplot object shaped like a vortex.
 }
+\examples{
+vortex()
+}

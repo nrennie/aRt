@@ -11,11 +11,13 @@
 #' @param jitter_y Jitter in y direction for circle positions. Default 0.3.
 #' @param alpha Transparency of circles. Default 0.5.
 #' @param col_palette Vector of colours. Default `c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")`.
-#' @param circle_bg Background colour of circles. Default "#fafafa".
-#' @param bg_col Background colour. Default "gray10".
-#' @param interpolate Boolean indicating if colours should be interpolated. Default TRUE.
+#' @param circle_bg Background colour of circles. Default `"#fafafa"`.
+#' @param bg_col Background colour. Default `"gray10"`.
+#' @param interpolate Boolean indicating if colours should be interpolated. Default `TRUE`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' riso_circles()
 #' @export
 
 riso_circles <- function(n_x = 4,
@@ -63,12 +65,6 @@ riso_circles <- function(n_x = 4,
     ggplot2::facet_wrap(~grp, ncol = n_x, nrow = n_y) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.margin = ggplot2::margin(10, 10, 10, 10),
-      strip.text = ggplot2::element_blank()
-    )
+    theme_aRt(bg_col, 0.5)
   return(g)
 }

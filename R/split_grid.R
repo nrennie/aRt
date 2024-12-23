@@ -66,6 +66,8 @@ split_single <- function(x_nudge = 0,
 #' @param grid_width Linewidth of grid lines. Default 1.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' split_grid()
 #' @export
 
 split_grid <- function(n_x = 4,
@@ -95,7 +97,7 @@ split_grid <- function(n_x = 4,
   plot_data <- dplyr::bind_rows(all_data, .id = "grp2") |>
     tidyr::unite("grp", "grp", "grp2", sep = "-") |>
     tibble::as_tibble()
-  ggplot2::ggplot(data = plot_data) +
+  p <- ggplot2::ggplot(data = plot_data) +
     ggplot2::geom_polygon(
       mapping = ggplot2::aes(
         x = .data$x, y = .data$y, fill = .data$fill, group = .data$grp
@@ -112,6 +114,6 @@ split_grid <- function(n_x = 4,
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "none")
+    theme_aRt(bg_col, 0.5)
+  return(p)
 }

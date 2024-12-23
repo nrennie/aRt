@@ -5,9 +5,9 @@
 #'
 #' @param n Number of lines per corner. Default 25.
 #' @param bg_col Background colour. Default "white".
-#' @param line_col Vector of colours (or single colour). Default "grey50".
+#' @param line_col Vector of colours (or single colour). Default `"grey50"`.
 #' @param linewidth Width of lines. Default 0.1.
-#' @param outline_col Outline colour. Default "black".
+#' @param outline_col Outline colour. Default `"black"`.
 #' @param outline_width Linewidth of outline. Default 1.5.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
@@ -61,7 +61,7 @@ criss_cross <- function(n = 25,
     x = c(0, 1, 1, 0, 0),
     y = c(0, 0, 1, 1, 0)
   )
-  ggplot2::ggplot() +
+  p <- ggplot2::ggplot() +
     ggplot2::geom_segment(
       data = top_left,
       mapping = ggplot2::aes(
@@ -114,16 +114,6 @@ criss_cross <- function(n = 25,
     ) +
     ggplot2::scale_colour_identity() +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      plot.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      ),
-      panel.background = ggplot2::element_rect(
-        colour = bg_col,
-        fill = bg_col
-      ),
-      plot.margin = ggplot2::margin(0, 0, 0, 0)
-    )
+    theme_aRt(bg_col)
+  return(p)
 }

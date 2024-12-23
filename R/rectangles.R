@@ -30,12 +30,14 @@ generate_rectangle <- function(x, y, height, width, group = 1) {
 #' @param max_height Maximum height of rectangle. Default 7.
 #' @param max_width Maximum width of rectangle. Default 5.
 #' @param size Line width of rectangles. Default 2.
-#' @param main_col Colour of non-highlighted rectangles. Default "lightgrey".
-#' @param col_palette Vector of colours. Default "Bold" colour palette from
+#' @param main_col Colour of non-highlighted rectangles. Default `"lightgrey"`.
+#' @param col_palette Vector of colours. Default `"Bold"` colour palette from
 #' rcartocolor. Must have 12 colours.
-#' @param bg_col Background colour. Default "white".
+#' @param bg_col Background colour. Default `"white"`.
 #' @param s Seed value. Default 123.
 #' @return A ggplot object
+#' @examples
+#' rectangles()
 #' @export
 
 rectangles <- function(n = 100,
@@ -71,9 +73,12 @@ rectangles <- function(n = 100,
   pal <- c(col_palette, main_col)
   names(pal) <- 1:13
   # plot
-  p <- ggplot2::ggplot(plot_data, ggplot2::aes(x = .data$x, y = .data$y)) +
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(x = .data$x, y = .data$y)
+  ) +
     ggplot2::geom_polygon(
-      ggplot2::aes(
+      mapping = ggplot2::aes(
         group = .data$group,
         colour = .data$col
       ),
@@ -89,10 +94,6 @@ rectangles <- function(n = 100,
     ggplot2::ylim(
       (min(c(plot_data$x, plot_data$y))), (max(c(plot_data$x, plot_data$y)))
     ) +
-    ggplot2::theme(
-      legend.position = "none",
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col)
-    )
-  p
+    theme_aRt(bg_col)
+  return(p)
 }

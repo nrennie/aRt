@@ -1,3 +1,9 @@
+# aRt 1.4.8
+
+* use {withr} for random seeds
+* remove `shells()`
+* remove `static()`
+
 # aRt 1.4.7
 
 * Add `stackture()`

@@ -8,11 +8,13 @@
 #' @param deg_jitter Degree of jitter. Default 0.4.
 #' @param col_palette Vector of colours. Must be at least length 4.
 #' Default `c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044", "#8dc657")`
-#' @param line_col Colour of lines. Default "transparent".
+#' @param line_col Colour of lines. Default `"transparent"`.
 #' @param linewidth Width of lines. Default 1.
-#' @param bg_col Background colour. Default "#679c35".
+#' @param bg_col Background colour. Default `"#679c35"`.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' split_jitter()
 #' @export
 
 split_jitter <- function(n_x = 5,
@@ -135,11 +137,6 @@ split_jitter <- function(n_x = 5,
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed(expand = FALSE) +
-    ggplot2::theme_void() +
-    ggplot2::theme(
-      legend.position = "none",
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col)
-    )
+    theme_aRt(bg_col)
   return(p)
 }

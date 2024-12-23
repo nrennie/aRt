@@ -25,9 +25,9 @@ attraction(
 
 \item{d}{Parameter. Default -1.}
 
-\item{main_col}{Vector of colours (or single colour). Default "black".}
+\item{main_col}{Vector of colours (or single colour). Default \code{"black"}.}
 
-\item{bg_col}{Background colour. Default "white".}
+\item{bg_col}{Background colour. Default \code{"white"}.}
 }
 \value{
 A ggplot object.
@@ -35,4 +35,7 @@ A ggplot object.
 \description{
 This function generates a generative art ggplot
 object using strange attractors.
+}
+\examples{
+attraction(n = 100)
 }

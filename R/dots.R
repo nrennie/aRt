@@ -6,13 +6,13 @@
 #' @param n_y Number of outwards points. Default 100.
 #' @param jitter_size_width Size of jitter width. Default 0.5.
 #' @param jitter_size_height Size of jitter height. Default 0.5.
-#' @param col_palette Vector of colours. Default "Purp" colour palette from rcartocolor.
-#' @param bg_col Background colour. Default "#63589f".
+#' @param col_palette Vector of colours. Default `"Purp"` colour palette from rcartocolor.
+#' @param bg_col Background colour. Default `"#63589f"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' dots()
 #' @export
-#'
-#'
 
 dots <- function(n_x = 50,
                  n_y = 100,
@@ -24,7 +24,14 @@ dots <- function(n_x = 50,
   x <- rep(1:n_x, times = n_y)
   y <- rep(1:n_y, each = n_x)
   plot_data <- data.frame(x = x, y = y)
-  p <- ggplot2::ggplot(plot_data, ggplot2::aes(x = x, y = y, colour = y)) +
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(
+      x = .data$x,
+      y = .data$y,
+      colour = .data$y
+    )
+  ) +
     ggplot2::geom_jitter(
       size = 0.5,
       width = jitter_size_width,
@@ -32,21 +39,6 @@ dots <- function(n_x = 50,
     ) +
     ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::coord_polar() +
-    ggplot2::theme(
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.title = ggplot2::element_blank(),
-      plot.subtitle = ggplot2::element_blank(),
-      legend.position = "none",
-      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"), # top, right, bottom, left
-      axis.title.x = ggplot2::element_blank(),
-      axis.title.y = ggplot2::element_blank(),
-      axis.text.x = ggplot2::element_blank(),
-      axis.text.y = ggplot2::element_blank(),
-      axis.ticks.x = ggplot2::element_blank(),
-      axis.ticks.y = ggplot2::element_blank(),
-      panel.grid.major = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank()
-    )
+    theme_aRt(bg_col)
   return(p)
 }

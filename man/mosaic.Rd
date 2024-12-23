@@ -44,3 +44,6 @@ A ggplot object.
 \description{
 This function generates a generative art ggplot object from voronoi tiles.
 }
+\examples{
+mosaic()
+}

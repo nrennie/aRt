@@ -25,3 +25,6 @@ This function generates a coloured generative art ggplot object from
 intersecting lines.
 Inspired by Balm by Bridget Riley.
 }
+\examples{
+riley()
+}

@@ -11,8 +11,9 @@
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' circles()
 #' @export
-#'
 
 circles <- function(n = 100,
                     smoothness = 100,
@@ -20,43 +21,34 @@ circles <- function(n = 100,
                     line_col = NA,
                     bg_col = "black",
                     s = 1234) {
-  set.seed(s)
   # generate data
-  x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
-  y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
-  d <- data.frame(x, y)
-  dg <- stats::hclust(stats::dist(d))
-  phylo_tree <- ape::as.phylo(dg)
-  graph_edges <- phylo_tree$edge
-  graph_net <- igraph::graph.edgelist(graph_edges)
-  graph_net <- igraph::set_vertex_attr(graph_net,
-    name = "cols",
-    index = igraph::V(graph_net),
-    value = stats::runif(igraph::gorder(graph_net))
+  graph_net <- withr::with_seed(
+    seed = s,
+    code = {
+      x <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
+      y <- c(stats::rnorm(n, 25, 25), stats::rnorm(n, 50, 25), stats::rnorm(n, 75, 25))
+      d <- data.frame(x, y)
+      dg <- stats::hclust(stats::dist(d))
+      phylo_tree <- ape::as.phylo(dg)
+      graph_edges <- phylo_tree$edge
+      graph_net <- igraph::graph.edgelist(graph_edges)
+      graph_net <- igraph::set_vertex_attr(graph_net,
+        name = "cols",
+        index = igraph::V(graph_net),
+        value = stats::runif(igraph::gorder(graph_net))
+      )
+      graph_net
+    }
   )
   # plot
   p <- ggraph::ggraph(graph_net, "circlepack") +
-    ggraph::geom_node_circle(ggplot2::aes(fill = .data$cols),
+    ggraph::geom_node_circle(
+      mapping = ggplot2::aes(fill = .data$cols),
       size = 0.25,
       n = smoothness,
       colour = line_col
     ) +
     ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
-    ggplot2::theme(
-      panel.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col),
-      plot.title = ggplot2::element_blank(),
-      plot.subtitle = ggplot2::element_blank(),
-      legend.position = "none",
-      plot.margin = ggplot2::unit(c(0, 0, 0, 0), "cm"),
-      axis.title.x = ggplot2::element_blank(),
-      axis.title.y = ggplot2::element_blank(),
-      axis.text.x = ggplot2::element_blank(),
-      axis.text.y = ggplot2::element_blank(),
-      axis.ticks.x = ggplot2::element_blank(),
-      axis.ticks.y = ggplot2::element_blank(),
-      panel.grid.major = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank()
-    )
-  p
+    theme_aRt(bg_col)
+  return(p)
 }
