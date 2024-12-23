@@ -11,6 +11,8 @@
 #' @param outline_width Linewidth of outline. Default 1.5.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
+#' @examples
+#' criss_cross()
 #' @export
 
 criss_cross <- function(n = 25,
@@ -20,43 +22,70 @@ criss_cross <- function(n = 25,
                         outline_col = "black",
                         outline_width = 1.5,
                         s = 1234) {
-  set.seed(s)
-  top_left <-
-    data.frame(
-      x = rep(0, 2 * n),
-      y = rep(1, 2 * n),
-      xend = c(stats::runif(n, 0.5, 1), rep(1, n)),
-      yend = c(rep(0, n), stats::runif(n, 0, 0.5)),
-      grp = seq_len(2 * n),
-      line_col = sample(line_col, size = 2 * n, replace = TRUE)
-    )
-  bottom_left <-
-    data.frame(
-      x = rep(0, 2 * n),
-      y = rep(0, 2 * n),
-      xend = c(stats::runif(n, 0.5, 1), rep(1, n)),
-      yend = c(rep(1, n), stats::runif(n, 0.5, 1)),
-      grp = seq_len(2 * n),
-      line_col = sample(line_col, size = 2 * n, replace = TRUE)
-    )
-  top_right <-
-    data.frame(
-      x = rep(1, 2 * n),
-      y = rep(1, 2 * n),
-      xend = c(stats::runif(n, 0, 0.5), rep(0, n)),
-      yend = c(rep(0, n), stats::runif(n, 0, 0.5)),
-      grp = seq_len(2 * n),
-      line_col = sample(line_col, size = 2 * n, replace = TRUE)
-    )
-  bottom_right <-
-    data.frame(
-      x = rep(1, 2 * n),
-      y = rep(0, 2 * n),
-      xend = c(stats::runif(n, 0, 0.5), rep(0, n)),
-      yend = c(rep(1, n), stats::runif(n, 0.5, 1)),
-      grp = seq_len(2 * n),
-      line_col = sample(line_col, size = 2 * n, replace = TRUE)
-    )
+  top_left <- withr::with_seed(
+    seed = s,
+    code = {
+      top_left <-
+        data.frame(
+          x = rep(0, 2 * n),
+          y = rep(1, 2 * n),
+          xend = c(stats::runif(n, 0.5, 1), rep(1, n)),
+          yend = c(rep(0, n), stats::runif(n, 0, 0.5)),
+          grp = seq_len(2 * n),
+          line_col = sample(line_col, size = 2 * n, replace = TRUE)
+        )
+      top_left
+    }
+  )
+
+  bottom_left <- withr::with_seed(
+    seed = s,
+    code = {
+      bottom_left <-
+        data.frame(
+          x = rep(0, 2 * n),
+          y = rep(0, 2 * n),
+          xend = c(stats::runif(n, 0.5, 1), rep(1, n)),
+          yend = c(rep(1, n), stats::runif(n, 0.5, 1)),
+          grp = seq_len(2 * n),
+          line_col = sample(line_col, size = 2 * n, replace = TRUE)
+        )
+      bottom_left
+    }
+  )
+
+  top_right <- withr::with_seed(
+    seed = s,
+    code = {
+      top_right <-
+        data.frame(
+          x = rep(1, 2 * n),
+          y = rep(1, 2 * n),
+          xend = c(stats::runif(n, 0, 0.5), rep(0, n)),
+          yend = c(rep(0, n), stats::runif(n, 0, 0.5)),
+          grp = seq_len(2 * n),
+          line_col = sample(line_col, size = 2 * n, replace = TRUE)
+        )
+      top_right
+    }
+  )
+
+  bottom_right <- withr::with_seed(
+    seed = s,
+    code = {
+      bottom_right <-
+        data.frame(
+          x = rep(1, 2 * n),
+          y = rep(0, 2 * n),
+          xend = c(stats::runif(n, 0, 0.5), rep(0, n)),
+          yend = c(rep(1, n), stats::runif(n, 0.5, 1)),
+          grp = seq_len(2 * n),
+          line_col = sample(line_col, size = 2 * n, replace = TRUE)
+        )
+      bottom_right
+    }
+  )
+
   square_data <- data.frame(
     x = c(0, 1, 1, 0, 0),
     y = c(0, 0, 1, 1, 0)

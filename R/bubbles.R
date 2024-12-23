@@ -82,7 +82,12 @@ bubbles <- function(num_circles = 20,
         k <- draw_ellipse_in_circle(x0 = x0[i], y0 = y0[i], r = r[i]) |>
           dplyr::mutate(
             group_circle = i,
-            circle_col = as.character(sample(1:13, size = 1, prob = c(rep(0.01, 12), 0.78)))
+            circle_col = as.character(
+              sample(1:13,
+                size = 1,
+                prob = c(rep(0.01, 12), 0.78)
+              )
+            )
           )
         plot_data <- rbind(plot_data, k)
       }
@@ -110,8 +115,12 @@ bubbles <- function(num_circles = 20,
     ggplot2::geom_path() +
     ggplot2::scale_colour_manual(values = pal) +
     ggplot2::coord_fixed() +
-    ggplot2::xlim((min(c(plot_data$x, plot_data$y))), (max(c(plot_data$x, plot_data$y)))) +
-    ggplot2::ylim((min(c(plot_data$x, plot_data$y))), (max(c(plot_data$x, plot_data$y)))) +
+    ggplot2::xlim(
+      (min(c(plot_data$x, plot_data$y))), (max(c(plot_data$x, plot_data$y)))
+    ) +
+    ggplot2::ylim(
+      (min(c(plot_data$x, plot_data$y))), (max(c(plot_data$x, plot_data$y)))
+    ) +
     theme_aRt(bg_col)
   return(p)
 }

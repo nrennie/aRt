@@ -28,3 +28,6 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object from intersecting lines.
 }
+\examples{
+divide()
+}

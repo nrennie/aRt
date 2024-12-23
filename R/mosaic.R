@@ -28,18 +28,23 @@ mosaic <- function(n = 100,
                    y_means = c(0, 7, 8),
                    xy_var = 2,
                    s = 1234) {
-  set.seed(s)
-  df <- purrr::map2(
-    .x = x_means,
-    .y = y_means,
-    .f = ~ data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var))
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      df <- purrr::map2(
+        .x = x_means,
+        .y = y_means,
+        .f = ~ data.frame(x = rnorm(n, .x, xy_var), y = rnorm(n, .y, xy_var))
+      )
+      plot_data <- dplyr::bind_rows(df)
+      num_cols <- length(fill_cols)
+      plot_data$fill_col <- factor(sample(1:num_cols,
+                                          size = nrow(plot_data),
+                                          replace = TRUE
+      ))
+      plot_data
+    }
   )
-  plot_data <- dplyr::bind_rows(df)
-  num_cols <- length(fill_cols)
-  plot_data$fill_col <- factor(sample(1:num_cols,
-    size = nrow(plot_data),
-    replace = TRUE
-  ))
   p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(

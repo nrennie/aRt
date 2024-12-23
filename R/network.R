@@ -25,22 +25,26 @@ network <- function(
     bg_line_col = "grey70",
     line_col = "black",
     s = 1234) {
-  # set seed
-  set.seed(s)
-  # prepare data
-  plot_data <- expand.grid(x = 1:n_x, y = 1:n_y) |>
-    tibble::as_tibble() |>
-    dplyr::slice_sample(prop = prop) |>
-    dplyr::mutate(id = dplyr::row_number())
-  plot_data$r <- stats::runif(nrow(plot_data), 0.1, 0.45)
-  plot_data$fill <- sample(col_palette, nrow(plot_data), replace = TRUE)
-  # make graph
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      plot_data <- expand.grid(x = 1:n_x, y = 1:n_y) |>
+        tibble::as_tibble() |>
+        dplyr::slice_sample(prop = prop) |>
+        dplyr::mutate(id = dplyr::row_number())
+      plot_data$r <- stats::runif(nrow(plot_data), 0.1, 0.45)
+      plot_data$fill <- sample(col_palette, nrow(plot_data), replace = TRUE)
+      plot_data
+    }
+  )
   to_graph <- plot_data |>
     dplyr::select(.data$id, .data$x, .data$y) |>
     dplyr::mutate(k = 1)
   new_graph <- to_graph |>
     dplyr::full_join(to_graph, by = "k", relationship = "many-to-many") |>
-    dplyr::mutate(dist = sqrt((.data$x.x - .data$x.y)^2 + (.data$y.x - .data$y.y)^2)) |>
+    dplyr::mutate(
+      dist = sqrt((.data$x.x - .data$x.y)^2 + (.data$y.x - .data$y.y)^2)
+    ) |>
     dplyr::select(-.data$k) |>
     dplyr::select(.data$id.x, .data$id.y, .data$dist) |>
     tidyr::pivot_wider(

@@ -4,9 +4,9 @@
 #' Inspired by https://www.r-bloggers.com/2010/08/fractals-in-r/
 #'
 #' @param N Number of iterations. Default 25.
-#' @param col_palette Vector of colours of length >= N. Default `MetBrewer::met.brewer("Demuth", n = 25)`.
+#' @param col_palette Vector of colours. Default `c("#9b332b", "#b64f32", "#f7c267", "#b9b9b8", "#5d6174", "#41485f")`.
 #' @param shift Offset of y-values. Default 0.
-#' @param left Start rangle of x-axis. Default -1.
+#' @param left Start range of x-axis. Default -1.
 #' @param right End range of x-axis. Default 1.
 #' @param y_param Rate of y growth. Default 3.
 #' @param resolution Resolution of grid. Default 0.005.
@@ -17,7 +17,7 @@
 #' @export
 
 fractals <- function(N = 25, # nolint
-                     col_palette = MetBrewer::met.brewer("Demuth", n = 25),
+                     col_palette = c("#9b332b", "#b64f32", "#f7c267", "#b9b9b8", "#5d6174", "#41485f"),
                      shift = 0,
                      left = -1,
                      right = 1,
@@ -26,10 +26,8 @@ fractals <- function(N = 25, # nolint
                      dist_max = 4) {
   # initialise
   t <- 0
+  col_palette <- grDevices::colorRampPalette(col_palette)(N)
   num_colours <- length(col_palette)
-  if (num_colours < N) {
-    stop("Number of colours in col_palette must be greater than or equal to N")
-  }
   # create data
   step <- seq(left, right, by = resolution)
   output <- array(0, dim = c(length(step)^2, 3))
@@ -51,7 +49,7 @@ fractals <- function(N = 25, # nolint
       if (dist < dist_max) {
         col <- num_colours
       } else {
-        col <- n * floor(num_colours / N)
+        col <- n * floor(num_colours   / N)
       }
 
       t <- t + 1
@@ -67,11 +65,12 @@ fractals <- function(N = 25, # nolint
     mapping = ggplot2::aes(
       x = .data$x,
       y = .data$y,
-      fill = I(col_palette[col])
+      fill = col_palette[.data$col]
     )
   ) +
     ggplot2::geom_raster() +
+    ggplot2::scale_fill_identity() +
     ggplot2::coord_cartesian(expand = FALSE) +
-    theme_aRt("white")
+    theme_aRt("transparent")
   return(p)
 }

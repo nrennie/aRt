@@ -27,9 +27,9 @@ flow_fields(
 
 \item{alpha}{Transparency of lines. Default 1.}
 
-\item{line_col}{Line colours. Vector (or single element) of colours. Default c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b")}
+\item{line_col}{Line colours. Vector (or single element) of colours. Default \code{c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b")}.}
 
-\item{bg_col}{Background colour. Default "white".}
+\item{bg_col}{Background colour. Default \code{"white"}.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -41,5 +41,5 @@ This function generates a generative art ggplot object from using particle trace
 See also https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/
 }
 \examples{
-flow_fields()
+flow_fields(n = 100)
 }

@@ -40,7 +40,7 @@ puzzles <- function(n = 200,
   )
   p <- ggplot2::ggplot(
     data = plot_data,
-    plot_data = ggplot2::aes(
+    mapping = ggplot2::aes(
       area = .data$areas,
       fill = .data$fill_value,
       subgroup = .data$groups

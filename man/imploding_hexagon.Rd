@@ -19,7 +19,7 @@ imploding_hexagon(
 
 \item{size}{Size of points. Default 0.1.}
 
-\item{bg_col}{Background colour. Default "grey10".}
+\item{bg_col}{Background colour. Default \code{"grey10"}.}
 
 \item{col_palette}{Colour palette. Default
 \code{grDevices::grey.colors(n = 10, start = 0.1, end = 0.7)}.}

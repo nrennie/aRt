@@ -14,7 +14,7 @@ crosshatch(
   col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
   bg_col = "#fafafa",
   interpolate = TRUE,
-  s = 123
+  s = 1234
 )
 }
 \arguments{
@@ -32,11 +32,11 @@ crosshatch(
 
 \item{col_palette}{Vector of colours. Default \code{c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")}.}
 
-\item{bg_col}{Background colour. Default "gray10".}
+\item{bg_col}{Background colour. Default \code{"gray10"}.}
 
 \item{interpolate}{Boolean indicating if colours should be interpolated. Default TRUE.}
 
-\item{s}{Seed value. Default 123.}
+\item{s}{Seed value. Default 1234.}
 }
 \value{
 A ggplot object.
@@ -44,4 +44,7 @@ A ggplot object.
 \description{
 This function generates a coloured generative art ggplot object using
 overlapping lines in a grid.
+}
+\examples{
+crosshatch()
 }

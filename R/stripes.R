@@ -4,11 +4,12 @@
 #'
 #' @param perc Percentage of data points to be sorted. Default 0.5.
 #' @param n Number of rows. Default 3.
-#' @param col_palette Vector of colours. Default "TealGrn" colour palette from rcartocolor.
-#' @param alpha Transparancy of fill
+#' @param col_palette Vector of colours. Default `"TealGrn"` colour palette from rcartocolor.
+#' @param alpha Transparency of fill. Default 1.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object
-#' @stripes()
+#' @examples
+#' stripes()
 #' @export
 
 stripes <- function(perc = 0.5,

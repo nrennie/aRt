@@ -68,6 +68,9 @@ moire <- function(inner_n = 20,
     theme_aRt(bg_col)
   q <- cowplot::ggdraw() +
     cowplot::draw_plot(p) +
-    ggplot2::theme(plot.background = ggplot2::element_rect(fill = bg_col, colour = bg_col))
+    ggplot2::theme(plot.background = ggplot2::element_rect(
+      fill = bg_col,
+      colour = bg_col
+    ))
   return(q)
 }

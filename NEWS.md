@@ -3,6 +3,11 @@
 * use {withr} for random seeds
 * remove `shells()`
 * remove `static()`
+* remove `connected()`
+* remove `heart()`
+* remove `infinity()`
+* remove `contours()` (now in new package)
+* rename `random_tessellation()` as `fragmentum()`
 
 # aRt 1.4.7
 

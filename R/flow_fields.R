@@ -8,12 +8,12 @@
 #' @param x_freq Frequency of x simplex noise. Default 1.
 #' @param y_freq Frequency of y simplex noise. Default 1.
 #' @param alpha Transparency of lines. Default 1.
-#' @param line_col Line colours. Vector (or single element) of colours. Default c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b")
-#' @param bg_col Background colour. Default "white".
+#' @param line_col Line colours. Vector (or single element) of colours. Default `c("#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#6e016b")`.
+#' @param bg_col Background colour. Default `"white"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
-#' flow_fields()
+#' flow_fields(n = 100)
 #' @export
 
 flow_fields <- function(n = 10000,

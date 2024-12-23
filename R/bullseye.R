@@ -14,27 +14,31 @@
 bullseye <- function(main_col = "black",
                      bg_col = "white",
                      s = 1234) {
-  # generate data
-  set.seed(s)
-  df1 <- data.frame(id = seq(1, 20), value = sample(seq(-20, 100), 20, replace = TRUE))
-  df2 <- data.frame(id = seq(1, 20), value = sample(seq(-20, 100), 20, replace = TRUE))
-  df3 <- data.frame(id = seq(1, 40), value = sample(seq(-20, 100), 40, replace = TRUE))
-  df4 <- data.frame(id = seq(1, 40), value = sample(seq(-20, 100), 40, replace = TRUE))
-  df5 <- data.frame(id = seq(1, 60), value = sample(seq(-20, 100), 60, replace = TRUE))
-  df6 <- data.frame(id = seq(1, 60), value = sample(seq(-20, 100), 60, replace = TRUE))
-  df7 <- data.frame(id = seq(1, 80), value = sample(seq(-20, 100), 80, replace = TRUE))
-  df8 <- data.frame(id = seq(1, 80), value = sample(seq(-20, 100), 80, replace = TRUE))
-  # make plot layers
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      df1 <- data.frame(id = seq(1, 20), value = sample(seq(-20, 100), 20, replace = TRUE), grp = 1)
+      df2 <- data.frame(id = seq(1, 20), value = sample(seq(-20, 100), 20, replace = TRUE), grp = 2)
+      df3 <- data.frame(id = seq(1, 40), value = sample(seq(-20, 100), 40, replace = TRUE), grp = 3)
+      df4 <- data.frame(id = seq(1, 40), value = sample(seq(-20, 100), 40, replace = TRUE), grp = 4)
+      df5 <- data.frame(id = seq(1, 60), value = sample(seq(-20, 100), 60, replace = TRUE), grp = 5)
+      df6 <- data.frame(id = seq(1, 60), value = sample(seq(-20, 100), 60, replace = TRUE), grp = 6)
+      df7 <- data.frame(id = seq(1, 80), value = sample(seq(-20, 100), 80, replace = TRUE), grp = 7)
+      df8 <- data.frame(id = seq(1, 80), value = sample(seq(-20, 100), 80, replace = TRUE), grp = 8)
+      plot_data <- do.call(rbind, list(df1, df2, df3, df4, df5, df6, df7, df8))
+      plot_data
+    }
+  )
   p1 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = df1,
+      data = dplyr::filter(plot_data, grp == 1),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = df2,
+      data = dplyr::filter(plot_data, grp == 2),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -45,14 +49,14 @@ bullseye <- function(main_col = "black",
     theme_aRt(bg_col, -0.5)
   p2 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = df3,
+      data = dplyr::filter(plot_data, grp == 3),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = df4,
+      data = dplyr::filter(plot_data, grp == 4),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -63,14 +67,14 @@ bullseye <- function(main_col = "black",
     theme_aRt("transparent", -0.5)
   p3 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = df5,
+      data = dplyr::filter(plot_data, grp == 5),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = df6,
+      data = dplyr::filter(plot_data, grp == 6),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -81,14 +85,14 @@ bullseye <- function(main_col = "black",
     theme_aRt("transparent", -0.5)
   p4 <- ggplot2::ggplot() +
     ggplot2::geom_bar(
-      data = df7,
+      data = dplyr::filter(plot_data, grp == 7),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 1,
       fill = ggplot2::alpha(main_col, 0.3)
     ) +
     ggplot2::geom_bar(
-      data = df8,
+      data = dplyr::filter(plot_data, grp == 8),
       mapping = ggplot2::aes(x = as.factor(.data$id), y = .data$value),
       stat = "identity",
       width = 0.2,
@@ -97,7 +101,6 @@ bullseye <- function(main_col = "black",
     ggplot2::ylim(-50, 100) +
     ggplot2::coord_polar(start = 135) +
     theme_aRt("transparent", -0.5)
-  # join plots
   p <- p1 +
     patchwork::inset_element(p2, left = 0, bottom = 0, right = 1, top = 1) +
     patchwork::inset_element(p3, left = 0, bottom = 0, right = 1, top = 1) +

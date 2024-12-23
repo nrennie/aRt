@@ -59,33 +59,41 @@ perpendicular <- function(n = 100,
   if (max_length <= 2) {
     stop("max_length should be > 2")
   }
-  # generate data
-  set.seed(s)
-  plot_data <- data.frame(
-    x = c(),
-    xend = c(),
-    y = c(),
-    yend = c(),
-    group = c()
+  plot_data <- withr::with_seed(
+    seed = s,
+    code = {
+      set.seed(s)
+      plot_data <- data.frame(
+        x = c(),
+        xend = c(),
+        y = c(),
+        yend = c(),
+        group = c()
+      )
+      for (i in 1:n) {
+        k <- generate_line(
+          x = stats::runif(1, 0, 30),
+          y = stats::runif(1, 0, 30),
+          length = stats::runif(1, 2, max_length),
+          angle = sample(c("v", "h"), size = 1),
+          group = i
+        )
+        plot_data <- rbind(plot_data, k)
+      }
+      plot_data
+    }
   )
-  for (i in 1:n) {
-    k <- generate_line(
-      x = stats::runif(1, 0, 30),
-      y = stats::runif(1, 0, 30),
-      length = stats::runif(1, 2, max_length),
-      angle = sample(c("v", "h"), size = 1),
-      group = i
+  p <- ggplot2::ggplot(
+    data = plot_data,
+    mapping = ggplot2::aes(
+      x = .data$x,
+      y = .data$y,
+      xend = .data$xend,
+      yend = .data$yend
     )
-    plot_data <- rbind(plot_data, k)
-  }
-  # plot
-  p <- ggplot2::ggplot(plot_data, ggplot2::aes(
-    x = .data$x,
-    y = .data$y,
-    xend = .data$xend,
-    yend = .data$yend
-  )) +
-    ggplot2::geom_segment(ggplot2::aes(group = .data$group),
+  ) +
+    ggplot2::geom_segment(
+      mapping = ggplot2::aes(group = .data$group),
       linewidth = linewidth,
       colour = main_col
     ) +

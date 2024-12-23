@@ -64,7 +64,7 @@ gradients <- function(nx = 5,
   )
 
   plot_data <- purrr::pmap_df(inputs, make_square)
-  ggplot2::ggplot(plot_data) +
+  p <- ggplot2::ggplot(plot_data) +
     ggplot2::geom_segment(
       mapping = ggplot2::aes(
         x = .data$x,
@@ -76,5 +76,5 @@ gradients <- function(nx = 5,
     ) +
     ggplot2::coord_fixed(expand = FALSE) +
     theme_aRt("transparent")
-
+  return(p)
 }

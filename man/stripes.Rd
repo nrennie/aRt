@@ -17,9 +17,9 @@ stripes(
 
 \item{n}{Number of rows. Default 3.}
 
-\item{col_palette}{Vector of colours. Default "TealGrn" colour palette from rcartocolor.}
+\item{col_palette}{Vector of colours. Default \code{"TealGrn"} colour palette from rcartocolor.}
 
-\item{alpha}{Transparancy of fill}
+\item{alpha}{Transparency of fill. Default 1.}
 
 \item{s}{Seed value. Default 1234.}
 }
@@ -28,4 +28,7 @@ A ggplot object
 }
 \description{
 This function generates a generative art ggplot object featuring rows of stripes.
+}
+\examples{
+stripes()
 }

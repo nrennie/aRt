@@ -6,7 +6,7 @@
 \usage{
 fractals(
   N = 25,
-  col_palette = MetBrewer::met.brewer("Demuth", n = 25),
+  col_palette = c("#9b332b", "#b64f32", "#f7c267", "#b9b9b8", "#5d6174", "#41485f"),
   shift = 0,
   left = -1,
   right = 1,
@@ -18,11 +18,11 @@ fractals(
 \arguments{
 \item{N}{Number of iterations. Default 25.}
 
-\item{col_palette}{Vector of colours of length >= N. Default \code{MetBrewer::met.brewer("Demuth", n = 25)}.}
+\item{col_palette}{Vector of colours. Default \code{c("#9b332b", "#b64f32", "#f7c267", "#b9b9b8", "#5d6174", "#41485f")}.}
 
 \item{shift}{Offset of y-values. Default 0.}
 
-\item{left}{Start rangle of x-axis. Default -1.}
+\item{left}{Start range of x-axis. Default -1.}
 
 \item{right}{End range of x-axis. Default 1.}
 
