@@ -74,14 +74,6 @@ network <- function(
       height = 1,
       colour = bg_line_col
     ) +
-    ggforce::geom_circle(
-      data = plot_data,
-      mapping = ggplot2::aes(
-        x0 = .data$x, y0 = .data$y,
-        r = .data$r, fill = .data$fill
-      ),
-      colour = NA
-    ) +
     ggplot2::geom_segment(
       data = line_data,
       mapping = ggplot2::aes(
@@ -89,6 +81,14 @@ network <- function(
         y = .data$from_y, yend = .data$to_y
       ),
       colour = line_col
+    ) +
+    ggforce::geom_circle(
+      data = plot_data,
+      mapping = ggplot2::aes(
+        x0 = .data$x, y0 = .data$y,
+        r = .data$r, fill = .data$fill
+      ),
+      colour = NA
     ) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
