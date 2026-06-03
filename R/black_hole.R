@@ -30,8 +30,8 @@ black_hole_points <- function(r_maxi, n, lim) {
 #' @param r_max Vector of radii for the internal circle. Default `c(50, 150, 250, 350)`.
 #' @param n Number of points per circle. Default 10000.
 #' @param lim Numeric specifying size of grid. Default 400.
-#' @param main_cols Vector of colours (or single colour). Default
-#' `rcartocolor::carto_pal(n = 7, name = "SunsetDark")`.
+#' @param col_palette Vector of colours (or single colour). Default
+#' `c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F")`.
 #' @param bg_col Background colour. Default "black".
 #' @param size Size of points. Default 0.01.
 #' @param a Transparency of points. Default 0.5.
@@ -44,7 +44,7 @@ black_hole_points <- function(r_maxi, n, lim) {
 black_hole <- function(r_max = c(50, 150, 250, 350),
                        n = 10000,
                        lim = 300,
-                       main_cols = rcartocolor::carto_pal(n = 7, name = "SunsetDark"),
+                       col_palette = c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F"),
                        bg_col = "black",
                        size = 0.01,
                        a = 0.5,
@@ -70,7 +70,7 @@ black_hole <- function(r_max = c(50, 150, 250, 350),
     ) +
     ggplot2::coord_fixed(expand = FALSE) +
     ggplot2::scale_colour_gradientn(
-      colours = ggplot2::alpha(main_cols, alpha = a)
+      colours = ggplot2::alpha(col_palette, alpha = a)
     ) +
     theme_aRt(bg_col)
   return(p)

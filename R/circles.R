@@ -5,8 +5,7 @@
 #'
 #' @param n Number of nodes. Default 10.
 #' @param smoothness Smoothness of lines on circles. Default 100.
-#' @param col_palette Vector of colours. Default "Bold" colour palette from
-#' rcartocolor.
+#' @param col_palette Vector of colours. Default `c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A", "#E68310")`.
 #' @param line_col Background colour. Default NA.
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
@@ -17,7 +16,7 @@
 
 circles <- function(n = 100,
                     smoothness = 100,
-                    col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
+                    col_palette = c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A", "#E68310"),
                     line_col = NA,
                     bg_col = "black",
                     s = 1234) {

@@ -1,3 +1,8 @@
+# aRt 1.5.1
+
+* Use `col_palette` for argument name
+* Refactor `bullseye()` to allow palettes
+
 # aRt 1.5.0
 
 * use {withr} for random seeds

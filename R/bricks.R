@@ -26,7 +26,7 @@ brick_size <- function(n) {
 #' This function generates a coloured generative art ggplot object using polygons.
 #'
 #' @param n_y Number of rows. Default 20.
-#' @param colours Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").
+#' @param col_palette Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").
 #' @param bg_col Background colour. Default "gray97".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -35,7 +35,7 @@ brick_size <- function(n) {
 #' @export
 
 bricks <- function(n_y = 20,
-                   colours = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+                   col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
                    bg_col = "gray97",
                    s = 1234) {
   plot_data <- withr::with_seed(
@@ -68,7 +68,7 @@ bricks <- function(n_y = 20,
         values <- data.frame(
           id = unique(id),
           cols = n_col_select(
-            n = length(colours),
+            n = length(col_palette),
             size = num_bricks,
             random = TRUE,
             s = s
@@ -89,7 +89,7 @@ bricks <- function(n_y = 20,
       mapping = ggplot2::aes(group = .data$id, fill = .data$cols),
       colour = NA
     ) +
-    ggplot2::scale_fill_manual(values = colours) +
+    ggplot2::scale_fill_manual(values = col_palette) +
     theme_aRt(bg_col)
   return(p)
 }

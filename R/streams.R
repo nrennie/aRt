@@ -4,7 +4,7 @@
 #'
 #' @param bg_col Background colour. Default "white".
 #' @param line_col Line colour. Default "white".
-#' @param fill_col Vector of fill colours.
+#' @param col_palette Vector of fill colours.
 #' @param type Rotation of stream. Default "right".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -14,7 +14,7 @@
 
 streams <- function(bg_col = "white",
                     line_col = "white",
-                    fill_col = c(
+                    col_palette = c(
                       "#5F4690", "#1D6996", "#38A6A5", "#0F8554",
                       "#73AF48", "#EDAD08", "#E17C05", "#CC503E",
                       "#94346E", "#6F4070"
@@ -30,7 +30,7 @@ streams <- function(bg_col = "white",
     plot_data <- withr::with_seed(
       seed = s,
       code = {
-        n <- length(fill_col)
+        n <- length(col_palette)
         plot_data <- purrr::map_dfr(
           .x = 1:n,
           .f = ~ {
@@ -57,7 +57,7 @@ streams <- function(bg_col = "white",
         color = line_col,
         sorting = "onset"
       ) +
-      ggplot2::scale_fill_manual(values = fill_col) +
+      ggplot2::scale_fill_manual(values = col_palette) +
       theme_aRt(bg_col)
     # rotate
     if (type == "up") {

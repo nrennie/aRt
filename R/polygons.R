@@ -46,7 +46,7 @@ n_col_select <- function(n, size, random = FALSE, s = 1234) {
 #' the polygons. Default 0.5.
 #' @param deg_jitter Numeric between 0 and 0.5 specifying the degree of jitter.
 #' Default 0.1.
-#' @param colours Vector of colours. Can be any length. Default
+#' @param col_palette Vector of colours. Can be any length. Default
 #' `c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")`.
 #' @param rand Boolean for whether colours should be random or ordered.
 #' Default FALSE.
@@ -61,7 +61,7 @@ polygons <- function(n_x = 12,
                      n_y = 18,
                      gap_size = 0.5,
                      deg_jitter = 0.1,
-                     colours = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+                     col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
                      rand = FALSE,
                      bg_col = "gray97",
                      s = 1234) {
@@ -92,9 +92,9 @@ polygons <- function(n_x = 12,
       id <- rep(1:(n_x * n_y), each = 4)
       positions <- data.frame(x = x, y = y, id = id)
       if (rand == FALSE) {
-        col_choice <- n_col_select(n = length(colours), size = n_x * n_y, s = s)
+        col_choice <- n_col_select(n = length(col_palette), size = n_x * n_y, s = s)
       } else {
-        col_choice <- sample(colours, size = n_x * n_y, replace = TRUE)
+        col_choice <- sample(col_palette, size = n_x * n_y, replace = TRUE)
       }
       values <- data.frame(id = unique(id), cols = col_choice)
       datapoly <- merge(values, positions, by = c("id"))
@@ -121,7 +121,7 @@ polygons <- function(n_x = 12,
       ),
       colour = NA
     ) +
-    ggplot2::scale_fill_manual(values = colours) +
+    ggplot2::scale_fill_manual(values = col_palette) +
     theme_aRt(bg_col)
   return(p)
 }

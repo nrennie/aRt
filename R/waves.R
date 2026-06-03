@@ -6,7 +6,7 @@
 #' @param a sine wave parameter. Default 23.
 #' @param b Cosine wave parameter. Default 6.
 #' @param linewidth Width of lines. Default 0.5.
-#' @param main_col Vector of colours (or single colour) for lines. Default "black".
+#' @param col_palette Vector of colours (or single colour) for lines. Default "black".
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 2021.
 #' @return A ggplot object.
@@ -17,7 +17,7 @@
 waves <- function(a = 23,
                   b = 6,
                   linewidth = 0.5,
-                  main_col = "black",
+                  col_palette = "black",
                   bg_col = "white",
                   s = 2021) {
   plot_data <- withr::with_seed(
@@ -36,7 +36,7 @@ waves <- function(a = 23,
     mapping = ggplot2::aes(x = .data$x, y = .data$y)
   ) +
     ggplot2::geom_path(ggplot2::aes(colour = .data$y), linewidth = linewidth) +
-    ggplot2::scale_colour_gradientn(colours = rev(main_col)) +
+    ggplot2::scale_colour_gradientn(colours = rev(col_palette)) +
     ggplot2::coord_polar() +
     theme_aRt(bg_col)
   return(p)
