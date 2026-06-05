@@ -8,7 +8,7 @@ shatter(
   n_x = 25,
   n_y = 25,
   decay = 0.8,
-  colour = "black",
+  col_palette = "black",
   bg_col = "gray97",
   s = 1234
 )
@@ -20,7 +20,7 @@ shatter(
 
 \item{decay}{Numeric between 0 and 1 specifying the rate of decay if square shapes. Default 0.8.}
 
-\item{colour}{Single colour for fill colour of polygons. Default "black".}
+\item{col_palette}{colour palette. Default "black".}
 
 \item{bg_col}{Single colour for background. Default "gray97".}
 

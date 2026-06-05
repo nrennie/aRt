@@ -1,8 +1,8 @@
 Package: aRt
 Title: Generative Art with R
-Version: 1.5.1
+Version: 1.5.2
 Authors@R: 
-    person("Nicola", "Rennie", , "nrennie35@gmail.com", role = c("aut", "cre"))
+    person("Nicola", "Rennie", , "nrennie.research@gmail.com", role = c("aut", "cre"))
 Description: Creates generative art using R.
 License: Apache License (>= 2)
 URL: https://nrennie.github.io/aRt/
@@ -12,6 +12,7 @@ Imports:
   ape,
   cowplot,
   dplyr,
+  ggchicklet,
   ggforce,
   ggfx,
   ggpattern,
@@ -23,25 +24,18 @@ Imports:
   lwgeom,
   patchwork,
   purrr,
+  scales,
   sf,
   stats,
   stringr,
   tibble,
-  tidygraph,
   tidyr,
   treemapify,
   withr
 Suggests:
-  ambient,
   deldir,
   elevatr,
-  ggstream,
-  MetBrewer,
-  particles,
-  PrettyCols,
-  rayshader,
-  rcartocolor,
-  RColorBrewer
+  rayshader
 Remotes:
   thomasp85/ggfx,
   nrennie/ggvoronoi
@@ -49,4 +43,4 @@ Config/Needs/website: nrennie/nrenniepkgdown
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

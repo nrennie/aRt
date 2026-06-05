@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Nicola Rennie \email{nrennie35@gmail.com}
+\strong{Maintainer}: Nicola Rennie \email{nrennie.research@gmail.com}
 
 }
 \keyword{internal}

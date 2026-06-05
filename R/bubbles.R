@@ -2,8 +2,8 @@
 #'
 #' This function generates data for an ellipse or circle.
 #'
-#' @param x0 x-cordinate of circle centre. Default 0.
-#' @param y0 y-cordinate of circle centre. Default 0.
+#' @param x0 x-coordinate of circle centre. Default 0.
+#' @param y0 y-coordinate of circle centre. Default 0.
 #' @param r vertical radius of circle. Default 5.
 #' @param a ratio of horizontal to vertical radii.
 #' @param n number of points to generate. Default 1000.
@@ -28,8 +28,8 @@ draw_ellipse_circle <- function(x0 = 0,
 #'
 #' This function generates data for a circle filled with ellipses of the same vertical radius
 #'
-#' @param x0 x-cordinate of circle centre. Default 0.
-#' @param y0 y-cordinate of circle centre. Default 0.
+#' @param x0 x-coordinate of circle centre. Default 0.
+#' @param y0 y-coordinate of circle centre. Default 0.
 #' @param r vertical radius of circle. Default 5.
 #' @param n number of points to generate. Default 1000.
 #' @return a tibble
@@ -41,7 +41,7 @@ draw_ellipse_in_circle <- function(x0 = 0,
                                    n = 1000) {
   plot_data <- data.frame(x = c(), y = c(), group = c())
   a <- seq(0, 1, 0.05)
-  for (i in seq_len(length(a))) {
+  for (i in seq_along(a)) {
     k <- draw_ellipse_circle(x0 = x0, y0 = y0, r = r, a = a[i], n = n, group = i)
     plot_data <- rbind(plot_data, k)
   }
@@ -55,7 +55,8 @@ draw_ellipse_in_circle <- function(x0 = 0,
 #'
 #' @param num_circles Number of circles. Default 20.
 #' @param main_col Colour of non-highlighted rectangles. Default "black".
-#' @param col_palette Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.
+#' @param col_palette Vector of colours. Default `c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A")`.
+#' @param col_prob Probability of choosing colour from `col_palette` instead of `main_col`.
 #' @param bg_col Background colour. Default "white".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object
@@ -65,12 +66,10 @@ draw_ellipse_in_circle <- function(x0 = 0,
 
 bubbles <- function(num_circles = 20,
                     main_col = "black",
-                    col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
+                    col_palette = c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A"),
+                    col_prob = 0.3,
                     bg_col = "white",
                     s = 1234) {
-  if (length(col_palette) != 12) {
-    stop("col_palette must be a vector of length 12")
-  }
   plot_data <- withr::with_seed(
     seed = s,
     code = {
@@ -83,9 +82,12 @@ bubbles <- function(num_circles = 20,
           dplyr::mutate(
             group_circle = i,
             circle_col = as.character(
-              sample(1:13,
+              sample(1:(length(col_palette) + 1),
                 size = 1,
-                prob = c(rep(0.01, 12), 0.78)
+                prob = c(
+                  rep(col_prob / length(col_palette), length(col_palette)),
+                  (1 - col_prob)
+                )
               )
             )
           )
@@ -102,7 +104,7 @@ bubbles <- function(num_circles = 20,
   )
 
   pal <- c(col_palette, main_col)
-  names(pal) <- 1:13
+  names(pal) <- 1:(length(col_palette) + 1)
   p <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(

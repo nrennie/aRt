@@ -7,7 +7,8 @@
 fading(
   n_layers = 6,
   n_points = 10,
-  col_palette = rcartocolor::carto_pal(n = 7, "SunsetDark"),
+  col_palette = c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A",
+    "#7C1D6F"),
   s = 1234
 )
 }
@@ -16,8 +17,7 @@ fading(
 
 \item{n_points}{Number of points per layer area. Default 10.}
 
-\item{col_palette}{Vector of colours. Default "SunsetDark" colour palette
-from rcartocolor.}
+\item{col_palette}{Vector of colours. Default \verb{c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F"}.}
 
 \item{s}{Seed value. Default 1234.}
 }

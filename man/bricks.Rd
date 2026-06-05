@@ -6,7 +6,7 @@
 \usage{
 bricks(
   n_y = 20,
-  colours = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+  col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
   bg_col = "gray97",
   s = 1234
 )
@@ -14,9 +14,9 @@ bricks(
 \arguments{
 \item{n_y}{Number of rows. Default 20.}
 
-\item{colours}{Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").}
+\item{col_palette}{Vector of colours. Can be any length. Default \code{c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")}.}
 
-\item{bg_col}{Background colour. Default "gray97".}
+\item{bg_col}{Background colour. Default \code{"gray97"}.}
 
 \item{s}{Seed value. Default 1234.}
 }

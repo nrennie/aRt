@@ -11,7 +11,7 @@ fragmentum(
   linewidth = 0.5,
   line_col = "black",
   bg_col = "black",
-  col_palette = PrettyCols::prettycols("Lively"),
+  col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
   s = 1234
 )
 }
@@ -28,7 +28,7 @@ fragmentum(
 
 \item{bg_col}{Background colour. Default \code{"black"}.}
 
-\item{col_palette}{Vector of colours. Can be any length. Default \code{PrettyCols::prettycols("Lively")}.}
+\item{col_palette}{Vector of colours. Can be any length. Default \code{c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")}.}
 
 \item{s}{Seed value. Default 1234.}
 }

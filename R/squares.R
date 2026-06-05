@@ -8,7 +8,7 @@
 #' @param pattern_col Colour of pattern lines. Default "white".
 #' @param pattern_fill Colour of pattern background. Default "black".
 #' @param pattern_size Size of pattern. Default 0.4.
-#' @param size Size of lines between squares. Default 1.5.
+#' @param linewidth Size of lines between squares. Default 1.5.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -20,7 +20,7 @@ squares <- function(n = 7,
                     pattern_col = "white",
                     pattern_fill = "black",
                     pattern_size = 0.4,
-                    size = 1.5,
+                    linewidth = 1.5,
                     s = 1234) {
 
   plot_data <- withr::with_seed(
@@ -49,7 +49,7 @@ squares <- function(n = 7,
       pattern_colour = pattern_col,
       pattern_fill = pattern_fill,
       pattern_size = pattern_size,
-      size = size
+      linewidth = linewidth
     ) +
     ggpattern::scale_pattern_manual(values = c(
       "stripe",

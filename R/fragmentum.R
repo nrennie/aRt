@@ -8,7 +8,7 @@
 #' @param linewidth Width of lines between polygons. Default 0.5.
 #' @param line_col Colour of lines between polygons. Default `"black"`.
 #' @param bg_col Background colour. Default `"black"`.
-#' @param col_palette Vector of colours. Can be any length. Default `PrettyCols::prettycols("Lively")`.
+#' @param col_palette Vector of colours. Can be any length. Default `c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -21,7 +21,7 @@ fragmentum <- function(n_x = 10,
                        linewidth = 0.5,
                        line_col = "black",
                        bg_col = "black",
-                       col_palette = PrettyCols::prettycols("Lively"),
+                       col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
                        s = 1234) {
   if (n_x < 1 || n_y < 1) {
     stop("Number of rows and columns must be at least 1")

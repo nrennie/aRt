@@ -3,7 +3,7 @@
 #' This function generates a generative art ggplot object using pie charts
 #' and circles.
 #'
-#' @param col_palette Vector of colours. Default `PrettyCols::prettycols("Lively")`.
+#' @param col_palette Vector of colours. Default `c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")`.
 #' @param bg_col Background colour. Default `"#343046"`.
 #' @param x_ring Vector of x-co-ordinates for centre of gaps. Default `c(0.2, 0.9)`.
 #' @param y_ring Vector of y-co-ordinates for centre of gaps. Default `c(0.2, 1.8)`.
@@ -18,7 +18,7 @@
 #' rings()
 #' @export
 
-rings <- function(col_palette = PrettyCols::prettycols("Lively"),
+rings <- function(col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
                   bg_col = "#343046",
                   x_ring = c(0.2, 0.9),
                   y_ring = c(0.2, 1.8),

@@ -4,7 +4,7 @@
 #'
 #' @param n Number of points. Default 25.
 #' @param start_val Starting position for polar coordinates. Default 90.
-#' @param col_scheme Colour scheme of art. One of c("mono", "rainbow). Default 0.1.
+#' @param col_palette Colour palette. Default `c("#700460", "#a02c5d", "#ec0f47", "#ee6b3b", "#fbbf54", "#abd96d", "#15c286", "#087353", "#045459", "#4b0082")`.
 #' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -14,23 +14,17 @@
 
 vortex <- function(n = 25,
                    start_val = 90,
-                   col_scheme = "mono",
+                   col_palette = c("#700460", "#a02c5d", "#ec0f47", "#ee6b3b", "#fbbf54", "#abd96d", "#15c286", "#087353", "#045459", "#4b0082"),
                    bg_col = "black",
                    s = 1234) {
-  # colour schemes
-  if (col_scheme == "mono") {
-    cols <- rev(c("gray100", "gray95", "gray90", "gray85", "gray80", "gray70", "gray60", "gray50", "gray15", "gray0"))
-  } else if (col_scheme == "rainbow") {
-    cols <- c("#700460", "#a02c5d", "#ec0f47", "#ee6b3b", "#fbbf54", "#abd96d", "#15c286", "#087353", "#045459", "#4b0082")
-  }
   # generate data
   plot_data <- withr::with_seed(
     seed = s,
     code = {
-      m <- n * 10
+      m <- n * length(col_palette)
       plot_data <- data.frame(
         id = seq(1, m), value = sample(seq(0, m), m, replace = TRUE),
-        type = factor(rep(c(1:10), each = (m / 10)))
+        type = factor(rep(c(seq_along(col_palette)), each = (m / length(col_palette))))
       )
       plot_data
     }
@@ -47,7 +41,7 @@ vortex <- function(n = 25,
         colour = .data$type
       )
     ) +
-    ggplot2::scale_color_manual("", values = cols) +
+    ggplot2::scale_color_manual(values = col_palette) +
     ggplot2::coord_polar(start = start_val, theta = "y") +
     theme_aRt(bg_col)
   return(p)

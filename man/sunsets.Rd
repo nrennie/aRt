@@ -5,9 +5,9 @@
 \title{Sunsets}
 \usage{
 sunsets(
-  num_bars = 8,
-  n = 1000,
-  col_palette = PrettyCols::prettycols("Lively"),
+  num_bars = 6,
+  n = 500,
+  col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
   bg_col = "#413C58",
   vertical = FALSE,
   fade_vertical = FALSE,
@@ -16,13 +16,13 @@ sunsets(
 )
 }
 \arguments{
-\item{num_bars}{Number of bars. Default 8.}
+\item{num_bars}{Number of bars. Default 6.}
 
-\item{n}{Number of lines per bar. Default 1000.}
+\item{n}{Number of lines per bar. Default 500.}
 
-\item{col_palette}{Colour palette. Default PrettyCols::prettycols("Lively").}
+\item{col_palette}{Colour palette. Default \code{c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")}.}
 
-\item{bg_col}{Background colour. Default "#413C58".}
+\item{bg_col}{Background colour. Default \code{"#413C58"}.}
 
 \item{vertical}{Boolean indicating whether bars should be
 vertical. Default FALSE.}

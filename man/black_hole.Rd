@@ -8,7 +8,8 @@ black_hole(
   r_max = c(50, 150, 250, 350),
   n = 10000,
   lim = 300,
-  main_cols = rcartocolor::carto_pal(n = 7, name = "SunsetDark"),
+  col_palette = c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A",
+    "#7C1D6F"),
   bg_col = "black",
   size = 0.01,
   a = 0.5,
@@ -22,8 +23,8 @@ black_hole(
 
 \item{lim}{Numeric specifying size of grid. Default 400.}
 
-\item{main_cols}{Vector of colours (or single colour). Default
-\code{rcartocolor::carto_pal(n = 7, name = "SunsetDark")}.}
+\item{col_palette}{Vector of colours (or single colour). Default
+\code{c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F")}.}
 
 \item{bg_col}{Background colour. Default "black".}
 

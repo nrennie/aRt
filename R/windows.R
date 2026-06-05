@@ -1,25 +1,25 @@
-#' Window Boxes
+#' Windows
 #'
 #' This function generates a coloured generative art ggplot object using rectangles.
 #'
 #' @param n_x Number of squares per row. Default 10.
 #' @param n_y Number of squares per column. Default 10.
 #' @param col_palette Vector of colours. Default
-#' `PrettyCols::prettycols("Beach", n = 5)`.
+#' `c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f")`.
 #' @param linewidth Width of borders around squares. Default 2.
 #' @param rayshade Boolean determining whether the returned plot should be
 #' converted to three dimensional using rayshader. If `TRUE`, `{rayshader}`
 #' is required to be installed. Default `FALSE`.
 #' @return A ggplot object.
 #' @examples
-#' window_boxes()
+#' windows()
 #' @export
 
-window_boxes <- function(n_x = 10,
-                         n_y = 10,
-                         col_palette = PrettyCols::prettycols("Beach", n = 5),
-                         linewidth = 2,
-                         rayshade = FALSE) {
+windows <- function(n_x = 10,
+                    n_y = 10,
+                    col_palette = c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f"),
+                    linewidth = 2,
+                    rayshade = FALSE) {
   plot_data <- expand.grid(
     x = 1:n_x,
     y = 1:n_y

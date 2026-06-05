@@ -41,7 +41,7 @@ wander <- function(n_lines = 100,
       all_cols <- grDevices::colorRampPalette(col_palette)(n_cols)
       # generate lines
       line_data <- purrr::map(
-        .x = seq_len(length(theta)),
+        .x = seq_along(theta),
         .f = ~ data.frame(
           x0 = seq(x_inner[.x], x_outer[.x], length.out = n_points),
           y0 = seq(y_inner[.x], y_outer[.x], length.out = n_points),

@@ -6,7 +6,7 @@
 #' @param n_y Number of outwards points. Default 100.
 #' @param jitter_size_width Size of jitter width. Default 0.5.
 #' @param jitter_size_height Size of jitter height. Default 0.5.
-#' @param col_palette Vector of colours. Default `"Purp"` colour palette from rcartocolor.
+#' @param col_palette Vector of colours. Default `c("#F3E0F7", "#E4C7F1", "#D1AFE8", "#B998DD", "#9F82CE", "#826DBA", "#63589F")`.
 #' @param bg_col Background colour. Default `"#63589f"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -18,7 +18,7 @@ dots <- function(n_x = 50,
                  n_y = 100,
                  jitter_size_width = 0.5,
                  jitter_size_height = 0.5,
-                 col_palette = rcartocolor::carto_pal(n = 7, "Purp"),
+                 col_palette = c("#F3E0F7", "#E4C7F1", "#D1AFE8", "#B998DD", "#9F82CE", "#826DBA", "#63589F"),
                  bg_col = "#63589f",
                  s = 1234) {
   p <- withr::with_seed(

@@ -7,7 +7,8 @@
 bubbles(
   num_circles = 20,
   main_col = "black",
-  col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
+  col_palette = c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A"),
+  col_prob = 0.3,
   bg_col = "white",
   s = 1234
 )
@@ -17,7 +18,9 @@ bubbles(
 
 \item{main_col}{Colour of non-highlighted rectangles. Default "black".}
 
-\item{col_palette}{Vector of colours. Default "Bold" colour palette from rcartocolor. Must have 12 colours.}
+\item{col_palette}{Vector of colours. Default \code{c("#7F3C8D", "#11A579", "#3969AC", "#F2B701", "#E73F74", "#80BA5A")}.}
+
+\item{col_prob}{Probability of choosing colour from \code{col_palette} instead of \code{main_col}.}
 
 \item{bg_col}{Background colour. Default "white".}
 

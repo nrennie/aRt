@@ -10,7 +10,7 @@
 #' Default `c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044", "#8dc657")`
 #' @param line_col Colour of lines. Default `"transparent"`.
 #' @param linewidth Width of lines. Default 1.
-#' @param bg_col Background colour. Default `"#679c35"`.
+#' @param bg_col Background colour. Default `"transparent"`.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -26,7 +26,7 @@ distort <- function(n_x = 5,
                     ),
                     line_col = "transparent",
                     linewidth = 1,
-                    bg_col = "#679c35",
+                    bg_col = "transparent",
                     s = 1234) {
   # make polygons
   if (n_x < 1 || n_y < 1) {
@@ -108,7 +108,7 @@ distort <- function(n_x = 5,
       final_plot_data <- tibble::tibble(
         x = c(), y = c(), grp = c(), fill = c()
       )
-      for (i in seq_len(length(polygons))) {
+      for (i in seq_along(polygons)) {
         p <- polygons[i]
         p_data <- dplyr::filter(plot_data, group == p)
         x_corners <- p_data$x

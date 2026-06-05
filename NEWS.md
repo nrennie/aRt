@@ -1,3 +1,12 @@
+# aRt 1.5.2
+
+* Deprecate `attraction()`, `sunbursts()`, `streams()`, `flow_fields()`, `waves()`, `circular()`, `squiggles()`, `stripes()`, `circles()`, `criss_cross()`, `moire()`, and `spirals()`.
+* Use vectors of colours for inputs
+* Small fixes for consistency
+* Add `lockers()`
+* Rename `riso_circles()` and `riso()`
+* Use R Markdown for README examples
+
 # aRt 1.5.1
 
 * Use `col_palette` for argument name

@@ -48,8 +48,8 @@ n_col_select <- function(n, size, random = FALSE, s = 1234) {
 #' Default 0.1.
 #' @param col_palette Vector of colours. Can be any length. Default
 #' `c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")`.
-#' @param rand Boolean for whether colours should be random or ordered.
-#' Default FALSE.
+#' @param random Boolean for whether colours should be random or ordered.
+#' Default TRUE.
 #' @param bg_col Background colour. Default "gray97".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -62,7 +62,7 @@ polygons <- function(n_x = 12,
                      gap_size = 0.5,
                      deg_jitter = 0.1,
                      col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
-                     rand = FALSE,
+                     random = TRUE,
                      bg_col = "gray97",
                      s = 1234) {
   if (n_x < 1 || n_y < 1) {
@@ -91,7 +91,7 @@ polygons <- function(n_x = 12,
       y <- c(matrix(c(y1, y2, y4, y3), byrow = TRUE, nrow = 4, ncol = length(y1)))
       id <- rep(1:(n_x * n_y), each = 4)
       positions <- data.frame(x = x, y = y, id = id)
-      if (rand == FALSE) {
+      if (random) {
         col_choice <- n_col_select(n = length(col_palette), size = n_x * n_y, s = s)
       } else {
         col_choice <- sample(col_palette, size = n_x * n_y, replace = TRUE)

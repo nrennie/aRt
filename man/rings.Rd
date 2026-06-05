@@ -5,7 +5,7 @@
 \title{Rings}
 \usage{
 rings(
-  col_palette = PrettyCols::prettycols("Lively"),
+  col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
   bg_col = "#343046",
   x_ring = c(0.2, 0.9),
   y_ring = c(0.2, 1.8),
@@ -18,7 +18,7 @@ rings(
 )
 }
 \arguments{
-\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("Lively")}.}
+\item{col_palette}{Vector of colours. Default \code{c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")}.}
 
 \item{bg_col}{Background colour. Default \code{"#343046"}.}
 

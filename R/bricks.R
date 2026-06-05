@@ -26,8 +26,8 @@ brick_size <- function(n) {
 #' This function generates a coloured generative art ggplot object using polygons.
 #'
 #' @param n_y Number of rows. Default 20.
-#' @param col_palette Vector of colours. Can be any length. Default c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C").
-#' @param bg_col Background colour. Default "gray97".
+#' @param col_palette Vector of colours. Can be any length. Default `c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")`.
+#' @param bg_col Background colour. Default `"gray97"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples

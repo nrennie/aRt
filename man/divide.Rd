@@ -6,7 +6,8 @@
 \usage{
 divide(
   num_lines = 30,
-  col_palette = PrettyCols::prettycols("TangerineBlues"),
+  col_palette = c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1",
+    "#5f93ac", "#2e627a", "#00344a"),
   rayshade = FALSE,
   s = 1234
 )
@@ -14,7 +15,7 @@ divide(
 \arguments{
 \item{num_lines}{Number of intersecting lines. Default \code{30}.}
 
-\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("TangerineBlues")}.}
+\item{col_palette}{Vector of colours. Default \code{c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1", "#5f93ac", "#2e627a", "#00344a")}.}
 
 \item{rayshade}{Boolean determining whether the returned plot should be converted to
 three dimensional using rayshader. If \code{TRUE}, \code{{rayshader}} is required to be installed.

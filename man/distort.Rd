@@ -12,7 +12,7 @@ distort(
     "#8dc657"),
   line_col = "transparent",
   linewidth = 1,
-  bg_col = "#679c35",
+  bg_col = "transparent",
   s = 1234
 )
 }
@@ -30,7 +30,7 @@ Default \code{c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044"
 
 \item{linewidth}{Width of lines. Default 1.}
 
-\item{bg_col}{Background colour. Default \code{"#679c35"}.}
+\item{bg_col}{Background colour. Default \code{"transparent"}.}
 
 \item{s}{Random seed. Default 1234.}
 }

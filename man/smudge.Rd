@@ -7,7 +7,8 @@
 smudge(
   n = 25,
   binwidth = 0.01,
-  col_palette = PrettyCols::prettycols("TangerineBlues"),
+  col_palette = c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1",
+    "#5f93ac", "#2e627a", "#00344a"),
   s = 1234
 )
 }
@@ -17,7 +18,7 @@ smudge(
 \item{binwidth}{Binwidth for colours. Default 0.01.}
 
 \item{col_palette}{Vector of colours. Default
-\code{PrettyCols::prettycols("TangerineBlues")}.}
+\code{c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1", "#5f93ac", "#2e627a", "#00344a")}.}
 
 \item{s}{Seed value. Default 1234.}
 }

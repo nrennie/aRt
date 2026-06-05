@@ -7,3 +7,4 @@ aRt.png
 ^pkgdown$
 ^\.github$
 ^LICENSE\.md$
+README.Rmd

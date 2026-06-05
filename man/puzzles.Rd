@@ -7,7 +7,7 @@
 puzzles(
   n = 200,
   num_groups = 30,
-  col_palette = PrettyCols::prettycols("Beach"),
+  col_palette = c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f"),
   bg_col = "white",
   s = 1234
 )
@@ -17,7 +17,7 @@ puzzles(
 
 \item{num_groups}{Number of larger boxes. Default 30.}
 
-\item{col_palette}{Vector of colours. Default \code{PrettyCols::prettycols("Beach")}.}
+\item{col_palette}{Vector of colours. Default \code{c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f")}.}
 
 \item{bg_col}{Background colour. Default \code{"white"}.}
 

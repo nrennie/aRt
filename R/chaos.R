@@ -104,6 +104,6 @@ chaos <- function(n_lines = 75,
       colour = circle_line_col
     ) +
     ggplot2::coord_fixed() +
-    theme_aRt(bg_col, 5)
+    theme_aRt(bg_col)
   return(p)
 }

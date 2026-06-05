@@ -52,8 +52,7 @@ generate_rectangle <- function(x, y, height, width,
 #' @param max_width Maximum width of rectangle. Default 5.
 #' @param size Line width of rectangles. Default 2.
 #' @param main_col Colour of non-highlighted rectangles. Default `"lightgrey"`.
-#' @param col_palette Vector of colours. Default `"Bold"` colour palette from
-#' rcartocolor.
+#' @param col_palette Vector of colours. Default `c("#80BA5A", "#E68310", "#008695", "#CF1C90", "#F97B72", "#4B4B8F")`.
 #' @param bg_col Background colour. Default `"white"`.
 #' @param weight Sampling weight. Default 0.25.
 #' @param s Seed value. Default 1234.
@@ -61,13 +60,12 @@ generate_rectangle <- function(x, y, height, width,
 #' @examples
 #' rectangles()
 #' @export
-
 rectangles <- function(n = 100,
                        max_height = 7,
                        max_width = 5,
                        size = 2,
                        main_col = "lightgrey",
-                       col_palette = rcartocolor::carto_pal(n = 12, "Bold"),
+                       col_palette = c("#80BA5A", "#E68310", "#008695", "#CF1C90", "#F97B72", "#4B4B8F"),
                        bg_col = "white",
                        weight = 0.25,
                        s = 1234) {

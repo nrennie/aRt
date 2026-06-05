@@ -1,4 +1,4 @@
-#' Mosiac
+#' Mosaic
 #'
 #' This function generates a generative art ggplot object from voronoi tiles.
 #'

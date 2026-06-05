@@ -8,7 +8,7 @@ abacus(
   nx = 30,
   ny = 100,
   max_size = 2,
-  main_col = "black",
+  col_palette = "black",
   bg_col = "white",
   s = 123
 )
@@ -20,7 +20,7 @@ abacus(
 
 \item{max_size}{Maximum size of points. Default 2.}
 
-\item{main_col}{Vector of colours (or single colour). Default "black".}
+\item{col_palette}{Vector of colours (or single colour). Default "black".}
 
 \item{bg_col}{Background colour. Default "white".}
 

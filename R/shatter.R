@@ -5,7 +5,7 @@
 #' @param n_x Number of polygons per row. Default 25.
 #' @param n_y Number of polygons per column. Default 25.
 #' @param decay Numeric between 0 and 1 specifying the rate of decay if square shapes. Default 0.8.
-#' @param colour Single colour for fill colour of polygons. Default "black".
+#' @param col_palette colour palette. Default "black".
 #' @param bg_col Single colour for background. Default "gray97".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
@@ -16,7 +16,7 @@
 shatter <- function(n_x = 25,
                     n_y = 25,
                     decay = 0.8,
-                    colour = "black",
+                    col_palette = "black",
                     bg_col = "gray97",
                     s = 1234) {
   if (n_x < 1 || n_y < 1) {
@@ -44,7 +44,11 @@ shatter <- function(n_x = 25,
       y <- c(matrix(c(y1, y2, y4, y3), byrow = TRUE, nrow = 4, ncol = length(y1)))
 
       id <- rep(1:(n_x * n_y), each = 4)
-      positions <- data.frame(x = x, y = y, id = id)
+      fill_col <- rep(sample(
+        col_palette,
+        size = n_x * n_y, replace = TRUE
+      ), each = 4)
+      positions <- data.frame(x = x, y = y, id = id, fill_col = fill_col)
       values <- data.frame(id = unique(id))
       datapoly <- merge(values, positions, by = c("id"))
       datapoly
@@ -57,12 +61,14 @@ shatter <- function(n_x = 25,
     ggplot2::geom_polygon(
       ggplot2::aes(
         group = id,
-        fill = y
+        fill = fill_col,
+        alpha = -y
       ),
       colour = NA
     ) +
     ggplot2::scale_y_reverse() +
-    ggplot2::scale_fill_gradient(low = colour, high = bg_col) +
+    ggplot2::scale_fill_identity() +
+    ggplot2::scale_alpha(range = c(0, 1)) +
     theme_aRt(bg_col)
   return(p)
 }

@@ -4,12 +4,19 @@
 \alias{bullseye}
 \title{Bullseye}
 \usage{
-bullseye(main_col = "black", bg_col = "white", s = 1234)
+bullseye(
+  col_palette = c("#E01A4F", "#F15946", "#F9C22E", "#53B3CB", "#7DCFB6"),
+  bg_col = "white",
+  alpha = 0.3,
+  s = 1234
+)
 }
 \arguments{
-\item{main_col}{Colour scheme of art. Default "black".}
+\item{col_palette}{Colour palette. Default \code{c("#E01A4F", "#F15946", "#F9C22E", "#53B3CB", "#7DCFB6")}.}
 
-\item{bg_col}{Background colour. Default "white".}
+\item{bg_col}{Background colour. Default \code{"white"}.}
+
+\item{alpha}{Transparency. Default 0.3.}
 
 \item{s}{Seed value. Default 1234.}
 }

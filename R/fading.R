@@ -5,8 +5,7 @@
 #'
 #' @param n_layers Number of layers. Default 6.
 #' @param n_points Number of points per layer area. Default 10.
-#' @param col_palette Vector of colours. Default "SunsetDark" colour palette
-#' from rcartocolor.
+#' @param col_palette Vector of colours. Default `c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F"`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -15,7 +14,7 @@
 
 fading <- function(n_layers = 6,
                    n_points = 10,
-                   col_palette = rcartocolor::carto_pal(n = 7, "SunsetDark"),
+                   col_palette = c("#FCDE9C", "#FAA476", "#F0746E", "#E34F6F", "#DC3977", "#B9257A", "#7C1D6F"),
                    s = 1234) {
   plot_data <- withr::with_seed(
     seed = s,

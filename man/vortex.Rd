@@ -4,14 +4,21 @@
 \alias{vortex}
 \title{Vortex}
 \usage{
-vortex(n = 25, start_val = 90, col_scheme = "mono", bg_col = "black", s = 1234)
+vortex(
+  n = 25,
+  start_val = 90,
+  col_palette = c("#700460", "#a02c5d", "#ec0f47", "#ee6b3b", "#fbbf54", "#abd96d",
+    "#15c286", "#087353", "#045459", "#4b0082"),
+  bg_col = "black",
+  s = 1234
+)
 }
 \arguments{
 \item{n}{Number of points. Default 25.}
 
 \item{start_val}{Starting position for polar coordinates. Default 90.}
 
-\item{col_scheme}{Colour scheme of art. One of c("mono", "rainbow). Default 0.1.}
+\item{col_palette}{Colour palette. Default \code{c("#700460", "#a02c5d", "#ec0f47", "#ee6b3b", "#fbbf54", "#abd96d", "#15c286", "#087353", "#045459", "#4b0082")}.}
 
 \item{bg_col}{Background colour. Default "black".}
 

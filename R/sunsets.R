@@ -37,10 +37,10 @@ generate_sunsets_data <- function(num_bars = 8,
 #'
 #' This function creates generative art using faceted segments.
 #'
-#' @param num_bars Number of bars. Default 8.
-#' @param n Number of lines per bar. Default 1000.
-#' @param col_palette Colour palette. Default PrettyCols::prettycols("Lively").
-#' @param bg_col Background colour. Default "#413C58".
+#' @param num_bars Number of bars. Default 6.
+#' @param n Number of lines per bar. Default 500.
+#' @param col_palette Colour palette. Default `c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B")`.
+#' @param bg_col Background colour. Default `"#413C58"`.
 #' @param vertical Boolean indicating whether bars should be
 #' vertical. Default FALSE.
 #' @param fade_vertical Boolean indicating whether the colouring
@@ -51,10 +51,9 @@ generate_sunsets_data <- function(num_bars = 8,
 #' @examples
 #' sunsets()
 #' @export
-
-sunsets <- function(num_bars = 8,
-                    n = 1000,
-                    col_palette = PrettyCols::prettycols("Lively"),
+sunsets <- function(num_bars = 6,
+                    n = 500,
+                    col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#003D5B"),
                     bg_col = "#413C58",
                     vertical = FALSE,
                     fade_vertical = FALSE,

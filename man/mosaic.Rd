@@ -2,11 +2,11 @@
 % Please edit documentation in R/mosaic.R
 \name{mosaic}
 \alias{mosaic}
-\title{Mosiac}
+\title{Mosaic}
 \usage{
 mosaic(
   n = 10,
-  fill_cols = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"),
+  col_palette = c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E"),
   line_col = "white",
   line_size = 1,
   x_means = c(0, 10, 5),
@@ -18,7 +18,7 @@ mosaic(
 \arguments{
 \item{n}{Number of points to generate tiles from. Default 100.}
 
-\item{fill_cols}{Vector of colours to fill tiles with, Default
+\item{col_palette}{Vector of colours to fill tiles with, Default
 \code{c("#4B3F72", "#CBB3BF", "#FFC857", "#119DA4", "#19647E")}.}
 
 \item{line_col}{Colour of lines between tiles, Default "white".}

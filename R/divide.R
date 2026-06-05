@@ -3,7 +3,7 @@
 #' This function generates a coloured generative art ggplot object from intersecting lines.
 #'
 #' @param num_lines Number of intersecting lines. Default `30`.
-#' @param col_palette Vector of colours. Default `PrettyCols::prettycols("TangerineBlues")`.
+#' @param col_palette Vector of colours. Default `c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1", "#5f93ac", "#2e627a", "#00344a")`.
 #' @param rayshade Boolean determining whether the returned plot should be converted to
 #' three dimensional using rayshader. If `TRUE`, `{rayshader}` is required to be installed.
 #' Default `FALSE`.
@@ -14,7 +14,9 @@
 #' @export
 
 divide <- function(num_lines = 30,
-                   col_palette = PrettyCols::prettycols("TangerineBlues"),
+                   col_palette = c("#552000", "#8a4d00", "#c17d17",
+                                   "#f8b150", "#f5f5f5", "#93c6e1",
+                                   "#5f93ac", "#2e627a", "#00344a"),
                    rayshade = FALSE,
                    s = 1234) {
   num_lines <- ceiling(num_lines)
@@ -47,7 +49,7 @@ divide <- function(num_lines = 30,
       cropped_sf <- lwgeom::st_split(polygon1, make_lines) |>
         sf::st_collection_extract(c("POLYGON")) |>
         sf::st_as_sf()
-      cropped_sf$col <- sample(seq_len(length(col_palette)),
+      cropped_sf$col <- sample(seq_along(col_palette),
         size = nrow(cropped_sf),
         replace = TRUE
       )

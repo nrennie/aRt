@@ -1,9 +1,30 @@
+# Global variables
+utils::globalVariables(c("density", ".", ".data"))
+
+
+
+#' Generates a random hex code
+#'
+#' @param n Number of hex codes to generate
+#' @return Character string of hex codes
+#' @noRd
+random_hex <- function(n) {
+  generate_hex <- function() {
+    choices <- sample(c(as.character(0:9), LETTERS[1:6]), size = 6, replace = TRUE)
+    output <- paste0("#", stringr::str_flatten(choices))
+    return(output)
+  }
+  hex <- replicate(n = n, generate_hex(), simplify = TRUE)
+  return(hex)
+}
+
+
+
 #' aRt theme
 #'
 #' Custom ggplot2 theme for aRt objects
 #'
 #' @noRd
-
 theme_aRt <- function(bg_col, padding = 0) { # nolint
   ggplot2::theme_void() +
     ggplot2::theme(

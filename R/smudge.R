@@ -6,7 +6,7 @@
 #' @param n Number of grid boxes. Default 25.
 #' @param binwidth Binwidth for colours. Default 0.01.
 #' @param col_palette Vector of colours. Default
-#' `PrettyCols::prettycols("TangerineBlues")`.
+#' `c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1", "#5f93ac", "#2e627a", "#00344a")`.
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -15,7 +15,7 @@
 
 smudge <- function(n = 25,
                    binwidth = 0.01,
-                   col_palette = PrettyCols::prettycols("TangerineBlues"),
+                   col_palette = c("#552000", "#8a4d00", "#c17d17", "#f8b150", "#f5f5f5", "#93c6e1", "#5f93ac", "#2e627a", "#00344a"),
                    s = 1234) {
   plot_data <- withr::with_seed(
     seed = s,

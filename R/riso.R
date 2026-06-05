@@ -1,4 +1,4 @@
-#' Riso Circles
+#' Riso
 #'
 #' This function generates a coloured generative art ggplot object using
 #' overlapping semi-transparent circles.
@@ -17,21 +17,21 @@
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
-#' riso_circles()
+#' riso()
 #' @export
 
-riso_circles <- function(n_x = 4,
-                         n_y = 4,
-                         n_circles = 2,
-                         r = 0.5,
-                         jitter_x = 0.25,
-                         jitter_y = 0.3,
-                         alpha = 0.5,
-                         col_palette = c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076"),
-                         circle_bg = "#fafafa",
-                         bg_col = "gray10",
-                         interpolate = TRUE,
-                         s = 1234) {
+riso <- function(n_x = 4,
+                 n_y = 4,
+                 n_circles = 2,
+                 r = 0.5,
+                 jitter_x = 0.25,
+                 jitter_y = 0.3,
+                 alpha = 0.5,
+                 col_palette = c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076"),
+                 circle_bg = "#fafafa",
+                 bg_col = "gray10",
+                 interpolate = TRUE,
+                 s = 1234) {
   plot_data <- withr::with_seed(
     seed = s,
     code = {

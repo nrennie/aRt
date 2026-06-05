@@ -10,7 +10,7 @@ squares(
   pattern_col = "white",
   pattern_fill = "black",
   pattern_size = 0.4,
-  size = 1.5,
+  linewidth = 1.5,
   s = 1234
 )
 }
@@ -25,7 +25,7 @@ squares(
 
 \item{pattern_size}{Size of pattern. Default 0.4.}
 
-\item{size}{Size of lines between squares. Default 1.5.}
+\item{linewidth}{Size of lines between squares. Default 1.5.}
 
 \item{s}{Random seed. Default 1234.}
 }
