@@ -1,0 +1,260 @@
+# aRt
+
+aRt is an R package to create generative art.
+
+## Installation
+
+Install from GitHub using:
+
+### Colour palettes
+
+Some of the functions in previous releases of the `aRt` package took
+names of colour palettes as arguments. These colour palettes came from
+external R packages, and the names of the palettes were not necessarily
+obvious. These functions have been updated to allow any choice of
+colours, rather than restricting a user to a single package from which
+to choose palettes.
+
+## Examples
+
+### abacus
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-1.png)
+
+### black_hole
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-2.png)
+
+### blending
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-3.png)
+
+### boxes
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-4.png)
+
+### bricks
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-5.png)
+
+### bubbles
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-6.png)
+
+### bullseye
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-7.png)
+
+### chaos
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-8.png)
+
+### crawling
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-9.png)
+
+### crosshatch
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-10.png)
+
+### disarray
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-11.png)
+
+### distort
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-12.png)
+
+``` R
+## Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
+```
+
+### divide
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-13.png)
+
+### dots
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-14.png)
+
+### fading
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-16.png)
+
+### fractals
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-17.png)
+
+### fragmentum
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-18.png)
+
+### gradients
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-19.png)
+
+### lockers
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-20.png)
+
+### mesh
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-21.png)
+
+### mirrored
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-22.png)
+
+### mosaic
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-24.png)
+
+### network
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-25.png)
+
+### perpendicular
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-26.png)
+
+### polygons
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-27.png)
+
+### puzzles
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-28.png)
+
+### rectangles
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-29.png)
+
+### riley
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-30.png)
+
+### rings
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-31.png)
+
+### riso
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-32.png)
+
+### shatter
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-33.png)
+
+### smudge
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-34.png)
+
+### spiro
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
+
+### squares
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-36.png)
+
+### stacked
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-37.png)
+
+### stackture
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-38.png)
+
+### sunsets
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-39.png)
+
+### tiles
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-40.png)
+
+### vortex
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-41.png)
+
+### wander
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-42.png)
+
+# Package index
+
+## All functions
+
+- [`abacus()`](https://nrennie.github.io/aRt/reference/abacus.md) :
+  Abacus
+- [`black_hole()`](https://nrennie.github.io/aRt/reference/black_hole.md)
+  : Black Hole
+- [`blending()`](https://nrennie.github.io/aRt/reference/blending.md) :
+  Blending
+- [`boxes()`](https://nrennie.github.io/aRt/reference/boxes.md) : Boxes
+- [`bricks()`](https://nrennie.github.io/aRt/reference/bricks.md) :
+  Bricks
+- [`bubbles()`](https://nrennie.github.io/aRt/reference/bubbles.md) :
+  Bubbles
+- [`bullseye()`](https://nrennie.github.io/aRt/reference/bullseye.md) :
+  Bullseye
+- [`chaos()`](https://nrennie.github.io/aRt/reference/chaos.md) : Chaos
+- [`crawling()`](https://nrennie.github.io/aRt/reference/crawling.md) :
+  Crawling
+- [`crosshatch()`](https://nrennie.github.io/aRt/reference/crosshatch.md)
+  : Crosshatch
+- [`disarray()`](https://nrennie.github.io/aRt/reference/disarray.md) :
+  Disarray
+- [`distort()`](https://nrennie.github.io/aRt/reference/distort.md) :
+  Distort
+- [`divide()`](https://nrennie.github.io/aRt/reference/divide.md) :
+  Divide
+- [`dots()`](https://nrennie.github.io/aRt/reference/dots.md) : Dots
+- [`fading()`](https://nrennie.github.io/aRt/reference/fading.md) :
+  Fading
+- [`fractals()`](https://nrennie.github.io/aRt/reference/fractals.md) :
+  Fractals
+- [`fragmentum()`](https://nrennie.github.io/aRt/reference/fragmentum.md)
+  : Fragmentum
+- [`gradients()`](https://nrennie.github.io/aRt/reference/gradients.md)
+  : Generates generative art as a grid of gradient colour fades
+- [`lockers()`](https://nrennie.github.io/aRt/reference/lockers.md) :
+  Draw a generative locker-grid plot
+- [`mesh()`](https://nrennie.github.io/aRt/reference/mesh.md) : Mesh
+- [`mirrored()`](https://nrennie.github.io/aRt/reference/mirrored.md) :
+  Mirrored
+- [`mosaic()`](https://nrennie.github.io/aRt/reference/mosaic.md) :
+  Mosaic
+- [`network()`](https://nrennie.github.io/aRt/reference/network.md) :
+  Network
+- [`perpendicular()`](https://nrennie.github.io/aRt/reference/perpendicular.md)
+  : Perpendicular
+- [`polygons()`](https://nrennie.github.io/aRt/reference/polygons.md) :
+  Polygons
+- [`puzzles()`](https://nrennie.github.io/aRt/reference/puzzles.md) :
+  Puzzles
+- [`rectangles()`](https://nrennie.github.io/aRt/reference/rectangles.md)
+  : Rectangles
+- [`riley()`](https://nrennie.github.io/aRt/reference/riley.md) : Riley
+- [`rings()`](https://nrennie.github.io/aRt/reference/rings.md) : Rings
+- [`riso()`](https://nrennie.github.io/aRt/reference/riso.md) : Riso
+- [`shatter()`](https://nrennie.github.io/aRt/reference/shatter.md) :
+  Shatter
+- [`smudge()`](https://nrennie.github.io/aRt/reference/smudge.md) :
+  Smudge
+- [`spiro()`](https://nrennie.github.io/aRt/reference/spiro.md) : Spiro
+- [`squares()`](https://nrennie.github.io/aRt/reference/squares.md) :
+  Squares
+- [`stack()`](https://nrennie.github.io/aRt/reference/stack.md) : Stack
+- [`stacked()`](https://nrennie.github.io/aRt/reference/stacked.md) :
+  Stacked
+- [`stackture()`](https://nrennie.github.io/aRt/reference/stackture.md)
+  : Stackture
+- [`sunsets()`](https://nrennie.github.io/aRt/reference/sunsets.md) :
+  Sunsets
+- [`tiles()`](https://nrennie.github.io/aRt/reference/tiles.md) : Tiles
+- [`vortex()`](https://nrennie.github.io/aRt/reference/vortex.md) :
+  Vortex
+- [`wander()`](https://nrennie.github.io/aRt/reference/wander.md) :
+  Wander
+

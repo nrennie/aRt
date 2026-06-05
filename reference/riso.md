@@ -1,0 +1,84 @@
+# Riso
+
+This function generates a coloured generative art ggplot object using
+overlapping semi-transparent circles.
+
+## Usage
+
+``` r
+riso(
+  n_x = 4,
+  n_y = 4,
+  n_circles = 2,
+  r = 0.5,
+  jitter_x = 0.25,
+  jitter_y = 0.3,
+  alpha = 0.5,
+  col_palette = c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076"),
+  circle_bg = "#fafafa",
+  bg_col = "gray10",
+  interpolate = TRUE,
+  s = 1234
+)
+```
+
+## Arguments
+
+- n_x:
+
+  Number of columns in grid. Default 4.
+
+- n_y:
+
+  Number of rows in grid. Default 4.
+
+- n_circles:
+
+  Number of circles per grid square. Default 2.
+
+- r:
+
+  Radius of circles. Default 0.5.
+
+- jitter_x:
+
+  Jitter in x direction for circle positions. Default 0.25.
+
+- jitter_y:
+
+  Jitter in y direction for circle positions. Default 0.3.
+
+- alpha:
+
+  Transparency of circles. Default 0.5.
+
+- col_palette:
+
+  Vector of colours. Default
+  `c("#6497b1", "#6a359c", "#FFB04F", "#679c35", "#cd1076")`.
+
+- circle_bg:
+
+  Background colour of circles. Default `"#fafafa"`.
+
+- bg_col:
+
+  Background colour. Default `"gray10"`.
+
+- interpolate:
+
+  Boolean indicating if colours should be interpolated. Default `TRUE`.
+
+- s:
+
+  Seed value. Default 1234.
+
+## Value
+
+A ggplot object.
+
+## Examples
+
+``` r
+riso()
+```
