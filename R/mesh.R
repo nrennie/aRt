@@ -1,4 +1,4 @@
-#' Windows
+#' Mesh
 #'
 #' This function generates a coloured generative art ggplot object using rectangles.
 #'
@@ -12,14 +12,14 @@
 #' is required to be installed. Default `FALSE`.
 #' @return A ggplot object.
 #' @examples
-#' windows()
+#' mesh()
 #' @export
 
-windows <- function(n_x = 10,
-                    n_y = 10,
-                    col_palette = c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f"),
-                    linewidth = 2,
-                    rayshade = FALSE) {
+mesh <- function(n_x = 10,
+                 n_y = 10,
+                 col_palette = c("#0e7c7b", "#17bebb", "#d4f4dd", "#d62246", "#4b1d3f"),
+                 linewidth = 2,
+                 rayshade = FALSE) {
   plot_data <- expand.grid(
     x = 1:n_x,
     y = 1:n_y

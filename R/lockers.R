@@ -91,45 +91,51 @@ lockers <- function(
   linewidth = 1,
   s = 1234
 ) {
-  set.seed(s)
-  # Data
-  plot_data <- purrr::map(
-    .x = seq_len(n_col),
-    .f = ~ make_column(
-      min_rows = min_rows,
-      max_rows = max_rows,
-      x_start = .x
-    )
-  ) |>
-    dplyr::bind_rows()
-  to_divide <- which(stats::runif(nrow(plot_data)) <= subdivide_prob)
-  to_keep_data <- plot_data |>
-    dplyr::filter_out(dplyr::row_number() %in% to_divide)
-  to_divide_data <- plot_data |>
-    dplyr::filter(dplyr::row_number() %in% to_divide)
-  if (nrow(to_divide_data) > 0) {
-    new_data <- purrr::map(
-      .x = seq_len(nrow(to_divide_data)),
-      .f = ~ divide_box(
-        xmin = to_divide_data$xmin[.x],
-        xmax = to_divide_data$xmax[.x],
-        ymin = to_divide_data$ymin[.x],
-        ymax = to_divide_data$ymax[.x],
-        min_c = min_c,
-        max_c = max_c
-      )
-    ) |>
-      dplyr::bind_rows()
-    final_data <- rbind(to_keep_data, new_data)
-  } else {
-    final_data <- to_keep_data
-  }
-  final_data$col <- sample(grDevices::colorRampPalette(col_palette)(nrow(final_data)))
-  final_data <- final_data |>
-    dplyr::mutate(
-      area = (.data$ymax - .data$ymin) * (.data$xmax - .data$xmin)
-    ) |>
-    dplyr::arrange(.data$area)
+  final_data <- withr::with_seed(
+    seed = s,
+    code = {
+      # Data
+      plot_data <- purrr::map(
+        .x = seq_len(n_col),
+        .f = ~ make_column(
+          min_rows = min_rows,
+          max_rows = max_rows,
+          x_start = .x
+        )
+      ) |>
+        dplyr::bind_rows()
+      to_divide <- which(stats::runif(nrow(plot_data)) <= subdivide_prob)
+      to_keep_data <- plot_data |>
+        dplyr::filter_out(dplyr::row_number() %in% to_divide)
+      to_divide_data <- plot_data |>
+        dplyr::filter(dplyr::row_number() %in% to_divide)
+      if (nrow(to_divide_data) > 0) {
+        new_data <- purrr::map(
+          .x = seq_len(nrow(to_divide_data)),
+          .f = ~ divide_box(
+            xmin = to_divide_data$xmin[.x],
+            xmax = to_divide_data$xmax[.x],
+            ymin = to_divide_data$ymin[.x],
+            ymax = to_divide_data$ymax[.x],
+            min_c = min_c,
+            max_c = max_c
+          )
+        ) |>
+          dplyr::bind_rows()
+        final_data <- rbind(to_keep_data, new_data)
+      } else {
+        final_data <- to_keep_data
+      }
+      final_data$col <- sample(grDevices::colorRampPalette(col_palette)(nrow(final_data)))
+      final_data <- final_data |>
+        dplyr::mutate(
+          area = (.data$ymax - .data$ymin) * (.data$xmax - .data$xmin)
+        ) |>
+        dplyr::arrange(.data$area)
+      final_data
+    }
+  )
+
 
   # Plot
   g <- ggplot2::ggplot(

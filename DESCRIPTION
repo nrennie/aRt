@@ -37,6 +37,7 @@ Suggests:
   elevatr,
   rayshader
 Remotes:
+  hrbrmstr/ggchicklet,
   thomasp85/ggfx,
   nrennie/ggvoronoi
 Config/Needs/website: nrennie/nrenniepkgdown

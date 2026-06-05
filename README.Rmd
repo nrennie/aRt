@@ -32,14 +32,15 @@ Some of the functions in previous releases of the `aRt` package took names of co
 
 ## Examples
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.asp = 1, results='asis'}
 library(aRt)
 ns <- asNamespace("aRt")
 exports <- sort(getNamespaceExports("aRt"))
-for (i in exports[1:3]) {
+for (i in exports) {
   p <- do.call(i, list())
-  cat(paste0("### ", i))
+  cat(paste0("### ", i, "\n\n"))
   print(p)
+  cat("\n\n")
 }
 ```
 
