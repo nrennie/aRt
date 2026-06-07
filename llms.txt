@@ -65,10 +65,6 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-12.png)
 
-``` R
-## Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
-```
-
 ### divide
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-13.png)
@@ -77,109 +73,101 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-14.png)
 
-### fading
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-16.png)
-
 ### fractals
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-17.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-15.png)
 
 ### fragmentum
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-18.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-16.png)
 
 ### gradients
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-19.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-17.png)
 
 ### lockers
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-20.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-18.png)
 
 ### mesh
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-21.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-19.png)
 
 ### mirrored
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-22.png)
-
-### mosaic
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-24.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-20.png)
 
 ### network
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-25.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-21.png)
 
 ### perpendicular
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-26.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-22.png)
 
 ### polygons
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-27.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-23.png)
 
 ### puzzles
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-28.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-24.png)
 
 ### rectangles
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-29.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-25.png)
 
 ### riley
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-30.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-26.png)
 
 ### rings
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-31.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-27.png)
 
 ### riso
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-32.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-28.png)
 
 ### shatter
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-33.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-29.png)
 
 ### smudge
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-34.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-30.png)
 
 ### spiro
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-31.png)
 
 ### squares
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-36.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-32.png)
 
 ### stacked
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-37.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-33.png)
 
 ### stackture
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-38.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-34.png)
 
 ### sunsets
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-39.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
 
 ### tiles
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-40.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-36.png)
 
 ### vortex
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-41.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-37.png)
 
 ### wander
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-42.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-38.png)
 
 # Package index
 
