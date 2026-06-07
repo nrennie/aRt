@@ -44,6 +44,9 @@
 <span>  n_x <span class="op">=</span> <span class="fl">12</span>,</span>
 <span>  n_y <span class="op">=</span> <span class="fl">12</span>,</span>
 <span>  col_palette <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#67322e"</span>, <span class="st">"#99610a"</span>, <span class="st">"#6e948c"</span>, <span class="st">"#2c6b67"</span>, <span class="st">"#122c43"</span><span class="op">)</span>,</span>
+<span>  rayshade <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  shadow_intensity <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  sunangle <span class="op">=</span> <span class="fl">315</span>,</span>
 <span>  s <span class="op">=</span> <span class="fl">1234</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -62,6 +65,20 @@
 
 <dt id="arg-col-palette">col_palette<a class="anchor" aria-label="anchor" href="#arg-col-palette"></a></dt>
 <dd><p>Vector of colours. Default <code>c("#67322e", "#99610a", "#6e948c", "#2c6b67", "#122c43")</code> which is the Veronese palette from MetBrewer.</p></dd>
+
+
+<dt id="arg-rayshade">rayshade<a class="anchor" aria-label="anchor" href="#arg-rayshade"></a></dt>
+<dd><p>Boolean determining whether the returned plot should
+be converted to three dimensional using rayshader. If <code>TRUE</code>, <code>{rayshader}</code>
+is required to be installed. Default <code>FALSE</code>.</p></dd>
+
+
+<dt id="arg-shadow-intensity">shadow_intensity<a class="anchor" aria-label="anchor" href="#arg-shadow-intensity"></a></dt>
+<dd><p>Intensity of shading for 3D elements, Default 0.5.</p></dd>
+
+
+<dt id="arg-sunangle">sunangle<a class="anchor" aria-label="anchor" href="#arg-sunangle"></a></dt>
+<dd><p>Angle of the sun. Default 315.</p></dd>
 
 
 <dt id="arg-s">s<a class="anchor" aria-label="anchor" href="#arg-s"></a></dt>

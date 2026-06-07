@@ -2,7 +2,10 @@
 
 ## aRt 1.5.2
 
-- Deprecate `attraction()`, `sunbursts()`, `streams()`, `flow_fields()`,
+- Combine [`tiles()`](https://nrennie.github.io/aRt/reference/tiles.md)
+  and `stacked()`
+- Deprecate `dots()`, `crawling()`, `spiro()`, `sunsets()`,
+  `attraction()`, `sunbursts()`, `streams()`, `flow_fields()`,
   `waves()`, `circular()`, `squiggles()`, `stripes()`, `circles()`,
   `criss_cross()`, `moire()`, and `spirals()`.
 - Use vectors of colours for inputs
@@ -73,8 +76,8 @@
 ## aRt 1.4.3
 
 - Add `random_tessellation()`
-- Add [`sunsets()`](https://nrennie.github.io/aRt/reference/sunsets.md)
-- Add [`spiro()`](https://nrennie.github.io/aRt/reference/spiro.md)
+- Add `sunsets()`
+- Add `spiro()`
 - Rename `windows()` to `window_boxes()`
 - Rename [`lines()`](https://rdrr.io/r/graphics/lines.html) to
   [`perpendicular()`](https://nrennie.github.io/aRt/reference/perpendicular.md)
@@ -136,8 +139,7 @@
 ## aRt 1.2.9
 
 - add `contours()` function
-- add [`stacked()`](https://nrennie.github.io/aRt/reference/stacked.md)
-  function
+- add `stacked()` function
 - add {metR}, {elevatr}, {raster}, and {rayshader} dependencies
 - Minor bug fix to
   [`tiles()`](https://nrennie.github.io/aRt/reference/tiles.md)

@@ -49,51 +49,51 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-8.png)
 
-### crawling
+### crosshatch
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-9.png)
 
-### crosshatch
+### disarray
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-10.png)
 
-### disarray
+### distort
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-11.png)
 
-### distort
+### divide
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-12.png)
 
-### divide
+### fading
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-13.png)
 
-### dots
+### fractals
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-14.png)
 
-### fractals
+### fragmentum
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-15.png)
 
-### fragmentum
+### gradients
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-16.png)
 
-### gradients
+### lockers
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-17.png)
 
-### lockers
+### mesh
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-18.png)
 
-### mesh
+### mirrored
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-19.png)
 
-### mirrored
+### mosaic
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-20.png)
 
@@ -137,37 +137,25 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-30.png)
 
-### spiro
+### squares
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-31.png)
 
-### squares
+### stackture
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-32.png)
 
-### stacked
+### tiles
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-33.png)
 
-### stackture
+### vortex
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-34.png)
 
-### sunsets
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
-
-### tiles
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-36.png)
-
-### vortex
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-37.png)
-
 ### wander
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-38.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
 
 # Package index
 
@@ -187,8 +175,6 @@ to choose palettes.
 - [`bullseye()`](https://nrennie.github.io/aRt/reference/bullseye.md) :
   Bullseye
 - [`chaos()`](https://nrennie.github.io/aRt/reference/chaos.md) : Chaos
-- [`crawling()`](https://nrennie.github.io/aRt/reference/crawling.md) :
-  Crawling
 - [`crosshatch()`](https://nrennie.github.io/aRt/reference/crosshatch.md)
   : Crosshatch
 - [`disarray()`](https://nrennie.github.io/aRt/reference/disarray.md) :
@@ -197,7 +183,6 @@ to choose palettes.
   Distort
 - [`divide()`](https://nrennie.github.io/aRt/reference/divide.md) :
   Divide
-- [`dots()`](https://nrennie.github.io/aRt/reference/dots.md) : Dots
 - [`fading()`](https://nrennie.github.io/aRt/reference/fading.md) :
   Fading
 - [`fractals()`](https://nrennie.github.io/aRt/reference/fractals.md) :
@@ -230,16 +215,11 @@ to choose palettes.
   Shatter
 - [`smudge()`](https://nrennie.github.io/aRt/reference/smudge.md) :
   Smudge
-- [`spiro()`](https://nrennie.github.io/aRt/reference/spiro.md) : Spiro
 - [`squares()`](https://nrennie.github.io/aRt/reference/squares.md) :
   Squares
 - [`stack()`](https://nrennie.github.io/aRt/reference/stack.md) : Stack
-- [`stacked()`](https://nrennie.github.io/aRt/reference/stacked.md) :
-  Stacked
 - [`stackture()`](https://nrennie.github.io/aRt/reference/stackture.md)
   : Stackture
-- [`sunsets()`](https://nrennie.github.io/aRt/reference/sunsets.md) :
-  Sunsets
 - [`tiles()`](https://nrennie.github.io/aRt/reference/tiles.md) : Tiles
 - [`vortex()`](https://nrennie.github.io/aRt/reference/vortex.md) :
   Vortex

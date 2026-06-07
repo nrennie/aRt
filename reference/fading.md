@@ -42,4 +42,5 @@ A ggplot object.
 
 ``` r
 fading()
+#> Warning: `stat_voronoi_tile()` is dropping duplicated points
 ```

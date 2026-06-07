@@ -49,51 +49,51 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-8.png)
 
-### crawling
+### crosshatch
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-9.png)
 
-### crosshatch
+### disarray
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-10.png)
 
-### disarray
+### distort
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-11.png)
 
-### distort
+### divide
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-12.png)
 
-### divide
+### fading
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-13.png)
 
-### dots
+### fractals
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-14.png)
 
-### fractals
+### fragmentum
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-15.png)
 
-### fragmentum
+### gradients
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-16.png)
 
-### gradients
+### lockers
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-17.png)
 
-### lockers
+### mesh
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-18.png)
 
-### mesh
+### mirrored
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-19.png)
 
-### mirrored
+### mosaic
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-20.png)
 
@@ -137,34 +137,22 @@ to choose palettes.
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-30.png)
 
-### spiro
+### squares
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-31.png)
 
-### squares
+### stackture
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-32.png)
 
-### stacked
+### tiles
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-33.png)
 
-### stackture
+### vortex
 
 ![](README_files/figure-markdown_github/unnamed-chunk-2-34.png)
 
-### sunsets
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)
-
-### tiles
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-36.png)
-
-### vortex
-
-![](README_files/figure-markdown_github/unnamed-chunk-2-37.png)
-
 ### wander
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-38.png)
+![](README_files/figure-markdown_github/unnamed-chunk-2-35.png)

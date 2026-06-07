@@ -16,8 +16,6 @@
 - [`bullseye()`](https://nrennie.github.io/aRt/reference/bullseye.md) :
   Bullseye
 - [`chaos()`](https://nrennie.github.io/aRt/reference/chaos.md) : Chaos
-- [`crawling()`](https://nrennie.github.io/aRt/reference/crawling.md) :
-  Crawling
 - [`crosshatch()`](https://nrennie.github.io/aRt/reference/crosshatch.md)
   : Crosshatch
 - [`disarray()`](https://nrennie.github.io/aRt/reference/disarray.md) :
@@ -26,7 +24,6 @@
   Distort
 - [`divide()`](https://nrennie.github.io/aRt/reference/divide.md) :
   Divide
-- [`dots()`](https://nrennie.github.io/aRt/reference/dots.md) : Dots
 - [`fading()`](https://nrennie.github.io/aRt/reference/fading.md) :
   Fading
 - [`fractals()`](https://nrennie.github.io/aRt/reference/fractals.md) :
@@ -59,16 +56,11 @@
   Shatter
 - [`smudge()`](https://nrennie.github.io/aRt/reference/smudge.md) :
   Smudge
-- [`spiro()`](https://nrennie.github.io/aRt/reference/spiro.md) : Spiro
 - [`squares()`](https://nrennie.github.io/aRt/reference/squares.md) :
   Squares
 - [`stack()`](https://nrennie.github.io/aRt/reference/stack.md) : Stack
-- [`stacked()`](https://nrennie.github.io/aRt/reference/stacked.md) :
-  Stacked
 - [`stackture()`](https://nrennie.github.io/aRt/reference/stackture.md)
   : Stackture
-- [`sunsets()`](https://nrennie.github.io/aRt/reference/sunsets.md) :
-  Sunsets
 - [`tiles()`](https://nrennie.github.io/aRt/reference/tiles.md) : Tiles
 - [`vortex()`](https://nrennie.github.io/aRt/reference/vortex.md) :
   Vortex

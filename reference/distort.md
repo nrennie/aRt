@@ -9,11 +9,10 @@ distort(
   n_x = 5,
   n_y = 5,
   deg_jitter = 0.4,
-  col_palette = c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044",
-    "#8dc657"),
+  col_palette = c("#4D4D4D", "#888888", "#AEAEAE", "#CCCCCC", "#E6E6E6"),
   line_col = "transparent",
   linewidth = 1,
-  bg_col = "transparent",
+  bg_col = "#333333",
   s = 1234
 )
 ```
@@ -35,7 +34,7 @@ distort(
 - col_palette:
 
   Vector of colours. Must be at least length 4. Default
-  `c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044", "#8dc657")`
+  `c("#4D4D4D", "#888888", "#AEAEAE", "#CCCCCC", "#E6E6E6")`
 
 - line_col:
 
@@ -47,7 +46,7 @@ distort(
 
 - bg_col:
 
-  Background colour. Default `"transparent"`.
+  Background colour. Default `"#333333"`.
 
 - s:
 

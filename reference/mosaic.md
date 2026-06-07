@@ -63,4 +63,8 @@ A ggplot object.
 
 ``` r
 mosaic()
+#> Warning: `fortify(<SpatialPolygonsDataFrame>)` was deprecated in ggplot2 3.4.4.
+#> ℹ Please migrate to sf.
+#> ℹ The deprecated feature was likely used in the aRt package.
+#>   Please report the issue to the authors.
 ```
