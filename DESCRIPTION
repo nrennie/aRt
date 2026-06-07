@@ -9,7 +9,6 @@ URL: https://nrennie.github.io/aRt/
 Depends: 
   R (>= 4.1)
 Imports:
-  ape,
   cowplot,
   dplyr,
   ggchicklet,
@@ -17,7 +16,6 @@ Imports:
   ggfx,
   ggpattern,
   ggplot2 (>= 3.4.0),
-  ggraph,
   ggvoronoi,
   grDevices,
   igraph,

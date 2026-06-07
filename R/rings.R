@@ -93,5 +93,10 @@ rings <- function(col_palette = c("#413C58", "#D1495B", "#EDAE49", "#00798C", "#
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
     theme_aRt(bg_col)
-  return(p)
+  q <- cowplot::ggdraw() +
+    cowplot::draw_plot(p) +
+    ggplot2::theme(plot.background = ggplot2::element_rect(
+      fill = bg_col, colour = bg_col
+    ))
+  return(q)
 }

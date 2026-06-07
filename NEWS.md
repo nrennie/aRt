@@ -1,6 +1,7 @@
 # aRt 1.5.2
 
-* Deprecate `attraction()`, `sunbursts()`, `streams()`, `flow_fields()`, `waves()`, `circular()`, `squiggles()`, `stripes()`, `circles()`, `criss_cross()`, `moire()`, and `spirals()`.
+* Combine `tiles()` and `stacked()`
+* Deprecate `dots()`, `crawling()`, `spiro()`, `sunsets()`, `attraction()`, `sunbursts()`, `streams()`, `flow_fields()`, `waves()`, `circular()`, `squiggles()`, `stripes()`, `circles()`, `criss_cross()`, `moire()`, and `spirals()`.
 * Use vectors of colours for inputs
 * Small fixes for consistency
 * Add `lockers()`

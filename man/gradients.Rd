@@ -4,12 +4,16 @@
 \alias{gradients}
 \title{Generates generative art as a grid of gradient colour fades}
 \usage{
-gradients(nx = 5, ny = 5, s = 1234)
+gradients(nx = 4, ny = 4, bg_col = "white", linewidth = 1.5, s = 1234)
 }
 \arguments{
-\item{nx}{Number of columns. Default 5.}
+\item{nx}{Number of columns. Default 4.}
 
-\item{ny}{Number of rows. Default 5.}
+\item{ny}{Number of rows. Default 4.}
+
+\item{bg_col}{Background colour. Default "white".}
+
+\item{linewidth}{Linewidth. Default 1.5.}
 
 \item{s}{Random seed. Default 1234.}
 }

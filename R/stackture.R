@@ -81,6 +81,9 @@ stackture <- function(n_x = 8,
       all_data
     }
   )
+  bb <- sf::st_bbox(all_data)
+  lower <- min(c(bb["xmin"], bb["ymin"]))
+  upper <- min(c(bb["xmax"], bb["ymax"]))
   p <- ggplot2::ggplot(data = all_data) +
     ggplot2::geom_sf(
       mapping = ggplot2::aes(fill = .data$col),
@@ -88,6 +91,8 @@ stackture <- function(n_x = 8,
       alpha = alpha
     ) +
     ggplot2::scale_fill_identity() +
+    ggplot2::scale_x_continuous(limits = c(lower, upper)) +
+    ggplot2::scale_y_continuous(limits = c(lower, upper)) +
     theme_aRt(bg_col)
   return(p)
 }

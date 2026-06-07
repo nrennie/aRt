@@ -54,5 +54,5 @@ fading <- function(n_layers = 6,
     ggplot2::coord_cartesian(expand = FALSE) +
     ggplot2::scale_fill_gradientn(colours = rev(col_palette)) +
     theme_aRt("transparent", -0.5)
-  return(suppressWarnings(print(p)))
+  return(p)
 }

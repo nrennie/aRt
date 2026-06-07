@@ -45,25 +45,25 @@ n_col_select <- function(n, size, random = FALSE, s = 1234) {
 #' @param gap_size Numeric between 0 and 1 specifying the size of the gap in
 #' the polygons. Default 0.5.
 #' @param deg_jitter Numeric between 0 and 0.5 specifying the degree of jitter.
-#' Default 0.1.
+#' Default 0.2.
 #' @param col_palette Vector of colours. Can be any length. Default
-#' `c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")`.
+#' `c("#ff9062", "#fd6598", "#cb64c0", "#3294dd", "#75fb8a", "#d0eb60")`.
 #' @param random Boolean for whether colours should be random or ordered.
 #' Default TRUE.
-#' @param bg_col Background colour. Default "gray97".
+#' @param bg_col Background colour. Default "black".
 #' @param s Seed value. Default 1234.
 #' @return A ggplot object.
 #' @examples
 #' polygons()
 #' @export
 
-polygons <- function(n_x = 12,
-                     n_y = 18,
+polygons <- function(n_x = 16,
+                     n_y = 16,
                      gap_size = 0.5,
-                     deg_jitter = 0.1,
-                     col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+                     deg_jitter = 0.2,
+                     col_palette = c("#ff9062", "#fd6598", "#cb64c0", "#3294dd", "#75fb8a", "#d0eb60"),
                      random = TRUE,
-                     bg_col = "gray97",
+                     bg_col = "black",
                      s = 1234) {
   if (n_x < 1 || n_y < 1) {
     stop("Number of rows and columns must be at least 1")
@@ -92,9 +92,10 @@ polygons <- function(n_x = 12,
       id <- rep(1:(n_x * n_y), each = 4)
       positions <- data.frame(x = x, y = y, id = id)
       if (random) {
-        col_choice <- n_col_select(n = length(col_palette), size = n_x * n_y, s = s)
-      } else {
         col_choice <- sample(col_palette, size = n_x * n_y, replace = TRUE)
+      } else {
+        col_choice <- n_col_select(n = length(col_palette), size = n_x * n_y, s = s)
+
       }
       values <- data.frame(id = unique(id), cols = col_choice)
       datapoly <- merge(values, positions, by = c("id"))

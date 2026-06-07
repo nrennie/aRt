@@ -5,13 +5,13 @@
 \title{Polygons}
 \usage{
 polygons(
-  n_x = 12,
-  n_y = 18,
+  n_x = 16,
+  n_y = 16,
   gap_size = 0.5,
-  deg_jitter = 0.1,
-  col_palette = c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C"),
+  deg_jitter = 0.2,
+  col_palette = c("#ff9062", "#fd6598", "#cb64c0", "#3294dd", "#75fb8a", "#d0eb60"),
   random = TRUE,
-  bg_col = "gray97",
+  bg_col = "black",
   s = 1234
 )
 }
@@ -24,15 +24,15 @@ polygons(
 the polygons. Default 0.5.}
 
 \item{deg_jitter}{Numeric between 0 and 0.5 specifying the degree of jitter.
-Default 0.1.}
+Default 0.2.}
 
 \item{col_palette}{Vector of colours. Can be any length. Default
-\code{c("#9B1D20", "#3D2B3D", "#CBEFB6", "#635D5C")}.}
+\code{c("#ff9062", "#fd6598", "#cb64c0", "#3294dd", "#75fb8a", "#d0eb60")}.}
 
 \item{random}{Boolean for whether colours should be random or ordered.
 Default TRUE.}
 
-\item{bg_col}{Background colour. Default "gray97".}
+\item{bg_col}{Background colour. Default "black".}
 
 \item{s}{Seed value. Default 1234.}
 }

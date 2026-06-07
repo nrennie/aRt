@@ -7,10 +7,10 @@
 #' @param n_y Number of rows. Default 4.
 #' @param deg_jitter Degree of jitter. Default 0.4.
 #' @param col_palette Vector of colours. Must be at least length 4.
-#' Default `c("#416322", "#4e7628", "#5a892f", "#679c35", "#74af3b", "#80c044", "#8dc657")`
+#' Default `c("#4D4D4D", "#888888", "#AEAEAE", "#CCCCCC", "#E6E6E6")`
 #' @param line_col Colour of lines. Default `"transparent"`.
 #' @param linewidth Width of lines. Default 1.
-#' @param bg_col Background colour. Default `"transparent"`.
+#' @param bg_col Background colour. Default `"#333333"`.
 #' @param s Random seed. Default 1234.
 #' @return A ggplot object.
 #' @examples
@@ -21,12 +21,11 @@ distort <- function(n_x = 5,
                     n_y = 5,
                     deg_jitter = 0.4,
                     col_palette = c(
-                      "#416322", "#4e7628", "#5a892f", "#679c35",
-                      "#74af3b", "#80c044", "#8dc657"
+                      "#4D4D4D", "#888888", "#AEAEAE", "#CCCCCC", "#E6E6E6"
                     ),
                     line_col = "transparent",
                     linewidth = 1,
-                    bg_col = "transparent",
+                    bg_col = "#333333",
                     s = 1234) {
   # make polygons
   if (n_x < 1 || n_y < 1) {

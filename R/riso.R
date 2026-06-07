@@ -54,6 +54,9 @@ riso <- function(n_x = 4,
       plot_data
     }
   )
+  xlims <- max(abs(c(plot_data$x0 + plot_data$r, plot_data$x0 - plot_data$r)))
+  ylims <- max(abs(c(plot_data$y0 + plot_data$r, plot_data$y0 - plot_data$r)))
+  lims <- max(c(xlims, ylims))
   g <- ggplot2::ggplot(data = plot_data) +
     ggforce::geom_circle(
       mapping = ggplot2::aes(
@@ -71,6 +74,8 @@ riso <- function(n_x = 4,
       alpha = alpha
     ) +
     ggplot2::facet_wrap(~grp, ncol = n_x, nrow = n_y) +
+    ggplot2::scale_x_continuous(limits = c(-lims, lims)) +
+    ggplot2::scale_y_continuous(limits = c(-lims, lims)) +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_fixed() +
     theme_aRt(bg_col, 0.5)

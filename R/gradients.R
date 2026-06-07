@@ -22,15 +22,19 @@ make_square <- function(xmin, xmax, ymin, ymax, low, high) {
 
 #' Generates generative art as a grid of gradient colour fades
 #'
-#' @param nx Number of columns. Default 5.
-#' @param ny Number of rows. Default 5.
+#' @param nx Number of columns. Default 4.
+#' @param ny Number of rows. Default 4.
+#' @param bg_col Background colour. Default "white".
+#' @param linewidth Linewidth. Default 1.5.
 #' @param s Random seed. Default 1234.
 #' @return Tibble
 #' @examples
 #' gradients()
 #' @export
-gradients <- function(nx = 5,
-                      ny = 5,
+gradients <- function(nx = 4,
+                      ny = 4,
+                      bg_col = "white",
+                      linewidth = 1.5,
                       s = 1234) {
   inputs <- withr::with_seed(
     seed = s,
@@ -58,7 +62,14 @@ gradients <- function(nx = 5,
         colour = I(.data$colour)
       )
     ) +
+    ggplot2::geom_tile(
+      data = expand.grid(x = 0.5 + 1:nx, y = 0.5 + 1:ny),
+      mapping = ggplot2::aes(x = .data$x, .data$y),
+      colour = bg_col,
+      linewidth = linewidth,
+      fill = "transparent"
+    ) +
     ggplot2::coord_fixed(expand = FALSE) +
-    theme_aRt("transparent")
+    theme_aRt(bg_col, 0.5)
   return(p)
 }

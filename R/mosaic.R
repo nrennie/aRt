@@ -60,5 +60,5 @@ mosaic <- function(n = 10,
     ggplot2::scale_fill_manual(values = col_palette) +
     ggplot2::coord_cartesian(expand = FALSE) +
     theme_aRt(line_col)
-  return(suppressWarnings(print(p)))
+  return(p)
 }
